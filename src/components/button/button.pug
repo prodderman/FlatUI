@@ -1,0 +1,9 @@
+mixin button(options) 
+  if !options
+    - options = {}
+
+  -  var classes = ''
+  -  classes += options.color ? `btn--${options.color}` : ''
+  -  classes += options.size ? ` btn--${options.size}` : ''
+  -  classes += options.fill ? ` btn--${options.fill}` : ''
+  button.btn(class= classes)= options.text

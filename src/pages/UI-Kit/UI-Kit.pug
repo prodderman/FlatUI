@@ -1,4 +1,5 @@
 include ../../components/layout/layout
+include ../../components/button/button
 
 doctype html
 html(lang="en")
@@ -11,16 +12,43 @@ html(lang="en")
     +layout()
       +layout__container("small")
         section.buttons
-          h2 standart buttons
+          h2 standard&ensp;buttons
+          .buttons__container
+            .buttons__row
+              +button({size: 'small', text: "Button"})
+              +button({text: "Button"})
+              +button({color: 'red', text: "Button"})
+              +button({color: "red", size: 'small', text: "Button"})
+            .buttons__row
+              +button({size: 'small', fill: 'transparent', text: "Button"}) 
+              +button({fill: 'transparent', text: "Button"})
+              +button({color: 'red', fill: 'transparent', text: "Button"})
+              +button({color: "red", size: 'small', fill: 'transparent', text: "Button"})
         section.arrows
+          h2 ARROW&ensp;BUTTONS
         section.percentages
+          h2 PERCENTAGES / PIE CHART
         section.sliders
+          h2 sliders
         section.stages
-        section.forms-elemnts
+          h2 stages
+        section.form-elemnts
+          h2 form&ensp;elements
+        section.toggles
+          h2  toggles
+        section.tick-boxes
+          h2 tick-boxes
         section.search-dropdown
+          h2 SEARCH / DROP DOWN
         section.user-profile
+          h2 user&ensp;profile
         section.news-events
+          h2 NEWS & EVENTS
         section.location
+          h2  location
         section.calendar
+          h2 calendar
         section.messaging
+          h2  messaging
         section.video
+          h2 video
