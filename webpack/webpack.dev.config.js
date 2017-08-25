@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = new config.default().merge({
   devtool: 'eval',
@@ -63,6 +62,7 @@ module.exports = new config.default().merge({
 
   devServer: {
     inline: true,
+    hot: true,
     contentBase: 'dist',
     port: process.env.PORT
   }

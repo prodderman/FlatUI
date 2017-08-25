@@ -69,11 +69,11 @@ module.exports = new config.default().merge({
           name: "img/[name].[ext]"
         }
       },
-      {
-        test: /\.(svg|otf|ttf|eot|woff|woff2)$/,
+      {     
+        test: /\.(ico|png|jpg|svg|ttf|eot|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: "font/[name]/[name].[ext]"
+          name: "[path][name].[ext]"
         }
       }
     ]
@@ -91,7 +91,7 @@ module.exports = new config.default().merge({
       }
     }),
     new etp({
-      filename: "css/[name].css",
+      filename: "css/[name].css?[contenthash]",
       allChunks: true
     }),
   ],

@@ -2,7 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 const hwp = require('html-webpack-plugin');
+const hwhp = require('html-webpack-harddisk-plugin');
 const config = require('webpack-config');
+const CleanPlugin = require('clean-webpack-plugin');
 
 const pages = [];
 
@@ -21,6 +23,7 @@ const htmls = pages.map(fileName => new hwp({
   filename: `${fileName}.html`,
   chunks: [`${fileName}`, 'common'],
   template: `./src/pages/${fileName}/${fileName}.pug`,
+  alwaysWriteToDisk: true
 }));
 
 const entries = pages.reduce((entry, fileName) => {
@@ -50,12 +53,16 @@ module.exports = new config.default().merge({
   },
 
   plugins: [
+    new CleanPlugin(['./dist'], { root: __dirname}),
     new webpack.ProgressPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
+    }),
+    new hwhp({
+      outputPath: path.resolve(__dirname, 'dist')
     })
   ].concat(htmls),
 
