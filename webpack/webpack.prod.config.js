@@ -63,17 +63,26 @@ module.exports = new config.default().merge({
         }
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(ico|png|jpg|svg)$/,
         loader: 'file-loader',
+        exclude: [
+          /node_modules/,
+          /fonts/
+        ],
         options: {
           name: "img/[name].[ext]"
         }
       },
       {     
-        test: /\.(ico|png|jpg|svg|ttf|eot|woff|woff2)$/,
+        test: /\.(svg|ttf|eot|woff|woff2)$/,
         loader: 'file-loader',
+        exclude: [
+          /node_modules/,
+          /img/
+        ],
         options: {
-          name: "[path][name].[ext]"
+          name: "fonts/[name]/[name].[ext]",
+          prefix: "font"
         }
       }
     ]

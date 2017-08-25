@@ -1,5 +1,6 @@
 include ../../components/layout/layout
 include ../../components/button/button
+include ../../components/arrow/arrow
 
 doctype html
 html(lang="en")
@@ -26,6 +27,13 @@ html(lang="en")
               +button({color: "red", size: 'small', fill: 'transparent', text: "Button"})
         section.arrows
           h2 ARROW&ensp;BUTTONS
+          .arrows__container
+            +arrow()
+            +arrow({direction: "right"})
+            +arrow({disabled: true})
+            +arrow({disabled: true, direction: "right"})
+            +arrow({fill: true})
+            +arrow({fill: true, direction: "right"})
         section.percentages
           h2 PERCENTAGES / PIE CHART
         section.sliders

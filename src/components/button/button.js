@@ -1,7 +1,7 @@
 import './button.styl';
 
 class Button {
-  
+
   constructor(btn) {
     this.btn = btn;
     this.btn.click((e) => this.Ripple(e));
@@ -19,9 +19,10 @@ class Button {
     div.addClass('ripple');
     this.btn.addClass('btn--ripple');
     this.btn.append(div);
+
     div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', (e) => {
       div.remove();
-      this.btn.removeClass('btn--ripple');
+      this.btn.not(":has('.ripple')").removeClass('btn--ripple');
     });
   }
 }

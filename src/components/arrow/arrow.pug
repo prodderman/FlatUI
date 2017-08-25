@@ -1,0 +1,19 @@
+mixin arrow(options)
+  if !options
+    - options = {}
+  if !options.disabled
+    - options.disabled = false
+  if !options.href
+    - options.href = "#"
+  if !options.direction
+    - options.direction = "left"
+
+  - var classes = ''
+  -  classes += options.fill ? `arrow--fill` : ''
+  -  classes += options.disabled ? `arrow--disabled` : ''
+  -  classes += options.direction ? ` arrow--${options.direction}` : 'arrow-left'
+
+  if options.disabled
+    span.arrow(class= classes)
+  else 
+    a.arrow(href= options.href, class= classes)
