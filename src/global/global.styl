@@ -1,88 +1,113 @@
 @import '~global/vars.styl';
+@import '~fonts/FontAwesome/font-awesome.min.css'
 
 @font-face {
-  font-family: "MyriadPro";
-  src: url("../fonts/MyriadProRegular/MyriadProRegular.eot");
-  src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
-          url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+  font-family: "Lato";
+  src: url("../fonts/LatoRegular/LatoRegular.eot");
+  src: url("../fonts/LatoRegular/LatoRegular.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoRegular/LatoRegular.woff") format("woff"),
+          url("../fonts/LatoRegular/LatoRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "MyriadPro";
-  src: url("../fonts/MyriadProBold/MyriadProBold.eot");
-  src: url("../fonts/MyriadProBold/MyriadProBold.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProBold/MyriadProBold.woff") format("woff"),
-          url("../fonts/MyriadProBold/MyriadProBold.ttf") format("truetype");
+  font-family: "Lato";
+  src: url("../fonts/LatoBold/LatoBold.eot");
+  src: url("../fonts/LatoBold/LatoBold.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoBold/LatoBold.woff") format("woff"),
+          url("../fonts/LatoBold/LatoBold.ttf") format("truetype");
   font-style: normal;
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "MyriadPro";
-  src: url("../fonts/MyriadProItalic/MyriadProItalic.eot");
-  src: url("../fonts/MyriadProItalic/MyriadProItalic.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProItalic/MyriadProItalic.woff") format("woff"),
-          url("../fonts/MyriadProItalic/MyriadProItalic.ttf") format("truetype");
+  font-family: "Lato";
+  src: url("../fonts/LatoBlack/LatoBlack.eot");
+  src: url("../fonts/LatoBlack/LatoBlack.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoBlack/LatoBlack.woff") format("woff"),
+          url("../fonts/LatoBlack/LatoBlack.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/LatoItalic/LatoItalic.eot");
+  src: url("../fonts/LatoItalic/LatoItalic.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoItalic/LatoItalic.woff") format("woff"),
+          url("../fonts/LatoItalic/LatoItalic.ttf") format("truetype");
   font-style: italic;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "MyriadProSemi";
-  src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.eot");
-  src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProSemiBold/MyriadProSemiBold.woff") format("woff"),
-          url("../fonts/MyriadProSemiBold/MyriadProSemiBold.ttf") format("truetype");
+  font-family: "Lato";
+  src: url("../fonts/LatoLight/LatoLight.eot");
+  src: url("../fonts/LatoLight/LatoLight.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoLight/LatoLight.woff") format("woff"),
+          url("../fonts/LatoLight/LatoLight.ttf") format("truetype");
   font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.eot");
-  src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.woff") format("woff"),
-          url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "MyriadProSemi";
-  src: url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.eot");
-  src: url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.woff") format("woff"),
-          url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "MyriadProSemi";
-  src: url("../fonts/MyriadProLightSemiExt/MyriadProLightSemiExt.eot");
-  src: url("../fonts/MyriadProLightSemiExt/MyriadProLightSemiExt.eot?#iefix")format("embedded-opentype"),
-          url("../fonts/MyriadProLightSemiExt/MyriadProLightSemiExt.woff") format("woff"),
-          url("../fonts/MyriadProLightSemiExt/MyriadProLightSemiExt.ttf") format("truetype"),
-          url("../fonts/MyriadProLightSemiExt/MyriadProLightSemiExt.svg") format("svg");
   font-weight: 200;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/LatoBoldItalic/LatoBoldItalic.eot");
+  src: url("../fonts/LatoBoldItalic/LatoBoldItalic.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoBoldItalic/LatoBoldItalic.woff") format("woff"),
+          url("../fonts/LatoBoldItalic/LatoBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "LatoLightItalic";
+  src: url("../fonts/LatoLightItalic/LatoLightItalic.eot");
+  src: url("../fonts/LatoLightItalic/LatoLightItalic.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/LatoLightItalic/LatoLightItalic.woff") format("woff"),
+          url("../fonts/LatoLightItalic/LatoLightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/SourceSansProRegular/SourceSansProRegular.eot");
+  src: url("../fonts/SourceSansProRegular/SourceSansProRegular.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/SourceSansProRegular/SourceSansProRegular.woff") format("woff"),
+          url("../fonts/SourceSansProRegular/SourceSansProRegular.ttf") format("truetype");
   font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/SourceSansProLight/SourceSansProLight.eot");
+  src: url("../fonts/SourceSansProLight/SourceSansProLight.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/SourceSansProLight/SourceSansProLight.woff") format("woff"),
+          url("../fonts/SourceSansProLight/SourceSansProLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/SourceSansProBold/SourceSansProBold.eot");
+  src: url("../fonts/SourceSansProBold/SourceSansProBold.eot?#iefix")format("embedded-opentype"),
+          url("../fonts/SourceSansProBold/SourceSansProBold.woff") format("woff"),
+          url("../fonts/SourceSansProBold/SourceSansProBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
 }
 
 * 
   box-sizing: border-box
+  margin: 0
+  padding: 0
 
 html 
 body
-  font-family MyriadPro
   font-size 16px
   overflow-x: hidden
   height 100%
-  
-p
-  font-size: 15px
-  letter-spacing: 0.2px
-  line-height: @font-size + 3
-  margin: 0

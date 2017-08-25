@@ -1,0 +1,11 @@
+mixin layout()
+  .page
+    block
+
+mixin layout__container(width)
+  - 
+    var addClass = ''
+    addClass = width ? `page__container--${width}` : ''
+
+  .page__container(class= addClass)
+    block
