@@ -1,6 +1,7 @@
 include ../../components/layout/layout
 include ../../components/button/button
 include ../../components/arrow/arrow
+include ../../components/percentage/percentage
 
 doctype html
 html(lang="en")
@@ -36,6 +37,15 @@ html(lang="en")
             +arrow({fill: true, direction: "right"})
         section.percentages
           h2 PERCENTAGES / PIE CHART
+          .percentages__container
+            .percentages-wrap
+              +percentage(0)
+            .percentages-wrap
+              +percentage(38)
+            .percentages-wrap
+              +percentage(62)
+            .percentages-wrap
+              +percentage(89)
         section.sliders
           h2 sliders
         section.stages

@@ -1,0 +1,15 @@
+mixin percentage(percent)
+  .percentage(data-percent= percent)
+    svg.percentage__diagram(viewBox="0 0 100 100")
+      text.percentage__diagram-number(text-anchor= "middle"
+                                      alignment-baseline= "central" 
+                                      x=50 
+                                      y= 50)= percent
+      circle.percentage__diagram-circle(fill="none" 
+                                        cx="50" 
+                                        cy="50" 
+                                        r="47.5" 
+                                        stroke="black"
+                                        stroke-dasharray= 6.28*48
+                                        stroke-width= "5px"
+                                        stroke-dashoffset= (6.28*48)*(100-percent)/100)

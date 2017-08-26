@@ -1,0 +1,15 @@
+@import '~global/vars.styl';
+
+.percentage
+  width: 100%
+
+  &__diagram-circle
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 1.5s ease-in-out;
+    stroke: $c_red
+
+  &__diagram-number
+    font-weight: 200
+    font-size: 40px
+    fill: $c_gray
