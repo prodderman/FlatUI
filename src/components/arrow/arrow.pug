@@ -11,9 +11,9 @@ mixin arrow(options)
   - var classes = ''
   -  classes += options.fill ? `arrow--fill` : ''
   -  classes += options.disabled ? `arrow--disabled` : ''
-  -  classes += options.direction ? ` arrow--${options.direction}` : 'arrow-left'
+  -  classes += options.direction ? `arrow--${options.direction}` : 'arrow-left'
 
   if options.disabled
-    span.arrow(class= classes)
+    span.arrow(class= classes)&attributes(attributes)
   else 
     a.arrow(href= options.href, class= classes)

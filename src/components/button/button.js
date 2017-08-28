@@ -1,9 +1,9 @@
 import './button.styl';
 
-class Button {
+export default class Button {
 
   constructor(btn) {
-    this.btn = btn;
+    this.btn = $(btn);
     this.btn.click((e) => this.Ripple(e));
   }
 
@@ -26,11 +26,3 @@ class Button {
     });
   }
 }
-
-export default function render() {
-    $('.btn').each(function() {
-      return new Button($(this));
-    });
-}
-
-render();
