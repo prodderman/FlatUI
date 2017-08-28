@@ -8,12 +8,12 @@ export default class Percentage {
 
   render() {
     let percent = this.diagram.data('percent');
-    let text = this.diagram.find('.percentage__diagram-number');
-    let chart = this.diagram.find('.percentage__diagram-circle');
+    let text = this.diagram.find('.percentage__number');
+    let chart = this.diagram.find('.percentage__circle');
     let time = 1500;
 
     chart.animate({
-      'stroke-dashoffset': 6.28 * 48 * (100 - percent) / 100
+      'stroke-dashoffset': 3.14159 * 2 * 48 * (100 - percent) / 100
     }, time);
 
     text.prop('Counter', $(this).text()).animate({
