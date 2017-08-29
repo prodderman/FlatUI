@@ -4,6 +4,7 @@ include ../../components/arrow/arrow
 include ../../components/percentage/percentage
 include ../../components/piechart/piechart
 include ../../components/stages/stages
+include ../../components/slider/slider
 
 doctype html
 html(lang="en")
@@ -56,26 +57,34 @@ html(lang="en")
                          {name: "Edge", count: 40, color: "#4eb7a8"}])
         .section.sliders
           h2 sliders
+          .section__container
+            .section__container-half
+              +slider()
+            .section__container-half
+              +slider()
         .section.stage
           h2 stages
           +stages({count: 5, current: 3})
         .section.form-elemnts
           h2 form&ensp;elements
-        .section.toggles
-          h2  toggles
-        .section.tick-boxes
-          h2 tick-boxes
-        .section.search-dropdown
+          .section__container
+            .section__container-half
+            .section__container-half
+              .section.toggles
+                h2  toggles
+              .section.tick-boxes
+                h2 tick-boxes
+        .section.section-half.search-dropdown
           h2 SEARCH / DROP DOWN
-        .section.user-profile
+        .section.section-half.user-profile
           h2 user&ensp;profile
         .section.news-events
           h2 NEWS & EVENTS
         .section.location
           h2  location
-        .section.calendar
+        .section.section-half.calendar
           h2 calendar
-        .section.messaging
+        .section.section-half.messaging
           h2  messaging
         .section.video
           h2 video

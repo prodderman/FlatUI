@@ -66,7 +66,6 @@ module.exports = new config.default().merge({
         test: /\.(ico|png|jpg|svg)$/,
         loader: 'file-loader',
         exclude: [
-          /node_modules/,
           /fonts/
         ],
         options: {

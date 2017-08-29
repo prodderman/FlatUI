@@ -3,7 +3,6 @@ import './piechart.styl';
 export default class Piechart {
   constructor(diagram) {
     this.diagram = $(diagram);
-    this.data = new Map();
     this.render();
   }
 

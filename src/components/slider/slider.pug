@@ -1,0 +1,13 @@
+mixin slider(options)
+  if !options
+    - options = {}
+
+  -  var classes = ''
+  -  classes += options.color ? `slider--${options.color}` : ''
+  -  classes += options.numeric ? ` slider--numeric` : ''
+  -  classes += options.fill ? ` slider--fill` : ''
+  -  classes += options.bar ? ` slider--bar` : ''
+
+  .slider.js-slider(class= classes 
+                    data-max= options.max
+                    data-min= options.min)&attributes(attributes)

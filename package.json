@@ -49,7 +49,6 @@
     "html-webpack-plugin": "^2.30.1",
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
-    "node-static": "^0.7.9",
     "normalize.css": "^7.0.0",
     "pug": "^2.0.0-rc.3",
     "pug-loader": "^2.3.0",
@@ -60,7 +59,5 @@
     "webpack-config": "^7.1.0",
     "webpack-dev-server": "^2.6.1"
   },
-  "dependencies": {
-    "lodash": "^4.17.4"
-  }
+  "dependencies": {}
 }

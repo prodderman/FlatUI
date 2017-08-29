@@ -24,7 +24,8 @@ const htmls = pages.map(fileName => new hwp({
   filename: `${fileName}.html`,
   chunks: [`${fileName}`, 'common'],
   template: `./src/pages/${fileName}/${fileName}.pug`,
-  alwaysWriteToDisk: true
+  alwaysWriteToDisk: true,
+  hash: true,
 }));
 
 const entries = pages.reduce((entry, fileName) => {
@@ -39,26 +40,25 @@ module.exports = new config.default().merge({
     filename: "js/[name].js"
   },
 
-  module: {
-    noParse: function (content) {
-      return /jquery|lodash/.test(content);
-    },
-  },
-
   resolve: {
     modules: [
+      'node_modules',
       'src',
       path.resolve(__dirname, "vendors"),
-      'node_modules'
     ]
   },
 
   plugins: [
     new fwp('./src/global/favicon.png'),
-    new CleanPlugin(['./dist'], { root: __dirname}),
+    new CleanPlugin(['./dist'], {
+      root: __dirname
+    }),
     new webpack.ProgressPlugin(),
     new webpack.ProvidePlugin({
-      $: 'jquery'
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery'",
+      "window.$": "jquery"
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
