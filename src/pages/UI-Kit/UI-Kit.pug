@@ -3,6 +3,7 @@ include ../../components/button/button
 include ../../components/arrow/arrow
 include ../../components/percentage/percentage
 include ../../components/piechart/piechart
+include ../../components/stages/stages
 
 doctype html
 html(lang="en")
@@ -14,7 +15,7 @@ html(lang="en")
   body
     +layout()
       +layout__container("small")
-        section.buttons
+        .section.buttons
           h2 standard&ensp;buttons
           .buttons__container
             .buttons__row
@@ -27,18 +28,18 @@ html(lang="en")
               +button({fill: 'transparent', text: "Button"})
               +button({color: 'red', fill: 'transparent', text: "Button"})
               +button({color: "red", size: 'small', fill: 'transparent', text: "Button"})
-        section.arrows
+        .section.arrows
           h2 ARROW&ensp;BUTTONS
-          .arrows__container
+          .section__container
             +arrow()
             +arrow({direction: "right"})
             +arrow({disabled: true})
             +arrow({disabled: true, direction: "right"})
             +arrow({fill: true})
             +arrow({fill: true, direction: "right"})
-        section.percentages
+        .section.percentages
           h2 PERCENTAGES / PIE CHART
-          .percentages__container
+          .section__container
             .percentages-wrap
               +percentage(0)
             .percentages-wrap
@@ -50,29 +51,31 @@ html(lang="en")
             .percentages-wrap
               +piechart([{name: "Chrome", count: 10, color: "#4f4f4f"},
                          {name: "Yandex", count: 30, color: "#e75735"},
-                         {name: "IE", count: 30, color: "#4eb7a8"},
-                         {name: "Firefox", count: 30, color: "#e5e5e5"}])
-        section.sliders
+                         {name: "IE", count: 15, color: "#4eb7a8"},
+                         {name: "Firefox", count: 30, color: "#e5e5e5"},
+                         {name: "Edge", count: 40, color: "#4eb7a8"}])
+        .section.sliders
           h2 sliders
-        section.stages
+        .section.stage
           h2 stages
-        section.form-elemnts
+          +stages({count: 5, current: 3})
+        .section.form-elemnts
           h2 form&ensp;elements
-        section.toggles
+        .section.toggles
           h2  toggles
-        section.tick-boxes
+        .section.tick-boxes
           h2 tick-boxes
-        section.search-dropdown
+        .section.search-dropdown
           h2 SEARCH / DROP DOWN
-        section.user-profile
+        .section.user-profile
           h2 user&ensp;profile
-        section.news-events
+        .section.news-events
           h2 NEWS & EVENTS
-        section.location
+        .section.location
           h2  location
-        section.calendar
+        .section.calendar
           h2 calendar
-        section.messaging
+        .section.messaging
           h2  messaging
-        section.video
+        .section.video
           h2 video

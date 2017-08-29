@@ -5,6 +5,7 @@ const hwp = require('html-webpack-plugin');
 const hwhp = require('html-webpack-harddisk-plugin');
 const config = require('webpack-config');
 const CleanPlugin = require('clean-webpack-plugin');
+const fwp = require('favicons-webpack-plugin');
 
 const pages = [];
 
@@ -53,6 +54,7 @@ module.exports = new config.default().merge({
   },
 
   plugins: [
+    new fwp('./src/global/favicon.png'),
     new CleanPlugin(['./dist'], { root: __dirname}),
     new webpack.ProgressPlugin(),
     new webpack.ProvidePlugin({

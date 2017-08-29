@@ -1,7 +1,7 @@
 mixin percentage(percent)
   if !percent
     - percent = 0
-  .percentage.js-percentage(data-percent= percent)&attributes(attributes)
+  section.percentage.js-percentage(data-percent= percent)&attributes(attributes)
     svg(viewBox="0 0 100 100")
       text.percentage__number(text-anchor= "middle"
                                       alignment-baseline= "central" 

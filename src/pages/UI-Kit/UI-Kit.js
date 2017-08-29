@@ -6,6 +6,7 @@ import Button from '../../components/button/button';
 import '../../components/arrow/arrow';
 import Chart from '../../components/percentage/percentage';
 import Piechart from '../../components/piechart/piechart';
+import '../../components/stages/stages';
 
 $(() => {
   const buttons = $('.btn').map((index, node) => new Button(node));
