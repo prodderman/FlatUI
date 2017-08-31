@@ -4,7 +4,7 @@ mixin layout()
 
 mixin layout__container(width)
   - 
-    var addClass = ''
+    let addClass = ''
     addClass = width ? `page__container--${width}` : ''
 
   .page__container(class= addClass)

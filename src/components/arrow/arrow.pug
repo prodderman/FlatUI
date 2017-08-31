@@ -1,19 +1,10 @@
-mixin arrow(options)
-  if !options
-    - options = {}
-  if !options.disabled
-    - options.disabled = false
-  if !options.href
-    - options.href = "#"
-  if !options.direction
-    - options.direction = "left"
+mixin arrow({disabled = false, href = "#", direction = "left", fill = false } = {})
+  -  let classes = ''
+  -  classes += fill ? `arrow--fill` : ''
+  -  classes += disabled ? ` arrow--disabled` : ''
+  -  classes += direction ? ` arrow--${direction}` : 'arrow-left'
 
-  - var classes = ''
-  -  classes += options.fill ? `arrow--fill` : ''
-  -  classes += options.disabled ? ` arrow--disabled` : ''
-  -  classes += options.direction ? ` arrow--${options.direction}` : 'arrow-left'
-
-  if options.disabled
+  if disabled
     span.arrow(class= classes)&attributes(attributes)
   else 
-    a.arrow(href= options.href, class= classes)
+    a.arrow(href= href, class= classes)&attributes(attributes)

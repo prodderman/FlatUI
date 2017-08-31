@@ -1,19 +1,22 @@
 import './percentage.styl';
 
-export default class Percentage {
+class Percentage {
   constructor(diagram) {
     this.diagram = $(diagram);
     this.render();
   }
 
   render() {
-    let percent = this.diagram.data('percent');
-    let text = this.diagram.find('.percentage__number');
-    let chart = this.diagram.find('.percentage__circle');
-    let time = 1500;
+    const percent = this.diagram.data('percent');
+    const text = this.diagram.find('.percentage__number');
+    const chart = this.diagram.find('.percentage__circle');
+    const radius = parseInt(chart.css("r"));
+
+    const time = 1500;
+    const offSet = Math.PI * 2 * radius * (100 - percent) / 100;
 
     chart.animate({
-      'stroke-dashoffset': 3.14159 * 2 * 48 * (100 - percent) / 100
+      'stroke-dashoffset': offSet
     }, time);
 
     text.prop('Counter', $(this).text()).animate({
@@ -25,8 +28,9 @@ export default class Percentage {
         $(this).text(Math.ceil(now));
       }
     });
-
-    
-
   }
 }
+
+$(() => {
+  const charts = $('.js-percentage').map((index, node) => new Percentage(node));
+})

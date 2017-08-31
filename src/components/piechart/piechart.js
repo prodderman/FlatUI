@@ -1,16 +1,16 @@
 import './piechart.styl';
 
-export default class Piechart {
+class Piechart {
   constructor(diagram) {
     this.diagram = $(diagram);
     this.render();
   }
 
   render() {
-    let data = new Map();
+    const data = new Map();
     let totalCount = 0;
     let totalAngle = 0;
-    let pieces = this.diagram.find("circle.piechart__piece");
+    const pieces = this.diagram.find("circle.piechart__piece");
     pieces.map((index, node) => {
       data.set($(node).data('name'), $(node).data('count'));
     });
@@ -18,7 +18,7 @@ export default class Piechart {
       totalCount += count;
     }
     pieces.map((index, node) => {
-      let angle = 100 - data.get($(node).data('name')) * 100 / totalCount;
+      const angle = 100 - data.get($(node).data('name')) * 100 / totalCount;
       $(node).css({
         'stroke-dashoffset': angle,
         'transform': `rotate(${totalAngle}deg)`
@@ -27,3 +27,7 @@ export default class Piechart {
     });
   }
 }
+
+$(()=>{
+  const pieChrarts = $('.js-piechart').map((index, node) => new Piechart(node));
+})
