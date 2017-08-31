@@ -1,9 +1,9 @@
-mixin button(options) 
-  if !options
-    - options = {}
+mixin button({text = "Button", color, size, fill, type} = {}) 
 
-  -  var classes = ''
-  -  classes += options.color ? `btn--${options.color}` : ''
-  -  classes += options.size ? ` btn--${options.size}` : ''
-  -  classes += options.fill ? ` btn--${options.fill}` : ''
-  button.btn(class= classes)&attributes(attributes)= options.text
+  -  let classes = ''
+  -  classes += color ? `btn--${color}` : ''
+  -  classes += size ? ` btn--${size}` : ''
+  -  classes += fill ? ` btn--${fill}` : ''
+  button.btn(class= classes
+             type = submit ? 'submit' : false,
+            )&attributes(attributes)= text

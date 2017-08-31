@@ -1,0 +1,19 @@
+include ../input/input
+include ../button/button
+include ../textarea/textarea
+
+mixin form({method = "POST", action, enctype}={})
+  form.form.js-form(
+    method=method
+    action=action
+  )&attributes(attributes)
+    +input({
+
+    })
+    +input({
+
+    })
+    +textarea({
+
+    })
+    +button({submit=true})

@@ -26,6 +26,7 @@ const htmls = pages.map(fileName => new hwp({
   template: `./src/pages/${fileName}/${fileName}.pug`,
   alwaysWriteToDisk: true,
   hash: true,
+  inject: 'body'
 }));
 
 const entries = pages.reduce((entry, fileName) => {

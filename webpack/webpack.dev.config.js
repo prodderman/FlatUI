@@ -44,10 +44,14 @@ module.exports = new config.default().merge({
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-          pretty: true
-        }
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: true
+            }
+          },
+        ]
       },
       {
         test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
@@ -63,7 +67,7 @@ module.exports = new config.default().merge({
   devServer: {
     inline: true,
     hot: true,
-    contentBase: 'dist',
+    contentBase: './dist',
     port: process.env.PORT
   }
 })

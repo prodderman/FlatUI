@@ -1,6 +1,6 @@
 import './button.styl';
 
-export default class Button {
+class Button {
 
   constructor(btn) {
     this.btn = $(btn);
@@ -26,3 +26,7 @@ export default class Button {
     });
   }
 }
+
+$(()=> {
+  const buttons = $('.btn').map((index, node) => new Button(node));
+});

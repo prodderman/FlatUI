@@ -5,6 +5,7 @@ include ../../components/percentage/percentage
 include ../../components/piechart/piechart
 include ../../components/stages/stages
 include ../../components/slider/slider
+include ../../components/form/form
 
 doctype html
 html(lang="en")
@@ -20,15 +21,15 @@ html(lang="en")
           h2 standard&ensp;buttons
           .buttons__container
             .buttons__row
-              +button({size: 'small', text: "Button"})
-              +button({text: "Button"})
-              +button({color: 'red', text: "Button"})
-              +button({color: "red", size: 'small', text: "Button"})
+              +button({size: 'small'})
+              +button()
+              +button({color: 'red'})
+              +button({color: "red", size: 'small'})
             .buttons__row
-              +button({size: 'small', fill: 'transparent', text: "Button"}) 
-              +button({fill: 'transparent', text: "Button"})
-              +button({color: 'red', fill: 'transparent', text: "Button"})
-              +button({color: "red", size: 'small', fill: 'transparent', text: "Button"})
+              +button({size: 'small', fill: 'transparent'}) 
+              +button({fill: 'transparent'})
+              +button({color: 'red', fill: 'transparent'})
+              +button({color: "red", size: 'small', fill: 'transparent'})
         .section.arrows
           h2 ARROW&ensp;BUTTONS
           .section__container
@@ -67,6 +68,7 @@ html(lang="en")
           +stages({count: 5, current: 3})
         .section.form-elemnts
           h2 form&ensp;elements
+          +form()
           .section__container
             .section__container-half
             .section__container-half

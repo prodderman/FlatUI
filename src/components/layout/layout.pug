@@ -3,9 +3,6 @@ mixin layout()
     block
 
 mixin layout__container(width)
-  - 
-    var addClass = ''
-    addClass = width ? `page__container--${width}` : ''
 
-  .page__container(class= addClass)
+  .page__container(class= width ? `page__container--${width}` : '')
     block

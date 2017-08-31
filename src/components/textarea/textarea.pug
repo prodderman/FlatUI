@@ -1,0 +1,8 @@
+mixin textarea({}={})
+  .textarea&attributes(attributes)
+    textarea({
+      name = options.name,
+      placeholder = options.placeholder,
+      tabindex = options.tabindex,
+      required = options.required
+    })
