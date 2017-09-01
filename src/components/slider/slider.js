@@ -18,7 +18,7 @@ class Slider {
 }
 
 $(() => {
-  const sliders = $('.js-slider').map((index, node) => new Slider(node));
+    const sliders = $('.js-slider').map((index, node) => new Slider(node));
 });
 
 // var points = 20;

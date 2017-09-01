@@ -1,47 +1,54 @@
 @import '~global/vars.styl';
 
-.page
+.ui-kit
   &__container
     display: flex
     flex-wrap: wrap
 
-.section
-  width: 100%
-  text-align: center
-  margin-bottom: 45px
-
-  &-half
-    width: 50%
-
-  h2
-    margin-bottom: 30px
-
-  &__container
+  .section
     width: 100%
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
+    text-align: center
+    margin-bottom: 45px
 
-    &-half
-      width: 45%
+    h2
+      margin-bottom: 30px
 
-.buttons
+    &__container
+      width: 100%
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
 
-  &__container
-    width: 80%s
-    margin: auto
+      &-half
+        width: 48%
 
-  h2
-    margin-bottom: 60px
+  .buttons
 
-  &__row
-    display: flex
-    align-items: flex-end
-    justify-content: space-around
-    margin-bottom: 20px
+    &__container
+      width: 80%
+      margin: auto
+
+    h2
+      margin-bottom: 60px
+
+    &__row
+      display: flex
+      align-items: flex-end
+      justify-content: space-around
+      margin-bottom: 20px
 
 
-.percentages
+  .percentages
 
-  &-wrap
-    width: 94px
+    &-wrap
+      width: 94px
+
+  .toggles
+    .section__container
+      width: 50%
+      margin: auto
+
+   .tick-boxes
+    .section__container
+      width: 25%
+      margin: auto

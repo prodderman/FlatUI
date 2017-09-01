@@ -1,1 +1,16 @@
 @import '~global/vars.styl';
+
+.slider 
+  &.ui-widget.ui-widget-content
+    background-color: $c_lightgray
+    border: none
+    border-radius: 40px
+    height: 6px
+
+    .ui-slider-handle
+      border-radius: 50%
+      border: none
+      background-color: $c_green
+
+      &:focus
+        outline: none

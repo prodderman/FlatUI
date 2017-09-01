@@ -7,22 +7,25 @@ module.exports = new config.default().merge({
   output: {
     pathinfo: true,
   },
+  
   module: {
     rules: [{
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'stage-0'],
+            plugins: ['transform-runtime']
+          }
+        },
         exclude: [
           /node_modules/,
           path.resolve(__dirname, 'src/vendors/'),
-        ],
-        query: {
-          presets: ['es2015', 'stage-0']
-        }
+        ]
       },
       {
         test: /\.css/,
-        use: [
-          {
+        use: [{
             loader: 'style-loader',
           },
           {
@@ -44,14 +47,12 @@ module.exports = new config.default().merge({
       },
       {
         test: /\.pug$/,
-        use: [
-          {
-            loader: 'pug-loader',
-            options: {
-              pretty: true
-            }
-          },
-        ]
+        use: [{
+          loader: 'pug-loader',
+          options: {
+            pretty: true
+          }
+        }, ]
       },
       {
         test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,

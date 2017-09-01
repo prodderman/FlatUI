@@ -22,10 +22,11 @@ fs
 
 const htmls = pages.map(fileName => new hwp({
   filename: `${fileName}.html`,
-  chunks: [`${fileName}`, 'common'],
+  chunks: ['main'],
   template: `./src/pages/${fileName}/${fileName}.pug`,
   alwaysWriteToDisk: true,
-  hash: true,
+  hash: false,
+  favicon: './src/global/favicon.png',
   inject: 'body'
 }));
 
@@ -35,10 +36,11 @@ const entries = pages.reduce((entry, fileName) => {
 }, {});
 
 module.exports = new config.default().merge({
-  entry: entries,
+  entry: './src/entry.js',
   output: {
     path: paths.dist,
-    filename: "js/[name].js"
+    filename: "js/main.js",
+    library: "main"
   },
 
   resolve: {
@@ -46,11 +48,14 @@ module.exports = new config.default().merge({
       'node_modules',
       'src',
       path.resolve(__dirname, "vendors"),
-    ]
+    ],
+    alias: {
+      vendors: path.resolve(__dirname, 'src/vendors/')
+    }
   },
 
   plugins: [
-    new fwp('./src/global/favicon.png'),
+    //new fwp('./src/global/favicon.png'),
     new CleanPlugin(['./dist'], {
       root: __dirname
     }),
@@ -59,10 +64,7 @@ module.exports = new config.default().merge({
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery'",
-      "window.$": "jquery"
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common'
+      "window.$": "jquery",
     }),
     new hwhp({
       outputPath: path.resolve(__dirname, 'dist')

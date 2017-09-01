@@ -1,1 +1,66 @@
 @import '~global/vars.styl';
+
+.feedback
+  text-align: left
+
+  &__input
+    position relative
+    margin-bottom: 12px
+    margin-right: 80px
+
+    .parsley-errors-list
+      position: absolute
+      color: white
+      list-style: none
+      top: 0
+      width: 70px
+      margin-left: 10px
+      border-radius: 3px
+      text-align: center
+      left: 100%
+      height: 28px
+      background-color: $c_red
+
+      li
+        display: none;
+
+      &:after
+        content: "error"
+        font-size: 10px
+        letter-spacing: 0.5px
+        font-weight: bold
+        line-height: 28px
+        text-transform: uppercase
+        
+
+      &:before
+        content: ""
+        position absolute
+        right: 100%
+        top 0
+        bottom: 0
+        height: 2px
+        margin: auto
+        border: 3px solid $c_red
+
+        border-bottom-color: transparent
+        border-left-color: transparent
+        border-top-color: transparent
+
+    .parsley-success
+      
+      + .parsley-errors-list
+          background-color: $c_green
+
+          &:before
+            border-right-color: $c_green
+
+          &:after
+            content: "thanks!"
+
+  &__btn
+    display: flex
+    justify-content: flex-end
+
+  &__textarea
+    margin-bottom: 12px

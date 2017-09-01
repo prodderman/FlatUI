@@ -6,22 +6,24 @@ const etp = require('extract-text-webpack-plugin');
 
 module.exports = new config.default().merge({
   output: {
-    filename: 'js/[name].js',
-    publicPath: "",
+    filename: 'js/[name]-[hash].js',
     path: path.resolve(__dirname, "..", 'dist'),
   },
 
   module: {
     rules: [{
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'stage-0'],
+            plugins: ['transform-runtime']
+          }
+        },
         exclude: [
           /node_modules/,
           path.resolve(__dirname, 'src/vendors/'),
-        ],
-        query: {
-          presets: ['es2015', 'stage-0']
-        }
+        ]
       },
       {
         test: /\.css/,
@@ -99,8 +101,7 @@ module.exports = new config.default().merge({
       }
     }),
     new etp({
-      filename: "css/[name].css?[contenthash]",
-      allChunks: true
+      filename: "css/[name]-[contenthash].css",
     }),
   ],
 })

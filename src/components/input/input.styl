@@ -1,1 +1,69 @@
 @import '~global/vars.styl';
+
+.input
+
+  input[type="checkbox"]
+    display: none;
+
+  &__label 
+    cursor pointer
+
+  &__tickbox
+    color $c_gray
+    width: 24px
+    height: 24px
+    line-height: 24px
+    font-size: 12px
+    background-color: $c_lightgray
+    border-radius: 50%
+    transition: 0.2s
+
+  &__toggle
+    position relative
+    display: block
+    width: 60px
+    height: 24px
+    border-radius: 100px
+    background-color: $c_lightgray
+    overflow hidden
+
+    &-track
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height 100%
+      width: 160%
+      padding: 0 5px
+      transform: translateX(-35px);
+      transition: 0.2s
+
+    &-knob
+      width: 18px
+      height: 18px
+      background-color: white
+      border-radius: 50%
+
+    &-text
+      color: white
+      width: 35%
+      font-size: 12px
+      font-weight: 800
+      text-transform: uppercase
+
+  &__field
+    font-family: "SourceSansPro", sans-serif
+    font-size: 14px
+    width: 100%;
+    background-color: $c_lightgray
+    border: none
+    border-radius: 3px
+    height: 28px 
+    padding: 5px 13px
+
+    &:checked + .input__toggle .input__toggle-track
+      transform: translateX(0);
+      background-color: $c_green
+
+    &:checked + .input__tickbox
+      background-color: $c_green
+      color: white

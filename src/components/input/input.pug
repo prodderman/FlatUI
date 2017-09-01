@@ -1,8 +1,29 @@
-mixin input({type = "text", name}={})
-  .input&attributes(attributes)
-    input(
-      type = type
-      name = name
-      
-    )
-  
+mixin input({type = "text", name, pattern, placeholder, required, mix=""}={})
+  .input(class= mix)
+    if type === "toggle" || type === "tickbox"
+      label.input__label
+        input.input__field(
+          type = "checkbox"
+          name = name
+          required = required
+        )&attributes(attributes)
+        if type == "toggle"
+          .input__toggle
+            .input__toggle-track
+              .input__toggle-text= "on"
+              .input__toggle-knob
+              .input__toggle-text= "off"
+        else
+          .input__tickbox
+            i.fa.fa-check(aria-hidden="true")
+        if block
+          .input__label-text
+            block
+    else
+      input.input__field(
+        type = type
+        name = name
+        placeholder = placeholder
+        pattern = pattern
+        required = required
+      )&attributes(attributes)

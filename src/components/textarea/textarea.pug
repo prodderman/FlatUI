@@ -1,8 +1,10 @@
-mixin textarea({}={})
-  .textarea&attributes(attributes)
-    textarea({
-      name = options.name,
-      placeholder = options.placeholder,
-      tabindex = options.tabindex,
-      required = options.required
-    })
+mixin textarea({name, placeholder, required, pattern, cols = 30, rows = 5, mix=""}={})
+  .textarea(class= mix)
+    textarea.textarea__field(
+      name = name,
+      placeholder = placeholder,
+      cols = cols,
+      rows = rows,
+      pattern = pattern,
+      required = required
+    )&attributes(attributes)

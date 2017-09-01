@@ -15,7 +15,7 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title UI-Kit
   body
-    +layout()
+    +layout("ui-kit")
       +layout__container("small")
         .section.buttons
           h2 standard&ensp;buttons
@@ -51,7 +51,7 @@ html(lang="en")
             .percentages-wrap
               +percentage(89)
             .percentages-wrap
-              +piechart([{name: "Chrome", count: 10, color: "#4f4f4f"},
+              +piechart([{name: "Chrome", count: 20, color: "#4f4f4f"},
                          {name: "Yandex", count: 30, color: "#e75735"},
                          {name: "IE", count: 15, color: "#4eb7a8"},
                          {name: "Firefox", count: 30, color: "#e5e5e5"},
@@ -68,25 +68,51 @@ html(lang="en")
           +stages({count: 5, current: 3})
         .section.form-elemnts
           h2 form&ensp;elements
-          +form()
           .section__container
             .section__container-half
+              +form()
             .section__container-half
               .section.toggles
                 h2  toggles
+                .section__container
+                  +input({
+                    type: "toggle",
+                  })
+                  +input({
+                    type: "toggle",
+                  })(checked)
               .section.tick-boxes
                 h2 tick-boxes
-        .section.section-half.search-dropdown
-          h2 SEARCH / DROP DOWN
-        .section.section-half.user-profile
-          h2 user&ensp;profile
+                .section__container
+                  +input({
+                    type: "tickbox",
+                  })(checked)
+                  +input({
+                    type: "tickbox",
+                  })
+        .section
+          .section__container
+            .section__container-half
+              .section.search-dropdown
+                h2 SEARCH / DROP DOWN
+            .section__container-half
+              .section.user-profile
+                h2 user&ensp;profile
+
         .section.news-events
           h2 NEWS & EVENTS
+          .section__container
+            .section__container-half
+            .section__container-half
         .section.location
           h2  location
-        .section.section-half.calendar
-          h2 calendar
-        .section.section-half.messaging
-          h2  messaging
+        .section
+          .section__container
+            .section__container-half
+              .section.calendar
+                h2 calendar
+            .section__container-half
+              .section.messaging
+                h2 messaging
         .section.video
           h2 video
