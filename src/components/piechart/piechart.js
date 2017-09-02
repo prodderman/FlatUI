@@ -21,7 +21,7 @@ class Piechart {
       const angle = 100 - data.get($(node).data('name')) * 100 / totalCount;
       $(node).css({
         'stroke-dashoffset': angle,
-        'transform': `rotate(${totalAngle}deg)`
+        transform : `rotate(${totalAngle}deg)`
       });
       totalAngle += (100-angle)*360/100;
     });

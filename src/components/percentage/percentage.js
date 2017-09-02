@@ -7,10 +7,10 @@ class Percentage {
   }
 
   render() {
-    const percent = this.diagram.data('percent');
+    const percent = parseFloat(this.diagram.data('percent'));
     const text = this.diagram.find('.percentage__number');
     const chart = this.diagram.find('.percentage__circle');
-    const radius = parseFloat(chart.css("r"));
+    const radius = parseFloat(chart.attr("r"));
     const time = 1500;
     const offSet = Math.PI * 2 * radius * (100 - percent) / 100;
     chart.animate({
