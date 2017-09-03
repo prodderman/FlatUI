@@ -1,4 +1,6 @@
 import './percentage.styl';
+import 'jquery-circle-progress'; 
+
 
 class Percentage {
   constructor(diagram) {
@@ -7,25 +9,21 @@ class Percentage {
   }
 
   render() {
-    const percent = parseFloat(this.diagram.data('percent'));
-    const text = this.diagram.find('.percentage__number');
-    const chart = this.diagram.find('.percentage__circle');
-    const radius = parseFloat(chart.attr("r"));
+    const percent = parseFloat(this.diagram.data('percent')/100);
+    const size = this.diagram.width();
+    const fill = this.diagram.data("color");
+    const emptyFill = this.diagram.data("emptycolor");
     const time = 1500;
-    const offSet = Math.PI * 2 * radius * (100 - percent) / 100;
-    chart.animate({
-      'stroke-dashoffset': offSet
-    }, time);
-
-    text.prop('Counter', $(this).text()).animate({
-      Counter: percent
-    }, {
-      duration: time,
-      easing: 'swing',
-      step: function (now) {
-        $(this).text(Math.ceil(now));
-      }
-    });
+    this.diagram.circleProgress({
+      value: percent,
+      size: size,
+      fill: fill,
+      emptyFill: emptyFill,
+      startAngle: -Math.PI/2,
+      animation: { duration: time} 
+    }).on('circle-animation-progress', function(event, progress, stepValue) {
+      $(this).find('.percentage__text').text(Math.round(stepValue * progress * 100));
+    });   
   }
 }
 

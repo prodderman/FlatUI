@@ -16,8 +16,7 @@ module.exports = new config.default().merge({
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'stage-0'],
-            plugins: ['transform-runtime']
+            presets: ['es2015', 'stage-0']
           }
         },
         exclude: [

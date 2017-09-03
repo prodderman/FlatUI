@@ -1,14 +1,18 @@
 @import '~global/vars.styl';
 
 .percentage
+  position: relative
   width: 100%
-
-  &__circle
-    transform-origin: center;
-    transform: rotate(-90deg);
-    stroke: $c_red
-
-  &__number
+  
+  &__text 
+    position: absolute
+    top 0
+    bottom: 0
+    left 2px 
+    right 0
+    margin: auto
     font-weight: 200
     font-size: 40px
-    fill: $c_gray
+    height: 0
+    line-height: 0
+    color: $c_gray

@@ -43,13 +43,13 @@ html(lang="en")
           h2 PERCENTAGES / PIE CHART
           .section__container
             .percentages-wrap
-              +percentage(0)
+              +percentage({percent: 0})
             .percentages-wrap
-              +percentage(38)
+              +percentage({percent: 38})
             .percentages-wrap
-              +percentage(62)
+              +percentage({percent: 62})
             .percentages-wrap
-              +percentage(89)
+              +percentage({percent: 89})
             .percentages-wrap
               +piechart([{name: "Chrome", count: 20, color: "#4f4f4f"},
                          {name: "Yandex", count: 30, color: "#e75735"},

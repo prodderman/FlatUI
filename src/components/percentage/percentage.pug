@@ -1,17 +1,5 @@
-mixin percentage(percent = 0)
-  - const r = 47.5
-  section.percentage.js-percentage(data-percent= percent)&attributes(attributes)
-    svg(viewBox="0 0 100 100")
-      text.percentage__number(text-anchor= "middle"
-                                      alignment-baseline= "central" 
-                                      dominant-baseline= "central"
-                                      x=50 
-                                      y= 50)= 0
-      circle.percentage__circle(fill="none" 
-                                cx="50" 
-                                cy="50" 
-                                r=r
-                                stroke="black"
-                                stroke-dasharray= Math.PI*2*r
-                                stroke-width= "5px"
-                                stroke-dashoffset= Math.PI*2*r)
+mixin percentage({percent = 0, color = "#e75735", emptyColor = `rgba(0, 0, 0, 0)`} = {})
+  .percentage.js-percentage(data-color= color
+                            data-emptycolor= emptyColor
+                            data-percent= percent)&attributes(attributes)
+    .percentage__text
