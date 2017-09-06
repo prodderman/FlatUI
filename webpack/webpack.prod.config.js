@@ -101,6 +101,7 @@ module.exports = new config.default().merge({
     }),
     new etp({
       filename: "css/[name]-[contenthash].css",
+      allChunks: true,
     }),
   ],
 })

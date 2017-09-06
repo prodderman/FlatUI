@@ -6,6 +6,7 @@ include ../../components/piechart/piechart
 include ../../components/stages/stages
 include ../../components/slider/slider
 include ../../components/form/form
+include ../../components/calendar/calendar
 
 doctype html
 html(lang="en")
@@ -51,18 +52,17 @@ html(lang="en")
             .percentages-wrap
               +percentage({percent: 89})
             .percentages-wrap
-              +piechart([{name: "Chrome", count: 20, color: "#4f4f4f"},
-                         {name: "Yandex", count: 30, color: "#e75735"},
-                         {name: "IE", count: 15, color: "#4eb7a8"},
-                         {name: "Firefox", count: 30, color: "#e5e5e5"},
-                         {name: "Edge", count: 40, color: "#4eb7a8"}])
+              +piechart([{name: "Chrome", count: 2000, color: "#4eb7a8"},
+                         {name: "Yandex", count: 1000, color: "#e75735"},
+                         {name: "Firefox", count: 300, color: "#e5e5e5"},
+                         {name: "Edge", count: 400, color: "#4f4f4f"}])
         .section.sliders
           h2 sliders
           .section__container
             .section__container-half
-              +slider()
+              +slider({float: true, value: 40, color: "red"})
             .section__container-half
-              +slider()
+              +slider({pips: true, fill: true})
         .section.stage
           h2 stages
           +stages({count: 5, current: 3})
@@ -72,7 +72,7 @@ html(lang="en")
             .section__container-half
               +form()
             .section__container-half
-              .section.toggles
+              .section.toggles-node
                 h2  toggles
                 .section__container
                   +input({
@@ -81,7 +81,7 @@ html(lang="en")
                   +input({
                     type: "toggle",
                   })(checked)
-              .section.tick-boxes
+              .section.tick-boxes-node
                 h2 tick-boxes
                 .section__container
                   +input({
@@ -99,7 +99,7 @@ html(lang="en")
               .section.user-profile
                 h2 user&ensp;profile
 
-        .section.news-events
+        .section.news-events-node
           h2 NEWS & EVENTS
           .section__container
             .section__container-half
@@ -109,10 +109,11 @@ html(lang="en")
         .section
           .section__container
             .section__container-half
-              .section.calendar
+              .section.calendar-node
                 h2 calendar
+                +calendar()
             .section__container-half
-              .section.messaging
+              .section.messaging-node
                 h2 messaging
         .section.video
           h2 video

@@ -11,7 +11,8 @@ module.exports = new config.default().merge({
   watch: true,
   
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',

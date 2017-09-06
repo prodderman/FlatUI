@@ -7,27 +7,37 @@ class Piechart {
   }
 
   render() {
-    const data = new Map();
+    const canvas = this.diagram.find("canvas").get(0);
+    const ctx = canvas.getContext('2d');
+    const r = this.diagram.width() / 2;
+    const pieces = this.diagram.find(".piechart__data figure");
     let totalCount = 0;
-    let totalAngle = 0;
-    const pieces = this.diagram.find("circle.piechart__piece");
+    let prevAngle = 0;
+
+    this.diagram.width(this.diagram.parent().width());
+    this.diagram.height(this.diagram.parent().width());
+    canvas.width = this.diagram.width() * 1.5;
+    canvas.height = this.diagram.width() * 1.5;
+    const c = canvas.width / 2;
+
     pieces.map((index, node) => {
-      data.set($(node).data('name'), $(node).data('count'));
+      totalCount += $(node).data('count');
     });
-    for (let count of data.values()) {
-      totalCount += count;
-    }
+
     pieces.map((index, node) => {
-      const angle = 100 - data.get($(node).data('name')) * 100 / totalCount;
-      $(node).css({
-        'stroke-dashoffset': angle,
-        transform : `rotate(${totalAngle}deg)`
-      });
-      totalAngle += (100-angle)*360/100;
-    });
+      const angle = prevAngle + $(node).data('count') * 2 * Math.PI / totalCount;
+      ctx.beginPath();
+      ctx.arc(c, c, r - 7.5, -Math.PI/2 + prevAngle, -Math.PI/2 + angle, false);
+      ctx.fillStyle = 'transparent';
+      ctx.fill();
+      ctx.lineWidth = 15;
+      ctx.strokeStyle = $(node).data("color");
+      ctx.stroke();
+      prevAngle = angle;
+    }, this);
   }
 }
 
-$(()=>{
+$(() => {
   const pieChrarts = $('.js-piechart').map((index, node) => new Piechart(node));
 })

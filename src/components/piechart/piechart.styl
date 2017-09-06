@@ -1,13 +1,10 @@
 @import '~global/vars.styl';
 
 .piechart
+  position relative
   width: 100%
 
-  svg 
-    transform-origin: center;
-    transform: rotate(-90deg);
-
-  &__piece
-    transform-origin: center;
-    transition: stroke-dashoffset 1.5s,
-                transform 1.5s
+  canvas
+    position: absolute
+    left -25%
+    top -25%

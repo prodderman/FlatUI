@@ -1,11 +1,12 @@
-mixin slider({color, numeric, fill, bar, max, min} = {})
+mixin slider({color, value=0, fill, float, pips, max=100, min=0} = {})
 
   -  let classes = ''
   -  classes += color ? `slider--${color}` : ''
-  -  classes += numeric ? ` slider--numeric` : ''
   -  classes += fill ? ` slider--fill` : ''
-  -  classes += bar ? ` slider--bar` : ''
+  -  classes += float ? ` slider--float` : ''
+  -  classes += pips ? ` slider--pips` : ''
 
   .slider.js-slider(class= classes 
+                    data-value= value
                     data-max= max
                     data-min= min)&attributes(attributes)

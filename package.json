@@ -5,7 +5,9 @@
   "scripts": {
     "test": "better-npm-run build-test",
     "prod": "better-npm-run build-prod",
-    "dev": "better-npm-run build-dev"
+    "dev": "better-npm-run build-dev",
+    "P": "node nPage.js",
+    "C": "node nComp.js"
   },
   "betterScripts": {
     "build-prod": {
@@ -61,8 +63,9 @@
     "jquery": "^3.2.1",
     "jquery-circle-progress": "^1.2.2",
     "jquery-ui": "^1.12.1",
+    "jquery-ui-slider-pips": "^1.11.4",
     "normalize.css": "^7.0.0",
-    "parsley": "^0.1.0",
-    "parsleyjs": "^2.7.2"
+    "parsleyjs": "^2.7.2",
+    "swiper": "^4.0.0-beta.2"
   }
 }
