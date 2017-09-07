@@ -6,7 +6,7 @@ const etp = require('extract-text-webpack-plugin');
 
 module.exports = new config.default().merge({
   output: {
-    filename: 'js/[name]-[hash].js',
+    filename: 'js/[name].js',
     path: path.resolve(__dirname, "..", 'dist'),
   },
 
@@ -64,7 +64,7 @@ module.exports = new config.default().merge({
         }
       },
       {
-        test: /\.(ico|png|jpg|svg)$/,
+        test: /\.(ico|png|jpg|svg|gif)$/,
         loader: 'file-loader',
         exclude: [
           /fonts/
@@ -100,7 +100,7 @@ module.exports = new config.default().merge({
       }
     }),
     new etp({
-      filename: "css/[name]-[contenthash].css",
+      filename: "css/[name].css",
       allChunks: true,
     }),
   ],
