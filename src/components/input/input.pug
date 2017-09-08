@@ -1,4 +1,4 @@
-mixin input({type = "text", name, pattern, placeholder, required, mix=""}={})
+mixin input({type = "text", name, pattern, placeholder, required, tabindex, mix=""}={})
   .input(class= mix)
     if type === "toggle" || type === "tickbox"
       label.input__label
@@ -6,6 +6,7 @@ mixin input({type = "text", name, pattern, placeholder, required, mix=""}={})
           type = "checkbox"
           name = name
           required = required
+          tabindex = tabindex
         )&attributes(attributes)
         if type == "toggle"
           .input__toggle
@@ -26,4 +27,5 @@ mixin input({type = "text", name, pattern, placeholder, required, mix=""}={})
         placeholder = placeholder
         pattern = pattern
         required = required
+        tabindex = tabindex
       )&attributes(attributes)

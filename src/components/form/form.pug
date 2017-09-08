@@ -13,7 +13,9 @@ mixin form({method = "POST", action="", enctype}={})
       placeholder: "Your Name",
       required: true,
       mix: "feedback__input"
-    })
+    })(
+
+    )
     
     +input({
       name: "email",
