@@ -8,6 +8,9 @@ include ../../components/slider/slider
 include ../../components/form/form
 include ../../components/calendar/calendar
 include ../../components/video/video
+include ../../components/input/input
+include ../../components/toggle/toggle
+include ../../components/tickbox/tickbox
 
 doctype html
 html(lang="en")
@@ -76,21 +79,13 @@ html(lang="en")
               .section.toggles-node
                 h2  toggles
                 .section__container
-                  +input({
-                    type: "toggle",
-                  })
-                  +input({
-                    type: "toggle",
-                  })(checked)
+                  +toggle()
+                  +toggle()(checked)
               .section.tick-boxes-node
                 h2 tick-boxes
                 .section__container
-                  +input({
-                    type: "tickbox",
-                  })(checked)
-                  +input({
-                    type: "tickbox",
-                  })
+                  +tickbox()(checked)
+                  +tickbox()
         .section
           .section__container
             .section__container-half
@@ -118,4 +113,4 @@ html(lang="en")
                 h2 messaging
         .section.video
           h2 video
-          +video({src: "https://vimeo.com/62980495"})
+          +video({src: "//vk.com/video_ext.php?oid=-122784028&id=456239475&hash=fbe58f5547e304cd"})

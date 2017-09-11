@@ -1,0 +1,22 @@
+@import '~global/vars.styl';
+
+.tickbox
+
+  input[type="checkbox"]
+    display: none;
+
+  &__label 
+    cursor pointer
+  
+  &__check
+    color $c_gray
+    width: 24px
+    height: 24px
+    line-height: 24px
+    font-size: 12px
+    background-color: $c_lightgray
+    border-radius: 50%
+
+  &__field:checked + .tickbox__check
+    background-color: $c_green
+    color: white

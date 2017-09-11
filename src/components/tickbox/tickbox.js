@@ -1,0 +1,1 @@
+import './tickbox.styl';

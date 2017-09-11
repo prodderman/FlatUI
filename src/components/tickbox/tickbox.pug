@@ -1,0 +1,14 @@
+mixin tickbox({name, required, tabindex, mix} = {})
+  .tickbox(class= mix)
+    label.tickbox__label
+      input.tickbox__field(
+        type = "checkbox"
+        name = name
+        required = required
+        tabindex = tabindex
+      )&attributes(attributes)
+      .tickbox__check
+        i.fa.fa-check(aria-hidden="true")
+      if block
+        .tickbox__label-text
+          block

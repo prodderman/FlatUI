@@ -8,7 +8,7 @@ class Video {
   }
 
   EventHandlers() {  
-    $( window ).resize(() => {
+    $( window ).resize((e) => {
       const size = this.SetSize();
       const frame = this.video.children("iframe");
       frame.width(size.width);
