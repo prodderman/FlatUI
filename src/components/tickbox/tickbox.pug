@@ -8,7 +8,6 @@ mixin tickbox({name, required, tabindex, mix} = {})
         tabindex = tabindex
       )&attributes(attributes)
       .tickbox__check
-        i.fa.fa-check(aria-hidden="true")
       if block
         .tickbox__label-text
           block

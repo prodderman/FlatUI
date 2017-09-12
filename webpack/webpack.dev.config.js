@@ -12,19 +12,19 @@ module.exports = new config.default().merge({
   
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-0']
-          }
-        },
-        exclude: [
-          /node_modules/,
-          path.resolve(__dirname, 'src/vendors/'),
-        ]
-      },
+      // {
+      //   test: /\.js$/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: ['es2015', 'stage-0']
+      //     }
+      //   },
+      //   exclude: [
+      //     /node_modules/,
+      //     path.resolve(__dirname, 'src/vendors/'),
+      //   ]
+      // },
       {
         test: /\.css/,
         use: [{

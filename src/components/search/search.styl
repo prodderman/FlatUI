@@ -1,0 +1,58 @@
+@import '~global/vars.styl';
+
+.search
+  position: relative
+  width: 100%
+
+  &__input
+    width: 100%
+    padding-right 33px
+
+  &__btn
+    position: absolute
+    right: 0
+    top 0
+    height: 100%
+    width: 33px
+    background-color: $c_red
+    border: none
+    cursor: pointer
+
+    &:focus
+      outline: none
+
+    &:before
+      content: "\f002";
+      font-family: FontAwesome
+      font-size: 14px
+      color: white
+
+  &__result-list
+    display: none
+    position: absolute
+    top calc(100% + 7px)
+    width: 100%
+    list-style: none
+    text-align: left
+    border-radius: 3px
+    border: 1px solid $c_lightgray
+  
+  &__result-text
+    display: block
+    font-family: "SourceSansPro", sans-serif;
+    font-size: 14px;
+    padding: 5px 13px;
+    
+    &:hover
+      background-color: #e5e5e5;
+  
+  input
+    transition: 0.1s
+
+    &.error
+
+      &:placeholder-shown
+        background-color: $c_red
+      
+      &::placeholder
+        color: white

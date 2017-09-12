@@ -4,10 +4,10 @@ import 'parsleyjs';
 class Feedback {
   constructor(form) {
     this.form = $(form);
-    this.EventHandlers();
+    this.addEventHandlers();
   }
 
-  EventHandlers() { 
+  addEventHandlers() { 
     this.form.submit((e) => {
       e.preventDefault();
       $.ajax({

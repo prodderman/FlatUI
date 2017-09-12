@@ -11,6 +11,7 @@ include ../../components/video/video
 include ../../components/input/input
 include ../../components/toggle/toggle
 include ../../components/tickbox/tickbox
+include ../../components/search/search
 
 doctype html
 html(lang="en")
@@ -91,6 +92,8 @@ html(lang="en")
             .section__container-half
               .section.search-dropdown
                 h2 SEARCH / DROP DOWN
+                .section__container
+                  +search({method: "GET"})
             .section__container-half
               .section.user-profile
                 h2 user&ensp;profile
