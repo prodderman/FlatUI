@@ -1,0 +1,52 @@
+@import '~global/vars.styl';
+
+.map
+  position: relative
+  z-index: 1111
+  width: 100%
+  overflow: hidden
+  border-radius: 3px
+
+  &__location
+    height: 203px
+  
+  &__overlay
+    display: flex
+    padding: 3% 4.5%
+    color: white
+    background-color: $c_red
+    font-family: Lato, sans-serif
+    font-size: 2.5rem
+    align-items: center
+    font-weight: 200
+    
+  &__text
+    font-size: 30px
+  
+  &__address
+    flex-grow: 1
+    text-align: left
+    text-transform: uppercase
+    font-family: Lato, sans-serif
+    font-size: 12px
+    letter-spacing: 0.1em
+    line-height: 1.1em
+    font-weight: bold
+    margin-left: 4%
+    margin-right: 4%
+  
+  &__controls
+    display: flex
+    
+  &__btn
+    background-color: transparent
+    width: 25px
+
+    &:not(:last-child)
+      margin-right: 20px
+
+    & svg
+      width: 100%
+
+    & svg path
+      fill: white

@@ -13,6 +13,7 @@ include ../../components/toggle/toggle
 include ../../components/tickbox/tickbox
 include ../../components/search/search
 include ../../components/select/select
+include ../../components/map/map
 
 doctype html
 html(lang="en")
@@ -111,6 +112,8 @@ html(lang="en")
             .section__container-half
         .section.location
           h2  location
+          .section__container
+            +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
         .section
           .section__container
             .section__container-half

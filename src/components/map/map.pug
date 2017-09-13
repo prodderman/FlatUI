@@ -1,0 +1,14 @@
+prepend scripts
+  script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU', type='text/javascript')
+
+mixin map({coord, address} = {})
+  .map.js-map(data-coord= coord)
+    .map__location.js-map__location
+    .map__overlay
+      .map__text Meet us!
+      .map__address!= address 
+      .map__controls
+        button.map__my-location.map__btn
+          include ./img/crosshair.svg
+        button.map__to-marker.map__btn
+          include ./img/marker.svg

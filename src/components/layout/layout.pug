@@ -2,7 +2,6 @@ mixin layout(mix = "")
   .page(class= mix)
     block
 
-mixin layout__container(width)
-
+mixin layout__container(width= "")
   .page__container(class= width ? `page__container--${width}` : '')
     block
