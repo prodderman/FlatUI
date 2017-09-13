@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
+const autoprefixer = require('autoprefixer');
 
 module.exports = new config.default().merge({
   devtool: 'eval',
@@ -12,19 +13,6 @@ module.exports = new config.default().merge({
   
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: ['es2015', 'stage-0']
-      //     }
-      //   },
-      //   exclude: [
-      //     /node_modules/,
-      //     path.resolve(__dirname, 'src/vendors/'),
-      //   ]
-      // },
       {
         test: /\.css/,
         use: [{
@@ -43,7 +31,17 @@ module.exports = new config.default().merge({
         test: /\.styl$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders=1',
+          'css-loader?importLoaders=2',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  autoprefixer({browsers: ['last 2 versions']}),
+                ];
+              },
+            },
+          },
           'stylus-loader',
         ],
       },

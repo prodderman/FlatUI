@@ -1,4 +1,5 @@
 import 'normalize.css';
+import './fonts/FontAwesome/font-awesome.min.css';
 import './global/global.styl';
 
 const cache = {};

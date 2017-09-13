@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
 const etp = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 module.exports = new config.default().merge({
@@ -52,6 +53,16 @@ module.exports = new config.default().merge({
                 minimize: true
               },
             },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: function () {
+                  return [
+                    autoprefixer({browsers: ['last 2 versions']}),
+                  ];
+                },
+              },
+            },
             'stylus-loader',
           ],
         }),
@@ -73,7 +84,7 @@ module.exports = new config.default().merge({
           name: "img/[name].[ext]"
         }
       },
-      {     
+      {
         test: /\.(svg|ttf|eot|woff|woff2)$/,
         loader: 'file-loader',
         exclude: [
@@ -91,12 +102,20 @@ module.exports = new config.default().merge({
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      comments: false,
       mangle: true,
       output: {
         comments: false
       },
       compress: {
-        warnings: false
+        sequences     : true,
+        booleans      : true,
+        loops         : true,
+        unused      : true,
+        warnings    : false,
+        drop_console: true,
+        unsafe      : true
       }
     }),
     new etp({

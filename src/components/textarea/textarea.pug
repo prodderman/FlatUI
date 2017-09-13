@@ -1,6 +1,6 @@
-mixin textarea({name, placeholder, required, pattern, cols = 30, rows = 5, mix=""}={})
-  .textarea(class= mix)
-    textarea.textarea__field(
+mixin textarea({name, placeholder, required, pattern, cols = 30, rows = 5, mix}={})
+  .textarea.input(class= mix)
+    textarea.textarea__field.input__field(
       name = name,
       placeholder = placeholder,
       cols = cols,

@@ -8,16 +8,3 @@ mixin piechart(items = [])
       each item in items
         figure(data-name= item.name data-count= item.count data-color = item.color)
     canvas
-  
-    //- svg(viewBox="0 0 42.83 42.83")
-    //-   g.piechart__items(fill="none" stroke-width="11")
-    //-     each item in items
-    //-       circle.piechart__piece(r="15.9155" 
-    //-              cx="21.4155" 
-    //-              cy="21.4155"
-    //-              data-name=item.name
-    //-              data-count=item.count
-    //-              stroke-dasharray="100"
-    //-              stroke-dashoffset="100"
-    //-              stroke=item.color)
-    //-   circle(r="14.4155" cx="21.4155" cy="21.4155" fill="white" stroke="none")

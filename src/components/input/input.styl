@@ -1,8 +1,8 @@
 @import '~global/vars.styl';
 
 .input
-  border-radius: 3px
-  overflow: hidden
+  width: 100%;
+  font-size: 0
 
   &__field
     font-family: "SourceSansPro", sans-serif
@@ -12,3 +12,7 @@
     border: none
     height: 28px 
     padding: 5px 13px
+    border-radius: 3px
+
+    &::placeholder
+      color: $c_gray

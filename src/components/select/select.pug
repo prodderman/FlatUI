@@ -1,0 +1,18 @@
+mixin select({name, multiple, size, placeholder="Choose An Option", tabindex, require, mix, options={}} = {})
+  .select.js-select(class= mix)
+    select.select__field(
+      name= name
+      multiple= multiple
+      size= size
+      require= require
+      tabindex= tabindex
+      data-placeholder= placeholder
+    )&attributes(attributes)
+      option.select__option(
+         selected="selected" 
+         disabled="disabled"
+      )
+      each name, value  in options
+        option.select__option(
+          value= value
+        )= name

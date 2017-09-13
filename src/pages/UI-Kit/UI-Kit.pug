@@ -12,6 +12,7 @@ include ../../components/input/input
 include ../../components/toggle/toggle
 include ../../components/tickbox/tickbox
 include ../../components/search/search
+include ../../components/select/select
 
 doctype html
 html(lang="en")
@@ -94,6 +95,11 @@ html(lang="en")
                 h2 SEARCH / DROP DOWN
                 .section__container
                   +search({method: "GET"})
+                  +select({options: {
+                    1: "Option 1",
+                    2: "Option 2",
+                    3: "Option 3"
+                  }})
             .section__container-half
               .section.user-profile
                 h2 user&ensp;profile
