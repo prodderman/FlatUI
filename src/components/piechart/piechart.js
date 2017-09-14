@@ -14,8 +14,6 @@ class Piechart {
     let totalCount = 0;
     let prevAngle = 0;
 
-    this.diagram.width(this.diagram.parent().width());
-    this.diagram.height(this.diagram.parent().width());
     canvas.width = this.diagram.width() * 1.5;
     canvas.height = this.diagram.width() * 1.5;
     const c = canvas.width / 2;

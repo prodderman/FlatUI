@@ -23,106 +23,84 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title UI-Kit
   body
-    +layout("ui-kit")
-      +layout__container("small")
-        .section.buttons
-          h2 standard&ensp;buttons
-          .buttons__container
-            .buttons__row
+    +layout()
+      +layout__main()
+        +layout__container({mix: 'ui-kit', basis: 700, align: 'center', wrap: 'wrap'})
+          +layout__container({wrap: 'wrap', basis: 500, align: 'center'})
+            h2 standard buttons
+            +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
               +button({size: 'small'})
               +button()
               +button({color: 'red'})
               +button({color: "red", size: 'small'})
-            .buttons__row
+            +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
               +button({size: 'small', fill: 'transparent'}) 
               +button({fill: 'transparent'})
               +button({color: 'red', fill: 'transparent'})
               +button({color: "red", size: 'small', fill: 'transparent'})
-        .section.arrows
-          h2 ARROW&ensp;BUTTONS
-          .section__container
+          h2 arrow buttons
+          +layout__container({basis: 450, align: 'center', wrap: 'wrap'})
             +arrow()
             +arrow({direction: "right"})
             +arrow({disabled: true})
             +arrow({disabled: true, direction: "right"})
             +arrow({fill: true})
             +arrow({fill: true, direction: "right"})
-        .section.percentages
-          h2 PERCENTAGES / PIE CHART
-          .section__container
-            .percentages-wrap
-              +percentage({percent: 0})
-            .percentages-wrap
-              +percentage({percent: 38})
-            .percentages-wrap
-              +percentage({percent: 62})
-            .percentages-wrap
-              +percentage({percent: 89})
-            .percentages-wrap
-              +piechart([{name: "Chrome", count: 2000, color: "#4eb7a8"},
-                         {name: "Yandex", count: 1000, color: "#e75735"},
-                         {name: "Firefox", count: 300, color: "#e5e5e5"},
-                         {name: "Edge", count: 400, color: "#4f4f4f"}])
-        .section.sliders
+          h2 percentages / pie chart
+          +layout__container({wrap: 'wrap'})
+            +percentage({percent: 0})
+            +percentage({percent: 38})
+            +percentage({percent: 62})
+            +percentage({percent: 89})
+            +piechart([{name: "Chrome", count: 2000, color: "#4eb7a8"},
+                        {name: "Yandex", count: 1000, color: "#e75735"},
+                        {name: "Firefox", count: 300, color: "#e5e5e5"},
+                        {name: "Edge", count: 400, color: "#4f4f4f"}])
           h2 sliders
-          .section__container
-            .section__container-half
-              +slider({float: true, value: 40, color: "red"})
-            .section__container-half
-              +slider({pips: true, fill: true, float: true})
-        .section.stage
+          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'}) 
+            +slider({float: true, value: 40, color: "red"})
+            +slider({pips: true, fill: true, float: true})
           h2 stages
-          +stages({count: 5, current: 3})
-        .section.form-elemnts
-          h2 form&ensp;elements
-          .section__container
-            .section__container-half
+          +layout__container({mix: 'ui-kit__row'}) 
+            +stages({count: 5, current: 3})
+          h2 form elements
+          +layout__container({wrap: 'wrap'})
+            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
               +form()
-            .section__container-half
-              .section.toggles-node
-                h2  toggles
-                .section__container
-                  +toggle()
-                  +toggle()(checked)
-              .section.tick-boxes-node
-                h2 tick-boxes
-                .section__container
-                  +tickbox()(checked)
-                  +tickbox()
-        .section
-          .section__container
-            .section__container-half
-              .section.search-dropdown
-                h2 SEARCH / DROP DOWN
-                .section__container
-                  +search({method: "GET"})
-                  +select({options: {
-                    1: "Option 1",
-                    2: "Option 2",
-                    3: "Option 3"
-                  }})
-            .section__container-half
-              .section.user-profile
-                h2 user&ensp;profile
-
-        .section.news-events-node
-          h2 NEWS & EVENTS
-          .section__container
-            .section__container-half
-            .section__container-half
-        .section.location
-          h2  location
-          .section__container
+            +layout__container({mix: 'ui-kit__column', align: 'right', wrap : 'wrap'})
+              h2  toggles
+              +layout__container({mix: 'ui-kit__row', basis: 150, align: 'center'})
+                +toggle()
+                +toggle()(checked)
+              h2 tick boxes
+              +layout__container({mix: 'ui-kit__row', basis: 100, align: 'center'})
+                +tickbox()(checked)
+                +tickbox()
+          +layout__container({wrap: 'wrap'})
+            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+              h2 search / drop down
+              +search({method: "GET"})
+              +select({options: {
+                1: "Option 1",
+                2: "Option 2",
+                3: "Option 3"
+              }})
+            +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
+              h2 user profile
+              +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
+  
+          +layout__container({wrap: 'wrap'})
+            h2 news & events
+            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+            +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
+          +layout__container({wrap: 'wrap'})
+            h2 location
             +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
-        .section
-          .section__container
-            .section__container-half
-              .section.calendar-node
-                h2 calendar
-                +calendar()
-            .section__container-half
-              .section.messaging-node
-                h2 messaging
-        .section.video
+          +layout__container({wrap: 'wrap'})
+            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+              h2 calendar
+              +calendar()
+            +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
+              h2 messaging
           h2 video
           +video({src: "//vk.com/video_ext.php?oid=-122784028&id=456239475&hash=fbe58f5547e304cd"})

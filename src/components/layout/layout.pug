@@ -1,7 +1,29 @@
-mixin layout(mix = "")
-  .page(class= mix)
+mixin layout()
+  .page()
     block
 
-mixin layout__container(width= "")
-  .page__container(class= width ? `page__container--${width}` : '')
+mixin layout__header()
+  header.page__header
+    block
+
+mixin layout__main()
+  main.page__main
+    block
+
+mixin layout__footer()
+  footer.page__footer
+    block
+
+mixin layout__container({display, basis, grow, shrink, wrap, direction, align, mix} = {})
+  -
+    let classes = ''
+    classes += display ? ' page__container--' + display : ''
+    classes += basis ? ' page__container--basis-' + basis : ''
+    classes += grow ? ' page__container--grow-' + grow : ''
+    classes += shrink ? ' page__container--shrink-' + shrink : ''
+    classes += wrap ? ' page__container--' + wrap : ''
+    classes += direction ? ' page__container--' + direction : ''
+    classes += align ? ' page__container--' + align : ''
+    classes += mix ? ' ' + mix : ''
+  .page__container(class= classes)
     block

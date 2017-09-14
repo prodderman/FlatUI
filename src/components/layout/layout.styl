@@ -1,11 +1,70 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .page
+  display: flex
+  flex-direction: column
+
+  &__main
+    display: flex
+    flex: 1 0 auto
 
   &__container
+    display: flex
+    flex: 1 1 100%
+    align-content: flex-start
+    justify-content: space-around;
+    margin-bottom: 3rem;
 
-    &--small
-      max-width: 700px
-      width: 100%
-      padding: 80px 53px
-      margin: auto
+    for $i in (1..30)
+      $basis = $i * 50
+
+      &--basis-{$basis}.page__container 
+        flex-basis: $basis px
+
+    for $grow in (0..10)
+      &--grow-{$grow}
+        flex-grow: $grow
+
+    for $shrink in (0..10)
+      &--shrink-{$shrink}
+        flex-shrink: $shrink
+
+    &--block
+      display: block
+
+    &--left
+      flex-grow: 0
+      margin-right: auto
+
+    &--right
+      flex-grow: 0
+      margin-left: auto
+
+    &--center
+      flex-grow: 0
+      margin-right: auto
+      margin-left: auto
+
+    &--column 
+      flex-direction: column
+
+      & > .page__container
+        flex-basis: auto
+
+    &--column-reverse
+      flex-direction: column-reverse
+
+      & > .page__container
+        flex-basis: auto
+
+    &--row-reverse
+      flex-direction: row-reverse
+
+    &--wrap
+      flex-wrap: wrap
+
+    &--wrap-reverse
+      flex-wrap: wrap-reverse
+
+    &--basis-auto.page__container
+      flex-basis: auto

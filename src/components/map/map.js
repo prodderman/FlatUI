@@ -24,7 +24,7 @@ class Map {
         iconImageOffset: [-19, -56]
       });
       map.geoObjects.add(placemark);
-      toMarker.click((e) => map.setCenter(placemark.geometry.getCoordinates(), 17, {duration: 300}));     
+      toMarker.click((e) => map.panTo(placemark.geometry.getCoordinates()));     
     });
   }
 }
