@@ -1,0 +1,17 @@
+mixin activity({href="#",alt="Activity", img} = {})
+  -
+    let src
+    try {
+      src = require(`${img}`);
+    }
+    catch(e) {
+      src = false;
+    };
+  a.activity&attributes(attributes)(href=href)
+    .activity__preview-image
+      if src
+        img.activity__img(
+          src= src
+          alt=alt)
+    .activity__preview-text
+      block

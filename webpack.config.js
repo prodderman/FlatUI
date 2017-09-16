@@ -9,13 +9,8 @@ const fwp = require('favicons-webpack-plugin');
 
 const pages = [];
 
-const paths = {
-  pages: path.resolve(__dirname, 'src', 'pages'),
-  dist: path.resolve(__dirname, "..", 'dist'),
-};
-
 fs
-  .readdirSync(paths.pages)
+  .readdirSync(path.resolve(__dirname, 'src', 'pages'))
   .forEach((file) => {
     pages.push(file);
   });
@@ -36,11 +31,10 @@ const entries = pages.reduce((entry, fileName) => {
 }, {});
 
 module.exports = new config.default().merge({
-  entry: './src/entry.js',
+  entry: ['./src/entry.js'],
   output: {
-    path: paths.dist,
-    filename: "js/main.js",
-    library: "main"
+    path: path.resolve(__dirname, "..", 'dist'),
+    filename: "main.js",
   },
 
   resolve: {
@@ -55,7 +49,6 @@ module.exports = new config.default().merge({
   },
 
   plugins: [
-    //new fwp('./src/global/favicon.png'),
     new CleanPlugin(['./dist'], {
       root: __dirname
     }),

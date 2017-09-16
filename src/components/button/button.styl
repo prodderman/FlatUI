@@ -12,10 +12,12 @@
   --shadow-color: $c_darkgreen
   --bg-color: $c_green
   box-shadow: 0 3px 0 0 var(--shadow-color)
-  font-weight: 800
+  font-weight: bold
   text-transform: uppercase
   cursor: pointer
   overflow: hidden
+  text-decoration: none
+  letter-spacing: 0.04em
   margin-bottom: 3px
 
   &:focus
@@ -41,9 +43,9 @@
     &:active
       transform: translateY(2px)
 
-  &--transparent
+  &--white
     color: $c_green
-    background-color: transparent
+    background-color: white
 
     &.btn--red
       color: $c_red

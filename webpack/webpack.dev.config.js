@@ -31,7 +31,7 @@ module.exports = new config.default().merge({
         test: /\.styl$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders=2',
+          'css-loader?importLoaders=1',
           {
             loader: 'postcss-loader',
             options: {

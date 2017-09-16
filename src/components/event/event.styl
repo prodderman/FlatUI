@@ -1,0 +1,52 @@
+@import '~global/vars.styl'ж
+
+.event
+  display: flex
+  overflow: hidden
+  flex-direction: column
+  flex: 1 1
+  padding: 1.2rem
+  text-align: left
+  color: white
+  background-color: $c_green
+  align-items: stretch
+
+  &__date
+    display: flex
+    flex-shrink: 0
+    align-items: baseline
+
+  &__date-day
+    margin-right: 0.5rem
+    font-family: Lato, sans-serif
+    font-weight: 200
+    font-size: 4.5rem
+    line-height: @font-size
+
+  &__date-month
+    font-family: Lato, sans-serif
+    font-weight: 200
+    font-size: 1.8rem
+
+  &__title
+    font-family: Lato, sans-serif
+    font-size: 0.8rem
+    font-weight: 800
+    letter-spacing: 0.06em
+    overflow: hidden
+    white-space: nowrap
+    text-transform: uppercase
+
+  &__text
+    margin-top: 0.3rem
+    margin-bottom: 0.3rem
+    font-family: Lato, sans-serif
+    font-size: 0.7rem
+    overflow: hidden
+    flex: 1 1;
+
+  &__btn
+    text-align: center
+    
+    button
+      width: 80%

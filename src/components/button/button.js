@@ -8,6 +8,7 @@ class Button {
   }
 
   Ripple(e) {
+    e.preventDefault();
     const div = $('<div/>');
     const offSet = this.btn.offset();
     const x = e.pageX - offSet.left;

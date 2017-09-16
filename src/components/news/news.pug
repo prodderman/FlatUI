@@ -1,0 +1,11 @@
+include ../activity/activity
+
+mixin news({href="#", img, alt, title, date, text} = {})
+  +activity({
+    href: href,
+    img: img,
+    alt: alt})
+    .news
+      .news__title= title
+      .news__date= date
+      .news__text= text

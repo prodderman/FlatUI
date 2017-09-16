@@ -14,6 +14,8 @@ include ../../components/tickbox/tickbox
 include ../../components/search/search
 include ../../components/select/select
 include ../../components/map/map
+include ../../components/news/news
+include ../../components/event/event
 
 doctype html
 html(lang="en")
@@ -25,19 +27,19 @@ html(lang="en")
   body
     +layout()
       +layout__main()
-        +layout__container({mix: 'ui-kit', basis: 700, align: 'center', wrap: 'wrap'})
-          +layout__container({wrap: 'wrap', basis: 500, align: 'center'})
+        +layout__container({mix: 'ui-kit', basis: 600, align: 'center', wrap: 'wrap'})
+          +layout__container({wrap: 'wrap', basis: 450, align: 'center'})
             h2 standard buttons
             +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-              +button({size: 'small'})
+              +button({small: true})
               +button()
-              +button({color: 'red'})
-              +button({color: "red", size: 'small'})
+              +button({altcolor: true})
+              +button({altcolor: true, small: true})
             +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-              +button({size: 'small', fill: 'transparent'}) 
-              +button({fill: 'transparent'})
-              +button({color: 'red', fill: 'transparent'})
-              +button({color: "red", size: 'small', fill: 'transparent'})
+              +button({small: true, fill: true}) 
+              +button({fill: true})
+              +button({altcolor: true, fill: true})
+              +button({altcolor: true, small: true, fill: true})
           h2 arrow buttons
           +layout__container({basis: 450, align: 'center', wrap: 'wrap'})
             +arrow()
@@ -92,7 +94,20 @@ html(lang="en")
           +layout__container({wrap: 'wrap'})
             h2 news & events
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+                +news({
+                  img: "./img/news.jpg",
+                  title: "It's all going downhill",
+                  date: "24 AUGUST 2013",
+                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
+                })
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
+                +event({
+                  img: "./img/event.jpg",
+                  day: "24",
+                  month: "Aug",
+                  title: "THIS IS THE TITLE",
+                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                })
           +layout__container({wrap: 'wrap'})
             h2 location
             +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})

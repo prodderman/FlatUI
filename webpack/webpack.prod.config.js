@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = new config.default().merge({
   output: {
-    filename: 'js/[name].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, "..", 'dist'),
   },
 
@@ -29,7 +29,6 @@ module.exports = new config.default().merge({
         test: /\.css/,
         use: etp.extract({
           fallback: 'style-loader',
-          publicPath: "../",
           use: [{
             loader: 'css-loader',
             options: {
@@ -44,7 +43,6 @@ module.exports = new config.default().merge({
         test: /\.styl$/,
         use: etp.extract({
           fallback: 'style-loader',
-          publicPath: "../",
           use: [{
               loader: 'css-loader',
               options: {
@@ -119,7 +117,7 @@ module.exports = new config.default().merge({
       }
     }),
     new etp({
-      filename: "css/[name].css",
+      filename: "[name].css",
       allChunks: true,
     }),
   ],

@@ -1,9 +1,9 @@
-mixin button({text = "Button", color, size, fill, type} = {}) 
+mixin button({text = "Button", altcolor, small, fill, type} = {}) 
 
   -  let classes = ''
-  -  classes += color ? `btn--${color}` : ''
-  -  classes += size ? ` btn--${size}` : ''
-  -  classes += fill ? ` btn--${fill}` : ''
+  -  classes += altcolor ? `btn--red` : ''
+  -  classes += small ? ` btn--small` : ''
+  -  classes += fill ? ` btn--white` : ''
   button.btn(class= classes
              type = submit ? 'submit' : false,
             )&attributes(attributes)= text
