@@ -1,16 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
-const etp = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require('autoprefixer');
 
 
-module.exports = new config.default().merge({
+module.exports = new config.default().extend("webpack/webpack.base.config.js").merge({
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, "..", 'dist'),
+    path: path.resolve(__dirname, '..', 'dist'),
+    publicPath: '',
   },
-
+  filename: __filename,
   module: {
     rules: [{
         test: /\.js$/,
@@ -27,23 +28,26 @@ module.exports = new config.default().merge({
       },
       {
         test: /\.css/,
-        use: etp.extract({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: false,
-              minimize: true,
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                sourceMap: false,
+                minimize: true
+              },
             },
-          }, ],
+          ],
         })
       },
       {
         test: /\.styl$/,
-        use: etp.extract({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
+          use: [
+            {
               loader: 'css-loader',
               options: {
                 importLoaders: 2,
@@ -116,7 +120,7 @@ module.exports = new config.default().merge({
         unsafe      : true
       }
     }),
-    new etp({
+    new ExtractTextPlugin({
       filename: "[name].css",
       allChunks: true,
     }),

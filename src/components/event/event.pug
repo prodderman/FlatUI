@@ -1,17 +1,11 @@
-include ../activity/activity
 include ../button/button
 
-
-mixin event({href="#", img, alt, title, day, month, text} = {})
-  +activity({
-    href: href,
-    img: img,
-    alt: alt})
-    .event
-      .event__date
-        .event__date-day= day
-        .event__date-month= month
-      .event__title= title
-      .event__text= text
-      .event__btn
-        +button({small: true, fill: true, text: "add to calendar"})
+mixin event({title, day, month, text} = {})
+  .event
+    .event__date
+      .event__date-day= day
+      .event__date-month= month
+    .event__title= title
+    .event__text= text
+    .event__btn
+      +button({small: true, fill: true, text: "add to calendar"})

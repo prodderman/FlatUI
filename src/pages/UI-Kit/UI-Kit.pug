@@ -14,6 +14,7 @@ include ../../components/tickbox/tickbox
 include ../../components/search/search
 include ../../components/select/select
 include ../../components/map/map
+include ../../components/activity/activity
 include ../../components/news/news
 include ../../components/event/event
 
@@ -94,15 +95,15 @@ html(lang="en")
           +layout__container({wrap: 'wrap'})
             h2 news & events
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+              +activity({img: "news.jpg"})
                 +news({
-                  img: "./img/news.jpg",
                   title: "It's all going downhill",
                   date: "24 AUGUST 2013",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
                 })
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
+              +activity({img: "event.jpg"})
                 +event({
-                  img: "./img/event.jpg",
                   day: "24",
                   month: "Aug",
                   title: "THIS IS THE TITLE",

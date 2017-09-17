@@ -3,14 +3,11 @@ const webpack = require('webpack');
 const config = require('webpack-config');
 const autoprefixer = require('autoprefixer');
 
-module.exports = new config.default().merge({
+module.exports = new config.default().extend('webpack/webpack.base.config.js').merge({
   devtool: 'eval',
   output: {
     pathinfo: true,
-  },
-
-  watch: true,
-  
+  },  
   module: {
     rules: [
       {
@@ -31,7 +28,7 @@ module.exports = new config.default().merge({
         test: /\.styl$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders=1',
+          'css-loader?importLoaders=2',
           {
             loader: 'postcss-loader',
             options: {
@@ -68,7 +65,7 @@ module.exports = new config.default().merge({
   devServer: {
     inline: true,
     hot: true,
-    contentBase: './dist',
+    contentBase: 'dist',
     port: process.env.PORT
   }
 })

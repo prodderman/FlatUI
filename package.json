@@ -11,7 +11,7 @@
   },
   "betterScripts": {
     "build-prod": {
-      "command": "webpack --display-modules --json --profile >stats.json",
+      "command": "webpack",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "prod"
@@ -25,7 +25,7 @@
       }
     },
     "build-dev": {
-      "command": "webpack-dev-server --hotOnly",
+      "command": "webpack-dev-server",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "dev",
@@ -43,24 +43,23 @@
     "babel-preset-stage-0": "^6.24.1",
     "better-npm-run": "0.0.15",
     "clean-webpack-plugin": "^0.1.16",
-    "css-loader": "^0.28.4",
+    "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^2.1.2",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.11.2",
     "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-plugin": "^2.30.1",
     "postcss-loader": "^2.0.6",
-    "pug": "^2.0.0-rc.3",
+    "pug": "^2.0.0-rc.4",
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.3.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "webpack": "^3.4.1",
     "webpack-config": "^7.1.0",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-dev-server": "^2.6.1",
+    "webpack-dev-server": "^2.8.2",
     "webpack-hot-middleware": "^2.19.1"
   },
   "dependencies": {
@@ -70,7 +69,8 @@
     "jquery-ui": "^1.12.1",
     "jquery-ui-slider-pips": "^1.11.4",
     "normalize.css": "^7.0.0",
-    "parsleyjs": "^2.7.2",
-    "swiper": "^4.0.0-beta.2"
+    "parsleyjs": "^2.8.0",
+    "swiper": "^4.0.0-beta.3",
+    "webpack": "^2.7.0"
   }
 }
