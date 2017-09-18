@@ -62,10 +62,20 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-          pretty: false
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015', 'stage-0']
+            }
+          },
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: false
+            }
+          }  
+        ],
       },
       {
         test: /\.js$/,

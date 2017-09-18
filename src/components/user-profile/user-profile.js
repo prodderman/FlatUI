@@ -1,4 +1,13 @@
 import './user-profile.styl';
-import user from './template.pug';
+import userTemplate from './template.pug';
 
-console.log(user);
+export default class User {
+  constructor(node, info) {
+    this.user = $(user);
+    this.info = info;
+  }
+
+  static template(options) {
+    return userTemplate(options);
+  }
+}

@@ -68,6 +68,7 @@
     "jquery-form-styler": "^2.0.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-slider-pips": "^1.11.4",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "normalize.css": "^7.0.0",
     "parsleyjs": "^2.8.0",
     "swiper": "^4.0.0-beta.3",

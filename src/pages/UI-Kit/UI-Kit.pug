@@ -18,6 +18,7 @@ include ../../components/activity/activity
 include ../../components/news/news
 include ../../components/event/event
 include ../../components/user-profile/user-profile
+include ../../components/messenger/messenger
 
 doctype html
 html(lang="en")
@@ -28,8 +29,14 @@ html(lang="en")
     title UI-Kit
   body
     +layout()
+      +messenger({name: "John Smith",
+              dialed: "Yeah that sounds great. See you then.",
+              img: "./img/user-1.jpg",
+              messages: [
+                {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
+              ]}).messenger-resizable.messenger-draggable
       +layout__main()
-        +layout__container({mix: 'ui-kit', basis: 600, align: 'center', wrap: 'wrap'})
+        +layout__container({mix: 'ui-kit', basis: 650, align: 'center', wrap: 'wrap'})
           +layout__container({wrap: 'wrap', basis: 450, align: 'center'})
             h2 standard buttons
             +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
@@ -130,5 +137,11 @@ html(lang="en")
               +calendar()
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
               h2 messaging
+              +messenger({name: "Sarah Brown",
+                          dialed: "Yeah that sounds great. See you then.",
+                          img: "./img/user-2.jpg",
+                          messages: [
+                            {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
+                          ]})
           h2 video
           +video({src: "//vk.com/video_ext.php?oid=-122784028&id=456239475&hash=fbe58f5547e304cd"})

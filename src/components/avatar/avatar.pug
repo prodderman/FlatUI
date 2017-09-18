@@ -2,3 +2,5 @@ mixin avatar({img} = {})
   .avatar&attributes(attributes)
     if img
       img(src=require(`${img}`)).avatar__photo
+    else      
+      img(src=require(`../../components/avatar/img/user-icon.png`)).avatar__photo

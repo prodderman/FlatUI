@@ -1,0 +1,22 @@
+include ../avatar/avatar
+include ../button/button
+
+mixin messenger({name="user name",id, img, messages=[], dialed} = {})
+  section.messenger.js-messenger(id= id ? `id_${id}` : false)&attributes(attributes)
+    .messenger__header
+      .messenger__name= name
+      .messenger__avatar
+        +avatar({img: img})
+    .messenger__body
+      .messenger__links
+        a(href="#" target = '_blank').messenger__link.messenger__link--msg
+        a(href="#" target = '_blank').messenger__link.messenger__link--photo
+      .messenger__chat
+        ul.messenger__tape
+          each msg in messages
+            .messenger__msg-wrap(class= msg.incoming ? "messenger__msg-wrap--in" : "messenger__msg-wrap--out")
+              .messenger__msg(class= msg.incoming ? "messenger__msg--in" : "messenger__msg--out")= msg.text
+      .messenger__textarea
+        .messenger__input(contenteditable="true")= dialed
+      .messenger__send
+        +button({text: "replay"}).messenger__btn.js-messenger__btn
