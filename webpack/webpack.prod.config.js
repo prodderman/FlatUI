@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const config = require('webpack-config');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = new config.default().extend("webpack/webpack.base.config.js").merge({
@@ -13,19 +15,7 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
   },
   filename: __filename,
   module: {
-    rules: [{
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-0']
-          }
-        },
-        exclude: [
-          /node_modules/,
-          path.resolve(__dirname, 'src/vendors/'),
-        ]
-      },
+    rules: [
       {
         test: /\.css/,
         use: ExtractTextPlugin.extract({
@@ -39,6 +29,7 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
                 minimize: true
               },
             },
+            
           ],
         })
       },
@@ -77,6 +68,19 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
         }
       },
       {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'stage-0']
+          }
+        },
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, 'src/vendors/'),
+        ]
+      },
+      {
         test: /\.(ico|png|jpg|svg|gif)$/,
         loader: 'file-loader',
         exclude: [
@@ -102,7 +106,6 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
   },
 
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       comments: false,

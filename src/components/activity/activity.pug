@@ -3,7 +3,7 @@ mixin activity({href="#",alt="Activity", img} = {})
     .activity__preview-image
       if img
         img.activity__img(
-          src= require(`./img/${img}`),
+          src= require(`${img}`),
           alt=alt)
     .activity__preview-text
       block

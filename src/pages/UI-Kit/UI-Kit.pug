@@ -17,6 +17,7 @@ include ../../components/map/map
 include ../../components/activity/activity
 include ../../components/news/news
 include ../../components/event/event
+include ../../components/user-profile/user-profile
 
 doctype html
 html(lang="en")
@@ -91,18 +92,29 @@ html(lang="en")
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
               h2 user profile
               +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-  
+                +user-profile({img: "./img/user-1.jpg", 
+                              name: "John Smith",
+                              profession: "ux designer",
+                              social: {tw: "https://twitter.com"}})
+              +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
+                +user-profile({img: "./img/user-2.jpg",
+                               name: "Sarah Brown",
+                               profession: "developer",
+                               social: {dr: "https://dribbble.com/",
+                                        tw: "https://twitter.com",
+                                        fb: "https://www.facebook.com/"},
+                               alt: true})
           +layout__container({wrap: 'wrap'})
             h2 news & events
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              +activity({img: "news.jpg"})
+              +activity({img: "./img/news.jpg"})
                 +news({
                   title: "It's all going downhill",
                   date: "24 AUGUST 2013",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
                 })
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
-              +activity({img: "event.jpg"})
+              +activity({img: "./img/event.jpg"})
                 +event({
                   day: "24",
                   month: "Aug",

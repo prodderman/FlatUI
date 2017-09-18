@@ -1,0 +1,100 @@
+@import '~global/vars.styl';
+
+.user
+  position: relative
+  --user-color: $c_lightgray
+  --user-color-name: $c_red
+  --user-color-text: $c_black
+
+  &.user--alt
+    --user-color: $c_green
+    --user-color-name: white
+    --user-color-text: white
+
+  &__info
+    position: absolute
+    display: none
+    flex-direction: column
+    text-align: center
+    align-items: center
+    flex: 1 1
+    top: 0
+    bottom: 0
+    margin: auto
+    left: calc(100% + 10px)
+    background-color: var(--user-color)
+    width: 10.25rem
+    height: 5.8rem
+    border-radius: 10px
+    padding: 10px
+
+    &:before
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 0;
+      bottom: 0;
+      height: 0;
+      margin: auto;
+      border: 7px solid var(--user-color)
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-top-color: transparent;
+    
+    &:after
+      content: "";
+      position: absolute;
+      width: 10px
+      height: 5.8rem
+      top: 0
+      bottom: 0
+      right: 100%
+      margin: auto
+      background-color: transparent
+      
+    
+  &__name
+    font-family: Lato, sans-serif
+    font-size: 1.1rem
+    color var(--user-color-name)
+
+  &__profession
+    font-family: Lato, sans-serif
+    text-transform: uppercase
+    color: var(--user-color-text)
+    font-weight: 800
+    letter-spacing: 0.08rem
+    font-size: 0.63rem
+
+  &__contact
+    display: flex
+    justify-content: space-around
+    align-items: center
+    flex: 1 1
+    width: 80%
+
+  &__social
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-grow: 1
+    font-size: 1.5rem
+    color: $c_black
+
+    &--fb:before
+      content: "\f09a";
+      font-family: FontAwesome
+
+    &--tw:before
+      content: "\f099";;
+      font-family: FontAwesome
+
+    &--dr:before
+      content: "\f17d";
+      font-family: FontAwesome
+
+  a.user__social
+    color: var(--user-color-name)
+
+  &:hover &__info
+    display: flex

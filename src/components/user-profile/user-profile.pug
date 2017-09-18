@@ -1,0 +1,21 @@
+include ../avatar/avatar
+
+mixin user-profile({alt, img, name, profession, social={}} = {})
+  .user(class= alt ? "user--alt" : false)
+    +avatar({img: img}).user__avatar
+    .user__info
+      .user__name= name ? name : "user name"
+      .user__profession= profession ? profession : "profession"
+      .user__contact
+        if social.fb
+          a.user__social.user__social--fb(href= social.fb traget="_black")
+        else
+          .user__social.user__social--fb
+        if social.tw
+          a.user__social.user__social--tw(href= social.tw traget="_black")
+        else
+          .user__social.user__social--tw
+        if social.dr
+          a.user__social.user__social--dr(href= social.dr traget="_black")
+        else
+          .user__social.user__social--dr
