@@ -8,18 +8,20 @@ import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
 import msgTemplate from './template.pug';
 
 export default class Messenger {
-  constructor(node) {
+  constructor(node, target) {
     this.messenger = $(node);
+    this.tagert = target;
     this.init();
     this.addEventHandlers();
   }
 
   static template(options) {
-    return msgTemplate(options);
+    return msgTemplate({ options });
   }
 
   addEventHandlers() {
-    const btnSend =  this.messenger.find(".js-messenger__btn");
+    const btnClose = this.messenger.find(".js-messenger__close");
+    const btnSend = this.messenger.find(".js-messenger__btn");
     const input = this.messenger.find(".messenger__input");
     const msgContainer = this.messenger.find("ul.messenger__tape");
 
@@ -36,17 +38,23 @@ export default class Messenger {
             const msgWrap = $('<div/>', {
               class: "messenger__msg-wrap messenger__msg-wrap--out"
             });
-            const msg =  $('<div/>', {
+            const msg = $('<div/>', {
               class: "messenger__msg messenger__msg--out"
             });
             msgWrap.append(msg.text(input.text()));
             msgContainer.append(msgWrap);
-            this.messenger.find('.messenger__chat').mCustomScrollbar("scrollTo","last");
+            this.messenger.find('.messenger__chat').mCustomScrollbar("scrollTo", "last");
             input.empty();
           }
         });
       };
-    })
+    });
+
+    btnClose.click((e) => {
+      this.tagert.active = false;
+      this.tagert = null;
+      this.messenger.remove();
+    });
   };
 
   init() {

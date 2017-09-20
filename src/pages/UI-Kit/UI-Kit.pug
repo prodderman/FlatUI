@@ -31,7 +31,7 @@ html(lang="en")
     +layout()
       +messenger({name: "John Smith",
               dialed: "Yeah that sounds great. See you then.",
-              img: "./img/user-1.jpg",
+              img: `user-1.jpg`,
               messages: [
                 {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
               ]}).messenger-resizable.messenger-draggable
@@ -99,12 +99,12 @@ html(lang="en")
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
               h2 user profile
               +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-                +user-profile({img: "./img/user-1.jpg", 
+                +user-profile({img: "user-1.jpg", 
                               name: "John Smith",
                               profession: "ux designer",
                               social: {tw: "https://twitter.com"}})
               +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-                +user-profile({img: "./img/user-2.jpg",
+                +user-profile({img: "user-2.jpg",
                                name: "Sarah Brown",
                                profession: "developer",
                                social: {dr: "https://dribbble.com/",
@@ -114,14 +114,14 @@ html(lang="en")
           +layout__container({wrap: 'wrap'})
             h2 news & events
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              +activity({img: "./img/news.jpg"})
+              +activity({img: "news.jpg"})
                 +news({
                   title: "It's all going downhill",
                   date: "24 AUGUST 2013",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
                 })
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
-              +activity({img: "./img/event.jpg"})
+              +activity({img: "event.jpg"})
                 +event({
                   day: "24",
                   month: "Aug",
@@ -139,7 +139,7 @@ html(lang="en")
               h2 messaging
               +messenger({name: "Sarah Brown",
                           dialed: "Yeah that sounds great. See you then.",
-                          img: "./img/user-2.jpg",
+                          img: "user-2.jpg",
                           messages: [
                             {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
                           ]})

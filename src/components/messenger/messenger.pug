@@ -1,8 +1,9 @@
 include ../avatar/avatar
 include ../button/button
 
-mixin messenger({name="user name",id, img, messages=[], dialed} = {})
-  section.messenger.js-messenger(id= id ? `id_${id}` : false)&attributes(attributes)
+mixin messenger({name="user name", id, img, messages=[], dialed} = {})
+  .messenger.js-messenger(id = id !== undefined ? `user_chat_${id}` : false)&attributes(attributes)
+    button.messenger__close.js-messenger__close
     .messenger__header
       .messenger__name= name
       .messenger__avatar

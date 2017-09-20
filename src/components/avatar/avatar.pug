@@ -1,6 +1,12 @@
 mixin avatar({img} = {})
+  - 
+    let src;
+    try {
+      src=require(`../../img/${img}`);
+    } 
+    catch(e) {
+      src= require(`../../components/avatar/img/user-icon.png`);
+    }
+    
   .avatar&attributes(attributes)
-    if img
-      img(src=require(`${img}`)).avatar__photo
-    else      
-      img(src=require(`../../components/avatar/img/user-icon.png`)).avatar__photo
+    img(src=src).avatar__photo

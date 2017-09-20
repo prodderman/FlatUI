@@ -1,4 +1,5 @@
 include ../components/layout/layout
+include ../components/contacts/contacts
 
 doctype html
 html
@@ -8,17 +9,12 @@ html
     title
       block title
   body
+    +contacts()
     +layout()
       +layout__header()
-        +layout__container()
-          block header
+        block header
 
       +layout__main()
-        +layout__container()
-          block main
-
-      +layout__footer()
-        +layout__container()
-          block footer
-          
+        block main
+        
     block scripts

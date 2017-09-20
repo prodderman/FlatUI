@@ -9,7 +9,7 @@
   background-color: #f2f2f2
   border-radius: 6px
   overflow hidden
-  z-index: 1111
+  z-index: 11
 
   &.messenger-resizable
   &.messenger-draggable
@@ -17,6 +17,25 @@
     bottom: 0
     left 0
     box-shadow: 0 0 7px 0 rgba(0,0,0,0.4)
+
+  &__close
+    position: absolute
+    color: white
+    opacity: 0.5
+    width: 20px
+    height: 20px
+    top: 0
+    font-size: 14px
+    right 0
+    background-color: transparent
+    transition: 0.1s
+
+    &:hover
+      opacity: 1
+
+    &:before
+      content: "\f00d";
+      font-family: FontAwesome        
 
   &__name
     font-family: SourceSansPro, sans-serif
@@ -152,6 +171,9 @@
 
   .mCSB_scrollTools
     opacity 0.5
+
+  .mCustomScrollBox
+    height: auto
 
   .mCSB_scrollTools .mCSB_draggerContainer
     right: -10px
