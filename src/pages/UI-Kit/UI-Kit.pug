@@ -14,7 +14,6 @@ include ../../components/tickbox/tickbox
 include ../../components/search/search
 include ../../components/select/select
 include ../../components/map/map
-include ../../components/activity/activity
 include ../../components/news/news
 include ../../components/event/event
 include ../../components/user-profile/user-profile
@@ -27,7 +26,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title UI-Kit
-  body
+  body.flat-ui
     +layout()
       +messenger({name: "John Smith",
               dialed: "Yeah that sounds great. See you then.",
@@ -37,7 +36,7 @@ html(lang="en")
               ]}).messenger-resizable.messenger-draggable
       +layout__main()
         +layout__container({mix: 'ui-kit', basis: 650, align: 'center', wrap: 'wrap'})
-          +layout__container({wrap: 'wrap', basis: 450, align: 'center'})
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap', basis: 450, align: 'center'})
             h2 standard buttons
             +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
               +button({small: true})
@@ -50,7 +49,7 @@ html(lang="en")
               +button({altcolor: true, fill: true})
               +button({altcolor: true, small: true, fill: true})
           h2 arrow buttons
-          +layout__container({basis: 450, align: 'center', wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__container', basis: 450, align: 'center', wrap: 'wrap'})
             +arrow()
             +arrow({direction: "right"})
             +arrow({disabled: true})
@@ -58,7 +57,7 @@ html(lang="en")
             +arrow({fill: true})
             +arrow({fill: true, direction: "right"})
           h2 percentages / pie chart
-          +layout__container({wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
             +percentage({percent: 0})
             +percentage({percent: 38})
             +percentage({percent: 62})
@@ -75,7 +74,7 @@ html(lang="en")
           +layout__container({mix: 'ui-kit__row'}) 
             +stages({count: 5, current: 3})
           h2 form elements
-          +layout__container({wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
               +form()
             +layout__container({mix: 'ui-kit__column', align: 'right', wrap : 'wrap'})
@@ -84,10 +83,10 @@ html(lang="en")
                 +toggle()
                 +toggle()(checked)
               h2 tick boxes
-              +layout__container({mix: 'ui-kit__row', basis: 100, align: 'center'})
+              +layout__container({mix: 'ui-kit__container', mix: 'ui-kit__row', basis: 100, align: 'center'})
                 +tickbox()(checked)
                 +tickbox()
-          +layout__container({wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
               h2 search / drop down
               +search({method: "GET"})
@@ -111,27 +110,27 @@ html(lang="en")
                                         tw: "https://twitter.com",
                                         fb: "https://www.facebook.com/"},
                                alt: true})
-          +layout__container({wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
             h2 news & events
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              +activity({img: "news.jpg"})
-                +news({
-                  title: "It's all going downhill",
-                  date: "24 AUGUST 2013",
-                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
-                })
+              +news({
+                img: "news.jpg",
+                title: "It's all going downhill",
+                date: "24 AUGUST 2013",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
+              })
             +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
-              +activity({img: "event.jpg"})
-                +event({
-                  day: "24",
-                  month: "Aug",
-                  title: "THIS IS THE TITLE",
-                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                })
-          +layout__container({wrap: 'wrap'})
+              +event({
+                img: "event.jpg",
+                day: "24",
+                month: "Aug",
+                title: "THIS IS THE TITLE",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              })
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
             h2 location
             +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
-          +layout__container({wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
             +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
               h2 calendar
               +calendar()

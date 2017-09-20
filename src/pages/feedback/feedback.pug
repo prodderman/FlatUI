@@ -1,0 +1,21 @@
+extends ../../global/template
+
+include ../../components/form/form
+include ../../components/map/map
+
+block variables
+  - const pageName = "Feedback"
+
+block title
+  | Contacts
+
+block main
+  +layout__container({mix: 'p-feedback', wrap: 'wrap', display: 'block'})
+    h1.p-feedback__h1 feedback
+    +layout__container({mix: 'p-feedback__container', wrap: 'wrap'})
+      +layout__container({mix: 'p-feedback__column', align: 'left', display: 'block'})
+        h2.p-feedback__h2 contact us
+        +form()
+    +layout__container({wrap: 'wrap', display: 'block'})
+      h2.p-feedback__h2 find us
+      +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})

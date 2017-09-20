@@ -51,20 +51,20 @@ export default class Messenger {
     });
 
     btnClose.click((e) => {
-      this.tagert.active = false;
-      this.tagert = null;
+      if (this.tagert) {
+        this.tagert.destroy();
+        this.tagert = null;
+      }
       this.messenger.remove();
     });
   };
 
   init() {
-    Messenger.count ? ++Messenger.count : Messenger.count = 1;
-
     this.messenger.find('.messenger__chat').mCustomScrollbar({
       axis: "y",
       scrollInertia: 7,
       theme: "dark"
-    });
+    }).mCustomScrollbar("scrollTo", "last");
 
     if (this.messenger.hasClass("messenger-resizable")) {
       this.messenger.resizable({
@@ -82,6 +82,28 @@ export default class Messenger {
       });
     }
   };
+
+  setFocus() {
+    this.messenger.find(".messenger__input").focus();
+    this.placeCaretAtEnd(this.messenger.find(".messenger__input").get(0));
+  }
+
+  placeCaretAtEnd(node) {
+    node.focus();
+    if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        range.collapse(false);
+        const select = window.getSelection();
+        select.removeAllRanges();
+        select.addRange(range);
+    } else if (typeof document.body.createTextRange != "undefined") {
+        const textRange = document.body.createTextRange();
+        textRange.moveToElementText(node);
+        textRange.collapse(false);
+        textRange.select();
+    }
+}
 }
 
 $(() => {

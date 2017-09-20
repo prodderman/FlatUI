@@ -1,0 +1,19 @@
+@import '~global/vars.styl';
+
+.sidebar
+  position: fixed
+  width: 300px
+  display: flex
+  flex-direction: column
+
+  &__container
+    padding: 1rem
+    flex: 1 1 100%
+    background-color: white
+    box-shadow: 0 0 2px 1px $c_lightgray
+
+    & > *:not(:last-child)
+      margin-bottom: 1rem 
+
+  & > *
+    margin-bottom: 1rem 

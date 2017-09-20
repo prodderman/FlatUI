@@ -7,12 +7,32 @@
   width: 100px
   height: 400px
   overflow: visible
+  background-color: white
+  border-radius: 3px
 
   &__inner
     height: 100%;
     width: 100%;
     overflow: hidden;
     position: relative;
+
+    &:before
+      content: ""
+      position: absolute
+      width: 100px
+      height: 14px
+      z-index 11
+      top 0
+      background: linear-gradient(0, rgba(255,255,255,0), $c_lightengray 80%)
+
+    &:after
+      content: ""
+      position: absolute
+      width: 100px
+      height: 14px
+      bottom: 0
+      z-index 11
+      background: linear-gradient(180deg, rgba(255,255,255,0), $c_lightengray 80%)
 
   &__scroller
     position: absolute;
@@ -21,6 +41,7 @@
     left: 0;
     right: -17px;
     overflow-y: scroll;
+    padding: calc(0.5rem + 17px) 0
   
   &__container
     display: flex

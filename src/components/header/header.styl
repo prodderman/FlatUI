@@ -1,1 +1,37 @@
 @import '~global/vars.styl';
+
+.header
+  display: flex
+  flex: 1 0 auto
+  padding: 0.5rem 0
+  align-items: stretch
+  height 67px
+
+  &__logo
+    padding: 0 1rem
+
+  &__logo-link
+    display block
+    width: 60px
+
+  &__logo-img
+    max-width: 100%
+
+  &__search-wrap
+    display: flex
+    align-items: center
+    width: 300px
+
+  &__profile
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding: 0 1rem
+    flex: 1 1 auto
+
+  &__profile-link
+    display: block
+
+  &__avatar
+    width: 50px
+    height: 50px

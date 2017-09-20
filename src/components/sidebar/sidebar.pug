@@ -1,0 +1,22 @@
+include ../../components/news/news
+include ../../components/event/event
+include ../../components/menu/menu
+
+mixin sidebar({} = {})
+  .sidebar
+    .sidebar__container
+      +menu(menuItems)
+    .sidebar__container
+      +news({
+        img: "news.jpg",
+        title: "It's all going downhill",
+        date: "24 AUGUST 2013",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
+      })
+      +event({
+        img: "event.jpg",
+        day: "24",
+        month: "Aug",
+        title: "THIS IS THE TITLE",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      })

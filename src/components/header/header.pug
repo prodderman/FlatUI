@@ -1,0 +1,15 @@
+include ../avatar/avatar
+include ../search/search
+
+mixin header({} = {})
+  .header
+    .header__logo
+      a.header__logo-link(href="#")
+        img(src=require('../../global/favicon.png')).header__logo-img
+    .header__profile
+      a.header__profile-link(href="profile.html")
+        +avatar().header__avatar
+
+    .header__search-wrap
+      +search().header__search
+    

@@ -1,4 +1,7 @@
-mixin news({title, date, text} = {})
+include ../activity/activity
+
+mixin news({href, alt, img, title, date, text} = {})
+  +activity({img: img})
     .news
       .news__title= title
       .news__date= date

@@ -4,30 +4,32 @@ import Messenger from '../messenger/messenger';
 import data from './data.json';
 
 class Friend extends User {
-  constructor(node, id, data) {
+  constructor(node, id) {
     super();
     this.friend = $(node);
     this.id = id;
-    this.data = data;
-    this.chatActive = false
+    this.chat = null
     this.AddEventHandler();
   }
 
-  set active(bool) {
-    this.chatActive = bool;
+  destroy() {
+    this.chat = null;
   }
 
   AddEventHandler() {
     const link = this.friend.find('a.user__link');
     link.click((e) => {
       e.preventDefault();
-      if (!this.chatActive) {
+      if (!this.chat) {
         const userChat = $(Messenger.template(data[this.id]))
                           .addClass("messenger-resizable")
                           .addClass("messenger-draggable");
         $(userChat).insertBefore($('.page'));
-        new Messenger($(`#user_chat_${this.id}`), this);
-        this.chatActive = true;
+        this.chat = new Messenger($(`#user_chat_${this.id}`), this);
+        this.chat.setFocus()
+      }
+      else {
+        this.chat.setFocus();
       }
     })
   }
