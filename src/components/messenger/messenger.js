@@ -77,7 +77,6 @@ export default class Messenger {
       this.messenger.draggable({
         handle: this.messenger.find(".messenger__name"),
         containment: "window",
-        zIndex: 100,
         scroll: false
       });
     }

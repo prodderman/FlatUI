@@ -4,20 +4,16 @@ export default class Video {
   constructor(video) {  
     this.video = $(video);
     this.Init();
-    this.EventHandlers();
+    this.addEventHandlers();
   }
 
-  EventHandlers() {  
+  addEventHandlers() {  
     $( window ).resize((e) => {
       const size = this.SetSize();
       const frame = this.video.children("iframe");
       frame.width(size.width);
       frame.height(size.height);
     });
-  }
-  
-  get options() {
-    
   }
 
   static get snippets() {
@@ -31,18 +27,20 @@ export default class Video {
   }
 
   Init() {
-    const url = this.video.data("src")
-    const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
-    const size = this.SetSize();
-    const frame = $('<iframe/>', {
-      width: size.width,
-      height: size.height,
-      src: this.CreateURL(src),
-      allowfullscreen: "",
-      frameborder: 0
-    });
-    this.SetSize(frame);
-    this.video.append(frame);
+    setTimeout(() => {
+      this.video.empty();
+      const url = this.video.data("src")
+      const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
+      const size = this.SetSize();
+      const frame = $('<iframe/>', {
+        width: size.width,
+        height: size.height,
+        src: this.CreateURL(src),
+        allowfullscreen: "",
+        frameborder: 0
+      });
+      this.video.append(frame);
+    }, 100);
   }
 
   SetSize() {

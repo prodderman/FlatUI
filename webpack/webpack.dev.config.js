@@ -29,16 +29,6 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
         use: [
           'style-loader',
           'css-loader?importLoaders=2',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: function () {
-                return [
-                  autoprefixer({browsers: ['last 2 versions']}),
-                ];
-              },
-            },
-          },
           'stylus-loader',
         ],
       },

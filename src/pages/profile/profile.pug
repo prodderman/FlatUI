@@ -5,3 +5,8 @@ block variables
 
 block title
   | My profile
+
+block main
+  +layout__container({mix: 'p-profile', wrap: 'wrap', align: 'center'})
+    +layout__container({mix: 'page__content', wrap: 'wrap'})
+      h1.p-profile__h1 my profile

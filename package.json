@@ -57,6 +57,7 @@
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
+    "swiper": "^4.0.0-beta.4",
     "webpack-config": "^7.1.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.8.2",
@@ -72,7 +73,6 @@
     "malihu-custom-scrollbar-plugin": "^3.1.5",
     "normalize.css": "^7.0.0",
     "parsleyjs": "^2.8.0",
-    "swiper": "^4.0.0-beta.3",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0"
   }
