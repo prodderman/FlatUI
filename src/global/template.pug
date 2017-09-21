@@ -12,9 +12,22 @@ include ../components/sidebar/sidebar
     {
       "name": "Feedback",
       "href": "feedback.html"
+    }, 
+    {
+      "name": "Stage4",
+      "href": "stage4.html"
+    },
+    {
+      "name": "Stage5",
+      "href": "stage5.html"
+    },
+    {
+      "name": "News and Event",
+      "href": "news-events.html"
     }
   ];
 - let basis = 1000
+- let sidebar = true
 
 block variables
 
@@ -36,7 +49,8 @@ html
         +layout__container({basis: basis, align: 'center'})
           +layout__container({mix: "page__content", basis: "auto"})
             block main
-          +layout__sidebar()
-            +sidebar()
+          if sidebar
+            +layout__sidebar()
+              +sidebar()
 
     block scripts

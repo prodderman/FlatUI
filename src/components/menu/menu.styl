@@ -6,15 +6,6 @@
     display: flex
     flex-direction: column
     list-style: none
-  
-  &__item
-    padding: 0.2rem 0
-    
-    &:not(:last-child)
-      margin-bottom: 0.5rem
-    
-    &:hover
-      background-color: $c_lightengray
 
   &__items-link
     display: block
@@ -24,6 +15,12 @@
     text-decoration: none
     text-transform: uppercase
     color $c_black
+    padding: 0.5rem 1rem
 
     &.menu__items-link--active
-      color: $c_green
+      color: $c_red
+
+    &:hover
+      color: white
+      background-color: $c_red
+  

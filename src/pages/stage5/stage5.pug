@@ -1,0 +1,14 @@
+extends ../../global/template.noauth.pug
+
+include ../../components/stages/stages
+
+block variables
+  - const pageName = "Stage5"
+  - sidebar = false
+  - basis = 800
+
+block title 
+  | Authorization
+
+block main
+  +stages({count: 5, current: 5})

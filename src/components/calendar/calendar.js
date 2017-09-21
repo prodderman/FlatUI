@@ -3,7 +3,7 @@ import 'jquery-ui/themes/base/theme.css';
 import 'jquery-ui/themes/base/datepicker.css';
 import './calendar.styl';
 
-class Calendar {
+export default class Calendar {
   constructor(calendar) {
     this.calendar = $(calendar);
     this.Init();
@@ -43,5 +43,5 @@ class Calendar {
 }
 
 $(() => {
-  const calendars = $('.js-calendar').map((index, node) => new Calendar(node));
+  $('.js-calendar').map((index, node) => new Calendar(node));
 });

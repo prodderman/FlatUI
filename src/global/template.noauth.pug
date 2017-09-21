@@ -1,0 +1,27 @@
+include ../components/layout/layout
+include ../components/header/header.noauth.pug
+include ../components/sidebar/sidebar
+
+- let basis = 1000
+
+block variables
+
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title
+      block title
+  body
+    +layout()
+      +layout__header()
+        +layout__container({basis: basis, align: 'center'})
+          +header-noauth()
+
+      +layout__main()
+        +layout__container({basis: basis, align: 'center'})
+          +layout__container({mix: "page__content", basis: "auto"})
+            block main
+
+    block scripts

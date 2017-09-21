@@ -1,6 +1,6 @@
 import './search.styl';
 
-class Search {
+export default class Search {
   constructor(node) {
     this.search = $(node);
     this.addEventHadlers();
@@ -63,5 +63,5 @@ class Search {
 }
 
 $(() => {
-  const searches = $('.js-search').map((index, node) => new Search($(node)));
+  $('.js-search').map((index, node) => new Search($(node)));
 });

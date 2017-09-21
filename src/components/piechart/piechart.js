@@ -1,6 +1,6 @@
 import './piechart.styl';
 
-class Piechart {
+export default class Piechart {
   constructor(diagram) {
     this.diagram = $(diagram);
     this.render();
@@ -37,5 +37,5 @@ class Piechart {
 }
 
 $(() => {
-  const pieChrarts = $('.js-piechart').map((index, node) => new Piechart(node));
+  $('.js-piechart').map((index, node) => new Piechart(node));
 })

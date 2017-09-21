@@ -5,7 +5,7 @@ import 'jquery-ui-slider-pips';
 import 'jquery-ui-slider-pips/dist/jquery-ui-slider-pips.css';
 import './slider.styl';
 
-class Slider {
+export default class Slider {
   constructor(slider) {
     this.slider = $(slider);
     this.init();
@@ -35,5 +35,5 @@ class Slider {
 }
 
 $(() => {
-  const sliders = $('.js-slider').map((index, node) => new Slider(node));
+  $('.js-slider').map((index, node) => new Slider(node));
 });

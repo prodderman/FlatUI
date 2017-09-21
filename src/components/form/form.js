@@ -1,9 +1,10 @@
 import './form.styl';
 import 'parsleyjs';
 
-class Feedback {
-  constructor(form) {
-    this.form = $(form);
+export default class Feedback {
+  constructor(node) {
+    this.form = $(node);
+    this.form.parsley();
     this.addEventHandlers();
   }
 
@@ -29,5 +30,5 @@ class Feedback {
 }
 
 $(()=> {
-  const forms = $('.js-feedback').map((index, node) => new Feedback(node));
+  $('.js-feedback').map((index, node) => new Feedback(node));
 });
