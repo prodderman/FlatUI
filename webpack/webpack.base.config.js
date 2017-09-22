@@ -19,7 +19,7 @@ const htmls = pages.map(fileName => new HtmlWebpackPlugin({
   template: `./src/pages/${fileName}/${fileName}.pug`,
   alwaysWriteToDisk: true,
   inject: 'body',
-  hash: false,
+  hash: true,
   favicon: './src/global/favicon.png',
 }));
 

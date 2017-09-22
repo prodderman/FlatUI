@@ -9,7 +9,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = new config.default().extend("webpack/webpack.base.config.js").merge({
   output: {
-    filename: '[name].js',
+    filename: '[name]-[hash].js',
     path: path.resolve(__dirname, '..', 'dist'),
     publicPath: '',
   },
@@ -134,7 +134,7 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
       }
     }),
     new ExtractTextPlugin({
-      filename: "[name].css",
+      filename: "[name]-[contenthash].css",
       allChunks: true,
     }),
   ],
