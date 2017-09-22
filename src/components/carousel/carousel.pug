@@ -1,9 +1,19 @@
-mixin carousel()
+include ../arrow/arrow
+
+
+mixin carousel({pagination=false, buttons= false, scrollbar=false } = {})
   .carousel.js-carousel
+    .carousel__wrap
       .carousel__container.swiper-container
         .carousel__wrapper.swiper-wrapper
           block
-        .carousel__pagination
-        .carousel__btn.carousel__btn-prev
-        .carousel__btn.carousel__btn-next
-        .carousel__scrollbar
+
+      if pagination
+        .carousel__pagination.swiper-pagination
+      if buttons
+        .carousel__btn.carousel__btn-prev.swiper-button-prev
+          +arrow()
+        .carousel__btn.carousel__btn-next.swiper-button-next
+          +arrow({direction: "right"})
+      if scrollbar
+        .carousel__scrollbar.swiper-scrollbar

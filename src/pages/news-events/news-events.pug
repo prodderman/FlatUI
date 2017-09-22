@@ -7,8 +7,6 @@ include ../../components/carousel/carousel
 
 block variables
   - const pageName = "News and Events"
-  - sidebar = false
-  - basis = 800
 
 block title 
   | News and Events
@@ -20,7 +18,7 @@ block main
     +layout__container({mix: 'page__content', wrap: 'wrap'})
       h2.p-news-event__h2 News
       +layout__container({mix: 'p-news-event__container', display: "block"})
-        +carousel()
+        +carousel({buttons: true})
           +news({
             img: "news.jpg",
             title: "It's all going downhill",
@@ -60,7 +58,7 @@ block main
     +layout__container({mix: 'page__content', wrap: 'wrap'})
       h2.p-news-event__h2 Events
       +layout__container({mix: 'p-news-event__container', display: "block"})
-        +carousel()
+        +carousel({buttons: true})
           +event({
             img: "event.jpg",
             day: "24",

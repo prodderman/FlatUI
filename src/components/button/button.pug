@@ -4,6 +4,6 @@ mixin button({text = "Button", altcolor, small, fill, submit} = {})
   -  classes += altcolor ? `btn--red` : ''
   -  classes += small ? ` btn--small` : ''
   -  classes += fill ? ` btn--white` : ''
-  button.btn(class= classes
+  button.btn.js-btn(class= classes
              type = submit ? 'submit' : false,
             )&attributes(attributes)= text

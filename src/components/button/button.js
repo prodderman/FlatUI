@@ -28,5 +28,5 @@ export default class Button {
 }
 
 $(()=> {
-  $('.btn').map((index, node) => new Button(node));
+  $('.js-btn').map((index, node) => new Button(node));
 });

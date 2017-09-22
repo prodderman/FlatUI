@@ -1,0 +1,12 @@
+mixin avatar-profile({img} = {})
+  - 
+    let src;
+    try {
+      src=require(`../../img/${img}`);
+    } 
+    catch(e) {
+      src= require(`../../components/avatar/img/user-icon.png`);
+    }
+    
+  .avatar-profile&attributes(attributes)
+    img(src=src).avatar-profile__photo
