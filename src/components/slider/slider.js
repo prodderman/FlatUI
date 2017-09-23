@@ -5,7 +5,7 @@ import 'jquery-ui-slider-pips';
 import 'jquery-ui-slider-pips/dist/jquery-ui-slider-pips.css';
 import './slider.styl';
 
-export default class Slider {
+export class Slider {
   constructor(slider) {
     this.slider = $(slider);
     this.init();
@@ -34,6 +34,8 @@ export default class Slider {
   }
 }
 
-$(() => {
-  $('.js-slider').map((index, node) => new Slider(node));
-});
+export default function render(inPage = false) {
+  $(() => {
+    $(inPage ? '.page .js-slider' : '.js-slider').map((index, node) => new Slider(node));
+  });
+}

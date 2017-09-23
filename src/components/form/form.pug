@@ -2,7 +2,7 @@ include ../input/input
 include ../button/button
 include ../textarea/textarea
 
-mixin form({method = "POST", action="", enctype}={})
+mixin form({method = "POST", action="", enctype} = {})
   form.feedback.js-feedback(
     data-parsley-validate
     method=method
@@ -32,4 +32,3 @@ mixin form({method = "POST", action="", enctype}={})
     })
     .feedback__btn
       +button({submit: true, text: "Submit"})
-    block

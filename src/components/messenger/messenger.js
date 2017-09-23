@@ -7,7 +7,7 @@ import 'jquery-ui/themes/base/draggable.css';
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
 import msgTemplate from './template.pug';
 
-export default class Messenger {
+export class Messenger {
   constructor(node, target) {
     this.messenger = $(node);
     this.tagert = target;
@@ -102,9 +102,11 @@ export default class Messenger {
         textRange.collapse(false);
         textRange.select();
     }
-}
+  }
 }
 
-$(() => {
-  $('.js-messenger').map((index, node) => new Messenger(node));
-})
+export default function render(inPage = false) {
+  $(() => {
+    $(inPage ? '.page .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
+  })
+}

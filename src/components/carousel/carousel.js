@@ -2,7 +2,7 @@ import 'swiper/dist/css/swiper.css';
 import Swiper from 'swiper';
 import './carousel.styl';
 
-export default class Carousel {
+export class Carousel {
   constructor(node) {
     this.carousel = $(node);
     this.init();
@@ -32,6 +32,8 @@ export default class Carousel {
   }
 };
 
-$(() => {
-  $('.js-carousel').map((index, node) => new Carousel(node));
-});
+export default function render(inPage = false) {
+  $(() => {
+    $(inPage? '.page .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
+  });
+}

@@ -1,7 +1,7 @@
-import './form.styl';
+import './singin.styl';
 import 'parsleyjs';
 
-class Feedback {
+export class Singin {
   constructor(node) {
     this.form = $(node);
     this.form.parsley();
@@ -20,17 +20,16 @@ class Feedback {
           this.form.find("input, select, textarea").trigger("focusout");
           this.form.parsley().reset();
         },
-        error: (xhr, textStatus, errorThrown) => {
-          alert(`error: ${errorThrown ? errorThrown : xhr.status} ${textStatus}`);
-        },
-        
+        complete: () => {
+          window.location.replace("profile.html");
+        }
       });
     });
   }
 }
 
 export default function render(inPage = false) {
-  $(()=> {
-    $(inPage ? '.page .js-feedback' : '.js-feedback').map((index, node) => new Feedback(node));
+  $(() => {
+    $(inPage ? '.page .js-singin' : '.js-singin').map((index, node) => new Singin(node));
   });
 }

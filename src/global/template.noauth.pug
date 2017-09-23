@@ -1,8 +1,8 @@
 include ../components/layout/layout
 include ../components/header/header.noauth.pug
-include ../components/sidebar/sidebar
 
-- let basis = 1000
+- let basis = 900
+- let vertical = false
 
 block variables
 
@@ -20,8 +20,8 @@ html
           +header-noauth()
 
       +layout__main()
-        +layout__container({basis: basis, align: 'center'})
-          +layout__container({mix: "page__content", basis: "auto"})
+        +layout__container({basis: basis, align: 'center', vertical: vertical})
+          +layout__container({basis: "auto", vertical: vertical})
             block main
 
     block scripts

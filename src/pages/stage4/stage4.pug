@@ -4,11 +4,11 @@ include ../../components/stages/stages
 
 block variables
   - const pageName = "Stage4"
-  - sidebar = false
-  - basis = 800
 
 block title
-  | Authorization
+  | Registration
 
 block main
-  +stages({count: 5, current: 4})
+  +layout__container({mix: 'p-register', wrap: 'wrap', align: 'center'})
+    +layout__container({mix: 'page__content', wrap: 'wrap'})
+      +stages({count: 5, current: 4})

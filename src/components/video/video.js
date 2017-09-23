@@ -1,6 +1,6 @@
 import './video.styl';
 
-export default class Video {
+export class Video {
   constructor(video) {  
     this.video = $(video);
     this.Init();
@@ -73,6 +73,8 @@ export default class Video {
   }
 }
 
-$(() => {
-  $('.js-video').map((i, node) => new Video(node));
-});
+export default function render(inPage = false) {
+  $(() => {
+    $(inPage ? '.page .js-video' : '.js-video').map((i, node) => new Video(node));
+  });
+}

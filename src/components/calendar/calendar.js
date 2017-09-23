@@ -3,7 +3,7 @@ import 'jquery-ui/themes/base/theme.css';
 import 'jquery-ui/themes/base/datepicker.css';
 import './calendar.styl';
 
-export default class Calendar {
+class Calendar {
   constructor(calendar) {
     this.calendar = $(calendar);
     this.Init();
@@ -42,6 +42,8 @@ export default class Calendar {
   }
 }
 
-$(() => {
-  $('.js-calendar').map((index, node) => new Calendar(node));
-});
+export default function render(inPage = false) {
+  $(() => {
+    $(inPage ? '.page .js-calendar': '.js-calendar').map((index, node) => new Calendar(node));
+  });
+}

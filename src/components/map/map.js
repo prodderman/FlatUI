@@ -1,6 +1,6 @@
 import './map.styl';
 
-export default class Map {
+export class Map {
   constructor(node) {
     this.map = $(node);
     this.init();
@@ -53,6 +53,8 @@ export default class Map {
   }
 }
 
-$(() => {
-  $('.js-map').map((index, node) => new Map(node));
-});
+export default function render(inPage = false) {
+  $(() => {
+    $(inPage ? '.page .js-map' : '.js-map').map((index, node) => new Map(node));
+  });
+}

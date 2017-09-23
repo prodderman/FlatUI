@@ -24,15 +24,31 @@
 
   &__content
     display: flex
+    flex-direction: row-reverse
     align-items: center
-    justify-content: flex-end
+    justify-content: flex-start
     flex: 1 1 auto
+    
+    & > a
+      font-family: Lato, sans-serif
+      font-weight: bold
+      display: flex
+      align-items: center
+      color white
+      transition: 0.2s
 
-  &__auth-link
-    color white
+      &:hover
+        color: $c_red
+
+  &__logout
+    margin-right: 1rem
 
   &__profile-link
-    display: block
+    display: flex
+    flex-direction: row-reverse
+
+  &__name
+    margin-right: 0.9rem
 
   &__avatar
     width: 50px

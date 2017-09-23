@@ -8,8 +8,9 @@ mixin header({} = {})
         img(src=require('../../global/favicon.png')).header__logo-img
     .header__content
       a.header__profile-link(href="profile.html", data-pjax=true)
-        .header__name
         +avatar().header__avatar
+        .header__name  Ryan Reynolds
+      a.header__logout(href="authorization.html") Logout
 
     .header__search-wrap
       +search().header__search

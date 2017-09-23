@@ -6,6 +6,9 @@
     display: none;
 
   &__label 
+    display: flex
+    justify-content: flex-start
+    align-items: center
     cursor pointer
   
   &__check
@@ -25,3 +28,8 @@
   &__field:checked + .tickbox__check
     background-color: $c_green
     color: white
+
+  &__label-text
+    font-family: SourceSansPro, sans-serif
+    color: $c_black
+    margin-left: 0.5rem

@@ -1,9 +1,9 @@
 import './contacts.styl';
-import User from '../user-profile/user-profile';
-import Messenger from '../messenger/messenger';
+import { User } from '../user-profile/user-profile';
+import { Messenger } from '../messenger/messenger';
 import data from './data.json';
 
-class Friend extends User {
+export class Friend extends User {
   constructor(node, id) {
     super();
     this.friend = $(node);
@@ -35,7 +35,7 @@ class Friend extends User {
   }
 }
 
-export default class Contacts {
+export class Contacts {
   constructor(node) {
     this.contacts = $(node);
     this.init();

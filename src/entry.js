@@ -10,13 +10,23 @@ function importAll (r) {
 importAll(require.context('./components/', true, /^\.\/.*\.(jsx?)$/));
 importAll(require.context('./pages/', true, /^\.\/.*\.(jsx?)$/));
 
+for (let key in cache) {
+  try {cache[key].default();}
+  catch (e){};
+}
+
 if (module.hot) {
   module.hot.accept();
 }
 
-$(() => {
-  $(document).pjax('a[data-pjax]', '.page', { 
-    fragment: '.page', 
-    timeout: 3000 
-  });
-})
+$(document).pjax('a[data-pjax]', '.page', { 
+  fragment: '.page', 
+  timeout: 3000 
+});
+
+$(document).on('ready pjax:end', (e) => {
+  for (let key in cache) {
+    try {cache[key].default(true);}
+    catch (e){};
+  }
+});

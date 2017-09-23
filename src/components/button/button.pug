@@ -1,9 +1,12 @@
-mixin button({text = "Button", altcolor, small, fill, submit} = {}) 
+mixin button({text = "Button", altcolor, small, fill, submit, href} = {}) 
 
   -  let classes = ''
   -  classes += altcolor ? `btn--red` : ''
   -  classes += small ? ` btn--small` : ''
   -  classes += fill ? ` btn--white` : ''
-  button.btn.js-btn(class= classes
+  if href
+    a.btn.js-btn(href= href class= classes)&attributes(attributes)= text
+  else
+    button.btn.js-btn(class= classes
              type = submit ? 'submit' : false,
             )&attributes(attributes)= text

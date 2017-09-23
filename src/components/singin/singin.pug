@@ -1,0 +1,27 @@
+include ../../components/input/input
+include ../../components/button/button
+include ../../components/tickbox/tickbox
+
+mixin singin({method = "POST", action="", enctype} = {})
+  form.singin.js-singin(
+      data-parsley-validate
+      method=method
+      action=action
+    )&attributes(attributes)
+    +input({mix: "singin__field", 
+            name: "email",
+            pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.toString(),
+            placeholder: "Your e-mail",
+            required: true})
+    +input({mix: "singin__field", 
+            type: "password",
+            name: "password", 
+            placeholder: "Your password",
+            required: true})
+    .singin__row
+      +tickbox({mix: "singin__check", name: "remember"}) Remember me?
+      a.singin__forgot(href="#", data-pjax= true) Forgot password?
+    .singin__row
+      +button({submit: true,
+              text: "Sing In"}).singin__btn.singin__submit
+      +button({href: "stage4.html", text: "Sing Up", altcolor: true})(data-pjax= true).singin__btn.singin__reg
