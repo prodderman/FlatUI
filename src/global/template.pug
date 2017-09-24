@@ -2,6 +2,8 @@ include ../components/layout/layout
 include ../components/contacts/contacts
 include ../components/header/header
 include ../components/sidebar/sidebar
+include ../components/mpanel/mpanel
+include ../components/menu/menu
 
 - 
   const menuItems = [
@@ -14,7 +16,7 @@ include ../components/sidebar/sidebar
       "href": "feedback.html"
     }, 
     {
-      "name": "News and Event",
+      "name": "News and Events",
       "href": "news-events.html"
     }
   ];
@@ -32,6 +34,7 @@ html
       block title
   body
     +contacts()
+    +mpanel()
     +layout()
       +layout__header()
         +layout__container({basis: basis, align: 'center'})

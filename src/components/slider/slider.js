@@ -9,13 +9,18 @@ export class Slider {
   constructor(slider) {
     this.slider = $(slider);
     this.init();
+    this.addEventHandlers();
   }
 
   init() {
+    const input = this.slider.find("input[type='hidden']");
     const slider = this.slider.slider({
       min: this.slider.data("min"),
       max: this.slider.data("max"),
-      value: this.slider.data("value")
+      value: this.slider.data("value"),
+      change: ( event, ui ) => {
+        input.val(ui.value);
+      }
     });
     if (this.slider.hasClass("slider--fill")) {
       slider.slider({
@@ -31,6 +36,7 @@ export class Slider {
         step: slider.slider("option", "max")/4
       });
     }
+
   }
 }
 

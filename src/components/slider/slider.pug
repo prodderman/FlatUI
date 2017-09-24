@@ -1,4 +1,4 @@
-mixin slider({color, value=0, fill, float, pips, max=100, min=0} = {})
+mixin slider({name, color, value=0, fill, float, pips, max=100, min=0} = {})
 
   -  let classes = ''
   -  classes += color ? `slider--${color}` : ''
@@ -10,3 +10,4 @@ mixin slider({color, value=0, fill, float, pips, max=100, min=0} = {})
                     data-value= value
                     data-max= max
                     data-min= min)&attributes(attributes)
+                    input(type="hidden", name=name, value=value)
