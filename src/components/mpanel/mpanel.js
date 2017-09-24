@@ -10,25 +10,24 @@ export class Mpanel {
   }
 
   init() {
-    let slideout;
     setTimeout(() => {
-      slideout = new Slideout({
+      this.menu.style.display = "block";
+      const width = this.menu.offsetWidth;
+      this.menu.style = "";
+      const slideout = new Slideout({
         panel: this.panel,
         menu: this.menu,
-        padding: this.menu.offsetWidth,
+        padding: width,
         duration : 300,
         tolerance : 70,
         side: 'right'
       });
-    },100)
-    document.querySelector('.toggle-button').addEventListener('click', function() {
-      slideout.toggle();
-    });
+    }, 100);
   }
 }
 
 export default function render() {
-  $(() => {
+  $( document ).ready(() => {
     new Mpanel ($('#page-id'), $('#mpanel-id'));
   });
 }
