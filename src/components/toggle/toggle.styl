@@ -6,6 +6,13 @@
     display: none;
 
   &__label 
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    cursor pointer
+    min-height: 28px
+
+  &__viewport
     position relative
     display: block
     width: 60px
@@ -30,6 +37,7 @@
     width: 35%
     font-size: 12px
     font-weight: 800
+    text-align: center
     text-transform: uppercase
 
   &__knob
@@ -41,3 +49,8 @@
   &__field:checked + .toggle__track
     transform: translateX(0);
     background-color: $c_green
+
+  &__label-text
+    font-family: SourceSansPro, sans-serif
+    color: $c_black
+    margin-left: 0.5rem

@@ -9,7 +9,6 @@ export class Slider {
   constructor(slider) {
     this.slider = $(slider);
     this.init();
-    this.addEventHandlers();
   }
 
   init() {

@@ -8,8 +8,10 @@ export class Percentage {
   }
 
   render() {
+    this.diagram.find('canvas').remove();
     const percent = parseFloat(this.diagram.data('percent')/100);
     const size = this.diagram.width();
+    const start = this.diagram.data("start");
     const fill = this.diagram.data("color");
     const emptyFill = this.diagram.data("emptycolor");
     const time = 1500;
@@ -19,9 +21,10 @@ export class Percentage {
       fill: fill,
       emptyFill: emptyFill,
       startAngle: -Math.PI/2,
+      animationStartValue: start/100,
       animation: { duration: time} 
     }).on('circle-animation-progress', function(event, progress, stepValue) {
-      $(this).find('.percentage__text').text(Math.round(stepValue * progress * 100));
+      $(this).find('.percentage__text').text(Math.round(stepValue * 100));
     });   
   }
 }

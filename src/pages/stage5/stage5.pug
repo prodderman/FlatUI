@@ -1,6 +1,9 @@
 extends ../../global/template.noauth.pug
 
 include ../../components/stages/stages
+include ../../components/percentage/percentage
+include ../../components/slider/slider
+include ../../components/button/button
 
 block variables
   - const pageName = "Stage5"
@@ -9,4 +12,43 @@ block title
   | Registration
 
 block main
-  +stages({count: 5, current: 5})
+  +layout__container({mix: 'p-stage5', wrap: 'wrap', align: 'center'})
+    +layout__container({mix: 'page__content', wrap: 'wrap'})
+      +stages({count: 5, current: 5})
+    +layout__container({mix: 'page__content', wrap: 'wrap'})
+      form.stage5.p-stage5__form(method="POST" action="" data-parsley-validate)
+        .stage5__column
+          h2.stage5__h2 SKILLS
+          .stage5__field
+            .stage5__label creative
+            +slider({name: "creative", color: true, float: true, max: 12, pips: true, fill: true})
+          .stage5__field
+            .stage5__label teamwork
+            +slider({name: "teamwork", float: true, max: 12, pips: true, fill: true})
+          .stage5__field
+            .stage5__label innovate
+            +slider({name: "innovate", color: true, float: true, max: 12, pips: true, fill: true})
+          .stage5__field
+            .stage5__label communication
+            +slider({name: "comunication", float: true, max: 12, pips: true, fill: true})
+        .stage5__column
+          h2.stage5__h2 SOFTWARE
+          .stage5__field
+            .stage5__label html&css
+            +slider({name: "html-css", color: true, float: true, max: 12, pips: true, fill: true})
+          .stage5__field
+            .stage5__label JavaScript
+            +slider({name: "js", float: true, max: 12, pips: true, fill: true})
+          .stage5__field
+            .stage5__label photoshop
+            +slider({name: "photoshop", color: true, float: true, max: 12, pips: true, fill: true})
+          .stage5__field
+            .stage5__label illustrator
+            +slider({name: "illustrator", float: true, max: 12, pips: true, fill: true})
+        .stage5__footer
+          .stage5__diagram
+            +percentage({percent: 85, start: 64})
+            .stage5__label-diagram % Page Filling
+          .stage5__btns
+            +button({href: "stage4.html", text: "prev", altcolor: true})(data-pjax= true).stage5__prev
+            +button({href: "profile.html", text: "complete"}).stage5__next
