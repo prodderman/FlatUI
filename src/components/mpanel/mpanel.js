@@ -32,8 +32,8 @@ export class Mpanel {
         container: '#menu-id',
         fragment: '#menu-id',
         timeout: 5000
-      })
-  });
+      });
+    });  
   }
 
   init() {

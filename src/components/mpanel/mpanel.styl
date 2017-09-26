@@ -57,5 +57,17 @@
 .slideout-open .slideout-panel
   overflow-y: hidden
 
+.slideout-open .slideout-panel
+  &:before
+    content: ""
+    position: absolute
+    display: block
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: transparent
+    z-index: 999
+
 .slideout-open .slideout-menu
   display: block
