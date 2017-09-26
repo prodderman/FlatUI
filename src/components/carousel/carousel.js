@@ -27,6 +27,15 @@ export class Carousel {
         nextButton: this.carousel.find('.carousel__btn').length > 0 ? this.carousel.find('.carousel__btn-next')[0] : false,
         prevButton: this.carousel.find('.carousel__btn').length > 0 ? this.carousel.find('.carousel__btn-prev')[0] : false,
         scrollbar: this.carousel.find('.carousel__scrollbar').length > 0 ? this.carousel.find('.carousel__scrollbar')[0] : false,
+        breakpoints: {
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          640: {
+            slidesPerView: 1
+          }
+        }
       }); 
     }, 100);
   }

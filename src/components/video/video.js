@@ -9,10 +9,8 @@ export class Video {
 
   addEventHandlers() {  
     $( window ).resize((e) => {
-      const size = this.SetSize();
       const frame = this.video.children("iframe");
-      frame.width(size.width);
-      frame.height(size.height);
+      frame.height(this.SetHeight());
     });
   }
 
@@ -31,10 +29,8 @@ export class Video {
       this.video.empty();
       const url = this.video.data("src")
       const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
-      const size = this.SetSize();
       const frame = $('<iframe/>', {
-        width: size.width,
-        height: size.height,
+        height: this.SetHeight(),
         src: this.CreateURL(src),
         allowfullscreen: "",
         frameborder: 0
@@ -43,12 +39,12 @@ export class Video {
     }, 100);
   }
 
-  SetSize() {
+  SetHeight() {
     const width = this.video.data('format').split(":")[0];
     const height = this.video.data('format').split(":")[1];
     const frameWidth = this.video.width();
     const frameHeight = height*frameWidth/width;
-    return {width: frameWidth, height: frameHeight};
+    return frameHeight;
   }
   
   CreateURL(src) {

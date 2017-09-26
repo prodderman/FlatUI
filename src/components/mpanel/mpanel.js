@@ -3,10 +3,10 @@ import './mpanel.styl';
 import Slideout from 'slideout';
 
 export class Mpanel {
-  constructor(panel, menu, btn) {
+  constructor(panel, menu, trigger) {
     this.panel = panel.get(0);
     this.menu = menu.get(0);
-    this.trigger = btn;
+    this.trigger = trigger;
     this.slideout;
     this.init();
     this.addEventHandlers();
@@ -16,6 +16,10 @@ export class Mpanel {
     this.trigger.on('click', () => {
       this.slideout.toggle();
     });
+
+    $(window).resize((e) => {
+      console.log(e.target.innerWidth);
+    })
   }
 
   init() {

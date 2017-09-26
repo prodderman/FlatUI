@@ -2,9 +2,10 @@
 
 .header
   display: flex
-  flex: 1 0 auto
+  flex: 1 0 100%
   padding: 0.5rem 0
   align-items: stretch
+  
   height 67px
 
   & > *
@@ -23,7 +24,8 @@
   &__search-wrap
     display: flex
     align-items: center
-    width: 300px
+    max-width: 300px
+    flex-grow: 1
 
   &__content
     display: flex
