@@ -1,5 +1,5 @@
 mixin menu(menuItems = [])
-  nav.menu
+  nav.menu&attributes(attributes)
     ul.menu__items
       each item in menuItems
         li.menu__item

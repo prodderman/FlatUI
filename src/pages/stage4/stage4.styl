@@ -2,36 +2,73 @@
 
 
 
-.stage4
+.stage
   flex: 1
   display: flex
-  justify-content: space-between
-  flex-wrap: wrap
+  flex-direction: column
   
   &__h2
     text-align: center
     margin-bottom: 1.3rem
+
+  &__fieldset
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
   
   &__column
     flex: 0 0 48%
+    display: flex
+    flex-direction: column
     margin-bottom: 2.5rem
 
     & > *:not(:last-child)
       margin-bottom: 1rem
 
+    @media screen and (max-width: 768px)
+      flex: 1 1 100%
+
+  &__field
+    display: flex
+    flex-wrap: wrap
+    align-items: baseline
+
+    @media screen and (max-width: 450px)
+      & > .slider
+        flex: 1 1 100%
+
   &__toggle
     display: flex
     align-items: center
+
+  &__label
+    flex: 0 0 10rem
+    font-family: Lato, sans-serif
+    font-size: 1rem
+    font-weight: bold
+    text-transform: uppercase
+    color: $c_black
+    padding-top: 0.3rem
+
+    @media screen and (max-width: 450px)
+      margin-bottom: 1rem
+      flex: 1 1 100%
 
   &__footer
     flex: 1 1 100%
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     align-items: center
+    text-align: center
+
+    @media screen and (max-width: 650px)
+      justify-content: center
 
   &__diagram
     display: flex
     align-items: center
+    margin-bottom: 1rem
 
   &__label-diagram
     font-family: Lato, sans-serif
@@ -44,6 +81,10 @@
   &__btns
     display: flex
     align-items: center
+
+    @media screen and (max-width: 650px)
+      justify-content: space-between
+      flex: 1 1 100%
 
   &__prev
     text-align: left

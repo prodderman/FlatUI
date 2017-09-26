@@ -5,6 +5,7 @@ import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js';
 import 'jquery-ui/themes/base/resizable.css';
 import 'jquery-ui/themes/base/draggable.css';
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+import 'jquery-ui-touch-punch';
 import msgTemplate from './template.pug';
 
 export class Messenger {

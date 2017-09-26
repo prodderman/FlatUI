@@ -8,75 +8,76 @@ include ../../components/toggle/toggle
 include ../../components/button/button
 
 block variables
-  - const pageName = "Stage4"
+  - const pageName = "Stage"
 
 block title
   | Registration
 
 block main
-  +layout__container({mix: 'p-stage4', wrap: 'wrap', align: 'center'})
+  +layout__container({mix: 'p-stage', wrap: 'wrap', align: 'center'})
     +layout__container({mix: 'page__content', wrap: 'wrap'})
       +stages({count: 5, current: 4})
     +layout__container({mix: 'page__content', wrap: 'wrap'})
-      form.stage4.p-stage4__form(method="POST" action="")
-        .stage4__column
-          h2.stage4__h2 main info
-          +input({mix: "stage4__input",
-                  name: "name",
-                  placeholder: "Name",
-                  require: true,
-                  tabindex: 1})
-          +input({mix: "stage4__input",
-                  name: "email",
-                  placeholder: "E-mail",
-                  require: true,
-                  tabindex: 2})
-          +select({mix: "stage4__select",
-                  name: "gender",
-                   require: true,
-                   placeholder: "Gender",
-                   tabindex: 3,
-                   options: {
-                     male: "Male",
-                     female: "Female"
-                   }})
-          +input({mix: "stage4__input",
-                  name: "password",
-                  type: "password",
-                  placeholder: "Password",
-                  require: true,
-                  tabindex: 4})
-          +input({mix: "stage4__input",
-                  name: "password",
-                  type: "password",
-                  placeholder: "Confirm password",
-                  require: true,
-                  tabindex: 5})
-        .stage4__column
-          h2.stage4__h2 other info
-          +input({mix: "stage4__input",
-                  name: "phone",
-                  placeholder: "Phone number",
-                  require: true,
-                  tabindex: 6})
-          +input({mix: "stage4__input",
-                  name: "profession",
-                  placeholder: "Profession",
-                  require: true,
-                  tabindex: 7})
-          +input({mix: "stage4__input",
-                  name: "city",
-                  placeholder: "City",
-                  require: true,
-                  tabindex: 7})
-          +toggle({mix: "stage4__toggle",
-                   name: "notifications"}) Receive notifications
-          +toggle({mix: "stage4__toggle",
-                   name: "subscribe"}) Subscribe to newsletter
-        .stage4__footer
-          .stage4__diagram
+      form.stage.p-stage__form(method="POST" action="")
+        .stage__fieldset
+          .stage__column
+            h2.stage__h2 main info
+            +input({mix: "stage__input",
+                    name: "name",
+                    placeholder: "Name",
+                    require: true,
+                    tabindex: 1})
+            +input({mix: "stage__input",
+                    name: "email",
+                    placeholder: "E-mail",
+                    require: true,
+                    tabindex: 2})
+            +select({mix: "stage__select",
+                    name: "gender",
+                    require: true,
+                    placeholder: "Gender",
+                    tabindex: 3,
+                    options: {
+                      male: "Male",
+                      female: "Female"
+                    }})
+            +input({mix: "stage__input",
+                    name: "password",
+                    type: "password",
+                    placeholder: "Password",
+                    require: true,
+                    tabindex: 4})
+            +input({mix: "stage__input",
+                    name: "password",
+                    type: "password",
+                    placeholder: "Confirm password",
+                    require: true,
+                    tabindex: 5})
+          .stage__column
+            h2.stage__h2 other info
+            +input({mix: "stage__input",
+                    name: "phone",
+                    placeholder: "Phone number",
+                    require: true,
+                    tabindex: 6})
+            +input({mix: "stage__input",
+                    name: "profession",
+                    placeholder: "Profession",
+                    require: true,
+                    tabindex: 7})
+            +input({mix: "stage__input",
+                    name: "city",
+                    placeholder: "City",
+                    require: true,
+                    tabindex: 7})
+            +toggle({mix: "stage__toggle",
+                    name: "notifications"}) Receive notifications
+            +toggle({mix: "stage__toggle",
+                    name: "subscribe"}) Subscribe to newsletter
+        .stage__footer
+          .stage__diagram
             +percentage({percent: 64})
-            .stage4__label-diagram % Page Filling
-          .stage4__btns
-            +button({href: "authorization.html", text: "prev", altcolor: true})(data-pjax= true).stage4__prev
-            +button({href: "stage5.html", text: "next"})(data-pjax= true).stage4__next
+            .stage__label-diagram % Page Filling
+          .stage__btns
+            +button({href: "authorization.html", text: "prev", altcolor: true})(data-pjax= true).stage__prev
+            +button({href: "stage5.html", text: "next"})(data-pjax= true).stage__next

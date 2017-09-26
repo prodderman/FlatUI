@@ -3,6 +3,7 @@ import 'jquery-ui/themes/base/theme.css';
 import 'jquery-ui/themes/base/slider.css';
 import 'jquery-ui-slider-pips';
 import 'jquery-ui-slider-pips/dist/jquery-ui-slider-pips.css';
+import 'jquery-ui-touch-punch';
 import './slider.styl';
 
 export class Slider {

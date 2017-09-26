@@ -10,7 +10,6 @@ export class Map {
     const coord = this.map.data('coord');
     const toMarker = this.map.find('.map__to-marker');
     if (!(coord instanceof Array)) return;
-    
     this.script("https://api-maps.yandex.ru/2.1/?lang=ru_RU").then(()=>{
       $('.js-map__location').empty();
       ymaps.ready(() => {
@@ -35,7 +34,12 @@ export class Map {
   script(url) {  
     return new Promise((resolve, reject) => {
       let r = false;
-      const place = $(document).find('script').get(0);
+      if ($(`script[src="${url}"]`).length > 0) {
+        r = true;
+        resolve(this);
+        return;
+      }
+      const place = document.getElementsByTagName('head')[0];
       const script = document.createElement('script');
   
       script.type = 'text/javascript';
@@ -48,7 +52,7 @@ export class Map {
         }
       };
       script.onerror = script.onabort = reject;
-      place.parentNode.insertBefore(script, place);
+      place.prepend(script);
     });
   }
 }

@@ -1,6 +1,13 @@
 include ../menu/menu
 include ../avatar/avatar
+include ../calendar/calendar
 
 mixin mpanel()
   .mpanel#mpanel-id
-    +menu(menuItems)
+    .mpanel__user
+      a.mpanel__logout(href="authorization.html") Log out
+      a.mpanel__profile-link(href="profile.html", data-pjax=true)
+        +avatar().mpanel__avatar
+        .mpanel__name  Ryan Reynolds
+    +menu(menuItems).mpanel__menu#menu-id
+    +calendar()

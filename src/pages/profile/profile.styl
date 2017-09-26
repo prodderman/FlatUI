@@ -28,6 +28,13 @@
     display: flex;
     flex: 0 0 230px;
 
+    @media screen and (max-width: 640px)
+      flex: 1 1 100%
+
+  &__calendar
+    @media screen and (max-width: 640px)
+      display: none
+
   &__right-column
     align-items: stretch
 
@@ -56,3 +63,4 @@
   
   &__photo
     margin-bottom: 1rem
+    height: 12rem

@@ -2,7 +2,7 @@ extends ../../global/template
 
 include ../../components/calendar/calendar
 include ../../components/button/button
-include ../../components/avatar/avatar-profile
+include ../../components/avatar/avatar
 
 block variables
   - const pageName = "Profile"
@@ -18,7 +18,7 @@ block main
       +layout__container({mix: 'page__content', wrap: 'wrap'})
         +avatar-profile().p-profile__photo
         +button({altcolor: true, text: "edit"}).p-profile__edit
-      +layout__container({mix: 'page__content', wrap: 'wrap'})
+      +layout__container({mix: 'p-profile__calendar page__content', wrap: 'wrap'})
         +calendar()
     +layout__container({mix: 'p-profile__right-column', wrap: 'wrap', basis: "auto"})
       +layout__container({mix: 'page__content', wrap: 'wrap', direction: 'column', vertical: "stretch"})

@@ -1,11 +1,10 @@
 import './mpanel.styl';
-
 import Slideout from 'slideout';
 
 export class Mpanel {
   constructor(panel, menu, trigger) {
-    this.panel = panel.get(0);
-    this.menu = menu.get(0);
+    this.panel = $(panel).get(0);
+    this.menu = $(menu).get(0);
     this.trigger = trigger;
     this.slideout;
     this.init();
@@ -13,13 +12,28 @@ export class Mpanel {
   }
 
   addEventHandlers() {
-    this.trigger.on('click', () => {
+    $('.page__header').on('click', this.trigger, (e) => {
       this.slideout.toggle();
     });
 
     $(window).resize((e) => {
-      console.log(e.target.innerWidth);
-    })
+      if (e.target.innerWidth > 1024) {
+        this.slideout.close();
+      }
+    });
+
+    $('#main-id').on('pjax:start', (e) => {
+        this.slideout.close();
+    });
+
+    $('#main-id').on('pjax:end', (e) => {
+      $.pjax({
+        url: window.location.href,
+        container: '#menu-id',
+        fragment: '#menu-id',
+        timeout: 5000
+      })
+  });
   }
 
   init() {
@@ -35,8 +49,8 @@ export class Mpanel {
   }
 }
 
-export default function render() {
-  $( document ).ready(() => {
-    new Mpanel ($('#page-id'), $('#mpanel-id'), $('.header__menu-trigger'));
-  });
-}
+$( document ).ready(() => {
+  if ($('#mpanel-id').length) {
+    new Mpanel ('#main-id', '#mpanel-id', '.header__menu-trigger');
+  }
+});

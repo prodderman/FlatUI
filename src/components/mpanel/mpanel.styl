@@ -3,7 +3,9 @@
 .mpanel 
   display: none
   position: fixed
-  top: 0
+  flex-direction: column
+  justify-content: space-between
+  top: 67px
   bottom: 0
   right: 0
   z-index: 0
@@ -12,21 +14,48 @@
   background-color: white
   box-shadow: 0 0 2px 1px $c_lightgray
   -webkit-overflow-scrolling: touch
-  min-height: 100vh
+  min-height: calc(100vh - 67px)
   overflow-y: auto
 
   @media screen and (min-width: 1025px)
+    display: block
+
+  &__user
     display: flex
+    flex-direction: column
+    margin-bottom: 1rem
+
+    & > a
+      font-family: Lato, sans-serif
+      font-weight: bold
+      color $c_black
+      transition: 0.2s
+
+      &:hover
+        color: $c_red
+
+  &__logout
+    text-align: right
+    margin-right: 1rem
+
+  &__profile-link
+    display: flex
+    align-items: center
+
+  &__name
+    margin-left: 0.9rem
+
+  &__menu
+    margin-bottom: 1rem
 
 .slideout-panel
   position: relative
   z-index: 1
-  will-change: transform
 
 .slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel
-  overflow: hidden
+  overflow-y: hidden
 
 .slideout-open .slideout-menu
-  display: flex
+  display: block

@@ -7,10 +7,7 @@ class Calendar {
   constructor(calendar) {
     this.calendar = $(calendar);
     this.Init();
-    this.EventHandlers();
   }
-
-  EventHandlers() {  }
 
   Init() {
     const nowNode = this.calendar.children(".calendar__now");
@@ -42,8 +39,8 @@ class Calendar {
   }
 }
 
-export default function render(inPage = false) {
+export default function render() {
   $(() => {
-    $(inPage ? '.page .js-calendar': '.js-calendar').map((index, node) => new Calendar(node));
+    $('.js-calendar').map((index, node) => new Calendar(node));
   });
 }
