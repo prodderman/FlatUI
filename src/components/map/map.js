@@ -25,6 +25,12 @@ export class Map {
           iconImageSize: [55, 55],
           iconImageOffset: [-19, -56]
         });
+
+        this.map.on('touchmove', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+        });
+
         map.geoObjects.add(placemark);
         toMarker.click((e) => map.panTo(placemark.geometry.getCoordinates()));     
       });
