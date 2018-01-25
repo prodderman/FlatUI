@@ -1,13 +1,13 @@
 include ../input/input
 
-mixin search({method = "POST", action="", searchAction}={})
+mixin search({method = 'POST', action='', searchAction}={})
   form.search.js-search(
     method= method
     action= action
     data-action= searchAction
   )&attributes(attributes)
-    +input({mix: "search__input", name: "search", placeholder: "Search"})(autocomplete="off")
-      button.search__btn(type= "submit")
+    +input({mix: 'search__input', name: 'search', placeholder: 'Search'})(autocomplete='off')
+      button.search__btn(type= 'submit')
     ul.search__result-list
       //- li.search__result-item
       //-   span.search__result-text foo

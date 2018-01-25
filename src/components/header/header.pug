@@ -4,13 +4,13 @@ include ../search/search
 mixin header({} = {})
   .header
     .header__logo
-      a.header__logo-link(href="news-events.html" data-pjax=true)
+      a.header__logo-link(href='news-events.html' data-pjax=true)
         img(src=require('../../global/favicon.png')).header__logo-img
     .header__content
-      a.header__profile-link(href="profile.html", data-pjax=true)
+      a.header__profile-link(href='profile.html', data-pjax=true)
         +avatar().header__avatar
         .header__name  Ryan Reynolds
-      a.header__logout(href="authorization.html") Log out
+      a.header__logout(href='authorization.html') Log out
 
     .header__search-wrap
       +search().header__search
@@ -19,10 +19,10 @@ mixin header({} = {})
 mixin header-noauth({} = {})
   .header
     .header__logo
-      a.header__logo-link(href="#")
+      a.header__logo-link(href='/mock-address/change-me')
         img(src=require('../../global/favicon.png')).header__logo-img
     .header__content
-      a.header__auth-link(href="authorization.html" data-pjax=true) Sing in
+      a.header__auth-link(href='authorization.html' data-pjax=true) Sing in
        
     .header__search-wrap
       +search().header__search    

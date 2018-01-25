@@ -2,20 +2,20 @@ import './piechart.styl';
 
 export class Piechart {
   constructor(diagram) {
-    this.diagram = $(diagram);
-    this.render();
+    this.$diagram = $(diagram);
+    this._render();
   }
 
-  render() {
-    const canvas = this.diagram.find("canvas").get(0);
+  _render() {
+    const canvas = this.$diagram.find('canvas').get(0);
     const ctx = canvas.getContext('2d');
-    const r = this.diagram.width() / 2;
-    const pieces = this.diagram.find(".piechart__data figure");
+    const r = this.$diagram.width() / 2;
+    const pieces = this.$diagram.find('.piechart__data figure');
     let totalCount = 0;
     let prevAngle = 0;
 
-    canvas.width = this.diagram.width() * 1.5;
-    canvas.height = this.diagram.width() * 1.5;
+    canvas.width = this.$diagram.width() * 1.5;
+    canvas.height = this.$diagram.width() * 1.5;
     const c = canvas.width / 2;
 
     pieces.map((index, node) => {
@@ -29,7 +29,7 @@ export class Piechart {
       ctx.fillStyle = 'transparent';
       ctx.fill();
       ctx.lineWidth = 15;
-      ctx.strokeStyle = $(node).data("color");
+      ctx.strokeStyle = $(node).data('color');
       ctx.stroke();
       prevAngle = angle;
     }, this);

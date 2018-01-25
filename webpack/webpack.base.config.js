@@ -34,7 +34,7 @@ module.exports = new config.default().merge({
     modules: [
       'node_modules',
       'src',
-      path.resolve(__dirname, "vendors"),
+      path.resolve(__dirname, 'vendors'),
     ],
     alias: {
       vendors: path.resolve(__dirname, '..', 'src', 'vendors')
@@ -44,8 +44,8 @@ module.exports = new config.default().merge({
     new CleanPlugin(['./dist'], { root: path.resolve(__dirname, '..') }),
     new webpack.ProgressPlugin(),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
     new HtmlWebpackHarddiskPlugin(),
   ].concat(htmls),

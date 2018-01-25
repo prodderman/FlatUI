@@ -20,7 +20,7 @@ mixin singin({method = "POST", action="", enctype} = {})
             required: true})
     .singin__row
       +tickbox({mix: "singin__check", name: "remember"}) Remember me?
-      a.singin__forgot(href="#", data-pjax= true) Forgot password?
+      a.singin__forgot(href="/mock-address/change-me", data-pjax= true) Forgot password?
     .singin__row
       +button({submit: true,
               text: "Sing In"}).singin__btn.singin__submit

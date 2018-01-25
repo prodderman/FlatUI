@@ -6,24 +6,24 @@ import data from './data.json';
 export class Friend extends User {
   constructor(node, id) {
     super();
-    this.friend = $(node);
+    this.$friend = $(node);
     this.id = id;
     this.chat = null
-    this.AddEventHandler();
+    this._addEventHandler();
   }
 
   destroy() {
     this.chat = null;
   }
 
-  AddEventHandler() {
-    const link = this.friend.find('a.user__link');
-    link.click((e) => {
-      e.preventDefault();
+  _addEventHandler() {
+    const link = this.$friend.find('a.user__link');
+    link.click((event) => {
+      event.preventDefault();
       if (!this.chat) {
         const userChat = $(Messenger.template(data[this.id]))
-                          .addClass("messenger-resizable")
-                          .addClass("messenger-draggable");
+                          .addClass('messenger-resizable')
+                          .addClass('messenger-draggable');
         $(userChat).insertBefore($('.page'));
         this.chat = new Messenger($(`#user_chat_${this.id}`), this);
         this.chat.setFocus()
@@ -38,15 +38,15 @@ export class Friend extends User {
 export class Contacts {
   constructor(node) {
     this.contacts = $(node);
-    this.init();
+    this._init();
   }
 
-  init() {
+  _init() {
     data.map((user, id) => {
-      const userNode = $(Friend.template(user));
-      const userInfo = userNode.find(".user__info").clone();
-      userNode.find(".user__info").remove();
-      this.contacts.find(".contacts__container").append(userNode);
+      const $userNode = $(Friend.template(user));
+      const $userInfo = $userNode.find('.user__info').clone();
+      $userNode.find('.user__info').remove();
+      this.contacts.find('.contacts__container').append($userNode);
       new Friend($(`#user_${id}`), id);
     })
   }

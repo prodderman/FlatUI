@@ -9,19 +9,19 @@ export class Singin {
   }
 
   addEventHandlers() { 
-    this.form.submit((e) => {
-      e.preventDefault();
+    this.form.submit((event) => {
+      event.preventDefault();
       $.ajax({
-        type: this.form.attr("method"),
-        url: this.form.attr("action"),
+        type: this.form.attr('method'),
+        url: this.form.attr('action'),
         data: this.form.serializeArray(),
         success: () => {
           this.form.trigger('reset');
-          this.form.find("input, select, textarea").trigger("focusout");
+          this.form.find('input, select, textarea').trigger('focusout');
           this.form.parsley().reset();
         },
         complete: () => {
-          window.location.replace("profile.html");
+          window.location.replace('profile.html');
         }
       });
     });

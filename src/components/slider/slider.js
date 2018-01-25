@@ -13,27 +13,27 @@ export class Slider {
   }
 
   init() {
-    const input = this.slider.find("input[type='hidden']");
+    const input = this.slider.find('input[type="hidden"]');
     const slider = this.slider.slider({
-      min: this.slider.data("min"),
-      max: this.slider.data("max"),
-      value: this.slider.data("value"),
+      min: this.slider.data('min'),
+      max: this.slider.data('max'),
+      value: this.slider.data('value'),
       change: ( event, ui ) => {
         input.val(ui.value);
       }
     });
-    if (this.slider.hasClass("slider--fill")) {
+    if (this.slider.hasClass('slider--fill')) {
       slider.slider({
-        range: "min",
+        range: 'min',
       });
     }
-    if (this.slider.hasClass("slider--float")) {
-      slider.slider("float");
+    if (this.slider.hasClass('slider--float')) {
+      slider.slider('float');
     }
-    if (this.slider.hasClass("slider--pips")) {
-      slider.slider("pips", {
-        rest: "label",
-        step: slider.slider("option", "max")/4
+    if (this.slider.hasClass('slider--pips')) {
+      slider.slider('pips', {
+        rest: 'label',
+        step: slider.slider('option', 'max')/4
       });
     }
 

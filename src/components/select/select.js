@@ -4,12 +4,13 @@ import 'vendors/formstyler/jquery.formstyler.css';
 
 export class Select {
   constructor(node) {
-    this.select = $(node);
-    this.init();
+    this.$select = $(node);
+    this._init();
   }
 
-  init() {
-    $('select').styler();
+  _init() {
+    const $selectField = this.$select.find('select');
+    $selectField.styler();
   }
 }
 

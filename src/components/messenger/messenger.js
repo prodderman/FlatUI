@@ -10,41 +10,69 @@ import msgTemplate from './template.pug';
 
 export class Messenger {
   constructor(node, target) {
-    this.messenger = $(node);
+    this.$messenger = $(node);
     this.tagert = target;
-    this.init();
-    this.addEventHandlers();
+    this._init();
+    this._addEventHandlers();
   }
 
   static template(options) {
     return msgTemplate({ options });
   }
 
-  addEventHandlers() {
-    const btnClose = this.messenger.find(".js-messenger__close");
-    const btnSend = this.messenger.find(".js-messenger__btn");
-    const input = this.messenger.find(".messenger__input");
-    const msgContainer = this.messenger.find("ul.messenger__tape");
+  setFocus() {
+    this.$messenger.find('.messenger__input').focus();
+    this._placeCaretAtEnd(this.$messenger.find('.messenger__input').get(0));
+  }
+
+  _init() {
+    this.$messenger.find('.messenger__chat').mCustomScrollbar({
+      axis: 'y',
+      scrollInertia: 7,
+      theme: 'dark'
+    }).mCustomScrollbar('scrollTo', 'last');
+
+    if (this.$messenger.hasClass('messenger-resizable')) {
+      this.$messenger.resizable({
+        minHeight: 429,
+        minWidth: this.$messenger.width()
+      });
+    }
+
+    if (this.$messenger.hasClass('messenger-draggable')) {
+      this.$messenger.draggable({
+        handle: this.$messenger.find('.messenger__name'),
+        containment: 'window',
+        scroll: false
+      });
+    }
+  };
+
+  _addEventHandlers() {
+    const btnClose = this.$messenger.find('.js-messenger__close');
+    const btnSend = this.$messenger.find('.js-messenger__btn');
+    const input = this.$messenger.find('.messenger__input');
+    const msgContainer = this.$messenger.find('ul.messenger__tape');
 
     btnSend.click((e) => {
       if (input.text()) {
         $.ajax({
-          type: "POST",
-          url: "",
+          type: 'POST',
+          url: '',
           data: input.text(),
           succes: () => {
 
           },
           complete: () => {
             const msgWrap = $('<div/>', {
-              class: "messenger__msg-wrap messenger__msg-wrap--out"
+              class: 'messenger__msg-wrap messenger__msg-wrap--out'
             });
             const msg = $('<div/>', {
-              class: "messenger__msg messenger__msg--out"
+              class: 'messenger__msg messenger__msg--out'
             });
             msgWrap.append(msg.text(input.text()));
             msgContainer.append(msgWrap);
-            this.messenger.find('.messenger__chat').mCustomScrollbar("scrollTo", "last");
+            this.$messenger.find('.messenger__chat').mCustomScrollbar('scrollTo', 'last');
             input.empty();
           }
         });
@@ -56,48 +84,20 @@ export class Messenger {
         this.tagert.destroy();
         this.tagert = null;
       }
-      this.messenger.remove();
+      this.$messenger.remove();
     });
   };
 
-  init() {
-    this.messenger.find('.messenger__chat').mCustomScrollbar({
-      axis: "y",
-      scrollInertia: 7,
-      theme: "dark"
-    }).mCustomScrollbar("scrollTo", "last");
-
-    if (this.messenger.hasClass("messenger-resizable")) {
-      this.messenger.resizable({
-        minHeight: 429,
-        minWidth: this.messenger.width()
-      });
-    }
-
-    if (this.messenger.hasClass("messenger-draggable")) {
-      this.messenger.draggable({
-        handle: this.messenger.find(".messenger__name"),
-        containment: "window",
-        scroll: false
-      });
-    }
-  };
-
-  setFocus() {
-    this.messenger.find(".messenger__input").focus();
-    this.placeCaretAtEnd(this.messenger.find(".messenger__input").get(0));
-  }
-
-  placeCaretAtEnd(node) {
+  _placeCaretAtEnd(node) {
     node.focus();
-    if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+    if (typeof window.getSelection != 'undefined' && typeof document.createRange != 'undefined') {
         const range = document.createRange();
         range.selectNodeContents(node);
         range.collapse(false);
         const select = window.getSelection();
         select.removeAllRanges();
         select.addRange(range);
-    } else if (typeof document.body.createTextRange != "undefined") {
+    } else if (typeof document.body.createTextRange != 'undefined') {
         const textRange = document.body.createTextRange();
         textRange.moveToElementText(node);
         textRange.collapse(false);

@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
-module.exports = new config.default().extend("webpack/webpack.base.config.js").merge({
+module.exports = new config.default().extend('webpack/webpack.base.config.js').merge({
   output: {
     filename: '[name]-[hash].js',
     path: path.resolve(__dirname, '..', 'dist'),
@@ -97,7 +97,7 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
           /fonts/
         ],
         options: {
-          name: "img/[name].[ext]"
+          name: 'img/[name].[ext]'
         }
       },
       {
@@ -108,8 +108,8 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
           /img/
         ],
         options: {
-          name: "fonts/[name]/[name].[ext]",
-          prefix: "font"
+          name: 'fonts/[name]/[name].[ext]',
+          prefix: 'font'
         }
       }
     ]
@@ -134,7 +134,7 @@ module.exports = new config.default().extend("webpack/webpack.base.config.js").m
       }
     }),
     new ExtractTextPlugin({
-      filename: "[name]-[contenthash].css",
+      filename: '[name]-[contenthash].css',
       allChunks: true,
     }),
   ],

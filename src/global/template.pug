@@ -8,16 +8,16 @@ include ../components/menu/menu
 - 
   const menuItems = [
     {
-      "name": "Profile",
-      "href": "profile.html"
+      'name': 'Profile',
+      'href': 'profile.html'
     },
     {
-      "name": "Feedback",
-      "href": "feedback.html"
+      'name': 'Feedback',
+      'href': 'feedback.html'
     }, 
     {
-      "name": "News and Events",
-      "href": "news-events.html"
+      'name': 'News and Events',
+      'href': 'news-events.html'
     }
   ];
 - let basis = 1100
@@ -29,7 +29,7 @@ doctype html
 html
   head
     meta(charset = 'utf-8')
-    meta(name='viewport', content="width=device-width, initial-scale=1.0, user-scalable=no")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
     title
       block title
   body
@@ -42,7 +42,7 @@ html
 
       +layout__main()
         +layout__container({basis: basis, align: 'center'})
-          +layout__container({basis: "auto"})
+          +layout__container({basis: 'auto'})
             block main
           if sidebar
             +layout__sidebar()

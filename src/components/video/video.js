@@ -9,30 +9,30 @@ export class Video {
 
   addEventHandlers() {  
     $( window ).resize((e) => {
-      const frame = this.video.children("iframe");
+      const frame = this.video.children('iframe');
       frame.height(this.SetHeight());
     });
   }
 
   static get snippets() {
     return {
-      'youtube': "//www.youtube.com/embed/",
-      'youtu': "//www.youtube.com/embed/",
-      'vimeo': "//player.vimeo.com/video/",
-      'rutube': "//rutube.ru/play/embed/",
-      "vk": ""
+      'youtube': '//www.youtube.com/embed/',
+      'youtu': '//www.youtube.com/embed/',
+      'vimeo': '//player.vimeo.com/video/',
+      'rutube': '//rutube.ru/play/embed/',
+      'vk': ''
     };
   }
 
   Init() {
     setTimeout(() => {
       this.video.empty();
-      const url = this.video.data("src")
+      const url = this.video.data('src')
       const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
       const frame = $('<iframe/>', {
         height: this.SetHeight(),
         src: this.CreateURL(src),
-        allowfullscreen: "",
+        allowfullscreen: '',
         frameborder: 0
       });
       this.video.append(frame);
@@ -40,8 +40,8 @@ export class Video {
   }
 
   SetHeight() {
-    const width = this.video.data('format').split(":")[0];
-    const height = this.video.data('format').split(":")[1];
+    const width = this.video.data('format').split(':')[0];
+    const height = this.video.data('format').split(':')[1];
     const frameWidth = this.video.width();
     const frameHeight = height*frameWidth/width;
     return frameHeight;
@@ -61,7 +61,7 @@ export class Video {
   }
 
   TestSrc(src) {
-    return src.match(new RegExp(Object.keys(Video.snippets).join("|")))[0];
+    return src.match(new RegExp(Object.keys(Video.snippets).join('|')))[0];
   }
 
   TestId(src) {

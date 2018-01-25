@@ -6,7 +6,7 @@ include ../../components/slider/slider
 include ../../components/button/button
 
 block variables
-  - const pageName = "Stage"
+  - const pageName = 'Stage'
 
 block title 
   | Registration
@@ -16,40 +16,40 @@ block main
     +layout__container({mix: 'page__content', wrap: 'wrap'})
       +stages({count: 5, current: 5})
     +layout__container({mix: 'page__content', wrap: 'wrap'})
-      form.stage.p-stage__form(method="POST" action="" data-parsley-validate)
+      form.stage.p-stage__form(method='POST' action='' data-parsley-validate)
         .stage__fieldset
           .stage__column
             h2.stage__h2 SKILLS
             .stage__field
               .stage__label creative
-              +slider({name: "creative", color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'creative', color: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label teamwork
-              +slider({name: "teamwork", float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'teamwork', float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label innovate
-              +slider({name: "innovate", color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'innovate', color: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label communication
-              +slider({name: "comunication", float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'comunication', float: true, max: 12, pips: true, fill: true})
           .stage__column
             h2.stage__h2 SOFTWARE
             .stage__field
               .stage__label html&css
-              +slider({name: "html-css", color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'html-css', color: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label JavaScript
-              +slider({name: "js", float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'js', float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label photoshop
-              +slider({name: "photoshop", color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'photoshop', color: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label illustrator
-              +slider({name: "illustrator", float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'illustrator', float: true, max: 12, pips: true, fill: true})
         .stage__footer
           .stage__diagram
             +percentage({percent: 85, start: 64})
             .stage__label-diagram % Page Filling
           .stage__btns
-            +button({href: "stage4.html", text: "prev", altcolor: true})(data-pjax= true).stage__prev
-            +button({href: "profile.html", text: "complete"}).stage__next
+            +button({href: 'stage4.html', text: 'prev', altcolor: true})(data-pjax= true).stage__prev
+            +button({href: 'profile.html', text: 'complete'}).stage__next

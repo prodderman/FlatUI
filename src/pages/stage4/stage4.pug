@@ -8,7 +8,7 @@ include ../../components/toggle/toggle
 include ../../components/button/button
 
 block variables
-  - const pageName = "Stage"
+  - const pageName = 'Stage'
 
 block title
   | Registration
@@ -18,66 +18,66 @@ block main
     +layout__container({mix: 'page__content', wrap: 'wrap'})
       +stages({count: 5, current: 4})
     +layout__container({mix: 'page__content', wrap: 'wrap'})
-      form.stage.p-stage__form(method="POST" action="")
+      form.stage.p-stage__form(method='POST' action='')
         .stage__fieldset
           .stage__column
             h2.stage__h2 main info
-            +input({mix: "stage__input",
-                    name: "name",
-                    placeholder: "Name",
+            +input({mix: 'stage__input',
+                    name: 'name',
+                    placeholder: 'Name',
                     require: true,
                     tabindex: 1})
-            +input({mix: "stage__input",
-                    name: "email",
-                    placeholder: "E-mail",
+            +input({mix: 'stage__input',
+                    name: 'email',
+                    placeholder: 'E-mail',
                     require: true,
                     tabindex: 2})
-            +select({mix: "stage__select",
-                    name: "gender",
+            +select({mix: 'stage__select',
+                    name: 'gender',
                     require: true,
-                    placeholder: "Gender",
+                    placeholder: 'Gender',
                     tabindex: 3,
                     options: {
-                      male: "Male",
-                      female: "Female"
+                      male: 'Male',
+                      female: 'Female'
                     }})
-            +input({mix: "stage__input",
-                    name: "password",
-                    type: "password",
-                    placeholder: "Password",
+            +input({mix: 'stage__input',
+                    name: 'password',
+                    type: 'password',
+                    placeholder: 'Password',
                     require: true,
                     tabindex: 4})
-            +input({mix: "stage__input",
-                    name: "password",
-                    type: "password",
-                    placeholder: "Confirm password",
+            +input({mix: 'stage__input',
+                    name: 'password',
+                    type: 'password',
+                    placeholder: 'Confirm password',
                     require: true,
                     tabindex: 5})
           .stage__column
             h2.stage__h2 other info
-            +input({mix: "stage__input",
-                    name: "phone",
-                    placeholder: "Phone number",
+            +input({mix: 'stage__input',
+                    name: 'phone',
+                    placeholder: 'Phone number',
                     require: true,
                     tabindex: 6})
-            +input({mix: "stage__input",
-                    name: "profession",
-                    placeholder: "Profession",
+            +input({mix: 'stage__input',
+                    name: 'profession',
+                    placeholder: 'Profession',
                     require: true,
                     tabindex: 7})
-            +input({mix: "stage__input",
-                    name: "city",
-                    placeholder: "City",
+            +input({mix: 'stage__input',
+                    name: 'city',
+                    placeholder: 'City',
                     require: true,
                     tabindex: 7})
-            +toggle({mix: "stage__toggle",
-                    name: "notifications"}) Receive notifications
-            +toggle({mix: "stage__toggle",
-                    name: "subscribe"}) Subscribe to newsletter
+            +toggle({mix: 'stage__toggle',
+                    name: 'notifications'}) Receive notifications
+            +toggle({mix: 'stage__toggle',
+                    name: 'subscribe'}) Subscribe to newsletter
         .stage__footer
           .stage__diagram
             +percentage({percent: 64})
             .stage__label-diagram % Page Filling
           .stage__btns
-            +button({href: "authorization.html", text: "prev", altcolor: true})(data-pjax= true).stage__prev
-            +button({href: "stage5.html", text: "next"})(data-pjax= true).stage__next
+            +button({href: 'authorization.html', text: 'prev', altcolor: true})(data-pjax= true).stage__prev
+            +button({href: 'stage5.html', text: 'next'})(data-pjax= true).stage__next

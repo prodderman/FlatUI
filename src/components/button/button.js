@@ -2,33 +2,33 @@ import './button.styl';
 
 export class Buttons {
   constructor() {
-    this.addEventHandlers();
+    this._addEventHandlers();
   }
 
-  addEventHandlers() {
-    $(document).on('click', '.js-btn, .js-btn .ripple', (e) => {
-      this.Ripple(e, $(e.target));
+  _addEventHandlers() {
+    $(document).on('click', '.js-btn, .js-btn .ripple', (event) => {
+      this._ripple(event, $(event.target));
     })
   }
 
-  Ripple(e, element) {
-    const btn = element.is('.ripple') ? element.parent(".js-btn") : element;
-    const div = $('<div/>', {
+  _ripple(event, $element) {
+    const $btn = $element.is('.ripple') ? $element.parent('.js-btn') : $element;
+    const $div = $('<div/>', {
       class: 'ripple'
     });
-    const offSet = btn.offset();
-    const x = e.pageX - offSet.left;
-    const y = e.pageY - offSet.top;
-    div.css({
+    const offSet = $btn.offset();
+    const x = event.pageX - offSet.left;
+    const y = event.pageY - offSet.top;
+    $div.css({
       top: `${y}px`,
       left: `${x}px`
     });
-    btn.addClass('btn--ripple');
-    btn.append(div);
+    $btn.addClass('btn--ripple');
+    $btn.append($div);
 
-    div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', (e) => {
-      div.remove();
-      btn.not(":has('.ripple')").removeClass('btn--ripple');
+    $div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', (event) => {
+      $div.remove();
+      $btn.not(':has(".ripple")').removeClass('btn--ripple');
     });
   }
 }

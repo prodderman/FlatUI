@@ -1,10 +1,10 @@
-mixin activity({href="#",alt="Activity", img} = {})
+mixin activity({href='/mock-address/change-me',alt='Activity', img} = {})
   - 
     let src;
     try {
       src=require(`../../img/${img}`);
     } 
-    catch(e) {
+    catch(event) {
       src= false
     }
     

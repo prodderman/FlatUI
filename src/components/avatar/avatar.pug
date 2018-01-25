@@ -4,7 +4,7 @@ mixin avatar({img} = {})
     try {
       src=require(`../../img/${img}`);
     } 
-    catch(e) {
+    catch(event) {
       src= require(`../../components/avatar/img/user-icon.png`);
     }
     
@@ -17,7 +17,7 @@ mixin avatar-profile({img} = {})
     try {
       src=require(`../../img/${img}`);
     } 
-    catch(e) {
+    catch(event) {
       src= require(`../../components/avatar/img/user-icon.png`);
     }
     

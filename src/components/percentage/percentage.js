@@ -3,19 +3,19 @@ import 'jquery-circle-progress';
 
 export class Percentage {
   constructor(diagram) {
-    this.diagram = $(diagram);
-    this.render();
+    this.$diagram = $(diagram);
+    this._render();
   }
 
-  render() {
-    this.diagram.find('canvas').remove();
-    const percent = parseFloat(this.diagram.data('percent')/100);
-    const size = this.diagram.width();
-    const start = this.diagram.data("start");
-    const fill = this.diagram.data("color");
-    const emptyFill = this.diagram.data("emptycolor");
+ _render() {
+    this.$diagram.find('canvas').remove();
+    const percent = parseFloat(this.$diagram.data('percent')/100);
+    const size = this.$diagram.width();
+    const start = this.$diagram.data('start');
+    const fill = this.$diagram.data('color');
+    const emptyFill = this.$diagram.data('emptycolor');
     const time = 1500;
-    this.diagram.circleProgress({
+    this.$diagram.circleProgress({
       value: percent,
       size: size,
       fill: fill,

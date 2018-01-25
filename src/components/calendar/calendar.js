@@ -5,19 +5,19 @@ import './calendar.styl';
 
 class Calendar {
   constructor(calendar) {
-    this.calendar = $(calendar);
-    this.Init();
+    this.$calendar = $(calendar);
+    this._init();
   }
 
-  Init() {
-    const nowNode = this.calendar.children(".calendar__now");
+  _init() {
+    const $nowNode = this.$calendar.children('.calendar__now');
     const _goToTodaySave = $.datepicker._gotoToday;
     const _selectDateSave = $.datepicker._selectDate;
-    nowNode.text(new Date().getDate());
+    $nowNode.text(new Date().getDate());
 
     $.datepicker._selectDate = function(id, dateStr) {
       _selectDateSave.call(this, id, dateStr);
-      $( id ).datepicker("setDate", dateStr);
+      $( id ).datepicker('setDate', dateStr);
     };
 
     $.datepicker._gotoToday = function(id) {
@@ -25,7 +25,7 @@ class Calendar {
       this._selectDate(id);
     };
     
-    this.calendar.datepicker({
+    this.$calendar.datepicker({
       inline: true,
       selectOtherMonths: true,
       dayNamesMin: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
@@ -33,7 +33,7 @@ class Calendar {
       showOtherMonths: true,
       firstDay: 1,
       onSelect: function(date, inst) {
-        nowNode.text(new Date(date).getDate());
+        $nowNode.text(new Date(date).getDate());
       }
     });
   }

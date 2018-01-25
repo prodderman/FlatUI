@@ -2,33 +2,33 @@ include ../input/input
 include ../button/button
 include ../textarea/textarea
 
-mixin form({method = "POST", action="", enctype} = {})
+mixin form({method = 'POST', action='', enctype} = {})
   form.feedback.js-feedback(
     data-parsley-validate
     method=method
     action=action
   )&attributes(attributes)
     +input({
-      name: "name",
-      placeholder: "Your Name",
+      name: 'name',
+      placeholder: 'Your Name',
       required: true,
-      mix: "feedback__input"
+      mix: 'feedback__input'
     })
     
     +input({
-      name: "email",
-      type: "email",
-      placeholder: "Your Email",
-      pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.toString(),
+      name: 'email',
+      type: 'email',
+      placeholder: 'Your Email',
+      pattern: /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.toString(),
       required: true,
-      mix: "feedback__input"
+      mix: 'feedback__input'
     })
 
     +textarea({
-      name: "message",
-      placeholder: "Your Message",
+      name: 'message',
+      placeholder: 'Your Message',
       required: true,
-      mix: "feedback__textarea"
+      mix: 'feedback__textarea'
     })
     .feedback__btn
-      +button({submit: true, text: "Submit"})
+      +button({submit: true, text: 'Submit'})
