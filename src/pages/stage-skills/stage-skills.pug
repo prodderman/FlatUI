@@ -6,7 +6,7 @@ include ../../components/slider/slider
 include ../../components/button/button
 
 block variables
-  - const pageName = 'Stage'
+  - const pageName = 'Stage skills'
 
 block title 
   | Registration
@@ -51,5 +51,5 @@ block main
             +percentage({percent: 85, start: 64})
             .stage__label-diagram % Page Filling
           .stage__btns
-            +button({href: 'stage4.html', text: 'prev', altcolor: true})(data-pjax= true).stage__prev
+            +button({href: 'stage-info.html', text: 'prev', altcolor: true})(data-pjax= true).stage__prev
             +button({href: 'profile.html', text: 'complete'}).stage__next

@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const config = require('webpack-config');
 const CleanPlugin = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const pages = [];
 
@@ -20,7 +21,6 @@ const htmls = pages.map(fileName => new HtmlWebpackPlugin({
   alwaysWriteToDisk: true,
   inject: 'body',
   hash: true,
-  favicon: './src/global/favicon.png',
 }));
 
 module.exports = new config.default().merge({
@@ -43,6 +43,7 @@ module.exports = new config.default().merge({
   plugins: [
     new CleanPlugin(['./dist'], { root: path.resolve(__dirname, '..') }),
     new webpack.ProgressPlugin(),
+    new FaviconsWebpackPlugin('./src/global/favicon.png'),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
