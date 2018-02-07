@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const config = require('webpack-config');
 const CleanPlugin = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const pages = [];
 
@@ -43,7 +42,6 @@ module.exports = new config.default().merge({
   plugins: [
     new CleanPlugin(['./dist'], { root: path.resolve(__dirname, '..') }),
     new webpack.ProgressPlugin(),
-    new FaviconsWebpackPlugin('./src/global/favicon.png'),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

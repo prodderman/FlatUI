@@ -42,7 +42,7 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
         }, ]
       },
       {
-        test: /\.(png|jpg|svg|ttf|eot|woff|woff2|gif)$/,
+        test: /\.(png|jpg|svg|gif|ttf|eot|woff|woff2|xml|json|webmanifest)$/,
         loader: 'file-loader?name=[path][name].[ext]'
       }
     ]

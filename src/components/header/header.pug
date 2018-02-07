@@ -5,7 +5,7 @@ mixin header({} = {})
   .header
     .header__logo
       a.header__logo-link(href='news-events.html' data-pjax=true)
-        img(src=require('../../global/favicon.png')).header__logo-img
+        img(src=require('../../global/favicons/android-chrome-192x192.png')).header__logo-img
     .header__content
       a.header__profile-link(href='profile.html', data-pjax=true)
         +avatar().header__avatar
@@ -20,7 +20,7 @@ mixin header-noauth({} = {})
   .header
     .header__logo
       a.header__logo-link(href='/mock-address/change-me')
-        img(src=require('../../global/favicon.png')).header__logo-img
+        img(src=require('../../global/favicons/android-chrome-192x192.png')).header__logo-img
     .header__content
       a.header__auth-link(href='authorization.html' data-pjax=true) Sing in
        
