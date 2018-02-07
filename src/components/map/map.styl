@@ -1,55 +1,55 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .map
-  position: relative
-  flex-basis: 100%
-  overflow: hidden
-  border-radius: 3px
+  position relative
+  flex-basis 100%
+  overflow hidden
+  border-radius 3px
 
   &__location
-    height: 203px
+    height 203px
 
     & > ymaps,
     & > ymaps > ymaps
-      width: 100% !important
+      width 100% !important
   
   &__overlay
-    display: flex
-    padding: 3% 4.5%
-    color: white
-    background-color: $c_red
-    font-family: Lato, sans-serif
-    font-size: 2.5rem
-    align-items: center
-    font-weight: 200
+    display flex
+    padding 3% 4.5%
+    color white
+    background-color $c_red
+    font-family Lato, sans-serif
+    font-size 2.5rem
+    align-items center
+    font-weight 200
     
   &__text
-    font-size: 30px
+    font-size 30px
   
   &__address
-    flex-grow: 1
-    text-align: left
-    text-transform: uppercase
-    font-family: Lato, sans-serif
-    font-size: 12px
-    letter-spacing: 0.1em
-    line-height: 1.1em
-    font-weight: bold
-    margin-left: 4%
-    margin-right: 4%
+    flex-grow 1
+    text-align left
+    text-transform uppercase
+    font-family Lato, sans-serif
+    font-size 12px
+    letter-spacing 0.1em
+    line-height 1.1em
+    font-weight bold
+    margin-left 4%
+    margin-right 4%
   
   &__controls
-    display: flex
+    display flex
     
   &__btn
-    background-color: transparent
-    width: 25px
+    background-color transparent
+    width 25px
 
     &:not(:last-child)
-      margin-right: 20px
+      margin-right 20px
 
     & svg
-      width: 100%
+      width 100%
 
     & svg path
-      fill: white
+      fill white

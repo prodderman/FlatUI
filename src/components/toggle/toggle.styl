@@ -1,56 +1,56 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .toggle
 
   input[type='checkbox']
-    display: none;
+    display none
 
   &__label 
-    display: flex
-    justify-content: flex-start
-    align-items: center
+    display flex
+    justify-content flex-start
+    align-items center
     cursor pointer
-    min-height: 28px
+    min-height 28px
 
   &__viewport
     position relative
-    display: block
-    width: 60px
-    height: 24px
-    border-radius: 100px
-    background-color: $c_lightgray
+    display block
+    width 60px
+    height 24px
+    border-radius 100px
+    background-color $c_lightgray
     overflow hidden
-    cursor: pointer
+    cursor pointer
 
   &__track
-    display: flex
-    justify-content: space-between
-    align-items: center
+    display flex
+    justify-content space-between
+    align-items center
     height 100%
-    width: 160%
-    padding: 0 5px
-    transform: translateX(-35px);
-    transition: 0.2s
+    width 160%
+    padding 0 5px
+    transform translateX(-35px)
+    transition 0.2s
 
   &__text
-    color: white
-    width: 35%
-    font-size: 12px
-    font-weight: 800
-    text-align: center
-    text-transform: uppercase
+    color white
+    width 35%
+    font-size 12px
+    font-weight 800
+    text-align center
+    text-transform uppercase
 
   &__knob
-    width: 18px
-    height: 18px
-    background-color: white
-    border-radius: 50%
+    width 18px
+    height 18px
+    background-color white
+    border-radius 50%
 
   &__field:checked + .toggle__track
-    transform: translateX(0);
-    background-color: $c_green
+    transform translateX(0)
+    background-color $c_green
 
   &__label-text
-    font-family: SourceSansPro, sans-serif
-    color: $c_black
-    margin-left: 0.5rem
+    font-family SourceSansPro, sans-serif
+    color $c_black
+    margin-left 0.5rem

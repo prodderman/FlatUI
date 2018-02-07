@@ -1,89 +1,89 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .btn
   position relative
-  display: block
-  font-size: 12px
+  display block
+  font-size 12px
   color white
-  border: 1px solid $c_green
-  background-color: $c_green
-  border-radius: 3px;
-  min-width: 118px;
-  padding: 0.5rem 1rem
-  --shadow-color: $c_darkgreen
-  --bg-color: $c_green
-  box-shadow: 0 3px 0 0 var(--shadow-color)
-  font-weight: 800
-  text-transform: uppercase
-  text-align: center
-  cursor: pointer
-  overflow: hidden
-  text-decoration: none
-  letter-spacing: 0.04em
-  margin-bottom: 3px
+  border 1px solid $c_green
+  background-color $c_green
+  border-radius 3px
+  min-width 118px
+  padding 0.5rem 1rem
+  --shadow-color $c_darkgreen
+  --bg-color $c_green
+  box-shadow 0 3px 0 0 var(--shadow-color)
+  font-weight 800
+  text-transform uppercase
+  text-align center
+  cursor pointer
+  overflow hidden
+  text-decoration none
+  letter-spacing 0.04em
+  margin-bottom 3px
 
   &:focus
-    outline: none
+    outline none
 
   &:active
-    transform: translateY(3px)
-    box-shadow: 0 0 0 0 var(--shadow-color)
+    transform translateY(3px)
+    box-shadow 0 0 0 0 var(--shadow-color)
 
   &--red
-    --bg-color: $c_red
-    --shadow-color: $c_darkred
-    border-color: $c_red
-    background-color: $c_red
+    --bg-color $c_red
+    --shadow-color $c_darkred
+    border-color $c_red
+    background-color $c_red
 
   &--small
-    font-size: 10px
-    width: auto;
-    min-width: 84px
-    padding: 0.3rem 1rem
-    height: auto;
-    box-shadow: 0 2px var(--shadow-color)
-    margin-bottom: 2px
+    font-size 10px
+    width auto
+    min-width 84px
+    padding 0.3rem 1rem
+    height auto
+    box-shadow 0 2px var(--shadow-color)
+    margin-bottom 2px
     
     &:active
-      transform: translateY(2px)
+      transform translateY(2px)
 
   &--white
-    color: $c_green
-    background-color: white
+    color $c_green
+    background-color white
 
     &.btn--red
-      color: $c_red
+      color $c_red
 
     &:hover
-      color: white
-      background-color: var(--bg-color)
+      color white
+      background-color var(--bg-color)
 
   &--ripple 
     color white !important
-    background-color: var(--bg-color)
+    background-color var(--bg-color)
     transition background .7s
 
   & .ripple
-    position: absolute
-    z-index: 1
-    width: 0
-    height: 0
-    transform: translate(-50%, -50%);
-    animation: ripple .7s
-    border-radius: 50%
-    opacity: 0.10
-    background: $c_lightgray
+    position absolute
+    z-index 1
+    width 0
+    height 0
+    transform translate(-50%, -50%)
+    animation ripple .7s
+    border-radius 50%
+    opacity 0.10
+    background $c_lightgray
 
     @keyframes ripple {
       0% {
-        opacity: 0
+        opacity 0
       }
       25% {
-        opacity: .50
+        opacity .50
       }
       100% {
-        width: 200%
-        padding-bottom: 200%
-        opacity: 0
+        width 200%
+        padding-bottom 200%
+        opacity 0
       }
     }

@@ -1,73 +1,73 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 :root
-  --slider-color: $c_green
+  --slider-color $c_green
 
 .slider
-  flex: 1 1 auto
+  flex 1 1 auto
 
   &.ui-widget
-    background-color: $c_lightgray
-    border: none
-    border-radius: 40px
-    height: 6px
+    background-color $c_lightgray
+    border none
+    border-radius 40px
+    height 6px
 
     .ui-slider
     
       &-handle
-        border-radius: 50%
-        border: none
-        cursor: move
-        outline: none
-        top: -.4em;
-        background-color: var(--slider-color)
+        border-radius 50%
+        border none
+        cursor move
+        outline none
+        top -.4em
+        background-color var(--slider-color)
 
       &:focus
-        outline: none
+        outline none
 
       &-range-min
-        background-color: var(--slider-color)
+        background-color var(--slider-color)
       
       &-tip
-        font-family: Lato, sans-serif
-        font-size: 13px
-        line-height: 13px
-        font-weight: bold
-        width: 35px
-        border-radius: 4px
+        font-family Lato, sans-serif
+        font-size 13px
+        line-height 13px
+        font-weight bold
+        width 35px
+        border-radius 4px
         color white
-        top: -2.6em
-        height: auto
-        letter-spacing: 1px
-        padding: 0.6em 0 0.35em
-        border: none
-        background-color: var(--slider-color)
+        top -2.6em
+        height auto
+        letter-spacing 1px
+        padding 0.6em 0 0.35em
+        border none
+        background-color var(--slider-color)
 
         &:before
-          bottom: -9px
-          border-top-color: var(--slider-color)
+          bottom -9px
+          border-top-color var(--slider-color)
 
         &:after
-          bottom: -9px
+          bottom -9px
           border-top-color var(--slider-color)
 
       &-pip
         top 14px
 
         &:hover .ui-slider-label
-          font-weight: 800
+          font-weight 800
         
         &:last-of-type
-          margin-left: -19px
+          margin-left -19px
       
       &-line
-        display: none
+        display none
 
       &-label
-        font-family: Lato, sans-serif
-        font-size: 11px
-        font-weight: 800
+        font-family Lato, sans-serif
+        font-size 11px
+        font-weight 800
         color $c_lightgray
 
   &--red
-    --slider-color: $c_red
+    --slider-color $c_red

@@ -1,35 +1,35 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .tickbox
 
   input[type='checkbox']
-    display: none;
+    display none
 
   &__label 
-    display: flex
-    justify-content: flex-start
-    align-items: center
+    display flex
+    justify-content flex-start
+    align-items center
     cursor pointer
   
   &__check
     color $c_gray
-    width: 24px
-    height: 24px
-    line-height: 24px
-    text-align: center
-    font-size: 12px
-    background-color: $c_lightgray
-    border-radius: 50%
+    width 24px
+    height 24px
+    line-height 24px
+    text-align center
+    font-size 12px
+    background-color $c_lightgray
+    border-radius 50%
 
     &:before 
-      font-family: FontAwesome
-      content: '\F00C';
+      font-family FontAwesome
+      content '\F00C'
 
   &__field:checked + .tickbox__check
-    background-color: $c_green
-    color: white
+    background-color $c_green
+    color white
 
   &__label-text
-    font-family: SourceSansPro, sans-serif
-    color: $c_black
-    margin-left: 0.5rem
+    font-family SourceSansPro, sans-serif
+    color $c_black
+    margin-left 0.5rem

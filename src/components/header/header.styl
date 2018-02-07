@@ -1,77 +1,77 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .header
-  display: flex
-  flex: 1 0 100%
-  padding: 0.5rem 0
-  align-items: stretch
+  display flex
+  flex 1 0 100%
+  padding 0.5rem 0
+  align-items stretch
   
   height 67px
 
   & > *
-    margin: 0 0.65rem
+    margin 0 0.65rem
 
   &__logo
-    flex: 1
+    flex 1
 
   &__logo-link
     display block
-    width: 60px
+    width 60px
 
   &__logo-img
-    max-width: 100%
+    max-width 100%
 
   &__search-wrap
-    display: flex
-    align-items: center
-    max-width: 300px
-    flex-grow: 1
+    display flex
+    align-items center
+    max-width 300px
+    flex-grow 1
 
   &__content
-    display: flex
-    flex-direction: row-reverse
-    align-items: center
-    justify-content: flex-start
-    flex: 1 1 auto
+    display flex
+    flex-direction row-reverse
+    align-items center
+    justify-content flex-start
+    flex 1 1 auto
 
-    @media (max-width: 1025px)
-      display: none
+    @media (max-width 1025px)
+      display none
     
     & > a
-      font-family: Lato, sans-serif
-      font-weight: bold
-      display: flex
-      align-items: center
+      font-family Lato, sans-serif
+      font-weight bold
+      display flex
+      align-items center
       color white
-      transition: 0.2s
+      transition 0.2s
 
       &:hover
-        color: $c_red
+        color $c_red
 
   &__logout
-    margin-right: 1rem
+    margin-right 1rem
 
   &__profile-link
-    display: flex
-    flex-direction: row-reverse
+    display flex
+    flex-direction row-reverse
 
   &__name
-    margin-right: 0.9rem
+    margin-right 0.9rem
 
   &__avatar
-    width: 50px
-    height: 50px
+    width 50px
+    height 50px
 
   &__menu-trigger
-    display: flex
-    align-items: center
-    cursor: pointer
-    color: white
-    font-size: 26px
+    display flex
+    align-items center
+    cursor pointer
+    color white
+    font-size 26px
     
     &:before
-      content: '\f0c9'
-      font-family: FontAwesome
+      content '\f0c9'
+      font-family FontAwesome
 
-    @media (min-width: 1025px)
-      display: none
+    @media (min-width 1025px)
+      display none

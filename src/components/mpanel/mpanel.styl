@@ -1,73 +1,73 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .mpanel 
-  display: none
-  position: fixed
-  flex-direction: column
-  justify-content: space-between
-  top: 67px
-  bottom: 0
-  right: 0
-  z-index: 0
-  padding: 1rem 
-  width: 300px
-  background-color: white
-  box-shadow: 0 0 2px 1px $c_lightgray
-  -webkit-overflow-scrolling: touch
-  min-height: calc(100vh - 67px)
-  overflow-y: auto
+  display none
+  position fixed
+  flex-direction column
+  justify-content space-between
+  top 67px
+  bottom 0
+  right 0
+  z-index 0
+  padding 1rem 
+  width 300px
+  background-color white
+  box-shadow 0 0 2px 1px $c_lightgray
+  -webkit-overflow-scrolling touch
+  min-height calc(100vh - 67px)
+  overflow-y auto
 
-  @media screen and (min-width: 1025px)
-    display: block
+  @media screen and (min-width 1025px)
+    display block
 
   &__user
-    display: flex
-    flex-direction: column
-    margin-bottom: 1rem
+    display flex
+    flex-direction column
+    margin-bottom 1rem
 
     & > a
-      font-family: Lato, sans-serif
-      font-weight: bold
+      font-family Lato, sans-serif
+      font-weight bold
       color $c_black
-      transition: 0.2s
+      transition 0.2s
 
       &:hover
-        color: $c_red
+        color $c_red
 
   &__logout
-    text-align: right
-    margin-right: 1rem
+    text-align right
+    margin-right 1rem
 
   &__profile-link
-    display: flex
-    align-items: center
+    display flex
+    align-items center
 
   &__name
-    margin-left: 0.9rem
+    margin-left 0.9rem
 
   &__menu
-    margin-bottom: 1rem
+    margin-bottom 1rem
 
 .slideout-panel
-  position: relative
-  z-index: 1
+  position relative
+  z-index 1
 
 .slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel
-  overflow-y: hidden
+  overflow-y hidden
 
 .slideout-open .slideout-panel
   &:before
-    content: ''
-    position: absolute
-    display: block
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: transparent
-    z-index: 999
+    content ''
+    position absolute
+    display block
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background transparent
+    z-index 999
 
 .slideout-open .slideout-menu
-  display: block
+  display block

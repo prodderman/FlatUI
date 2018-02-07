@@ -1,65 +1,65 @@
-@import '~global/vars.styl';
+@import '~global/vars.styl'
 
 .select
-  width: 100%
+  width 100%
   
   .jq-selectbox
-    width: 100%
+    width 100%
 
     &.focused .jq-selectbox__select
     &.opened .jq-selectbox__select
-      box-shadow: 0 0 3px 0 $c_green
+      box-shadow 0 0 3px 0 $c_green
 
     &__dropdown
-      font-family: SourceSansPro, sans-serif
-      font-size: 14px;
-      width: 100%
-      background-color: white
-      text-align: left
-      border: 1px solid $c_lightgray
-      border-radius: 3px
+      font-family SourceSansPro, sans-serif
+      font-size 14px
+      width 100%
+      background-color white
+      text-align left
+      border 1px solid $c_lightgray
+      border-radius 3px
 
       .select__option
-        color: black
-        padding: 5px 13px
-        cursor: pointer
+        color black
+        padding 5px 13px
+        cursor pointer
 
         &:hover
           color white
-          background-color: $c_green
+          background-color $c_green
 
     &__select
-      text-align: left
-      border: none 
-      background: $c_lightgray
-      box-shadow: none
-      border-radius: 3px
-      color: black
-      padding: 5px 13px
-      min-height: 28px
+      text-align left
+      border none 
+      background $c_lightgray
+      box-shadow none
+      border-radius 3px
+      color black
+      padding 5px 13px
+      min-height 28px
 
     &__select-text
-      width: 100% !important
-      font-family: SourceSansPro, sans-serif
-      font-size: 14px;
+      width 100% !important
+      font-family SourceSansPro, sans-serif
+      font-size 14px
 
       &.placeholder
-        color: $c_gray
+        color $c_gray
     
     &__trigger
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 33px;
-      background-color: $c_green;
-      border: none;
-      cursor: pointer;
-      color: white
-      text-align: center
-      font-size: 22px
-      line-height: @font-size + 4
+      position absolute
+      right 0
+      top 0
+      height 100%
+      width 33px
+      background-color $c_green
+      border none
+      cursor pointer
+      color white
+      text-align center
+      font-size 22px
+      line-height @font-size + 4
 
       &:before
-        font-family: FontAwesome;
-        content: '\f107';
+        font-family FontAwesome
+        content '\f107'
