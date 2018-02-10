@@ -50,61 +50,61 @@
     for $i in (1..30)
       $basis = $i * 50
 
-      &--basis-{$basis}.page__container 
+      &_basis-{$basis}.page__container 
         flex-basis $basis px
 
     for $grow in (0..10)
-      &--grow-{$grow}
+      &_grow-{$grow}
         flex-grow $grow
 
     for $shrink in (0..10)
-      &--shrink-{$shrink}
+      &_shrink-{$shrink}
         flex-shrink $shrink
 
-    &--block
+    &_block
       display block
 
-    &--left
+    &_left
       flex-basis 48%;
       flex-grow 0
       margin-right auto
 
-    &--right
+    &_right
       flex-basis 48%;
       flex-grow 0
       margin-left auto
 
-    &--center
+    &_center
       flex-grow 0
       margin-right auto
       margin-left auto
 
-    &--middle
+    &_middle
       align-items center
     
-    &--stretch
+    &_stretch
       align-items stretch
 
-    &--column 
+    &_column 
       flex-direction column
 
       & > .page__container
         flex-basis auto
 
-    &--column-reverse
+    &_column-reverse
       flex-direction column-reverse
 
       & > .page__container
         flex-basis auto
 
-    &--row-reverse
+    &_row-reverse
       flex-direction row-reverse
 
-    &--wrap
+    &_wrap
       flex-wrap wrap
 
-    &--wrap-reverse
+    &_wrap-reverse
       flex-wrap wrap-reverse
 
-    &--basis-auto.page__container
+    &_basis-auto.page__container
       flex 1 1 auto

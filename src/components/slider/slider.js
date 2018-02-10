@@ -22,15 +22,15 @@ export class Slider {
         input.val(ui.value);
       }
     });
-    if (this.slider.hasClass('slider--fill')) {
+    if (this.slider.hasClass('slider_fill')) {
       slider.slider({
         range: 'min',
       });
     }
-    if (this.slider.hasClass('slider--float')) {
+    if (this.slider.hasClass('slider_float')) {
       slider.slider('float');
     }
-    if (this.slider.hasClass('slider--pips')) {
+    if (this.slider.hasClass('slider_pips')) {
       slider.slider('pips', {
         rest: 'label',
         step: slider.slider('option', 'max')/4

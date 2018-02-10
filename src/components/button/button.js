@@ -23,12 +23,12 @@ export class Buttons {
       top: `${y}px`,
       left: `${x}px`
     });
-    $btn.addClass('btn--ripple');
+    $btn.addClass('btn_ripple');
     $btn.append($div);
 
     $div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', (event) => {
       $div.remove();
-      $btn.not(':has(".ripple")').removeClass('btn--ripple');
+      $btn.not(':has(".ripple")').removeClass('btn_ripple');
     });
   }
 }

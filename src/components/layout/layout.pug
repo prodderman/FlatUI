@@ -21,14 +21,14 @@ mixin layout__sidebar()
 mixin layout__container({display, basis, grow, shrink, wrap, direction, align, vertical, mix} = {})
   -
     let classes = ''
-    classes += display ? ' page__container--' + display : ''
-    classes += basis ? ' page__container--basis-' + basis : ''
-    classes += grow ? ' page__container--grow-' + grow : ''
-    classes += shrink ? ' page__container--shrink-' + shrink : ''
-    classes += wrap ? ' page__container--' + wrap : ''
-    classes += direction ? ' page__container--' + direction : ''
-    classes += align ? ' page__container--' + align : ''
-    classes += vertical ? ' page__container--' + vertical : ''
+    classes += display ? ' page__container_' + display : ''
+    classes += basis ? ' page__container_basis-' + basis : ''
+    classes += grow ? ' page__container_grow-' + grow : ''
+    classes += shrink ? ' page__container_shrink-' + shrink : ''
+    classes += wrap ? ' page__container_' + wrap : ''
+    classes += direction ? ' page__container_' + direction : ''
+    classes += align ? ' page__container_' + align : ''
+    classes += vertical ? ' page__container_' + vertical : ''
     classes += mix ? ' ' + mix : ''
   .page__container(class= classes)
     block
