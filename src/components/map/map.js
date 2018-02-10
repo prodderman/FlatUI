@@ -2,18 +2,18 @@ import './map.styl';
 
 export class Map {
   constructor(node) {
-    this.$map = $(node);
+    this.$ymap = $(node);
     this._init();
   }
 
   _init() {
-    const coord = this.$map.data('coord');
-    const toMarker = this.$map.find('.map__to-marker');
+    const coord = this.$ymap.data('coord');
+    const toMarker = this.$ymap.find('.map__to-marker');
     if (!(coord instanceof Array)) return;
     this.script('https://api-maps.yandex.ru/2.1/?lang=ru_RU').then(()=>{
       $('.js-map__location').empty();
       ymaps.ready(() => {
-        const map = new ymaps.Map($('.js-map__location', this.map)[0], {
+        const ymap = new ymaps.Map($('.js-map__location', this.$ymap)[0], {
           center: coord,
           zoom: 17,
           controls: []
@@ -26,13 +26,13 @@ export class Map {
           iconImageOffset: [-19, -56]
         });
 
-        this.map.on('touchmove', (event) => {
+        this.$ymap.on('touchmove', (event) => {
           event.stopPropagation();
           event.preventDefault();
         });
 
-        map.geoObjects.add(placemark);
-        toMarker.click((e) => map.panTo(placemark.geometry.getCoordinates()));     
+        ymap.geoObjects.add(placemark);
+        toMarker.click((e) => ymap.panTo(placemark.geometry.getCoordinates()));     
       });
     });
   }

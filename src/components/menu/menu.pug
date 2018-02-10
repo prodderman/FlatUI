@@ -4,6 +4,6 @@ mixin menu(menuItems = [])
       each item in menuItems
         li.menu__item
           if pageName === item.name
-            a.menu__items-link.menu__items-link--active(href=item.href data-pjax=true)= item.name
+            a.menu__items-link.menu__items-link_active(href=item.href data-pjax=true)= item.name
           else
             a.menu__items-link(href=item.href data-pjax=true)= item.name

@@ -37,7 +37,7 @@ export class Friend extends User {
 
 export class Contacts {
   constructor(node) {
-    this.contacts = $(node);
+    this.contacts = node;
     this._init();
   }
 

@@ -22,62 +22,64 @@ block main
         .stage__fieldset
           .stage__column
             h2.stage__h2 main info
-            +input({mix: 'stage__input',
-                    name: 'name',
-                    placeholder: 'Name',
-                    require: true,
-                    tabindex: 1})
-            +input({mix: 'stage__input',
-                    name: 'email',
-                    placeholder: 'E-mail',
-                    require: true,
-                    tabindex: 2})
-            +select({mix: 'stage__select',
-                    name: 'gender',
-                    require: true,
-                    placeholder: 'Gender',
-                    tabindex: 3,
-                    options: {
-                      male: 'Male',
-                      female: 'Female'
-                    }})
-            +input({mix: 'stage__input',
-                    name: 'password',
-                    type: 'password',
-                    placeholder: 'Password',
-                    require: true,
-                    tabindex: 4})
-            +input({mix: 'stage__input',
-                    name: 'password',
-                    type: 'password',
-                    placeholder: 'Confirm password',
-                    require: true,
-                    tabindex: 5})
+            .stage__input
+              +input({name: 'name',
+                      placeholder: 'Name',
+                      require: true,
+                      tabindex: 1})
+            .stage__input
+              +input({name: 'email',
+                      placeholder: 'E-mail',
+                      require: true,
+                      tabindex: 2})
+            .stage__select
+              +select({name: 'gender',
+                      require: true,
+                      placeholder: 'Gender',
+                      tabindex: 3,
+                      options: {
+                        male: 'Male',
+                        female: 'Female'
+                      }})
+            .stage__input
+              +input({name: 'password',
+                      type: 'password',
+                      placeholder: 'Password',
+                      require: true,
+                      tabindex: 4})
+            .stage__input
+              +input({name: 'password',
+                      type: 'password',
+                      placeholder: 'Confirm password',
+                      require: true,
+                      tabindex: 5})
           .stage__column
             h2.stage__h2 other info
-            +input({mix: 'stage__input',
-                    name: 'phone',
-                    placeholder: 'Phone number',
-                    require: true,
-                    tabindex: 6})
-            +input({mix: 'stage__input',
-                    name: 'profession',
-                    placeholder: 'Profession',
-                    require: true,
-                    tabindex: 7})
-            +input({mix: 'stage__input',
-                    name: 'city',
-                    placeholder: 'City',
-                    require: true,
-                    tabindex: 7})
-            +toggle({mix: 'stage__toggle',
-                    name: 'notifications'}) Receive notifications
-            +toggle({mix: 'stage__toggle',
-                    name: 'subscribe'}) Subscribe to newsletter
+            .stage__input
+              +input({name: 'phone',
+                      placeholder: 'Phone number',
+                      require: true,
+                      tabindex: 6})
+            .stage__input
+              +input({name: 'profession',
+                      placeholder: 'Profession',
+                      require: true,
+                      tabindex: 7})
+            .stage__input
+              +input({name: 'city',
+                      placeholder: 'City',
+                      require: true,
+                      tabindex: 7})
+            .stage__toggle
+              +toggle({name: 'notifications'}) Receive notifications
+            .stage__toggle
+              +toggle({name: 'subscribe'}) Subscribe to newsletter
         .stage__footer
           .stage__diagram
             +percentage({percent: 64})
             .stage__label-diagram % Page Filling
           .stage__btns
-            +button({href: 'authorization.html', text: 'prev', altcolor: true})(data-pjax= true).stage__prev
-            +button({href: 'stage-skills.html', text: 'next'})(data-pjax= true).stage__next
+            .stage__prev
+              +button({href: 'authorization.html', text: 'prev', altcolor: true})(data-pjax= true)
+            .stage__next
+              +button({href: 'stage-skills.html', text: 'next'})(data-pjax= true).

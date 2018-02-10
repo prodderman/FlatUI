@@ -65,10 +65,10 @@ export class Messenger {
           },
           complete: () => {
             const msgWrap = $('<div/>', {
-              class: 'messenger__msg-wrap messenger__msg-wrap--out'
+              class: 'messenger__msg-wrap messenger__msg-wrap_out'
             });
             const msg = $('<div/>', {
-              class: 'messenger__msg messenger__msg--out'
+              class: 'messenger__msg messenger__msg_out'
             });
             msgWrap.append(msg.text(input.text()));
             msgContainer.append(msgWrap);

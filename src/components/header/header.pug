@@ -12,8 +12,8 @@ mixin header({} = {})
         .header__name  Ryan Reynolds
       a.header__logout(href='authorization.html') Log out
 
-    .header__search-wrap
-      +search().header__search
+    .header__search
+      +search()
     .header__menu-trigger
 
 mixin header-noauth({} = {})
@@ -24,5 +24,5 @@ mixin header-noauth({} = {})
     .header__content
       a.header__auth-link(href='authorization.html' data-pjax=true) Sing in
        
-    .header__search-wrap
-      +search().header__search    
+    .header__search
+      +search() 

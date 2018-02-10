@@ -29,13 +29,16 @@
     transform translateY(3px)
     box-shadow 0 0 0 0 var(--shadow-color)
 
-  &--red
+  &_fullwidth
+    width 100%
+
+  &_red
     --bg-color $c_red
     --shadow-color $c_darkred
     border-color $c_red
     background-color $c_red
 
-  &--small
+  &_small
     font-size 10px
     width auto
     min-width 84px
@@ -47,18 +50,18 @@
     &:active
       transform translateY(2px)
 
-  &--white
+  &_white
     color $c_green
     background-color white
 
-    &.btn--red
+    &.btn_red
       color $c_red
 
     &:hover
       color white
       background-color var(--bg-color)
 
-  &--ripple 
+  &_ripple 
     color white !important
     background-color var(--bg-color)
     transition background .7s
