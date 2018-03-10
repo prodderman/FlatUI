@@ -21,7 +21,7 @@ block main
       form.stage.p-stage__form(method='POST' action='')
         .stage__fieldset
           .stage__column
-            h2.stage__h2 main info
+            h2.stage__title main info
             .stage__input
               +input({name: 'name',
                       placeholder: 'Name',
@@ -54,7 +54,7 @@ block main
                       require: true,
                       tabindex: 5})
           .stage__column
-            h2.stage__h2 other info
+            h2.stage__title other info
             .stage__input
               +input({name: 'phone',
                       placeholder: 'Phone number',

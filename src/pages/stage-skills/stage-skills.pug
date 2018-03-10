@@ -19,7 +19,7 @@ block main
       form.stage.p-stage__form(method='POST' action='' data-parsley-validate)
         .stage__fieldset
           .stage__column
-            h2.stage__h2 SKILLS
+            h2.stage__title SKILLS
             .stage__field
               .stage__label creative
               +slider({name: 'creative', color: true, float: true, max: 12, pips: true, fill: true})
@@ -33,7 +33,7 @@ block main
               .stage__label communication
               +slider({name: 'comunication', float: true, max: 12, pips: true, fill: true})
           .stage__column
-            h2.stage__h2 SOFTWARE
+            h2.stage__title SOFTWARE
             .stage__field
               .stage__label html&css
               +slider({name: 'html-css', color: true, float: true, max: 12, pips: true, fill: true})
