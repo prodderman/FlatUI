@@ -9,7 +9,7 @@ export class Select {
   }
 
   _init() {
-    const $selectField = this.$select.find('select');
+    const $selectField = this.$select.find('.js-select__field');
     $selectField.styler();
   }
 }

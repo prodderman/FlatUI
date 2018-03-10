@@ -10,7 +10,7 @@ export class Piechart {
     const canvas = this.$diagram.find('canvas').get(0);
     const ctx = canvas.getContext('2d');
     const r = this.$diagram.width() / 2;
-    const pieces = this.$diagram.find('.piechart__data figure');
+    const pieces = this.$diagram.find('.js-piechart__data figure');
     let totalCount = 0;
     let prevAngle = 0;
 

@@ -4,7 +4,7 @@
 
 mixin piechart(items = [])
   .piechart.js-piechart&attributes(attributes)
-    .piechart__data(hidden) 
+    .js-piechart__data(hidden) 
       each item in items
         figure(data-name= item.name data-count= item.count data-color = item.color)
     canvas

@@ -1,6 +1,6 @@
 mixin input({type = 'text', name, pattern, placeholder, required, tabindex}={})
   .input
-      input.input__field(
+      input.input__field.js-input__field(
         type = type
         name = name
         placeholder = placeholder
@@ -8,4 +8,3 @@ mixin input({type = 'text', name, pattern, placeholder, required, tabindex}={})
         required = required
         tabindex = tabindex
       )&attributes(attributes)
-      block

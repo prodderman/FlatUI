@@ -9,8 +9,8 @@ export class Carousel {
   }
 
   _init() {
-    const $swiperContainer = this.$carousel.find('.carousel__container');
-    const $swiperWrapper = this.$carousel.find('.carousel__wrapper');
+    const $swiperContainer = this.$carousel.find('.js-carousel__container');
+    const $swiperWrapper = this.$carousel.find('.js-carousel__wrapper');
     const $height = $swiperWrapper.height();
     
     $swiperWrapper.children().map((index, node) => {
@@ -23,10 +23,10 @@ export class Carousel {
       paginationClickable: true,
       spaceBetween: 20,
       grabCursor: true,
-      pagination: this.$carousel.find('.carousel__pagination').length > 0 ? this.$carousel.find('.carousel__pagination')[0] : false,
-      nextButton: this.$carousel.find('.carousel__btn').length > 0 ? this.$carousel.find('.carousel__btn-next')[0] : false,
-      prevButton: this.$carousel.find('.carousel__btn').length > 0 ? this.$carousel.find('.carousel__btn-prev')[0] : false,
-      scrollbar: this.$carousel.find('.carousel__scrollbar').length > 0 ? this.$carousel.find('.carousel__scrollbar')[0] : false,
+      pagination: this.$carousel.find('.js-carousel__pagination').length > 0 ? this.$carousel.find('.js-carousel__pagination')[0] : false,
+      nextButton: this.$carousel.find('.js-carousel__btn-next').length > 0 ? this.$carousel.find('.js-carousel__btn-next')[0] : false,
+      prevButton: this.$carousel.find('.js-carousel__btn-prev').length > 0 ? this.$carousel.find('.js-carousel__btn-prev')[0] : false,
+      scrollbar: this.$carousel.find('.js-carousel__scrollbar').length > 0 ? this.$carousel.find('.js-carousel__scrollbar')[0] : false,
       breakpoints: {
         1024: {
           slidesPerView: 2,

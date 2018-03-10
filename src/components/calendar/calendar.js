@@ -10,7 +10,7 @@ class Calendar {
   }
 
   _init() {
-    const $nowNode = this.$calendar.children('.calendar__now');
+    const $nowNode = this.$calendar.children('.js-calendar__now');
     const _goToTodaySave = $.datepicker._gotoToday;
     const _selectDateSave = $.datepicker._selectDate;
     $nowNode.text(new Date().getDate());

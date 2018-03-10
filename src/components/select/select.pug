@@ -1,6 +1,6 @@
 mixin select({name, multiple, size, tabindex, require, mix, options={}, placeholder='Choose An Option'} = {})
   .select.js-select(class= mix)
-    select.select__field(
+    select.select__field.js-select__field(
       name= name
       multiple= multiple
       size= size

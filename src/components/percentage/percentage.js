@@ -24,7 +24,7 @@ export class Percentage {
       animationStartValue: start/100,
       animation: { duration: time} 
     }).on('circle-animation-progress', function(event, progress, stepValue) {
-      $(this).find('.percentage__text').text(Math.round(stepValue * 100));
+      $(this).find('.js-percentage__text').text(Math.round(stepValue * 100));
     });   
   }
 }

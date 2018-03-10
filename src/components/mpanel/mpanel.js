@@ -24,7 +24,7 @@ export class Mpanel {
   }
 
   _addEventHandlers() {
-    $('.page__header').on('click', this.trigger, (event) => {
+    $('.js-page__header').on('click', this.trigger, (event) => {
       this.slideout.toggle();
     });
 
@@ -34,11 +34,11 @@ export class Mpanel {
       }
     });
 
-    $('#main-id').on('pjax:start', (event) => {
+    $('.js-page__main').on('pjax:start', (event) => {
         this.slideout.close();
     });
 
-    $('#main-id').on('pjax:end', (event) => {
+    $('.js-page__main').on('pjax:end', (event) => {
       $.pjax({
         url: window.location.href,
         container: '#menu-id',
@@ -50,7 +50,7 @@ export class Mpanel {
 }
 
 $( document ).ready(() => {
-  if ($('#mpanel-id').length) {
-    new Mpanel ('#main-id', '#mpanel-id', '.header__menu-trigger');
+  if ($('.js-mpanel').length) {
+    new Mpanel ('.js-page__main', '.js-mpanel', '.header__menu-trigger');
   }
 });

@@ -17,14 +17,14 @@ export class Friend extends User {
   }
 
   _addEventHandler() {
-    const link = this.$friend.find('a.user__link');
+    const link = this.$friend.find('a.js-user__link');
     link.click((event) => {
       event.preventDefault();
       if (!this.chat) {
         const userChat = $(Messenger.template(data[this.id]))
                           .addClass('messenger-resizable')
                           .addClass('messenger-draggable');
-        $(userChat).insertBefore($('.page'));
+        $(userChat).insertBefore($('.js-page'));
         this.chat = new Messenger($(`#user_chat_${this.id}`), this);
         this.chat.setFocus()
       }
@@ -44,14 +44,14 @@ export class Contacts {
   _init() {
     data.map((user, id) => {
       const $userNode = $(Friend.template(user));
-      const $userInfo = $userNode.find('.user__info').clone();
-      $userNode.find('.user__info').remove();
-      this.contacts.find('.contacts__container').append($userNode);
+      const $userInfo = $userNode.find('.js-user__info').clone();
+      $userNode.find('.js-user__info').remove();
+      this.contacts.find('.js-contacts__container').append($userNode);
       new Friend($(`#user_${id}`), id);
     })
   }
 }
 
 $(() => {
-  new Contacts($('#contacts-id'));
+  new Contacts($('.js-contacts'));
 });

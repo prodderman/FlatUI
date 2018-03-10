@@ -6,6 +6,7 @@ mixin search({method = 'POST', action='', searchAction}={})
     action= action
     data-action= searchAction
   )&attributes(attributes)
-    +input({mix: 'search__input', name: 'search', placeholder: 'Search'})(autocomplete='off')
+    .search__input
+      +input({name: 'search', placeholder: 'Search'})(autocomplete='off')
       button.search__btn(type= 'submit')
-    ul.search__result-list
+    ul.search__result-list.js-search__result-list

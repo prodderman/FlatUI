@@ -7,8 +7,8 @@ export class Search {
   }
 
   _addEventHadlers() {
-    const field = this.$search.find('input');
-    const seacrhList = this.$search.find('ul.search__result-list');
+    const field = this.$search.find('.js-input__field');
+    const seacrhList = this.$search.find('ul.js-search__result-list');
     field.on('change keyup', (e) => {
       if (field.val().length >= 2) {
         $.ajax({

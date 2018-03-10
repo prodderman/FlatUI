@@ -21,12 +21,12 @@ export class Messenger {
   }
 
   setFocus() {
-    this.$messenger.find('.messenger__input').focus();
-    this._placeCaretAtEnd(this.$messenger.find('.messenger__input').get(0));
+    this.$messenger.find('.js-messenger__input').focus();
+    this._placeCaretAtEnd(this.$messenger.find('.js-messenger__input').get(0));
   }
 
   _init() {
-    this.$messenger.find('.messenger__chat').mCustomScrollbar({
+    this.$messenger.find('.js-messenger__chat').mCustomScrollbar({
       axis: 'y',
       scrollInertia: 7,
       theme: 'dark'
@@ -41,7 +41,7 @@ export class Messenger {
 
     if (this.$messenger.hasClass('messenger-draggable')) {
       this.$messenger.draggable({
-        handle: this.$messenger.find('.messenger__name'),
+        handle: this.$messenger.find('.js-messenger__name'),
         containment: 'window',
         scroll: false
       });
@@ -51,8 +51,8 @@ export class Messenger {
   _addEventHandlers() {
     const btnClose = this.$messenger.find('.js-messenger__close');
     const btnSend = this.$messenger.find('.js-messenger__btn');
-    const input = this.$messenger.find('.messenger__input');
-    const msgContainer = this.$messenger.find('ul.messenger__tape');
+    const input = this.$messenger.find('.js-messenger__input');
+    const msgContainer = this.$messenger.find('ul.js-messenger__tape');
 
     btnSend.click((e) => {
       if (input.text()) {
@@ -72,7 +72,7 @@ export class Messenger {
             });
             msgWrap.append(msg.text(input.text()));
             msgContainer.append(msgWrap);
-            this.$messenger.find('.messenger__chat').mCustomScrollbar('scrollTo', 'last');
+            this.$messenger.find('.js-messenger__chat').mCustomScrollbar('scrollTo', 'last');
             input.empty();
           }
         });

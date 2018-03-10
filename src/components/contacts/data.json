@@ -4,7 +4,7 @@
     "name": "Stephen King",
     "profession": "writer",
     "img": "user-0.jpg",
-    "href": "#",
+    "href": "/mock-address/change-me",
     "social": {
       "fb": "https://fb.com",
       "tw": "https://twitter.com"
@@ -25,7 +25,7 @@
     "name": "John Smith",
     "profession": "ux designer",
     "img": "user-1.jpg",
-    "href": "#",
+    "href": "/mock-address/change-me",
     "social": {
       "fb": "https://fb.com"
     },
@@ -42,7 +42,7 @@
     "name": "Sarah Brown",
     "profession": "developer",
     "img": "user-2.jpg",
-    "href": "#",
+    "href": "/mock-address/change-me",
     "social": {
       "fb": "https://fb.com",
       "tw": "https://twitter.com",
@@ -60,7 +60,7 @@
     "name": "Elon Musk",
     "profession": "engenier",
     "img": "user-3.jpg",
-    "href": "#",
+    "href": "/mock-address/change-me",
     "social": {
       "fb": "https://fb.com"
     },
@@ -75,7 +75,7 @@
     "id": 4,
     "name": "Artemiy Lebedev",
     "profession": "designer",
-    "href": "#",
+    "href": "/mock-address/change-me",
     "social": {
       "fb": "https://fb.com",
       "tw": "https://twitter.com",
