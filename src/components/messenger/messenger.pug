@@ -6,8 +6,9 @@ mixin messenger({name='user name', id, img, messages=[], dialed} = {})
     button.messenger__close.js-messenger__close
     .messenger__header
       .messenger__name= name
-      .messenger__avatar
-        +avatar({img: img})
+      .messenger__row
+        .messenger__avatar
+          +avatar({img: img})
     .messenger__body
       .messenger__links
         a(href='/mock-address/change-me' target = '_blank').messenger__link.messenger__link_msg
