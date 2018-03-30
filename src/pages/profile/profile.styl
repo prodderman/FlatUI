@@ -6,7 +6,7 @@
   &__h1
     font-family Lato, sans-serif
     font-size 1.5rem
-    letter-spacing 1px
+    letter-spacing 0.05rem
     margin 0
     color $c_black
     font-weight 800
@@ -19,7 +19,7 @@
     position relative
     padding-bottom 0.7rem
     margin-bottom 0.7rem
-    letter-spacing 1px
+    letter-spacing 0.05rem
     color $c_black
     font-weight 800
     text-transform uppercase
@@ -28,7 +28,7 @@
       content ''
       position absolute
       width 100%
-      height 2px
+      height 0.125rem
       bottom 0
       left 0
       background-color $c_lightgray
@@ -40,13 +40,13 @@
 
   &__left-column
     display flex
-    flex 0 0 230px
+    flex 0 0 14.38rem
 
-    @media screen and (max-width 640px)
+    @media screen and (max-width 40rem)
       flex 1 1 100%
 
   &__calendar
-    @media screen and (max-width 640px)
+    @media screen and (max-width 40rem)
       display none
 
   &__right-column
@@ -67,7 +67,7 @@
     font-weight bold
     color $c_gray
     text-transform uppercase
-    flex 0 1 120px
+    flex 0 1 7.5rem
 
   &__link
     color $c_green

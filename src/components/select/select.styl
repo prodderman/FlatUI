@@ -8,20 +8,20 @@
 
     &.focused .jq-selectbox__select
     &.opened .jq-selectbox__select
-      box-shadow 0 0 3px 0 $c_green
+      box-shadow 0 0 0.188rem 0 $c_green
 
     &__dropdown
       font-family SourceSansPro, sans-serif
-      font-size 14px
+      font-size 0.88rem
       width 100%
       background-color white
       text-align left
-      border 1px solid $c_lightgray
-      border-radius 3px
+      border 0.06em solid $c_lightgray
+      border-radius 0.188rem
 
       .select__option
         color black
-        padding 5px 13px
+        padding 0.31rem 0.81rem
         cursor pointer
 
         &:hover
@@ -33,15 +33,15 @@
       border none 
       background $c_lightgray
       box-shadow none
-      border-radius 3px
+      border-radius 0.188rem
       color black
-      padding 5px 13px
-      min-height 28px
+      padding 0.31rem 0.81rem
+      min-height 1.75rem
 
     &__select-text
       width 100% !important
       font-family SourceSansPro, sans-serif
-      font-size 14px
+      font-size 0.88rem
 
       &.placeholder
         color $c_gray
@@ -51,14 +51,14 @@
       right 0
       top 0
       height 100%
-      width 33px
+      width 2rem
       background-color $c_green
       border none
       cursor pointer
       color white
       text-align center
-      font-size 22px
-      line-height @font-size + 4
+      font-size 1.38rem
+      line-height 1.25em
 
       &:before
         font-family FontAwesome

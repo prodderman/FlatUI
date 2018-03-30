@@ -3,16 +3,16 @@
 .btn
   position relative
   display block
-  font-size 12px
+  font-size 0.75rem
   color white
-  border 1px solid $c_green
+  border 0.06rem solid $c_green
   background-color $c_green
-  border-radius 3px
-  min-width 118px
+  border-radius 0.188rem
+  min-width 7.375rem
   padding 0.5rem 1rem
   --shadow-color $c_darkgreen
   --bg-color $c_green
-  box-shadow 0 3px 0 0 var(--shadow-color)
+  box-shadow 0 0.188rem 0 var(--shadow-color)
   font-weight 800
   text-transform uppercase
   text-align center
@@ -20,13 +20,13 @@
   overflow hidden
   text-decoration none
   letter-spacing 0.04em
-  margin-bottom 3px
+  margin-bottom 0.188rem
 
   &:focus
     outline none
 
   &:active
-    transform translateY(3px)
+    transform translateY(0.188rem)
     box-shadow 0 0 0 0 var(--shadow-color)
 
   &_fullwidth
@@ -39,16 +39,16 @@
     background-color $c_red
 
   &_small
-    font-size 10px
+    font-size 0.625rem
     width auto
-    min-width 84px
+    min-width 5.25rem
     padding 0.3rem 1rem
     height auto
-    box-shadow 0 2px var(--shadow-color)
-    margin-bottom 2px
+    box-shadow 0 0.125rem var(--shadow-color)
+    margin-bottom 0.125rem
     
     &:active
-      transform translateY(2px)
+      transform translateY(0.125rem)
 
   &_white
     color $c_green

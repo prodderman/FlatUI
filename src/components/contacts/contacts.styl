@@ -2,13 +2,13 @@
 
 .contacts
   position fixed
-  bottom 20px
+  bottom 1.25rem
   left 0
-  width 100px
-  height 400px
+  width 6.25rem
+  height 25rem
   overflow visible
   background-color white
-  border-radius 3px
+  border-radius 0.188rem
   z-index 1112
 
   &__inner
@@ -18,21 +18,19 @@
     position relative;
 
     &:before
+    &:after
       content ''
       position absolute
-      width 100px
-      height 14px
+      width 6.25rem
+      height 0.88rem
       z-index 11
+      
+    &:before
       top 0
       background linear-gradient(0, rgba(255,255,255,0), $c_lightengray 80%)
 
     &:after
-      content ''
-      position absolute
-      width 100px
-      height 14px
       bottom 0
-      z-index 11
       background linear-gradient(180deg, rgba(255,255,255,0), $c_lightengray 80%)
 
   &__scroller
@@ -49,7 +47,7 @@
     flex-direction column
 
     & > *  
-      margin-bottom 10px
+      margin-bottom 10px //change
   
-  @media (max-width 1300px)
+  @media (max-width 81.25rem)
     display none
