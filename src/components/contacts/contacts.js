@@ -43,10 +43,12 @@ export class Contacts {
 
   _init() {
     data.map((user, id) => {
+      const $userWrap = $('<div/>', { class: 'contacts__user-wrap' });
       const $userNode = $(Friend.template(user));
       const $userInfo = $userNode.find('.js-user__info').clone();
       $userNode.find('.js-user__info').remove();
-      this.contacts.find('.js-contacts__container').append($userNode);
+      $userWrap.append($userNode);
+      this.contacts.find('.js-contacts__container').append($userWrap);
       new Friend($(`#user_${id}`), id);
     })
   }

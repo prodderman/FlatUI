@@ -26,8 +26,13 @@
     flex-direction column
     margin-bottom 2.5rem
 
-    & > *:not(:last-child)
-      margin-bottom 1rem
+  &__input
+  &__select
+  &__toggle
+    margin-bottom 1rem
+
+    &:last-of-type
+      margin-bottom: 0
 
     @media screen and (max-width 48rem)
       flex 1 1 100%

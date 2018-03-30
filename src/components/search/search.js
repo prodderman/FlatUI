@@ -7,7 +7,7 @@ export class Search {
   }
 
   _addEventHadlers() {
-    const field = this.$search.find('.js-input__field');
+    const field = this.$search.find('.js-search__field');
     const seacrhList = this.$search.find('ul.js-search__result-list');
     field.on('change keyup', (e) => {
       if (field.val().length >= 2) {

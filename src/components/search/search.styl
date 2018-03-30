@@ -46,8 +46,22 @@
     &:hover
       background-color #e5e5e5
   
-  input
+  &__field
+    font-family 'SourceSansPro', sans-serif
+    font-size 0.875rem
+    width 100%;
+    background-color $c_lightgray
+    border none
+    height 1.75rem
+    padding 0.313rem 0.813rem
+    border-radius 0.188rem
     transition 0.1s
+
+    &::placeholder
+      color $c_gray
+
+    &:focus
+      box-shadow 0 0 0.188rem 0 $c_green
 
     &.error
 
