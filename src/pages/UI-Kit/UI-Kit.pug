@@ -26,38 +26,34 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title UI-Kit
-  body.flat-ui
-    +layout()
-      +messenger({name: "John Smith",
-              dialed: "Yeah that sounds great. See you then.",
-              img: `user-1.jpg`,
-              messages: [
-                {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
-              ]}).messenger-resizable.messenger-draggable
-      +layout__main()
-        +layout__container({mix: 'ui-kit', basis: 650, align: 'center', wrap: 'wrap'})
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap', basis: 450, align: 'center'})
-            h2 standard buttons
-            +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-              +button({small: true})
-              +button()
-              +button({altcolor: true})
-              +button({altcolor: true, small: true})
-            +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-              +button({small: true, fill: true}) 
-              +button({fill: true})
-              +button({altcolor: true, fill: true})
-              +button({altcolor: true, small: true, fill: true})
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+  body
+    +layout__container({mix: 'ui-kit', align: 'center', wrap: 'wrap'})
+      +layout__container({mix: 'ui-kit__center', basis: 600, align: 'center', wrap: 'wrap'})
+        +layout__container({mix: 'ui-kit__container ui-kit_buttons', wrap: 'wrap', basis: 450, align: 'center'})
+          h2 standard buttons
+          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
+            +button({small: true})
+            +button()
+            +button({altcolor: true})
+            +button({altcolor: true, small: true})
+          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
+            +button({small: true, fill: true}) 
+            +button({fill: true})
+            +button({altcolor: true, fill: true})
+            +button({altcolor: true, small: true, fill: true})   
+        +layout__container({mix: 'ui-kit__container ui-kit_arrows', basis: 450, align: 'center', wrap: 'wrap'})
           h2 arrow buttons
-          +layout__container({mix: 'ui-kit__container', basis: 450, align: 'center', wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
             +arrow()
             +arrow({direction: "right"})
             +arrow({disabled: true})
             +arrow({disabled: true, direction: "right"})
             +arrow({fill: true})
             +arrow({fill: true, direction: "right"})
+        +layout__container({mix: 'ui-kit__container ui-kit_diagrams', align: 'center', wrap: 'wrap'})
           h2 percentages / pie chart
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
             +percentage({percent: 0})
             +percentage({percent: 38})
             +percentage({percent: 62})
@@ -66,81 +62,86 @@ html(lang="en")
                         {name: "Yandex", count: 1000, color: "#e75735"},
                         {name: "Firefox", count: 300, color: "#e5e5e5"},
                         {name: "Edge", count: 400, color: "#4f4f4f"}])
+        +layout__container({mix: 'ui-kit__container ui-kit_sliders', align: 'center', wrap: 'wrap'})  
           h2 sliders
-          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'}) 
+          +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
             +slider({float: true, value: 40, color: "red"})
+          +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
             +slider({pips: true, fill: true, float: true})
+        +layout__container({mix: 'ui-kit__container ui-kit_stages', align: 'center', wrap: 'wrap'}) 
           h2 stages
-          +layout__container({mix: 'ui-kit__row'}) 
+          +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
             +stages({count: 5, current: 3})
+        +layout__container({mix: 'ui-kit__container ui-kit_form-elements', basis: 650, align: 'center', wrap: 'wrap'})
           h2 form elements
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
-            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              +form()
-            +layout__container({mix: 'ui-kit__column', align: 'right', wrap : 'wrap'})
-              h2  toggles
-              +layout__container({mix: 'ui-kit__row', basis: 150, align: 'center'})
-                +toggle()
-                +toggle()(checked)
-              h2 tick boxes
-              +layout__container({mix: 'ui-kit__container', mix: 'ui-kit__row', basis: 100, align: 'center'})
-                +tickbox()(checked)
-                +tickbox()
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
-            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              h2 search / drop down
-              +search({method: "GET"})
-              +select({options: {
-                1: "Option 1",
-                2: "Option 2",
-                3: "Option 3"
-              }})
-            +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
-              h2 user profile
-              +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-                +user-profile({img: "user-1.jpg", 
-                              name: "John Smith",
-                              profession: "ux designer",
-                              social: {tw: "https://twitter.com"}})
-              +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
-                +user-profile({img: "user-2.jpg",
-                               name: "Sarah Brown",
-                               profession: "developer",
-                               social: {dr: "https://dribbble.com/",
-                                        tw: "https://twitter.com",
-                                        fb: "https://www.facebook.com/"},
-                               alt: true})
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
-            h2 news & events
-            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              +news({
-                img: "news.jpg",
-                title: "It's all going downhill",
-                date: "24 AUGUST 2013",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
-              })
-            +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
-              +event({
-                img: "event.jpg",
-                day: "24",
-                month: "Aug",
-                title: "THIS IS THE TITLE",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              })
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
-            h2 location
-            +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
-          +layout__container({mix: 'ui-kit__container', wrap: 'wrap'})
-            +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
-              h2 calendar
-              +calendar()
-            +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
-              h2 messaging
-              +messenger({name: "Sarah Brown",
-                          dialed: "Yeah that sounds great. See you then.",
-                          img: "user-2.jpg",
-                          messages: [
-                            {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
-                          ]})
+          +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+            +form()
+          +layout__container({mix: 'ui-kit__column', align: 'right', wrap : 'wrap'})
+            h2  toggles
+            +layout__container({mix: 'ui-kit__container ui-kit_toggles', basis: 150, align: 'center'})
+              +toggle()
+              +toggle()(checked)
+            h2 tick boxes
+            +layout__container({mix: 'ui-kit__container ui-kit_tickbox', basis: 100, align: 'center'})
+              +tickbox()(checked)
+              +tickbox()
+        +layout__container({mix: 'ui-kit__container', align: 'center', wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__column ui-kit_search-dropdown', align: 'left', display: 'block'})
+            h2 search / drop down
+            +search({method: "GET"})
+            +select({options: {
+              1: "Option 1",
+              2: "Option 2",
+              3: "Option 3"
+            }})
+          +layout__container({mix: 'ui-kit__column ui-kit_users', align: 'right', display: 'block'})
+            h2 user profile
+            +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
+              +user-profile({img: "user-1.jpg", 
+                            name: "John Smith",
+                            profession: "ux designer",
+                            social: {tw: "https://twitter.com"}})
+            +layout__container({mix: 'ui-kit__row', wrap: 'wrap'})
+              +user-profile({img: "user-2.jpg",
+                              name: "Sarah Brown",
+                              profession: "developer",
+                              alt: true,
+                              social: {dr: "https://dribbble.com/",
+                                      tw: "https://twitter.com",
+                                      fb: "https://www.facebook.com/"},
+                              alt: true})
+        +layout__container({mix: 'ui-kit__container ui-kit_news-events', align: 'center', wrap: 'wrap'})
+          h2 news & events
+          +layout__container({mix: 'ui-kit__column', align: 'left', display: 'block'})
+            +news({
+              img: "news.jpg",
+              title: "It's all going downhill",
+              date: "24 AUGUST 2013",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
+            })
+          +layout__container({mix: 'ui-kit__column', align: 'right', display: 'block'})
+            +event({
+              img: "event.jpg",
+              day: "24",
+              month: "Aug",
+              title: "THIS IS THE TITLE",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            })
+        +layout__container({mix: 'ui-kit__container ui-kit_location', align: 'center', wrap: 'wrap'})
+          h2 location
+          +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
+        +layout__container({mix: 'ui-kit__container', align: 'center', wrap: 'wrap'})
+          +layout__container({mix: 'ui-kit__column ui-kit_calendar', align: 'left', display: 'block'})
+            h2 calendar
+            +calendar()
+          +layout__container({mix: 'ui-kit__column ui-kit_messages', align: 'right', display: 'block'})
+            h2 messaging
+            +messenger({name: "Sarah Brown",
+                        dialed: "Yeah that sounds great. See you then.",
+                        img: "user-2.jpg",
+                        messages: [
+                          {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
+                        ]})
+        +layout__container({mix: 'ui-kit__container ui-kit_video', align: 'center', wrap: 'wrap'})
           h2 video
-          +video({src: "//vk.com/video_ext.php?oid=-122784028&id=456239475&hash=fbe58f5547e304cd"})
+          +video({src: "https://www.youtube.com/watch?v=CN8x6tfzIEg"})

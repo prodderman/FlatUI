@@ -1,6 +1,6 @@
 include ../avatar/avatar
 
-mixin user-profile({id, img, social={}, name='user name', profession='profession', href='/mock-address/change-me'} = {})
+mixin user-profile({id, img, alt=false, social={}, name='user name', profession='profession', href='/mock-address/change-me'} = {})
   .user.js-user(class= alt ? 'user_alt' : false id = id !== undefined ? `user_${id}` : false)
     a.user__link.js-user__link(href= href)
       +avatar({img: img}).user__avatar
@@ -9,14 +9,14 @@ mixin user-profile({id, img, social={}, name='user name', profession='profession
       .user__profession= profession
       .user__contact
         if social.fb
-          a.user__social.user__social_fb(href= social.fb traget='_black')
+          a.user__social.user__social_fb(href= social.fb traget='_blank')
         else
           .user__social.user__social_fb
         if social.tw
-          a.user__social.user__social_tw(href= social.tw traget='_black')
+          a.user__social.user__social_tw(href= social.tw traget='_blank')
         else
           .user__social.user__social_tw
         if social.dr
-          a.user__social.user__social_dr(href= social.dr traget='_black')
+          a.user__social.user__social_dr(href= social.dr traget='_blank')
         else
           .user__social.user__social_dr
