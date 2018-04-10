@@ -11,21 +11,21 @@
   },
   "betterScripts": {
     "build-prod": {
-      "command": "webpack --profile",
+      "command": "./node_modules/.bin/webpack --profile",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "prod"
       }
     },
     "build-test": {
-      "command": "webpack",
+      "command": "./node_modules/.bin/webpack",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "prod"
       }
     },
     "build-dev": {
-      "command": "webpack-dev-server",
+      "command": "./node_modules/.bin/webpack-dev-server",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "dev",

@@ -1,13 +1,15 @@
 [
   {
-    "id": 0,
-    "name": "Stephen King",
-    "profession": "writer",
-    "img": "user-0.jpg",
-    "href": "/mock-address/change-me",
-    "social": {
-      "fb": "https://fb.com",
-      "tw": "https://twitter.com"
+    "userInfo": {
+      "id": 0,
+      "name": "Stephen King",
+      "profession": "writer",
+      "img": "user-0.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com",
+        "tw": "https://twitter.com"
+      }
     },
     "messages": [
       {
@@ -21,13 +23,15 @@
     ]
   },
   {
-    "id": 1,
-    "name": "John Smith",
-    "profession": "ux designer",
-    "img": "user-1.jpg",
-    "href": "/mock-address/change-me",
-    "social": {
-      "fb": "https://fb.com"
+    "userInfo": {
+      "id": 1,
+      "name": "John Smith",
+      "profession": "ux designer",
+      "img": "user-1.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com"
+      }
     },
     "messages": [
       {
@@ -38,15 +42,17 @@
     "dialed": "No."
   },
   {
-    "id": 2,
-    "name": "Sarah Brown",
-    "profession": "developer",
-    "img": "user-2.jpg",
-    "href": "/mock-address/change-me",
-    "social": {
-      "fb": "https://fb.com",
-      "tw": "https://twitter.com",
-      "dr": "https://dribbble.com/"
+    "userInfo": {
+      "id": 2,
+      "name": "Sarah Brown",
+      "profession": "developer",
+      "img": "user-2.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com",
+        "tw": "https://twitter.com",
+        "dr": "https://dribbble.com/"
+      }
     },
     "messages": [
       {
@@ -56,13 +62,15 @@
     ]
   },
   {
-    "id": 3,
-    "name": "Elon Musk",
-    "profession": "engenier",
-    "img": "user-3.jpg",
-    "href": "/mock-address/change-me",
-    "social": {
-      "fb": "https://fb.com"
+    "userInfo": {
+      "id": 3,
+      "name": "Elon Musk",
+      "profession": "engenier",
+      "img": "user-3.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com"
+      }
     },
     "messages": [
       {
@@ -72,14 +80,16 @@
     ]
   },
   {
-    "id": 4,
-    "name": "Artemiy Lebedev",
-    "profession": "designer",
-    "href": "/mock-address/change-me",
-    "social": {
-      "fb": "https://fb.com",
-      "tw": "https://twitter.com",
-      "dr": "https://dribbble.com/"
+    "userInfo": {
+      "id": 4,
+      "name": "Artemiy Lebedev",
+      "profession": "designer",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com",
+        "tw": "https://twitter.com",
+        "dr": "https://dribbble.com/"
+      }
     },
     "messages": [
       {

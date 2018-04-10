@@ -1,14 +1,14 @@
-include ../avatar/avatar
+include ../user-profile/user-profile
 include ../button/button
 
-mixin messenger({name='user name', id, img, messages=[], dialed} = {})
-  .messenger.js-messenger(id = id !== undefined ? `user_chat_${id}` : false)&attributes(attributes)
+mixin messenger({userInfo={}, messages=[], dialed} = {})
+  .messenger.js-messenger(userInfo.id = id !== undefined ? `user_chat_${userInfo.id}` : false)&attributes(attributes)
     button.messenger__close.js-messenger__close
     .messenger__header
-      .messenger__name.js-messenger__name= name
+      .messenger__name.js-messenger__name= userInfo.name
       .messenger__row
-        .messenger__avatar
-          +avatar({img: img})
+        .messenger__user
+          +user-profile(userInfo)
     .messenger__body
       .messenger__links
         a(href='/mock-address/change-me' target = '_blank').messenger__link.messenger__link_msg

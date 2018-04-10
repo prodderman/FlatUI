@@ -1,8 +1,8 @@
 include ../activity/activity
 include ../button/button
 
-mixin event({href, alt, img, title, day, month, text} = {})
-  +activity({img: img})
+mixin event({href, img, title, day, month, text} = {})
+  +activity({href: href, img: img})
     .event
       .event__date
         .event__date-day= day
@@ -10,4 +10,4 @@ mixin event({href, alt, img, title, day, month, text} = {})
       .event__title= title
       .event__text= text
       form.event__action
-        +button({small: true, fill: true, text: 'add to calendar', submit: true})
+        +button({altSize: true, empty: true, text: 'add to calendar', submit: true})

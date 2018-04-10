@@ -25,7 +25,7 @@ export class Friend extends User {
                           .addClass('messenger-resizable')
                           .addClass('messenger-draggable');
         $(userChat).insertBefore($('.js-page'));
-        this.chat = new Messenger($(`#user_chat_${this.id}`), this);
+        this.chat = new Messenger(userChat, this);
         this.chat.setFocus()
       }
       else {
@@ -42,14 +42,13 @@ export class Contacts {
   }
 
   _init() {
-    data.map((user, id) => {
+    data.map((user) => {
       const $userWrap = $('<div/>', { class: 'contacts__user-wrap' });
-      const $userNode = $(Friend.template(user));
-      const $userInfo = $userNode.find('.js-user__info').clone();
+      const $userNode = $(Friend.template(user.userInfo));
       $userNode.find('.js-user__info').remove();
       $userWrap.append($userNode);
       this.contacts.find('.js-contacts__container').append($userWrap);
-      new Friend($(`#user_${id}`), id);
+      new Friend($userNode, user.userInfo.id);
     })
   }
 }

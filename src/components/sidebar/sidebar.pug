@@ -8,16 +8,18 @@ mixin sidebar({} = {})
       +menu(menuItems)
     .sidebar__container
       h2.sidebar__title Last news
-      +news({
-        img: "news.jpg",
-        title: "It's all going downhill",
-        date: "24 AUGUST 2013",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
-      })
-      +event({
-        img: "event.jpg",
-        day: "24",
-        month: "Aug",
-        title: "THIS IS THE TITLE",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      })
+      .sidebar__activity
+        +news({
+          img: "news.jpg",
+          title: "It's all going downhill",
+          date: "24 AUGUST 2013",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
+        })
+      .sidebar__activity
+        +event({
+          img: "event.jpg",
+          day: "24",
+          month: "Aug",
+          title: "THIS IS THE TITLE",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        })
