@@ -6,13 +6,13 @@ export class Buttons {
   }
 
   _addEventHandlers() {
-    $(document).on('click', '.js-btn, .js-btn .ripple', (event) => {
+    $(document).on('click', '.js-button, .js-button .ripple', (event) => {
       this._ripple(event, $(event.target));
     })
   }
 
   _ripple(event, $element) {
-    const $btn = $element.is('.ripple') ? $element.parent('.js-btn') : $element;
+    const $btn = $element.is('.ripple') ? $element.parent('.js-button') : $element;
     const $div = $('<div/>', {
       class: 'ripple'
     });
@@ -23,12 +23,12 @@ export class Buttons {
       top: `${y}px`,
       left: `${x}px`
     });
-    $btn.addClass('btn_ripple');
+    $btn.addClass('button_ripple');
     $btn.append($div);
 
     $div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', (event) => {
       $div.remove();
-      $btn.not(':has(".ripple")').removeClass('btn_ripple');
+      $btn.not(':has(".ripple")').removeClass('button_ripple');
     });
   }
 }

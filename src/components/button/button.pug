@@ -1,14 +1,14 @@
-mixin button({text = 'Button', altcolor, small, fill, submit, href, fullWidth = false} = {}) 
+mixin button({text = 'Button', altColor, altSize, empty, submit, href, fullWidth = false} = {}) 
 
   -  let classes = ''
-  -  classes += altcolor ? `btn_red` : ''
-  -  classes += small ? ` btn_small` : ''
-  -  classes += fill ? ` btn_white` : ''
-  -  classes += fullWidth ? ` btn_fullwidth` : ``
+  -  classes += altColor ? `button_alt-color` : ''
+  -  classes += altSize ? ` button_alt-size` : ''
+  -  classes += empty ? ` button_empty` : ''
+  -  classes += fullWidth ? ` button_full-width` : ``
 
   if href
-    a.btn.js-btn(href= href class= classes)&attributes(attributes)= text
+    a.button.js-button(href= href class= classes)&attributes(attributes)= text
   else
-    button.btn.js-btn(class= classes
+    button.button.js-button(class= classes
              type = submit ? 'submit' : false,
             )&attributes(attributes)= text

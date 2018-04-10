@@ -1,6 +1,6 @@
 @import '~global/vars.styl'
 
-.btn
+.button
   position relative
   display block
   font-size 0.75rem
@@ -29,16 +29,16 @@
     transform translateY(0.188rem)
     box-shadow 0 0 0 0 var(--shadow-color)
 
-  &_fullwidth
+  &_full-width
     width 100%
 
-  &_red
+  &_alt-color
     --bg-color $c_red
     --shadow-color $c_darkred
     border-color $c_red
     background-color $c_red
 
-  &_small
+  &_alt-size
     font-size 0.625rem
     width auto
     min-width 5.25rem
@@ -50,11 +50,11 @@
     &:active
       transform translateY(0.125rem)
 
-  &_white
+  &_empty
     color $c_green
     background-color white
 
-    &.btn_red
+    &.button_alt-color
       color $c_red
 
     &:hover

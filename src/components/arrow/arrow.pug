@@ -1,8 +1,8 @@
-mixin arrow({disabled = false, href = '#', direction = 'left', fill = false } = {})
+mixin arrow({disabled = false, href = '#', direction = 'left', empty = false } = {})
   -  let classes = ''
-  -  classes += fill ? `arrow_fill` : ''
+  -  classes += empty ? `arrow_empty` : ''
   -  classes += disabled ? ` arrow_disabled` : ''
-  -  classes += direction ? ` arrow_${direction}` : 'arrow-left'
+  -  classes += ` arrow_direction_${direction}`
 
   if disabled
     span.arrow(class= classes)&attributes(attributes)

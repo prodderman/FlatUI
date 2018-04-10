@@ -22,13 +22,13 @@ block main
             h2.stage__title SKILLS
             .stage__field
               .stage__label creative
-              +slider({name: 'creative', color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'creative', altColor: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label teamwork
               +slider({name: 'teamwork', float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label innovate
-              +slider({name: 'innovate', color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'innovate', altColor: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label communication
               +slider({name: 'comunication', float: true, max: 12, pips: true, fill: true})
@@ -36,13 +36,13 @@ block main
             h2.stage__title SOFTWARE
             .stage__field
               .stage__label html&css
-              +slider({name: 'html-css', color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'html-css', altColor: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label JavaScript
               +slider({name: 'js', float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label photoshop
-              +slider({name: 'photoshop', color: true, float: true, max: 12, pips: true, fill: true})
+              +slider({name: 'photoshop', altColor: true, float: true, max: 12, pips: true, fill: true})
             .stage__field
               .stage__label illustrator
               +slider({name: 'illustrator', float: true, max: 12, pips: true, fill: true})
@@ -51,5 +51,5 @@ block main
             +percentage({percent: 85, start: 64})
             .stage__label-diagram % Page Filling
           .stage__btns
-            +button({href: 'stage-info.html', text: 'prev', altcolor: true})(data-pjax= true).stage__prev
+            +button({href: 'stage-info.html', text: 'prev', altColor: true})(data-pjax= true).stage__prev
             +button({href: 'profile.html', text: 'complete'}).stage__next
