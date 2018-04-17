@@ -1,17 +1,17 @@
 extends ../../global/template.noauth.pug
 
-include ../../components/singin/singin
+include ../../components/signin/signin
 
 block variables
-  - const pageName = 'Singin'
+  - const pageName = 'Signin'
   - vertical = 'middle'
 
 block title 
   | Main
 
 block main
-  +layout__container({mix: 'p-singin', wrap: 'wrap', align: 'center'})
-    +layout__container({mix: 'p-singin__enter page__content', wrap: 'wrap', basis: '400', align: 'center'})
-      h2.p-singin__title Enter
-      .p-singin__form
-        +singin()
+  +layout__container({mix: 'p-signin', wrap: 'wrap', align: 'center'})
+    +layout__container({mix: 'p-signin__enter page__content', wrap: 'wrap', basis: '400', align: 'center'})
+      h2.p-signin__title Enter
+      .p-signin__form
+        +signin()

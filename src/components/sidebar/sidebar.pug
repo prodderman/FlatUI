@@ -2,24 +2,17 @@ include ../../components/news/news
 include ../../components/event/event
 include ../../components/menu/menu
 
+
+
 mixin sidebar({} = {})
+  - const lastNews = require('../../global/mocks/news.json')[0];
+  - const lastEvent = require('../../global/mocks/events.json')[0];
   .sidebar
     .sidebar__menu
       +menu(menuItems)
     .sidebar__container
       h2.sidebar__title Last news
       .sidebar__activity
-        +news({
-          img: "news.jpg",
-          title: "It's all going downhill",
-          date: "24 AUGUST 2013",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros."
-        })
+        +news(lastNews)
       .sidebar__activity
-        +event({
-          img: "event.jpg",
-          day: "24",
-          month: "Aug",
-          title: "THIS IS THE TITLE",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        })
+        +event(lastEvent)

@@ -13,7 +13,6 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
     path: path.resolve(__dirname, '..', 'dist'),
     publicPath: '',
   },
-  filename: __filename,
   module: {
     rules: [
       {

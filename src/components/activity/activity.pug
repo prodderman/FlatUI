@@ -1,18 +1,15 @@
-mixin activity({href='/mock-address/change-me',alt='Activity', img} = {})
+mixin activity({href = '/mock-address/change-me', alt = 'Activity', img = ''} = {})
   - 
     let src;
     try {
-      src=require(`../../img/${img}`);
+      src = require.context('../../img', true)(`${img}`);
     } 
     catch(event) {
-      src= false
+      src = '';
     }
     
-  a.activity&attributes(attributes)(href=href)
+  a.activity&attributes(attributes)(href= href)
     .activity__preview-image
-      if src
-        img.activity__img(
-          src= src,
-          alt=alt)
-    .activity__preview-text
+      img.activity__img(src= src, alt= alt)
+    .activity__preview-text 
       block

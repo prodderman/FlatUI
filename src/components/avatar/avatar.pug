@@ -2,10 +2,10 @@ mixin avatar({img} = {})
   - 
     let src;
     try {
-      src=require(`../../img/${img}`);
+      src = require(`../../img/${img}`);
     } 
     catch(event) {
-      src= require(`../../components/avatar/img/user-icon.png`);
+      src = require(`../../components/avatar/img/user-icon.png`);
     }
     
   .avatar&attributes(attributes)
@@ -15,11 +15,11 @@ mixin avatar-profile({img} = {})
   - 
     let src;
     try {
-      src=require(`../../img/${img}`);
+      src = require(`../../img/${img}`);
     } 
     catch(event) {
-      src= require(`../../components/avatar/img/user-icon.png`);
+      src = require(`../../components/avatar/img/user-icon.png`);
     }
     
   .avatar-profile&attributes(attributes)
-    img(src=src).avatar-profile__photo
+    img(src= src).avatar-profile__photo

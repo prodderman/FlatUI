@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "title": "Beyond Subject Searching: Ovid",
+    "day": "24",
+    "month": "Aug",
+    "text": "This 1-hour session, which builds upon Behind the Scenes of PsycINFO.",
+    "href": "/mock-address/change-me",
+    "img": "./events/event_0.jpg"
+  },
+  {
+    "id": 1,
+    "title": "Applying Motivational Interviewing",
+    "day": "2",
+    "month": "June",
+    "text": "This workshop will introduce participants to adaptations of Motivational Interviewing.",
+    "href": "/mock-address/change-me",
+    "img": "./events/event_1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Western Psychological Association Convention",
+    "day": "17",
+    "month": "May",
+    "text": "Join us for the 98th annual WPA convention, hosted by Pacific University, Oregon.",
+    "href": "/mock-address/change-me",
+    "img": "./events/event_2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Breaking Through Burnout",
+    "day": "14",
+    "month": "June",
+    "text": "This free webinar will look at mindfulness as a self-care strategy for preventing therapist burnout.",
+    "href": "/mock-address/change-me",
+    "img": "./events/event_3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Economic and Social Justice",
+    "day": "30",
+    "month": "Oct",
+    "text": "This event is the second in a monthly heritage series, part of the 2018 I am Psyched! National Tour.",
+    "href": "/mock-address/change-me",
+    "img": "./events/event_4.jpg"
+  }
+]

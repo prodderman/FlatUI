@@ -1,7 +1,7 @@
-import './singin.styl';
+import './signin.styl';
 import 'parsleyjs';
 
-export class Singin {
+export class Signin {
   constructor(node) {
     this.form = $(node);
     this.form.parsley();
@@ -30,6 +30,6 @@ export class Singin {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-singin' : '.js-singin').map((index, node) => new Singin(node));
+    $(inPage ? '.page .js-signin' : '.js-signin').map((index, node) => new Signin(node));
   });
 }
