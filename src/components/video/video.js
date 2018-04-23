@@ -3,7 +3,7 @@ import './video.styl';
 export class Video {
   constructor(video) {  
     this.video = $(video);
-    this.Init();
+    this.init();
     this.addEventHandlers();
   }
 
@@ -24,14 +24,14 @@ export class Video {
     };
   }
 
-  Init() {
+  init() {
     setTimeout(() => {
       this.video.empty();
       const url = this.video.data('src')
       const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
       const frame = $('<iframe/>', {
-        height: this.SetHeight(),
-        src: this.CreateURL(src),
+        height: this.setHeight(),
+        src: this.createURL(src),
         allowfullscreen: '',
         frameborder: 0
       });
@@ -39,32 +39,32 @@ export class Video {
     }, 100);
   }
 
-  SetHeight() {
+  setHeight() {
     const width = this.video.data('format').split(':')[0];
     const height = this.video.data('format').split(':')[1];
     const frameWidth = this.video.width();
     const frameHeight = height*frameWidth/width;
     return frameHeight;
   }
-  
-  CreateURL(src) {
+
+  createURL(src) {
     for (let key in Video.snippets){
-      if (key === this.TestSrc(src.hostname)) {
+      if (key === this.testSrc(src.hostname)) {
         if (key === 'youtube')
-          return `${Video.snippets[key]}${this.TestId(src.search)[1]}`;
+          return `${Video.snippets[key]}${this.testId(src.search)[1]}`;
         else if (key === 'vk')
           return src;
         else
-          return `${Video.snippets[key]}${this.TestId(src.pathname).slice(-1)[0]}`;
+          return `${Video.snippets[key]}${this.testId(src.pathname).slice(-1)[0]}`;
       }
     }
   }
 
-  TestSrc(src) {
+  testSrc(src) {
     return src.match(new RegExp(Object.keys(Video.snippets).join('|')))[0];
   }
 
-  TestId(src) {
+  testId(src) {
     return src.match(/([^\/=]+)(?:)/g);
   }
 }
