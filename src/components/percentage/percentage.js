@@ -31,6 +31,6 @@ export class Percentage {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
+    $(inPage ? '.layout .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
   })
 }

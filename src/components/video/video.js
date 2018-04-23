@@ -71,6 +71,6 @@ export class Video {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-video' : '.js-video').map((i, node) => new Video(node));
+    $(inPage ? '.layout .js-video' : '.js-video').map((i, node) => new Video(node));
   });
 }

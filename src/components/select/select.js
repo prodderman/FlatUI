@@ -16,7 +16,7 @@ export class Select {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-select' : '.js-select').map((index, node) => new Select(node));
+    $(inPage ? '.layout .js-select' : '.js-select').map((index, node) => new Select(node));
   });
 }
 

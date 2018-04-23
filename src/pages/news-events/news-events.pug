@@ -14,22 +14,22 @@ block title
   | News and Events
 
 block main
-  +layout__container({mix: 'p-news-event', wrap: 'wrap', align: 'center'})
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
+ .p-news-event
+    .p-news-event__header
       h1.p-news-event__main-title= pageName
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
+    .p-news-event__content
       h2.p-news-event__title News
-      +layout__container({mix: 'p-news-event__container', display: "block"})
+      .p-news-event__slider
         +carousel({buttons: true})
           each news in newsData
             +news(news)
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
+    .p-news-event__content
       h2.p-news-event__title Events
-      +layout__container({mix: 'p-news-event__container', display: "block"})
+      .p-news-event__slider
         +carousel({buttons: true})
           each event in eventData
             +event(event)
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
+    .p-news-event__content
       h2.p-news-event__title Videos
-      +layout__container({mix: 'p-news-event__container', display: "block"})
+      .p-news-event__video
         +video({src: "https://www.youtube.com/watch?v=oA0Ay7xX4-k"})

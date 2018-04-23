@@ -42,6 +42,6 @@ export class Carousel {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage? '.page .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
+    $(inPage? '.layout  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
   });
 }

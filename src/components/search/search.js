@@ -64,6 +64,6 @@ export class Search {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-search' : '.js-search').map((index, node) => new Search($(node)));
+    $(inPage ? '.layout .js-search' : '.js-search').map((index, node) => new Search($(node)));
   });
 }

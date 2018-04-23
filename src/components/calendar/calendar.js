@@ -41,6 +41,6 @@ class Calendar {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
+    $(inPage ? '.layout  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
   });
 }

@@ -30,6 +30,6 @@ export class Signin {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-signin' : '.js-signin').map((index, node) => new Signin(node));
+    $(inPage ? '.layout .js-signin' : '.js-signin').map((index, node) => new Signin(node));
   });
 }

@@ -24,7 +24,7 @@ export class Friend extends User {
         const userChat = $(Messenger.template(data[this.id]))
                           .addClass('messenger-resizable')
                           .addClass('messenger-draggable');
-        $(userChat).insertBefore($('.js-page'));
+        $(userChat).insertBefore($('.js-'));
         this.chat = new Messenger(userChat, this);
         this.chat.setFocus()
       }

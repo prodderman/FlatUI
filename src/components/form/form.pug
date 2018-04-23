@@ -30,5 +30,5 @@ mixin form({method = 'POST', action = '', enctype} = {})
         placeholder: 'Your Message',
         required: true,
       })(data-parsley-errors-messages-disabled)
-    .feedback__btn
+    .feedback__button
       +button({submit: true, text: 'Submit'})

@@ -38,6 +38,6 @@ export class Piechart {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-piechart' : '.js-piechart').map((index, node) => new Piechart(node));
+    $(inPage ? '.layout .js-piechart' : '.js-piechart').map((index, node) => new Piechart(node));
   })
 }

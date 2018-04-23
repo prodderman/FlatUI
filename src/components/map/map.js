@@ -39,6 +39,6 @@ export class Map {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-map' : '.js-map').map((index, node) => new Map(node));
+    $(inPage ? '.layout .js-map' : '.js-map').map((index, node) => new Map(node));
   });
 }

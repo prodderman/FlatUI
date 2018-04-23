@@ -8,7 +8,8 @@ mixin header({} = {})
         img(src= require('../../global/favicons/android-chrome-192x192.png')).header__logo-img
     .header__content
       a.header__profile-link(href='profile.html', data-pjax= true)
-        +avatar().header__avatar
+        .header__avatar
+          +avatar()
         .header__name  Ryan Reynolds
       a.header__logout(href= 'authorization.html') Log out
 

@@ -1,6 +1,17 @@
 @import '~global/colors.styl'
+@import '~global/mixins.styl'
 
 .p-feedback
+  display flex
+  flex-wrap wrap
+  width 100%
+
+  &__header
+    page-panel(1 1 100%)
+  
+  &__content
+    page-panel(1 1 100%)
+    text-align left 
 
   &__main-title
     font-family Lato, sans-serif
@@ -20,11 +31,11 @@
     font-weight 800
     text-transform uppercase
 
-  &__column
-    flex-basis 50%
+  &__form
+    width 50%
 
     @media screen and (max-width 48rem)
-      flex-basis 100%
+      width 100%
 
-  &__container
-    margin-bottom 3rem
+  &__map:not(:last-of-type)
+    margin-bottom 1rem

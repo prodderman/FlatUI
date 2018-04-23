@@ -31,6 +31,6 @@ class Feedback {
 
 export default function render(inPage = false) {
   $(()=> {
-    $(inPage ? '.page .js-feedback' : '.js-feedback').map((index, node) => new Feedback(node));
+    $(inPage ? '.layout .js-feedback' : '.js-feedback').map((index, node) => new Feedback(node));
   });
 }

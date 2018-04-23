@@ -8,7 +8,7 @@ mixin avatar({img} = {})
       src = require(`../../components/avatar/img/user-icon.png`);
     }
     
-  .avatar&attributes(attributes)
+  .avatar
     img(src=src).avatar__photo
 
 mixin avatar-profile({img} = {})
@@ -21,5 +21,5 @@ mixin avatar-profile({img} = {})
       src = require(`../../components/avatar/img/user-icon.png`);
     }
     
-  .avatar-profile&attributes(attributes)
+  .avatar-profile
     img(src= src).avatar-profile__photo

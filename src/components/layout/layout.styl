@@ -1,6 +1,6 @@
 @import '~global/colors.styl'
 
-.page
+.layout
   display flex
   flex-direction column
   min-height 100vh
@@ -25,13 +25,6 @@
     box-shadow 0 0 0.8rem rgba(0, 0, 0, 0.5)
     z-index 1
 
-  &__content
-    padding 1rem 
-    background-color white
-    box-shadow 0 0 0.125rem 0.06rem $c_lightgray
-    margin 0 0.65rem
-    margin-top 1.3rem
-
   &__sidebar
     display flex
     flex 0 0 18.75rem
@@ -50,7 +43,7 @@
     for $i in (1..30)
       $basis = $i * 50
 
-      &_basis-{$basis}.page__container 
+      &_basis-{$basis}.layout__container 
         flex-basis $basis px
 
     for $grow in (0..10)
@@ -88,13 +81,13 @@
     &_column 
       flex-direction column
 
-      & > .page__container
+      & > .layout__container
         flex-basis auto
 
     &_column-reverse
       flex-direction column-reverse
 
-      & > .page__container
+      & > .layout__container
         flex-basis auto
 
     &_row-reverse
@@ -106,5 +99,5 @@
     &_wrap-reverse
       flex-wrap wrap-reverse
 
-    &_basis-auto.page__container
+    &_basis-auto.layout__container
       flex 1 1 auto

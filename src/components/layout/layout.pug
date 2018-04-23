@@ -1,34 +1,33 @@
 mixin layout()
-  .page.js-page
+  .layout.js-layout
     block
 
 mixin layout__header()
-  header.page__header.js-page__header
+  header.layout__header.js-layout__header
     block
 
 mixin layout__main()
-  main.page__main.js-page__main
+  main.layout__main.js-layout__main
     block
 
 mixin layout__footer()
-  footer.page__footer
+  footer.layout__footer
     block
 
 mixin layout__sidebar()
-  aside.page__sidebar
+  aside.layout__sidebar
     block
 
-mixin layout__container({display, basis, grow, shrink, wrap, direction, align, vertical, mix} = {})
+mixin layout__container({display, basis, grow, shrink, wrap, direction, align, vertical} = {})
   -
     let classes = ''
-    classes += display ? ' page__container_' + display : ''
-    classes += basis ? ' page__container_basis-' + basis : ''
-    classes += grow ? ' page__container_grow-' + grow : ''
-    classes += shrink ? ' page__container_shrink-' + shrink : ''
-    classes += wrap ? ' page__container_' + wrap : ''
-    classes += direction ? ' page__container_' + direction : ''
-    classes += align ? ' page__container_' + align : ''
-    classes += vertical ? ' page__container_' + vertical : ''
-    classes += mix ? ' ' + mix : ''
-  .page__container(class= classes)
+    classes += display ? ' layout__container_' + display : ''
+    classes += basis ? ' layout__container_basis-' + basis : ''
+    classes += grow ? ' layout__container_grow-' + grow : ''
+    classes += shrink ? ' layout__container_shrink-' + shrink : ''
+    classes += wrap ? ' layout__container_' + wrap : ''
+    classes += direction ? ' layout__container_' + direction : ''
+    classes += align ? ' layout__container_' + align : ''
+    classes += vertical ? ' layout__container_' + vertical : ''
+  .layout__container(class= classes)
     block

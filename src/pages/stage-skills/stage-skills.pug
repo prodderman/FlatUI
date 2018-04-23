@@ -12,44 +12,46 @@ block title
   | Registration
 
 block main
-  +layout__container({mix: 'p-stage', wrap: 'wrap', align: 'center'})
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
+  .p-stage-skills
+    .p-stage-skills__stages
       +stages({count: 5, current: 5})
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
-      form.stage.p-stage__form(method='POST' action='' data-parsley-validate)
-        .stage__fieldset
-          .stage__column
-            h2.stage__title SKILLS
-            .stage__field
-              .stage__label creative
+    .p-stage-skills__content
+      form.p-stage-skills__form(method='POST' action='' data-parsley-validate)
+        .p-stage-skills__fieldset
+          .p-stage-skills__column
+            h2.p-stage-skills__title SKILLS
+            .p-stage-skills__field
+              .p-stage-skills__label creative
               +slider({name: 'creative', altColor: true, float: true, max: 12, pips: true, fill: true})
-            .stage__field
-              .stage__label teamwork
+            .p-stage-skills__field
+              .p-stage-skills__label teamwork
               +slider({name: 'teamwork', float: true, max: 12, pips: true, fill: true})
-            .stage__field
-              .stage__label innovate
+            .p-stage-skills__field
+              .p-stage-skills__label innovate
               +slider({name: 'innovate', altColor: true, float: true, max: 12, pips: true, fill: true})
-            .stage__field
-              .stage__label communication
+            .p-stage-skills__field
+              .p-stage-skills__label communication
               +slider({name: 'comunication', float: true, max: 12, pips: true, fill: true})
-          .stage__column
-            h2.stage__title SOFTWARE
-            .stage__field
-              .stage__label html&css
+          .p-stage-skills__column
+            h2.p-stage-skills__title SOFTWARE
+            .p-stage-skills__field
+              .p-stage-skills__label html&css
               +slider({name: 'html-css', altColor: true, float: true, max: 12, pips: true, fill: true})
-            .stage__field
-              .stage__label JavaScript
+            .p-stage-skills__field
+              .p-stage-skills__label JavaScript
               +slider({name: 'js', float: true, max: 12, pips: true, fill: true})
-            .stage__field
-              .stage__label photoshop
+            .p-stage-skills__field
+              .p-stage-skills__label photoshop
               +slider({name: 'photoshop', altColor: true, float: true, max: 12, pips: true, fill: true})
-            .stage__field
-              .stage__label illustrator
+            .p-stage-skills__field
+              .p-stage-skills__label illustrator
               +slider({name: 'illustrator', float: true, max: 12, pips: true, fill: true})
-        .stage__footer
-          .stage__diagram
+        .p-stage-skills__footer
+          .p-stage-skills__diagram
             +percentage({percent: 85, start: 64})
-            .stage__label-diagram % Page Filling
-          .stage__btns
-            +button({href: 'stage-info.html', text: 'prev', altColor: true})(data-pjax= true).stage__prev
-            +button({href: 'profile.html', text: 'complete'}).stage__next
+            .p-stage-skills__label-diagram % Page Filling
+          .p-stage-skills__buttons
+            .p-stage-skills__prev
+              +button({href: 'stage-info.html', text: 'prev', altColor: true})(data-pjax= true)
+            .p-stage-skills__next
+              +button({href: 'profile.html', text: 'complete'})

@@ -43,6 +43,6 @@ export class Slider {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-slider' : '.js-slider').map((index, node) => new Slider(node));
+    $(inPage ? '.layout .js-slider' : '.js-slider').map((index, node) => new Slider(node));
   });
 }

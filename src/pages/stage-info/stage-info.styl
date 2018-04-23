@@ -1,9 +1,17 @@
 @import '~global/colors.styl'
+@import '~global/mixins.styl'
 
-.stage
-  flex 1
+.p-stage-info
   display flex
-  flex-direction column
+  justify-content center
+  flex-wrap wrap
+  width 100%
+
+  &__stages
+    page-panel(1 1 100%)
+
+  &__content
+    page-panel(1 1 100%)
   
   &__title
     font-family Lato, sans-serif
@@ -90,7 +98,7 @@
     color $c_black
     margin-left 1.5rem
 
-  &__btns
+  &__buttons
     display flex
     align-items center
 

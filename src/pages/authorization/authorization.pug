@@ -10,8 +10,8 @@ block title
   | Main
 
 block main
-  +layout__container({mix: 'p-signin', wrap: 'wrap', align: 'center'})
-    +layout__container({mix: 'p-signin__enter page__content', wrap: 'wrap', basis: '400', align: 'center'})
+  .p-signin
+    .p-signin__container
       h2.p-signin__title Enter
       .p-signin__form
         +signin()

@@ -14,25 +14,25 @@ block title
   | Registration
 
 block main
-  +layout__container({mix: 'p-stage', wrap: 'wrap', align: 'center'})
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
+  .p-stage-info
+    .p-stage-info__stages
       +stages({count: 5, current: 4})
-    +layout__container({mix: 'page__content', wrap: 'wrap'})
-      form.stage.p-stage__form(method='POST' action='')
-        .stage__fieldset
-          .stage__column
-            h2.stage__title main info
-            .stage__input
+    .p-stage-info__content
+      form.p-stage-info__form(method='POST' action='')
+        .p-stage-info__fieldset
+          .p-stage-info__column
+            h2.p-stage-info__title main info
+            .p-stage-info__input
               +input({name: 'name',
                       placeholder: 'Name',
                       require: true,
                       tabindex: 1})
-            .stage__input
+            .p-stage-info__input
               +input({name: 'email',
                       placeholder: 'E-mail',
                       require: true,
                       tabindex: 2})
-            .stage__select
+            .p-stage-info__select
               +select({name: 'gender',
                       require: true,
                       placeholder: 'Gender',
@@ -41,45 +41,45 @@ block main
                         male: 'Male',
                         female: 'Female'
                       }})
-            .stage__input
+            .p-stage-info__input
               +input({name: 'password',
                       type: 'password',
                       placeholder: 'Password',
                       require: true,
                       tabindex: 4})
-            .stage__input
+            .p-stage-info__input
               +input({name: 'password',
                       type: 'password',
                       placeholder: 'Confirm password',
                       require: true,
                       tabindex: 5})
-          .stage__column
-            h2.stage__title other info
-            .stage__input
+          .p-stage-info__column
+            h2.p-stage-info__title other info
+            .p-stage-info__input
               +input({name: 'phone',
                       placeholder: 'Phone number',
                       require: true,
                       tabindex: 6})
-            .stage__input
+            .p-stage-info__input
               +input({name: 'profession',
                       placeholder: 'Profession',
                       require: true,
                       tabindex: 7})
-            .stage__input
+            .p-stage-info__input
               +input({name: 'city',
                       placeholder: 'City',
                       require: true,
                       tabindex: 7})
-            .stage__toggle
+            .p-stage-info__toggle
               +toggle({name: 'notifications'}) Receive notifications
-            .stage__toggle
+            .p-stage-info__toggle
               +toggle({name: 'subscribe'}) Subscribe to newsletter
-        .stage__footer
-          .stage__diagram
-            +percentage({percent: 64})
-            .stage__label-diagram % Page Filling
-          .stage__btns
-            .stage__prev
-              +button({href: 'authorization.html', text: 'prev', altColor: true})(data-pjax= true)
-            .stage__next
-              +button({href: 'stage-skills.html', text: 'next'})(data-pjax= true).
+      .p-stage-info__footer
+        .p-stage-info__diagram
+          +percentage({percent: 64})
+          .p-stage-info__label-diagram % Page Filling
+        .p-stage-info__buttons
+          .p-stage-info__prev
+            +button({href: 'authorization.html', text: 'prev', altColor: true})(data-pjax= true)
+          .p-stage-info__next
+            +button({href: 'stage-skills.html', text: 'next'})(data-pjax= true).

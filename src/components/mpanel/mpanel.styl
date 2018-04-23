@@ -17,7 +17,7 @@
   min-height calc(100vh - 4.188rem)
   overflow-y auto
 
-  @media screen and (min-width 64rem)
+  @media screen and (min-width calc(64rem + 1px))
     display block
 
   &__user
@@ -33,6 +33,10 @@
 
       &:hover
         color $c_red
+
+  &__avatar
+    width 5.875rem
+    height 5.875rem
 
   &__logout
     text-align right

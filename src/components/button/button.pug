@@ -7,8 +7,6 @@ mixin button({text = 'Button', altColor, altSize, empty, submit, href, fullWidth
   -  classes += fullWidth ? ` button_full-width` : ``
 
   if href
-    a.button.js-button(href= href class= classes)&attributes(attributes)= text
+    a.button.js-button(href= href class= classes)= text
   else
-    button.button.js-button(class= classes
-             type= submit ? 'submit' : false,
-            )&attributes(attributes)= text
+    button.button.js-button(class= classes type= submit ? 'submit' : false)= text

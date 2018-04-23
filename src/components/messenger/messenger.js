@@ -11,7 +11,7 @@ import msgTemplate from './template.pug';
 export class Messenger {
   constructor(node, target) {
     this.$messenger = $(node);
-    this.tagert = target;
+    this.target = target;
     this._init();
     this._addEventHandlers();
   }
@@ -60,7 +60,7 @@ export class Messenger {
           type: 'POST',
           url: '',
           data: input.text(),
-          succes: () => {
+          success: () => {
 
           },
           complete: () => {
@@ -80,9 +80,9 @@ export class Messenger {
     });
 
     btnClose.click((e) => {
-      if (this.tagert) {
-        this.tagert.destroy();
-        this.tagert = null;
+      if (this.target) {
+        this.target.destroy();
+        this.target = null;
       }
       this.$messenger.remove();
     });
@@ -108,6 +108,6 @@ export class Messenger {
 
 export default function render(inPage = false) {
   $(() => {
-    $(inPage ? '.page .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
+    $(inPage ? '.layout .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
   })
 }
