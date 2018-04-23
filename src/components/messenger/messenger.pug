@@ -20,5 +20,5 @@ mixin messenger({userInfo = {}, messages = [], dialed} = {})
               .messenger__msg(class= msg.incoming ? 'messenger__msg_in' : 'messenger__msg_out')= msg.text
       .messenger__textarea
         .messenger__input.js-messenger__input(contenteditable = 'true')= dialed
-      .messenger__send
-        +button({text: 'reply'}).messenger__btn.js-messenger__btn
+      form.messenger__send.js-messenger__send(method="POST" action='')
+        +button({fullWidth: true, text: 'reply', submit: true})

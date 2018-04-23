@@ -7,7 +7,7 @@ mixin form({method = 'POST', action = '', enctype} = {})
     data-parsley-validate
     method= method
     action= action
-  )&attributes(attributes)
+  )
     .feedback__input
       +input({
         name: 'name',

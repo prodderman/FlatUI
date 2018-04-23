@@ -1,39 +1,104 @@
 @import '~global/colors.styl'
 
 .ui-kit
-  display: flex
-  flex: 1 0 auto;
-  text-align center
+  display flex
+  align-items center
   background-color white
-  padding-top 3rem
+  padding-top 5.1rem
+  
+  &__center
+    display flex
+    flex-direction column
+    align-items: center
+    flex 1 1 100%
 
-  h2
+  &__container
+    display flex
+    justify-content center
+    align-items flex-start
+    width 38rem
+    flex-wrap wrap
+    margin-bottom: 2.5rem
+
+    &_buttons
+      width 29.1rem
+
+      & .ui-kit__title
+        margin-bottom 4.4rem
+
+    &_arrows
+      width 26.5rem
+      margin-bottom 1.6rem
+
+    &_diagrams
+      margin-bottom: 1rem
+
+      & .ui-kit__title
+        margin-bottom 1.5rem
+    
+    &_sliders
+      width 37rem
+      margin-bottom: 2.3rem
+
+      & .ui-kit__title
+        margin-bottom 2.8rem
+    
+    &_stages
+      width 37.5rem
+
+      & .ui-kit__title
+        margin-bottom 1.7rem
+
+    &_form-elements
+      width 37.5rem
+
+    &_toggles
+      width 50%
+      justify-content space-between
+    
+    &_tickbox
+      width 25%
+      justify-content space-between
+
+  &__left-col
+    display flex
+    flex-basis 50%
+    flex-wrap wrap
+    padding-right 2.2rem
+
+    &_news
+    &_calendar
+      display block
+      padding-right 0.5rem
+
+    &_form
+      display block
+
+  &__right-col
+    display flex
+    flex-basis 50%
+    flex-wrap wrap
+    justify-content center
+    padding-left 2.2rem
+
+    &_event
+    &_messaging
+      padding-left 0.5rem
+
+  &__row
+    flex 1 1 100%
+    display flex
+    justify-content space-between
+    align-items flex-end
+    margin-bottom 1.2rem
+
+  &__title
     font-family Lato, sans-serif
     font-size 1.12rem
     letter-spacing 0.09rem
+    text-align center
     color $c_black
     font-weight 800
     text-transform uppercase
     flex-basis 100%
-    margin-bottom 1.6rem
-    
-  .search
-    margin-bottom 1rem
-
-  &__container
-    margin-bottom 3rem
-      
-  &__row
-    justify-content space-between
-    align-items flex-end
-    margin-bottom 1rem
-    
-    &:last-child
-      margin-bottom 0
-  
-  & .slider
-    flex-basis 45%
-    align-self flex-start
-  
-  &__column
-    flex-basis 47%
+    margin-bottom 2.25rem

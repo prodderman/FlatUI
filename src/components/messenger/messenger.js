@@ -50,12 +50,13 @@ export class Messenger {
 
   _addEventHandlers() {
     const btnClose = this.$messenger.find('.js-messenger__close');
-    const btnSend = this.$messenger.find('.js-messenger__btn');
+    const formSend = this.$messenger.find('.js-messenger__send');
     const input = this.$messenger.find('.js-messenger__input');
     const msgContainer = this.$messenger.find('ul.js-messenger__tape');
 
-    btnSend.click((e) => {
+    formSend.submit((event) => {
       if (input.text()) {
+        event.preventDefault();
         $.ajax({
           type: 'POST',
           url: '',
