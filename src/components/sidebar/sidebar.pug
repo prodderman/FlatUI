@@ -7,7 +7,7 @@ include ../../components/menu/menu
 mixin sidebar({} = {})
   - const lastNews = require('../../global/mocks/news.json')[0];
   - const lastEvent = require('../../global/mocks/events.json')[0];
-  .sidebar
+  .sidebar.js-sidebar
     .sidebar__menu
       +menu(menuItems)
     .sidebar__container

@@ -34,11 +34,11 @@ export class Mpanel {
       }
     });
 
-    $('.layout__pjax-container').on('pjax:start', () => {
+    $('.js-layout__pjax-container').on('pjax:start', () => {
         this.slideout.close();
     });
 
-    $('.layout__pjax-container').on('pjax:success', () => {
+    $('.js-layout__pjax-container').on('pjax:end', () => {
       $.pjax({
         url: window.location.href,
         container: '.mpanel__menu',

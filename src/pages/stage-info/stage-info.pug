@@ -80,6 +80,6 @@ block main
           .p-stage-info__label-diagram % Page Filling
         .p-stage-info__buttons
           .p-stage-info__prev
-            +button({href: 'authorization.html', text: 'prev', altColor: true})(data-pjax= true)
+            +button({href: 'authorization.html', text: 'prev', altColor: true})
           .p-stage-info__next
-            +button({href: 'stage-skills.html', text: 'next'})(data-pjax= true).
+            +button({href: 'stage-skills.html', text: 'next', pjax: true})

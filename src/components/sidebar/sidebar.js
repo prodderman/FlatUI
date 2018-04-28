@@ -1,12 +1,14 @@
 import './sidebar.styl';
 
 $(() => {
-  $('.layout__pjax-container').on('pjax:success', () => {
-    $.pjax({
-      url: window.location.href,
-      container: '.sidebar__menu',
-      fragment: '.sidebar__menu',
-      timeout: 4000
+  if ($('.js-sidebar').length > 0) {
+    $('.js-layout__pjax-container').on('pjax:end', () => {
+      $.pjax({
+        url: window.location.href,
+        container: '.sidebar__menu',
+        fragment: '.sidebar__menu',
+        timeout: 4000
+      });
     });
-  });
+  }
 });

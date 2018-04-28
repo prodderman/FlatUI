@@ -1,4 +1,4 @@
-mixin button({text = 'Button', altColor, altSize, empty, submit, href, fullWidth = false} = {}) 
+mixin button({text = 'Button', altColor, altSize, empty, submit, href, fullWidth = false, pjax = false} = {}) 
 
   -  let classes = ''
   -  classes += altColor ? `button_alt-color` : ''
@@ -7,6 +7,6 @@ mixin button({text = 'Button', altColor, altSize, empty, submit, href, fullWidth
   -  classes += fullWidth ? ` button_full-width` : ``
 
   if href
-    a.button.js-button(href= href class= classes)= text
+    a.button.js-button(href= href class= classes data-pjax= pjax ? true : false)= text
   else
     button.button.js-button(class= classes type= submit ? 'submit' : false)= text
