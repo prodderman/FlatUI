@@ -6,7 +6,7 @@ import 'jquery-pjax';
 const cache = {};
 function importAll (r) {
   r.keys().forEach(key => cache[key] = r(key));
-}  
+}
 importAll(require.context('./components/', true, /^\.\/.*\.(jsx?)$/));
 importAll(require.context('./pages/', true, /^\.\/.*\.(jsx?)$/));
 
@@ -19,8 +19,8 @@ if (module.hot) {
   module.hot.accept();
 }
 
-$(document).pjax('a[data-pjax]', '.js-layout__main', { 
-  fragment: '.js-layout__main', 
+$(document).pjax('a[data-pjax]', '.js-layout__main', {
+  fragment: '.js-layout__main',
   timeout: 3000
 });
 

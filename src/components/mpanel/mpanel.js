@@ -42,6 +42,6 @@ export class Mpanel {
 
 $( document ).ready(() => {
   if ($('.js-mpanel').length) {
-    new Mpanel ('.js-layout__main', '.js-mpanel', '.header__menu-trigger');
+    new Mpanel('.js-layout__main', '.js-mpanel', '.header__menu-trigger');
   }
 });

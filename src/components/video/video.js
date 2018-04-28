@@ -10,7 +10,7 @@ export class Video {
   addEventHandlers() {  
     $( window ).resize((e) => {
       const frame = this.video.children('iframe');
-      frame.height(this.SetHeight());
+      frame.height(this.setHeight());
     });
   }
 
