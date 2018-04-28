@@ -29,6 +29,7 @@ html
       +layout__main()
         +layout__container({basis: basis, align: 'center', vertical: vertical})
           +layout__container({basis: 'auto', vertical: vertical})
-            block main
+            +layout__pjax-container()
+              block main
 
     block scripts

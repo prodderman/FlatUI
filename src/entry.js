@@ -19,12 +19,12 @@ if (module.hot) {
   module.hot.accept();
 }
 
-$(document).pjax('a[data-pjax]', '.js-layout__main', {
-  fragment: '.js-layout__main',
+$(document).pjax('a[data-pjax]', '.js-layout__pjax-container', {
+  fragment: '.js-layout__pjax-container',
   timeout: 3000
 });
 
-$('.js-layout__main').on('ready pjax:end', (e) => {
+$('.js-layout__pjax-container').on('ready pjax:end', () => {
   for (let key in cache) {
     try {cache[key].default(true);}
     catch (e){};

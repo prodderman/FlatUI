@@ -10,12 +10,12 @@ mixin layout__main()
   main.layout__main.js-layout__main
     block
 
-mixin layout__footer()
-  footer.layout__footer
-    block
-
 mixin layout__sidebar()
   aside.layout__sidebar
+    block
+
+mixin layout__pjax-container()
+  .layout__pjax-container.js-layout__pjax-container
     block
 
 mixin layout__container({display, basis, grow, shrink, wrap, direction, align, vertical} = {})
