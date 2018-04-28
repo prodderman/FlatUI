@@ -20,11 +20,10 @@ if (module.hot) {
 }
 
 $(document).pjax('a[data-pjax]', '.js-layout__pjax-container', {
-  fragment: '.js-layout__pjax-container',
-  timeout: 3000
+  fragment: '.js-layout__pjax-container'
 });
 
-$('.js-layout__pjax-container').on('ready pjax:end', () => {
+$(document).on('ready pjax:end', () => {
   for (let key in cache) {
     try {cache[key].default(true);}
     catch (e){};

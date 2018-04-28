@@ -1,14 +1,14 @@
 [
   {
     "name": "Profile",
-    "href": "profile.html"
+    "href": "/profile.html"
   },
   {
     "name": "Feedback",
-    "href": "feedback.html"
+    "href": "/feedback.html"
   }, 
   {
     "name": "News and Events",
-    "href": "news-events.html"
+    "href": "/news-events.html"
   }
 ]

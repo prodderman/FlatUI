@@ -2,15 +2,15 @@ import './video.styl';
 
 export class Video {
   constructor(video) {  
-    this.video = $(video);
+    this.$video = $(video);
     this.init();
     this.addEventHandlers();
   }
 
   addEventHandlers() {  
     $( window ).resize((e) => {
-      const frame = this.video.children('iframe');
-      frame.height(this.setHeight());
+      const $frame = this.$video.children('iframe');
+      $frame.height(this.setHeight());
     });
   }
 
@@ -26,23 +26,23 @@ export class Video {
 
   init() {
     setTimeout(() => {
-      this.video.empty();
-      const url = this.video.data('src')
+      this.$video.empty();
+      const url = this.$video.data('src')
       const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
-      const frame = $('<iframe/>', {
+      const $frame = $('<iframe/>', {
         height: this.setHeight(),
         src: this.createURL(src),
         allowfullscreen: '',
         frameborder: 0
       });
-      this.video.append(frame);
+      this.$video.append($frame);
     }, 100);
   }
 
   setHeight() {
-    const width = this.video.data('format').split(':')[0];
-    const height = this.video.data('format').split(':')[1];
-    const frameWidth = this.video.width();
+    const width = this.$video.data('format').split(':')[0];
+    const height = this.$video.data('format').split(':')[1];
+    const frameWidth = this.$video.width();
     const frameHeight = height*frameWidth/width;
     return frameHeight;
   }
