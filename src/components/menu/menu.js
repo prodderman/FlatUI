@@ -17,7 +17,7 @@ export class Menu {
         text: menuItem.name,
         'data-pjax': true,
       }).appendTo($menuItem);
-      if (menuItem.href === window.location.pathname) {
+      if (window.location.pathname.indexOf(menuItem.href) !== -1) {
         $menuItemLink.addClass('menu__items-link_active');
       }
       return $menuItem;
