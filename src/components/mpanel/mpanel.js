@@ -37,15 +37,6 @@ export class Mpanel {
     $('.js-layout__main').on('pjax:start', (event) => {
         this.slideout.close();
     });
-
-    $('.js-layout__main').on('pjax:end', (event) => {
-      $.pjax({
-        url: window.location.href,
-        container: '#menu-id',
-        fragment: '#menu-id',
-        timeout: 5000
-      });
-    });  
   }
 }
 
