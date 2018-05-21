@@ -1,8 +1,8 @@
 import 'jquery-ui/ui/widgets/slider';
 import 'jquery-ui/themes/base/theme.css';
 import 'jquery-ui/themes/base/slider.css';
-import 'jquery-ui-slider-pips';
-import 'jquery-ui-slider-pips/dist/jquery-ui-slider-pips.css';
+import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.js';
+import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.css';
 import 'jquery-ui-touch-punch';
 import './slider.styl';
 
