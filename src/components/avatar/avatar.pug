@@ -1,4 +1,4 @@
-mixin avatar({img} = {})
+mixin avatar({img, isProfile = false} = {})
   - 
     let src;
     try {
@@ -8,18 +8,5 @@ mixin avatar({img} = {})
       src = require(`../../components/avatar/img/user-icon.png`);
     }
     
-  .avatar
+  .avatar(class= isProfile ? 'avatar_profile' : '')
     img(src=src).avatar__photo
-
-mixin avatar-profile({img} = {})
-  - 
-    let src;
-    try {
-      src = require(`../../img/${img}`);
-    } 
-    catch(event) {
-      src = require(`../../components/avatar/img/user-icon.png`);
-    }
-    
-  .avatar-profile
-    img(src= src).avatar-profile__photo
