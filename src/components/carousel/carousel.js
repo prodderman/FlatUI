@@ -25,8 +25,8 @@ export class Carousel {
       spaceBetween: 20,
       grabCursor: true,
       pagination: this.$carousel.find('.js-carousel__pagination').length > 0 ? this.$carousel.find('.js-carousel__pagination')[0] : false,
-      nextButton: this.$carousel.find('.js-carousel__btn-next').length > 0 ? this.$carousel.find('.js-carousel__btn-next')[0] : false,
-      prevButton: this.$carousel.find('.js-carousel__btn-prev').length > 0 ? this.$carousel.find('.js-carousel__btn-prev')[0] : false,
+      nextButton: this.$carousel.find('.js-carousel__button-next').length > 0 ? this.$carousel.find('.js-carousel__button-next')[0] : false,
+      prevButton: this.$carousel.find('.js-carousel__button-prev').length > 0 ? this.$carousel.find('.js-carousel__button-prev')[0] : false,
       scrollbar: this.$carousel.find('.js-carousel__scrollbar').length > 0 ? this.$carousel.find('.js-carousel__scrollbar')[0] : false,
       breakpoints: {
         1024: {
