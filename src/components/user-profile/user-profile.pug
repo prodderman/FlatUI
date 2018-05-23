@@ -9,14 +9,14 @@ mixin user-profile({id, img, alt=false, social={}, name='user name', profession=
       .user__profession= profession
       .user__contact
         if social.fb
-          a.user__social.user__social_fb(href= social.fb traget='_blank')
+          a.user__social.user__social_link.user__social_fb(href= social.fb target='_blank')
         else
           .user__social.user__social_fb
         if social.tw
-          a.user__social.user__social_tw(href= social.tw traget='_blank')
+          a.user__social.user__social_link.user__social_tw(href= social.tw target='_blank')
         else
           .user__social.user__social_tw
         if social.dr
-          a.user__social.user__social_dr(href= social.dr traget='_blank')
+          a.user__social.user__social_link.user__social_dr(href= social.dr target='_blank')
         else
           .user__social.user__social_dr
