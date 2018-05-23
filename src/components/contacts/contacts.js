@@ -18,8 +18,8 @@ export class Friend extends User {
   }
 
   _addEventHandler() {
-    const link = this.$friend.find('.js-user__link');
-    link.click((event) => {
+    const $link = this.$friend.find('.js-user__link');
+    $link.click((event) => {
       event.preventDefault();
       if (!this.chat) {
         const userChat = $(Messenger.template(data[this.id]))
@@ -54,5 +54,5 @@ export class Contacts {
 }
 
 $(() => {
-  (new Contacts($('.js-contacts')));
+  new Contacts($('.js-contacts'));
 });

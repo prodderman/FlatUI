@@ -14,13 +14,13 @@ export class Slider {
   }
 
   init() {
-    const input = this.slider.find('input[type="hidden"]');
+    const $input = this.slider.find('input[type="hidden"]');
     const slider = this.slider.slider({
       min: this.slider.data('min'),
       max: this.slider.data('max'),
       value: this.slider.data('value'),
       change: ( event, ui ) => {
-        input.val(ui.value);
+        $input.val(ui.value);
       }
     });
 

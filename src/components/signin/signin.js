@@ -4,8 +4,8 @@ import $ from 'jquery';
 
 export class Signin {
   constructor(node) {
-    this.form = $(node);
-    this.form.parsley();
+    this.$form = $(node);
+    this.$form.parsley();
     this.addEventHandlers();
   }
 

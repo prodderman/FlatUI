@@ -10,19 +10,19 @@ export class Map {
   }
 
   _init() {
-    const coord = this.$ymap.data('coord');
-    const toMarker = this.$ymap.find('.js-map__btn_to-marker');
-    if (!(coord instanceof Array)) return;
+    const $coord = this.$ymap.data('coord');
+    const $toMarker = this.$ymap.find('.js-map__btn_to-marker');
+    if (!($coord instanceof Array)) return;
     $('.js-map__location').empty();
 
     ymaps.ready(() => {
       const ymap = new ymaps.Map($('.js-map__location', this.$ymap)[0], {
-        center: coord,
+        center: $coord,
         zoom: 17,
         controls: []
       });
 
-      const placemark = new ymaps.Placemark(coord, {}, {
+      const placemark = new ymaps.Placemark($coord, {}, {
         iconLayout: 'default#image',
         iconImageHref: require('./img/marker.png'),
         iconImageSize: [55, 55],
@@ -35,7 +35,7 @@ export class Map {
       });
 
       ymap.geoObjects.add(placemark);
-      toMarker.click(() => ymap.panTo(placemark.geometry.getCoordinates()));     
+      $toMarker.click(() => ymap.panTo(placemark.geometry.getCoordinates()));     
     });
   }
 }
