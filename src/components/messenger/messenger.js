@@ -33,14 +33,14 @@ export class Messenger {
       theme: 'dark'
     }).mCustomScrollbar('scrollTo', 'last');
 
-    if (this.$messenger.hasClass('messenger-resizable')) {
+    if (this.$messenger.hasClass('messenger_resizable')) {
       this.$messenger.resizable({
         minHeight: 429,
         minWidth: this.$messenger.width()
       });
     }
 
-    if (this.$messenger.hasClass('messenger-draggable')) {
+    if (this.$messenger.hasClass('messenger_draggable')) {
       this.$messenger.draggable({
         handle: this.$messenger.find('.js-messenger__name'),
         containment: 'window',
