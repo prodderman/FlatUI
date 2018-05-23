@@ -1,33 +1,20 @@
+include ../contacts/contacts
+include ../header/header
+include ../sidebar/sidebar
+include ../mpanel/mpanel
+include ../menu/menu
+
 mixin layout()
+  +contacts()
+  +mpanel()
   .layout.js-layout
-    block
-
-mixin layout__header()
-  header.layout__header.js-layout__header
-    block
-
-mixin layout__main()
-  main.layout__main.js-layout__main
-    block
-
-mixin layout__sidebar()
-  aside.layout__sidebar
-    block
-
-mixin layout__pjax-container()
-  .layout__pjax-container.js-layout__pjax-container
-    block
-
-mixin layout__container({display, basis, grow, shrink, wrap, direction, align, vertical} = {})
-  -
-    let classes = ''
-    classes += display ? ' layout__container_' + display : ''
-    classes += basis ? ' layout__container_basis-' + basis : ''
-    classes += grow ? ' layout__container_grow-' + grow : ''
-    classes += shrink ? ' layout__container_shrink-' + shrink : ''
-    classes += wrap ? ' layout__container_' + wrap : ''
-    classes += direction ? ' layout__container_' + direction : ''
-    classes += align ? ' layout__container_' + align : ''
-    classes += vertical ? ' layout__container_' + vertical : ''
-  .layout__container(class= classes)
-    block
+    header.layout__header.js-layout__header
+      .layout__container.layout__container_basis-1100.layout__container_center
+        +header()
+    main.layout__main.js-layout__main
+      .layout__container.layout__container_basis-1100.layout__container_center
+        .layout__container.layout__container_basis-auto
+          .layout__pjax-container.js-layout__pjax-container
+            block main
+          aside.layout__sidebar
+            +sidebar()

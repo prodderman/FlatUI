@@ -1,5 +1,4 @@
-include ../components/layout/layout
-include ../components/header/header
+include ../components/layout/layout-noauth
 
 - let basis = 900
 - let vertical = false
@@ -21,15 +20,4 @@ html
     title
       block title
   body
-    +layout()
-      +layout__header()
-        +layout__container({basis: basis, align: 'center'})
-          +header-noauth()
-
-      +layout__main()
-        +layout__container({basis: basis, align: 'center', vertical: vertical})
-          +layout__container({basis: 'auto', vertical: vertical})
-            +layout__pjax-container()
-              block main
-
-    block scripts
+    +layout-noauth()

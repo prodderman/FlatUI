@@ -20,7 +20,7 @@ mixin signin({method = "POST", action = "", enctype} = {})
             required: true})
     .signin__row
       .signin__check
-        +tickbox({name: "remember"}) Remember me?
+        +tickbox({name: "remember", text: "Remember me?"})
       a.signin__forgot-password(href= "/mock-address/change-me", data-pjax= true) Forgot password?
     .signin__row
       .signin__button

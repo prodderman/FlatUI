@@ -1,7 +1,7 @@
 include ../avatar/avatar
 include ../search/search
 
-mixin header({} = {})
+mixin header()
   .header
     .header__logo
       a.header__logo-link(href= 'news-events.html' data-pjax= true)
@@ -16,14 +16,3 @@ mixin header({} = {})
     .header__search
       +search()
     .header__menu-trigger.js-header__menu-trigger
-
-mixin header-noauth({} = {})
-  .header
-    .header__logo
-      a.header__logo-link(href= '/mock-address/change-me')
-        img(src= require('../../global/favicons/android-chrome-192x192.png')).header__logo-img
-    .header__content
-      a.header__auth-link(href= 'authorization.html' data-pjax= true) Sign in
-       
-    .header__search
-      +search() 
