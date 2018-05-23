@@ -50,8 +50,8 @@ export class Messenger {
   }
 
   _addEventHandlers() {
-    const btnClose = this.$messenger.find('.js-messenger__close');
-    const formSend = this.$messenger.find('.js-messenger__send');
+    const btnClose = this.$messenger.find('.js-messenger__close-button');
+    const formSend = this.$messenger.find('.js-messenger__send-button');
     const input = this.$messenger.find('.js-messenger__input');
     const msgContainer = this.$messenger.find('ul.js-messenger__tape');
 

@@ -3,7 +3,7 @@ include ../button/button
 
 mixin messenger({userInfo = {}, messages = [], dialed} = {})
   .messenger.js-messenger(userInfo.id= id !== undefined ? `user_chat_${userInfo.id}` : false)
-    button.messenger__close.js-messenger__close
+    button.messenger__close-button.js-messenger__close-button
     .messenger__header
       .messenger__name.js-messenger__name= userInfo.name
       .messenger__row
@@ -20,5 +20,5 @@ mixin messenger({userInfo = {}, messages = [], dialed} = {})
               .messenger__msg(class= msg.incoming ? 'messenger__msg_in' : 'messenger__msg_out')= msg.text
       .messenger__textarea
         .messenger__input.js-messenger__input(contenteditable = 'true')= dialed
-      form.messenger__send.js-messenger__send(method="POST" action='')
+      form.messenger__send-button.js-messenger__send-button(method="POST" action='')
         +button({fullWidth: true, text: 'reply', submit: true})
