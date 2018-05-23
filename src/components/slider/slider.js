@@ -14,7 +14,7 @@ export class Slider {
   }
 
   init() {
-    const $input = this.slider.find('input[type="hidden"]');
+    const $input = this.slider.find('.slider__hidden-input');
     const slider = this.slider.slider({
       min: this.slider.data('min'),
       max: this.slider.data('max'),

@@ -10,4 +10,4 @@ mixin slider({name, altColor, value=0, fill, float, pips, max=100, min=0} = {})
                     data-value= value
                     data-max= max
                     data-min= min)
-                    input(type='hidden', name=name, value=value)
+                    input.slider__hidden-input(type='hidden', name=name, value=value)
