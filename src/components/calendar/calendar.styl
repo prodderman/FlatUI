@@ -12,7 +12,7 @@
     font-family Lato, sans-serif
     font-size 5rem
     font-weight 200
-    color white
+    color $c_white
     padding-top 0.21em
     padding-right 0.4rem
     letter-spacing -0.04em
@@ -49,7 +49,7 @@
     .ui-datepicker-title
       font-family Lato, sans-serif
       font-size 1.5rem
-      color white
+      color $c_white
       font-weight 200
       letter-spacing: -0.036em;
 
@@ -64,7 +64,7 @@
       display none
   
     .ui-datepicker-header 
-      background-color #d54c2c
+      background-color $c_darkenred
 
     .ui-datepicker-prev
       font-size: 1.6rem;
@@ -77,10 +77,10 @@
 
       &:before
         position absolute
-        content '\F104';
-        display block;
-        font-family FontAwesome;
-        color #fff;
+        content '\F104'
+        display block
+        font-family FontAwesome
+        color $c_white
         right 50%;
         top 50%;
         margin-top -0.93rem
@@ -102,7 +102,7 @@
         content '\F105';
         display block;
         font-family FontAwesome;
-        color #fff;
+        color $c_white;
         left 50%;
         top 50%
         margin-top -0.93rem
@@ -119,7 +119,7 @@
         font-family Lato, sans-serif
         font-size 0.53rem
         letter-spacing 0.11em
-        color white
+        color $c_white
         padding-top 1.5em
         line-height 0.6rem
     
@@ -127,7 +127,7 @@
 
       td 
         padding 0
-        border 0.1em solid white
+        border 0.1em solid $c_white
         opacity 1
 
         .ui-state-default 
@@ -145,9 +145,9 @@
           color $c_red
 
         .ui-state-active
-          color white
+          color $c_white
           background-color $c_red
         
         &.ui-datepicker-other-month 
           .ui-state-default
-            color white
+            color $c_white
