@@ -6,6 +6,7 @@ import 'jquery-ui/themes/base/resizable.css';
 import 'jquery-ui/themes/base/draggable.css';
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
 import 'jquery-ui-touch-punch';
+import $ from 'jquery';
 import msgTemplate from './template.pug';
 
 export class Messenger {
@@ -46,7 +47,7 @@ export class Messenger {
         scroll: false
       });
     }
-  };
+  }
 
   _addEventHandlers() {
     const btnClose = this.$messenger.find('.js-messenger__close');
@@ -77,32 +78,32 @@ export class Messenger {
             input.empty();
           }
         });
-      };
+      }
     });
 
-    btnClose.click((e) => {
+    btnClose.click(() => {
       if (this.target) {
         this.target.destroy();
         this.target = null;
       }
       this.$messenger.remove();
     });
-  };
+  }
 
   _placeCaretAtEnd(node) {
     node.focus();
     if (typeof window.getSelection != 'undefined' && typeof document.createRange != 'undefined') {
-        const range = document.createRange();
-        range.selectNodeContents(node);
-        range.collapse(false);
-        const select = window.getSelection();
-        select.removeAllRanges();
-        select.addRange(range);
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      range.collapse(false);
+      const select = window.getSelection();
+      select.removeAllRanges();
+      select.addRange(range);
     } else if (typeof document.body.createTextRange != 'undefined') {
-        const textRange = document.body.createTextRange();
-        textRange.moveToElementText(node);
-        textRange.collapse(false);
-        textRange.select();
+      const textRange = document.body.createTextRange();
+      textRange.moveToElementText(node);
+      textRange.collapse(false);
+      textRange.select();
     }
   }
 }
@@ -110,5 +111,5 @@ export class Messenger {
 export default function render(inPage = false) {
   $(() => {
     $(inPage ? '.layout .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
-  })
+  });
 }

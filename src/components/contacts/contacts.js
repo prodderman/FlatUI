@@ -2,13 +2,14 @@ import './contacts.styl';
 import { User } from '../user-profile/user-profile';
 import { Messenger } from '../messenger/messenger';
 import data from './data.json';
+import $ from 'jquery';
 
 export class Friend extends User {
   constructor(node, id) {
     super();
     this.$friend = $(node);
     this.id = id;
-    this.chat = null
+    this.chat = null;
     this._addEventHandler();
   }
 
@@ -22,16 +23,15 @@ export class Friend extends User {
       event.preventDefault();
       if (!this.chat) {
         const userChat = $(Messenger.template(data[this.id]))
-                          .addClass('messenger-resizable')
-                          .addClass('messenger-draggable');
+          .addClass('messenger-resizable')
+          .addClass('messenger-draggable');
         $(userChat).insertBefore($('.js-layout'));
         this.chat = new Messenger(userChat, this);
-        this.chat.setFocus()
-      }
-      else {
+        this.chat.setFocus();
+      } else {
         this.chat.setFocus();
       }
-    })
+    });
   }
 }
 
@@ -49,10 +49,10 @@ export class Contacts {
       $userWrap.append($userNode);
       this.contacts.find('.js-contacts__container').append($userWrap);
       new Friend($userNode, user.userInfo.id);
-    })
+    });
   }
 }
 
 $(() => {
-  new Contacts($('.js-contacts'));
+  (new Contacts($('.js-contacts')));
 });

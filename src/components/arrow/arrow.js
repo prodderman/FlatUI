@@ -1,1 +1,1 @@
-import './arrow.styl'; 
+import './arrow.styl';

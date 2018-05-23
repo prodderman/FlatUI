@@ -2,6 +2,7 @@ import 'jquery-ui/ui/widgets/datepicker';
 import 'jquery-ui/themes/base/theme.css';
 import 'jquery-ui/themes/base/datepicker.css';
 import './calendar.styl';
+import $ from 'jquery';
 
 class Calendar {
   constructor(calendar) {
@@ -32,7 +33,7 @@ class Calendar {
       showButtonPanel: true,
       showOtherMonths: true,
       firstDay: 1,
-      onSelect: function(date, inst) {
+      onSelect: function(date) {
         $nowNode.text(new Date(date).getDate());
       }
     });

@@ -1,4 +1,5 @@
 import './mpanel.styl';
+import $ from 'jquery';
 import Slideout from 'slideout';
 
 export class Mpanel {
@@ -35,7 +36,7 @@ export class Mpanel {
     });
 
     $('.js-layout__pjax-container').on('pjax:start', () => {
-        this.slideout.close();
+      this.slideout.close();
     });
   }
 }

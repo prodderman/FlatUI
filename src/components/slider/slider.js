@@ -5,6 +5,7 @@ import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.js';
 import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.css';
 import 'jquery-ui-touch-punch';
 import './slider.styl';
+import $ from 'jquery';
 
 export class Slider {
   constructor(slider) {

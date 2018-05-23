@@ -1,5 +1,6 @@
 import './percentage.styl';
-import 'jquery-circle-progress'; 
+import 'jquery-circle-progress';
+import $ from 'jquery';
 
 export class Percentage {
   constructor(diagram) {
@@ -7,7 +8,7 @@ export class Percentage {
     this._render();
   }
 
- _render() {
+  _render() {
     this.$diagram.find('canvas').remove();
     const percent = parseFloat(this.$diagram.data('percent')/100);
     const size = this.$diagram.width();
@@ -32,5 +33,5 @@ export class Percentage {
 export default function render(inPage = false) {
   $(() => {
     $(inPage ? '.layout .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
-  })
+  });
 }

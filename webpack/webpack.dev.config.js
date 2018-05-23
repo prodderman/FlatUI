@@ -1,7 +1,7 @@
-const path = require('path');
+/*global process:true*/
+
 const webpack = require('webpack');
 const config = require('webpack-config');
-const autoprefixer = require('autoprefixer');
 
 module.exports = new config.default().extend('webpack/webpack.base.config.js').merge({
   devtool: 'eval',
@@ -13,15 +13,15 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
       {
         test: /\.css/,
         use: [{
-            loader: 'style-loader',
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+            sourceMap: false,
           },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: false,
-            },
-          },
+        },
         ],
       },
       {
@@ -58,4 +58,4 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
     contentBase: 'dist',
     port: process.env.PORT
   }
-})
+});

@@ -1,4 +1,5 @@
 import './video.styl';
+import $ from 'jquery';
 
 export class Video {
   constructor(video) {  
@@ -8,7 +9,7 @@ export class Video {
   }
 
   addEventHandlers() {  
-    $( window ).resize((e) => {
+    $(window).resize(() => {
       const $frame = this.$video.children('iframe');
       $frame.height(this.setHeight());
     });
@@ -27,7 +28,7 @@ export class Video {
   init() {
     setTimeout(() => {
       this.$video.empty();
-      const url = this.$video.data('src')
+      const url = this.$video.data('src');
       const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
       const $frame = $('<iframe/>', {
         height: this.setHeight(),
@@ -65,7 +66,7 @@ export class Video {
   }
 
   testId(src) {
-    return src.match(/([^\/=]+)(?:)/g);
+    return src.match(/([^/=]+)(?:)/g);
   }
 }
 

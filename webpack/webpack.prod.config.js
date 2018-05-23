@@ -1,11 +1,10 @@
+/*global __dirname:true*/
+
 const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
 
 module.exports = new config.default().extend('webpack/webpack.base.config.js').merge({
   output: {
@@ -149,4 +148,4 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
       allChunks: true,
     }),
   ],
-})
+});

@@ -1,5 +1,6 @@
 import 'swiper/dist/css/swiper.css';
 import Swiper from 'swiper';
+import $ from 'jquery';
 import './carousel.styl';
 
 export class Carousel {
@@ -14,10 +15,10 @@ export class Carousel {
     const $height = $swiperWrapper.height();
     
     $swiperWrapper.children().map((index, node) => {
-      $(node).wrap( `<div class='carousel__slide swiper-slide'></div>` );
+      $(node).wrap('<div class=\'carousel__slide swiper-slide\'></div>');
     });
     this.$carousel.height($height);
-    const swiper = new Swiper($swiperContainer, {
+    new Swiper($swiperContainer, {
       slidesPerView: 2,
       centeredSlides: true,
       paginationClickable: true,
@@ -38,7 +39,7 @@ export class Carousel {
       }
     }); 
   }
-};
+}
 
 export default function render(inPage = false) {
   $(() => {

@@ -1,3 +1,5 @@
+/*global __dirname:true*/
+
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -19,21 +21,21 @@ const htmls = pages.map(fileName => new HtmlWebpackPlugin({
   template: `./src/pages/${fileName}/${fileName}.pug`,
   alwaysWriteToDisk: true,
   inject: 'body',
-  hash: true,
+  hash: true
 }));
 
 module.exports = new config.default().merge({
   entry: './src/entry.js',
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '..', 'dist')
   },
 
   resolve: {
     modules: [
       'node_modules',
       'src',
-      path.resolve(__dirname, 'vendors'),
+      path.resolve(__dirname, 'vendors')
     ],
     alias: {
       vendors: path.resolve(__dirname, '..', 'src', 'vendors')
@@ -44,8 +46,8 @@ module.exports = new config.default().merge({
     new webpack.ProgressPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery',
+      jQuery: 'jquery'
     }),
-    new HtmlWebpackHarddiskPlugin(),
-  ].concat(htmls),
+    new HtmlWebpackHarddiskPlugin()
+  ].concat(htmls)
 });

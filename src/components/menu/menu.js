@@ -1,4 +1,5 @@
 import './menu.styl';
+import $ from 'jquery';
 import menuItems from '../../global/mocks/menu-items.json';
 
 export class Menu {

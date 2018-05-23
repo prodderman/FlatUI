@@ -1,5 +1,6 @@
 import './form.styl';
 import 'parsleyjs';
+import $ from 'jquery';
 
 class Feedback {
   constructor(node) {

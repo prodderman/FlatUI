@@ -1,6 +1,7 @@
 import './select.styl';
 import 'vendors/formstyler/jquery.formstyler.min.js';
 import 'vendors/formstyler/jquery.formstyler.css';
+import $ from 'jquery';
 
 export class Select {
   constructor(node) {

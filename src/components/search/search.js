@@ -1,4 +1,5 @@
 import './search.styl';
+import $ from 'jquery';
 
 export class Search {
   constructor(node) {
@@ -9,7 +10,7 @@ export class Search {
   _addEventHadlers() {
     const field = this.$search.find('.js-search__field');
     const seacrhList = this.$search.find('ul.js-search__result-list');
-    field.on('change keyup', (e) => {
+    field.on('change keyup', () => {
       if (field.val().length >= 2) {
         $.ajax({
           type: 'POST',
@@ -34,7 +35,7 @@ export class Search {
       }
     });
 
-    field.on('focusin', (e) => {
+    field.on('focusin', () => {
       if (field.hasClass('error')) {
         field.removeClass('error');
         field.attr('placeholder', 'Search');
@@ -49,16 +50,13 @@ export class Search {
         data: {
           'search': field.val()
         },
-        success: (data) => {
-          //------------------
-        },
         error: () => {
           field.val('');
           field.addClass('error');
           field.attr('placeholder', 'I’ve not found what I’m looking for...');
         }
       });
-    })
+    });
   }
 }
 

@@ -1,4 +1,5 @@
 import './button.styl';
+import $ from 'jquery';
 
 export class Buttons {
   constructor() {
@@ -8,7 +9,7 @@ export class Buttons {
   _addEventHandlers() {
     $(document).on('click', '.js-button, .js-button .ripple', (event) => {
       this._ripple(event, $(event.target));
-    })
+    });
   }
 
   _ripple(event, $element) {
@@ -26,7 +27,7 @@ export class Buttons {
     $btn.addClass('button_ripple');
     $btn.append($div);
 
-    $div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', (event) => {
+    $div.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', () => {
       $div.remove();
       $btn.not(':has(".ripple")').removeClass('button_ripple');
     });

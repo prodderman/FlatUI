@@ -1,5 +1,6 @@
 import './signin.styl';
 import 'parsleyjs';
+import $ from 'jquery';
 
 export class Signin {
   constructor(node) {

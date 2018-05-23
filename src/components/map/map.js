@@ -1,4 +1,7 @@
+/*global ymaps:true*/
+
 import './map.styl';
+import $ from 'jquery';
 
 export class Map {
   constructor(node) {
@@ -32,7 +35,7 @@ export class Map {
       });
 
       ymap.geoObjects.add(placemark);
-      toMarker.click((e) => ymap.panTo(placemark.geometry.getCoordinates()));     
+      toMarker.click(() => ymap.panTo(placemark.geometry.getCoordinates()));     
     });
   }
 }

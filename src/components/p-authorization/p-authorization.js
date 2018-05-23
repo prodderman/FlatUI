@@ -1,1 +1,1 @@
-import './p-authorization.styl'
+import './p-authorization.styl';

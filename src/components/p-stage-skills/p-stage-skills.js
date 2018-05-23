@@ -1,1 +1,1 @@
-import './p-stage-skills.styl'
+import './p-stage-skills.styl';

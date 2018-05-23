@@ -1,4 +1,5 @@
 import './piechart.styl';
+import $ from 'jquery';
 
 export class Piechart {
   constructor(diagram) {
@@ -39,5 +40,5 @@ export class Piechart {
 export default function render(inPage = false) {
   $(() => {
     $(inPage ? '.layout .js-piechart' : '.js-piechart').map((index, node) => new Piechart(node));
-  })
+  });
 }

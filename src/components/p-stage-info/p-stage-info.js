@@ -1,1 +1,1 @@
-import './p-stage-info.styl'
+import './p-stage-info.styl';

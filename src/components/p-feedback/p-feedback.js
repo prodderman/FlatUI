@@ -1,1 +1,1 @@
-import './p-feedback.styl'
+import './p-feedback.styl';

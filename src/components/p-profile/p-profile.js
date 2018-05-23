@@ -1,1 +1,1 @@
-import './p-profile.styl'
+import './p-profile.styl';
