@@ -6,7 +6,7 @@ mixin stages({count = 2, current = 1})
   if current > count
     - current = count
 
-  ul.stages&attributes(attributes)
+  ul.stages
     - for (let i = 0; i < count; i++)
         - if (i < current - 1)
             li.stages__item.stages__item_visit(data-stage= (i+1))

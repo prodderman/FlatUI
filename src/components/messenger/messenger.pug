@@ -2,7 +2,7 @@ include ../user-profile/user-profile
 include ../button/button
 
 mixin messenger({userInfo = {}, messages = [], dialed} = {})
-  .messenger.js-messenger(userInfo.id= id !== undefined ? `user_chat_${userInfo.id}` : false)&attributes(attributes)
+  .messenger.js-messenger(userInfo.id= id !== undefined ? `user_chat_${userInfo.id}` : false)
     button.messenger__close.js-messenger__close
     .messenger__header
       .messenger__name.js-messenger__name= userInfo.name

@@ -8,7 +8,7 @@ mixin activity({href = '/mock-address/change-me', alt = 'Activity', img = ''} = 
       src = '';
     }
     
-  a.activity&attributes(attributes)(href= href)
+  a.activity(href= href)
     .activity__preview-image
       img.activity__img(src= src, alt= alt)
     .activity__preview-text 

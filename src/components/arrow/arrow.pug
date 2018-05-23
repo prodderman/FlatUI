@@ -5,6 +5,6 @@ mixin arrow({disabled = false, href = '#', direction = 'left', empty = false } =
   -  classes += ` arrow_direction_${direction}`
 
   if disabled
-    span.arrow(class= classes)&attributes(attributes)
+    span.arrow(class= classes)
   else 
-    a.arrow(href= href, class= classes)&attributes(attributes)
+    a.arrow(href= href, class= classes)
