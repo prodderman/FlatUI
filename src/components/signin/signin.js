@@ -10,7 +10,7 @@ export class Signin {
   }
 
   addEventHandlers() { 
-    this.form.submit((event) => {
+    this.$form.submit((event) => {
       event.preventDefault();
       $.ajax({
         type: this.form.attr('method'),
