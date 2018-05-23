@@ -10,7 +10,7 @@ export class Video {
 
   addEventHandlers() {  
     $(window).resize(() => {
-      const $frame = this.$video.children('iframe');
+      const $frame = this.$video.children('.video__frame');
       $frame.height(this.setHeight());
     });
   }
@@ -31,6 +31,7 @@ export class Video {
       const url = this.$video.data('src');
       const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
       const $frame = $('<iframe/>', {
+        class: 'video__frame',
         height: this.setHeight(),
         src: this.createURL(src),
         allowfullscreen: '',
