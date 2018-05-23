@@ -1,25 +1,12 @@
 extends ../../global/template
 
-include ../../components/form/form
-include ../../components/map/map
+include ../../components/p-feedback/p-feedback
 
 block variables
   - const pageName = 'Feedback'
 
 block title
-  | Contacts
+  =pageName
 
 block main
-  .p-feedback
-    .p-feedback__header
-      h1.p-feedback__main-title feedback
-    .p-feedback__content
-      h2.p-feedback__title contact us
-      .p-feedback__form
-        +form()
-    .p-feedback__content
-      h2.p-feedback__title find us
-      .p-feedback__map
-        +map({address: 'Красноармейская ул., 147', coord: '[56.453186, 84.975665]'})
-      .p-feedback__map
-        +map({address: 'проспект Кирова, 26', coord: '[56.466767, 84.965776]'})
+  +p-feedback()

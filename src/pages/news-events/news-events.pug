@@ -1,35 +1,12 @@
 extends ../../global/template
 
-include ../../components/video/video
-include ../../components/news/news
-include ../../components/event/event
-include ../../components/carousel/carousel
+include ../../components/p-news-events/p-news-events
 
 block variables
   - const pageName = "News and Events";
-  - newsData = require('../../global/mocks/news.json');
-  - eventData = require('../../global/mocks/events.json');
 
 block title 
   | News and Events
 
 block main
- .p-news-event
-    .p-news-event__header
-      h1.p-news-event__main-title= pageName
-    .p-news-event__content
-      h2.p-news-event__title News
-      .p-news-event__slider
-        +carousel({buttons: true})
-          each news in newsData
-            +news(news)
-    .p-news-event__content
-      h2.p-news-event__title Events
-      .p-news-event__slider
-        +carousel({buttons: true})
-          each event in eventData
-            +event(event)
-    .p-news-event__content
-      h2.p-news-event__title Videos
-      .p-news-event__video
-        +video({src: "https://www.youtube.com/watch?v=oA0Ay7xX4-k"})
+  +p-news-events()

@@ -1,0 +1,77 @@
+include ../stages/stages
+include ../percentage/percentage
+include ../input/input
+include ../select/select
+include ../toggle/toggle
+include ../button/button
+
+mixin p-stage-info()
+  .p-stage-info
+    .p-stage-info__stages
+      +stages({count: 5, current: 4})
+    .p-stage-info__content
+      form.p-stage-info__form(method='POST' action='')
+        .p-stage-info__fieldset
+          .p-stage-info__column
+            h2.p-stage-info__title main info
+            .p-stage-info__input
+              +input({name: 'name',
+                      placeholder: 'Name',
+                      require: true,
+                      tabindex: 1})
+            .p-stage-info__input
+              +input({name: 'email',
+                      placeholder: 'E-mail',
+                      require: true,
+                      tabindex: 2})
+            .p-stage-info__select
+              +select({name: 'gender',
+                      require: true,
+                      placeholder: 'Gender',
+                      tabindex: 3,
+                      options: {
+                        male: 'Male',
+                        female: 'Female'
+                      }})
+            .p-stage-info__input
+              +input({name: 'password',
+                      type: 'password',
+                      placeholder: 'Password',
+                      require: true,
+                      tabindex: 4})
+            .p-stage-info__input
+              +input({name: 'password',
+                      type: 'password',
+                      placeholder: 'Confirm password',
+                      require: true,
+                      tabindex: 5})
+          .p-stage-info__column
+            h2.p-stage-info__title other info
+            .p-stage-info__input
+              +input({name: 'phone',
+                      placeholder: 'Phone number',
+                      require: true,
+                      tabindex: 6})
+            .p-stage-info__input
+              +input({name: 'profession',
+                      placeholder: 'Profession',
+                      require: true,
+                      tabindex: 7})
+            .p-stage-info__input
+              +input({name: 'city',
+                      placeholder: 'City',
+                      require: true,
+                      tabindex: 7})
+            .p-stage-info__toggle
+              +toggle({name: 'notifications'}) Receive notifications
+            .p-stage-info__toggle
+              +toggle({name: 'subscribe'}) Subscribe to newsletter
+      .p-stage-info__footer
+        .p-stage-info__diagram
+          +percentage({percent: 64})
+          .p-stage-info__label-diagram % Page Filling
+        .p-stage-info__buttons
+          .p-stage-info__prev
+            +button({href: 'authorization.html', text: 'prev', altColor: true})
+          .p-stage-info__next
+            +button({href: 'stage-skills.html', text: 'next', pjax: true})
