@@ -1,4 +1,4 @@
-mixin tickbox({name, required, tabindex} = {})
+mixin tickbox({name, required, tabindex, text = ''} = {})
   .tickbox
     label.tickbox__label
       input.tickbox__field(
@@ -8,6 +8,5 @@ mixin tickbox({name, required, tabindex} = {})
         tabindex = tabindex
       )
       .tickbox__checked
-      if block
-        .tickbox__label-text
-          block
+      if text
+        .tickbox__label-text= text

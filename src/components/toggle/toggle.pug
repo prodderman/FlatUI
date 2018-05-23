@@ -1,4 +1,4 @@
-mixin toggle({name, required, tabindex} = {})
+mixin toggle({name, required, tabindex, text = ''} = {})
   .toggle
     label.toggle__label
       .toggle__viewport
@@ -12,6 +12,5 @@ mixin toggle({name, required, tabindex} = {})
           .toggle__text= 'on'
           .toggle__knob
           .toggle__text= 'off'
-      if block
-        .toggle__label-text
-          block
+      if text
+        .toggle__label-text= text
