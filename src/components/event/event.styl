@@ -38,12 +38,22 @@
     text-transform uppercase
 
   &__text
+    position relative
     margin-top 0.3rem
     margin-bottom 0.3rem
     font-family Lato, Arial, sans-serif
     font-size 0.7rem
     overflow hidden
     flex 1 1
+
+    &:after
+      content ''
+      position absolute
+      bottom 0
+      height 0.5rem
+      width 100%
+      display block
+      background linear-gradient(180deg, rgba(255,255,255,0), $c_green 100%)
 
   &__action
     display flex
