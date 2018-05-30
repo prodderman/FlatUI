@@ -10,7 +10,7 @@
     align-items center
     cursor pointer
   
-  &__checked
+  &__indicator
     color $c_gray
     width 1.5rem
     height 1.5rem
@@ -24,7 +24,7 @@
       font-family FontAwesome
       content '\F00C'
 
-  &__field:checked + &__checked
+  &__field:checked + &__indicator
     background-color $c_green
     color white
 
