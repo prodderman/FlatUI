@@ -1,5 +1,5 @@
 import './contacts.styl';
-import { User } from '../user-profile/user-profile';
+import { User } from '../user/user';
 import { Messenger } from '../messenger/messenger';
 import data from './data.json';
 import $ from 'jquery';
