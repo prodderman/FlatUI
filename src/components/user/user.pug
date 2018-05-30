@@ -1,4 +1,5 @@
 include ../avatar/avatar
+include ../social/social
 
 mixin user({id, img, alt=false, social={}, name='user name', profession='profession', href='/mock-address/change-me'} = {})
   .user.js-user(class= alt ? 'user_alt' : false id = id !== undefined ? `user_${id}` : false)
@@ -7,16 +8,7 @@ mixin user({id, img, alt=false, social={}, name='user name', profession='profess
     .user__info.js-user__info
       .user__name= name
       .user__profession= profession
-      .user__contact
-        if social.fb
-          a.user__social.user__social_link.user__social_fb(href= social.fb target='_blank')
-        else
-          .user__social.user__social_fb
-        if social.tw
-          a.user__social.user__social_link.user__social_tw(href= social.tw target='_blank')
-        else
-          .user__social.user__social_tw
-        if social.dr
-          a.user__social.user__social_link.user__social_dr(href= social.dr target='_blank')
-        else
-          .user__social.user__social_dr
+      .user__social
+        +social({icon: 'facebook', href: social.fb})
+        +social({icon: 'twitter', href: social.tw})
+        +social({icon: 'dribbble', href: social.dr})
