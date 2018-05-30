@@ -5,7 +5,7 @@ include ../percentage/percentage
 include ../piechart/piechart
 include ../stages/stages
 include ../slider/slider
-include ../form/form
+include ../feedback/feedback
 include ../calendar/calendar
 include ../video/video
 include ../input/input
@@ -16,7 +16,7 @@ include ../select/select
 include ../map/map
 include ../news/news
 include ../event/event
-include ../user-profile/user-profile
+include ../user/user
 include ../messenger/messenger
 
 mixin p-uikit()
@@ -74,7 +74,7 @@ mixin p-uikit()
         .p-uikit__container.p-uikit__container_form-elements
           h2.p-uikit__title form elements
           .p-uikit__left-col.p-uikit__left-col_form
-            +form()
+            +feedback()
           .p-uikit__right-col
             h2.p-uikit__title  toggles
             .p-uikit__container.p-uikit__container_toggles
@@ -98,12 +98,12 @@ mixin p-uikit()
           .p-uikit__right-col
             h2.p-uikit__title user profile
             .p-uikit__row
-              +user-profile({img: "user-1.jpg", 
+              +user({img: "user-1.jpg", 
                             name: "John Smith",
                             profession: "ux designer",
                             social: {tw: "https://twitter.com"}})
             .p-uikit__row
-              +user-profile({img: "user-2.jpg",
+              +user({img: "user-2.jpg",
                               name: "Sarah Brown",
                               profession: "developer",
                               alt: true,

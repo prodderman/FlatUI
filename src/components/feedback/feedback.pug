@@ -2,7 +2,7 @@ include ../input/input
 include ../button/button
 include ../textarea/textarea
 
-mixin form({method = 'POST', action = '', enctype} = {})
+mixin feedback({method = 'POST', action = '', enctype} = {})
   form.feedback.js-feedback(
     data-parsley-validate
     method= method

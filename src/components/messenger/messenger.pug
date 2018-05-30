@@ -1,4 +1,4 @@
-include ../user-profile/user-profile
+include ../user/user
 include ../button/button
 
 mixin messenger({userInfo = {}, messages = [], dialed} = {})
@@ -8,7 +8,7 @@ mixin messenger({userInfo = {}, messages = [], dialed} = {})
       .messenger__name.js-messenger__name= userInfo.name
       .messenger__row
         .messenger__user
-          +user-profile(userInfo)
+          +user(userInfo)
     .messenger__body
       .messenger__links
         a(href='/mock-address/change-me' target= '_blank').messenger__link.messenger__link_msg

@@ -1,4 +1,4 @@
-import './user-profile.styl';
+import './user.styl';
 import userTemplate from './template.pug';
 
 export class User {

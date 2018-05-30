@@ -1,4 +1,4 @@
-import './form.styl';
+import './feedback.styl';
 import 'parsleyjs';
 import $ from 'jquery';
 

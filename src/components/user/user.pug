@@ -1,6 +1,6 @@
 include ../avatar/avatar
 
-mixin user-profile({id, img, alt=false, social={}, name='user name', profession='profession', href='/mock-address/change-me'} = {})
+mixin user({id, img, alt=false, social={}, name='user name', profession='profession', href='/mock-address/change-me'} = {})
   .user.js-user(class= alt ? 'user_alt' : false id = id !== undefined ? `user_${id}` : false)
     a.user__link.js-user__link(href= href)
       +avatar({img: img})
