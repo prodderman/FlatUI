@@ -9,12 +9,11 @@ mixin layout()
   +mpanel()
   .layout.js-layout
     header.layout__header.js-layout__header
-      .layout__container.layout__container_basis-1100.layout__container_center
+      .layout__container.layout__container_basis-1100.layout__container_centered
         +header()
     main.layout__main.js-layout__main
-      .layout__container.layout__container_basis-1100.layout__container_center
-        .layout__container.layout__container_basis-auto
-          .layout__pjax-container.js-layout__pjax-container
-            block main
-          aside.layout__sidebar
-            +sidebar()
+      .layout__container.layout__container_basis-1100.layout__container_centered
+        .layout__pjax-container.js-layout__pjax-container
+          block main
+        aside.layout__sidebar
+          +sidebar()

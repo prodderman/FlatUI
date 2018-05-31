@@ -3,10 +3,10 @@ include ../header/header-noauth
 mixin layout-noauth()
   .layout.js-layout
       header.layout__header.js-layout__header
-        .layout__container.layout__container_basis-900.layout__container_center
+        .layout__container.layout__container_basis-900.layout__container_centered
           +header-noauth()
 
       main.layout__main.js-layout__main
-        .layout__container.layout__container_basis-900.layout__container_center.layout__container_stretch
+        .layout__container.layout__container_basis-900.layout__container_centered
           .layout__pjax-container.js-layout__pjax-container
             block main
