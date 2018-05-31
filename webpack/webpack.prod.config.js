@@ -89,21 +89,10 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
         ]
       },
       {
-        test: /\.(svg|png|ico|xml|json|webmanifest)$/,
-        loader: 'file-loader',
-        include: [
-          path.resolve(__dirname, '..', 'src/global/favicons')
-        ],
-        options: {
-          name: 'favicons/[name].[ext]'
-        }
-      },
-      {
-        test: /\.(ico|png|jpg|svg|gif)$/,
+        test: /\.(ico|png|jpg|svg|gif|xml|json|webmanifest)$/,
         loader: 'file-loader',
         exclude: [
-          /fonts/,
-          path.resolve(__dirname, '..', 'src/global/favicons')
+          /fonts/
         ],
         options: {
           name: 'img/[name].[ext]'
@@ -114,8 +103,7 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
         loader: 'file-loader',
         exclude: [
           /node_modules/,
-          /img/,
-          path.resolve(__dirname, '..', 'src/global/favicons')
+          /img/
         ],
         options: {
           name: 'fonts/[name]/[name].[ext]',

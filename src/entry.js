@@ -2,6 +2,7 @@ import 'normalize.css';
 import './fonts/FontAwesome/font-awesome.min.css';
 import './global/global.styl';
 import 'jquery-pjax';
+import $ from 'jquery';
 
 const cache = {};
 function importAll (r) {
@@ -10,8 +11,12 @@ function importAll (r) {
 importAll(require.context('./components/', true, /^\.\/.*\.(jsx?)$/));
 
 for (let key in cache) {
-  try {cache[key].default();}
-  catch (e){};
+  try {
+    cache[key].default();
+  }
+  catch (error) {
+    console.log(error);
+  }
 }
 
 if (module.hot) {
@@ -25,6 +30,8 @@ $(document).pjax('a[data-pjax]', '.js-layout__pjax-container', {
 $(document).on('ready pjax:end', () => {
   for (let key in cache) {
     try {cache[key].default(true);}
-    catch (e){};
+    catch (error) {
+      console.log(error);
+    }
   }
 });

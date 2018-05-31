@@ -1,10 +1,10 @@
-extends ../../global/template.noauth.pug
+extends ../../global/template.pug
 
 include ../../components/p-authorization/p-authorization
 
 block variables
   - const pageName = 'Authorization'
-  - vertical = 'middle'
+  - auth = false
 
 block title 
   =pageName

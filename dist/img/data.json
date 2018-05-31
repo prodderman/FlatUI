@@ -1,0 +1,101 @@
+[
+  {
+    "userInfo": {
+      "id": 0,
+      "name": "Stephen King",
+      "profession": "writer",
+      "img": "user-0.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com",
+        "tw": "https://twitter.com"
+      }
+    },
+    "messages": [
+      {
+        "incoming": true,
+        "text": "Hey! So are we cool to meet at the art gallery? Say 10pm"
+      },
+      {
+        "incoming": false,
+        "text": "Yeah that sounds great. See you then."
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "id": 1,
+      "name": "John Smith",
+      "profession": "ux designer",
+      "img": "user-1.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com"
+      }
+    },
+    "messages": [
+      {
+        "incoming": true,
+        "text": "Hey! So are we cool to meet at the art gallery? Say 10pm"
+      }
+    ],
+    "dialed": "No."
+  },
+  {
+    "userInfo": {
+      "id": 2,
+      "name": "Sarah Brown",
+      "profession": "developer",
+      "img": "user-2.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com",
+        "tw": "https://twitter.com",
+        "dr": "https://dribbble.com/"
+      }
+    },
+    "messages": [
+      {
+        "incoming": true,
+        "text": "Hey! So are we cool to meet at the art gallery? Say 10pm"
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "id": 3,
+      "name": "Elon Musk",
+      "profession": "engenier",
+      "img": "user-3.jpg",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com"
+      }
+    },
+    "messages": [
+      {
+        "incoming": true,
+        "text": "Hey! So are we cool to meet at the art gallery? Say 10pm"
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "id": 4,
+      "name": "Artemiy Lebedev",
+      "profession": "designer",
+      "href": "/mock-address/change-me",
+      "social": {
+        "fb": "https://fb.com",
+        "tw": "https://twitter.com",
+        "dr": "https://dribbble.com/"
+      }
+    },
+    "messages": [
+      {
+        "incoming": true,
+        "text": "Hey! So are we cool to meet at the art gallery? Say 10pm"
+      }
+    ]
+  }
+]

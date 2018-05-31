@@ -11,9 +11,9 @@ mixin carousel({ pagination = false, buttons = false, scrollbar = false } = {})
       if pagination
         .carousel__pagination.js-carousel__pagination.swiper-pagination
       if buttons
-        .carousel__button.carousel__button-prev.js-carousel__button-prev.swiper-button-prev
+        .carousel__button.carousel__button_prev.js-carousel__button_prev.swiper-button-prev
           +arrow()
-        .carousel__button.carousel__button-next.js-carousel__button-next.swiper-button-next
+        .carousel__button.carousel__button_next.js-carousel__button_next.swiper-button-next
           +arrow({direction: 'right'})
       if scrollbar
         .carousel__scrollbar.js-carousel__scrollbar.swiper-scrollbar

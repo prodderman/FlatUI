@@ -1,9 +1,10 @@
-extends ../../global/template.noauth.pug
+extends ../../global/template.pug
 
 include ../../components/p-stage-info/p-stage-info
 
 block variables
   - const pageName = 'Stage info'
+  - auth = false
 
 block title
   =pageName

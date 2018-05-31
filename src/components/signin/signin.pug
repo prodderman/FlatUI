@@ -21,9 +21,9 @@ mixin signin({method = "POST", action = "", enctype} = {})
     .signin__row
       .signin__check
         +tickbox({name: "remember", text: "Remember me?"})
-      a.signin__forgot-password(href= "/mock-address/change-me", data-pjax= true) Forgot password?
+      a.signin__forgot-password(href= "/mock-address/change-me") Forgot password?
     .signin__row
       .signin__button
         +button({submit: true, text: "Sign In", fullWidth: true})
       .signin__button  
-        +button({href: "stage-info.html", text: "Sign Up", altColor: true, fullWidth: true})
+        +button({href: "stage-info.html", text: "Sign Up", altColor: true, fullWidth: true, pjax: true})
