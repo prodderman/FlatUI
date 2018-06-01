@@ -31,6 +31,8 @@ class Buttons {
   }
 }
 
-$(() => {
+function render() {
   new Buttons();
-});
+}
+
+$( document ).ready(render);

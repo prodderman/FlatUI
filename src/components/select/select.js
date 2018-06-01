@@ -13,10 +13,11 @@ class Select {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(() => {
-    $(isElementOnPage ? '.js-layout__pjax-container .js-select' : '.js-select').map((index, node) => new Select(node));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-select' : '.js-select');
+  if ($components.length > 0) {
+    $components.map((index, node) => new Select(node));
+  }
 }
 
 export default render;

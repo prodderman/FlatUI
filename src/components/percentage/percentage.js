@@ -28,10 +28,11 @@ class Percentage {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(() => {
-    $(isElementOnPage ? '.js-layout__pjax-container .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-percentage' : '.js-percentage');
+  if ($components.length > 0) {
+    $components.map((index, node) => new Percentage(node));
+  }  
 }
 
 export default render;

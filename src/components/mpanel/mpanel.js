@@ -1,17 +1,17 @@
 import Slideout from 'slideout';
+import { bind } from 'decko';
 
-class Mpanel {
+class MPanel {
   constructor(panel, menu, trigger) {
-    this.$panel = $(panel).get(0);
-    this.$menu = $(menu).get(0);
-    this.trigger = trigger;
+    this.$panel = panel.get(0);
+    this.$menu = menu.get(0);
+    this.$trigger = trigger;
     this.slideout;
     this._init();
     this._addEventHandlers();
   }
 
   _init() {
-    if (!this.$menu) return;
     this.slideout = new Slideout({
       panel: this.$panel,
       menu: this.$menu,
@@ -23,24 +23,35 @@ class Mpanel {
   }
 
   _addEventHandlers() {
-    $(document).on('click', this.trigger, () => {
-      this.slideout.toggle();
-    });
+    this.$trigger.on('click', this._togglePanelOnTriggerClick);
+    $(window).resize(this._closePanelOnResize);
+    $('.js-layout__pjax-container').on('pjax:start', this._closePanelOnRelocation);
+  }
 
-    $(window).resize((event) => {
-      if (event.target.innerWidth > 1024) {
-        this.slideout.close();
-      }
-    });
+  @bind
+  _togglePanelOnTriggerClick() {
+    this.slideout.toggle();
+  }
 
-    $('.js-layout__pjax-container').on('pjax:start', () => {
+  @bind
+  _closePanelOnRelocation() {
+    this.slideout.close();
+  }
+
+  @bind
+  _closePanelOnResize(event) {
+    if (event.target.innerWidth > 1024) {
       this.slideout.close();
-    });
+    }
   }
 }
 
-$( document ).ready(() => {
-  if ($('.js-mpanel').length) {
-    new Mpanel('.js-layout__main', '.js-mpanel', '.js-header__menu-trigger');
-  }
-});
+function render() {
+  const $menuPanel = $('.js-mpanel');
+  const $main = $('.js-layout__main');
+  const $menuButton = $('.js-header__menu-trigger');
+  if ($menuPanel.length > 0 && $main.length > 0)
+    new MPanel($main, $menuPanel, $menuButton);
+}
+
+$( document ).ready(render);

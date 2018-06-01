@@ -57,10 +57,11 @@ class Search {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(() => {
-    $(isElementOnPage ? '.js-layout__pjax-container .js-search' : '.js-search').map((index, node) => new Search($(node)));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-search' : '.js-search');
+  if ($components.length > 0) {
+    $components.map((index, node) => new Search(node));
+  }
 }
 
 export default render;

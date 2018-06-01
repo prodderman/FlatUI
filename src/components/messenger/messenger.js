@@ -106,10 +106,11 @@ class Messenger {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(() => {
-    $(isElementOnPage ? '.js-layout__pjax-container .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-messenger' : '.js-messenger');
+  if ($components.length > 0) {
+    $components.map((index, node) => new Messenger(node));
+  }
 }
 
 export { Messenger };

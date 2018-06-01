@@ -1,5 +1,7 @@
 /*global process:true*/
+/*global __dirname:true*/
 
+const path = require('path');
 const webpack = require('webpack');
 const config = require('webpack-config');
 
@@ -10,6 +12,16 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
   },  
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+        },
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, 'src/vendors/'),
+        ]
+      },
       {
         test: /\.css/,
         use: [{

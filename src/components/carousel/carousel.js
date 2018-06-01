@@ -39,10 +39,11 @@ class Carousel {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(() => {
-    $(isElementOnPage? '.js-layout__pjax-container  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-carousel' : '.js-carousel');
+  if ($components.length > 0) {
+    $components.map((index, node) => new Carousel(node));
+  }
 }
 
 export default render;

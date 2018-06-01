@@ -51,6 +51,8 @@ class Contacts {
   }
 }
 
-$(() => {
+function render() {
   new Contacts($('.js-contacts'));
-});
+}
+
+$( document ).ready(render);

@@ -38,10 +38,11 @@ class Calendar {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(() => {
-    $(isElementOnPage ? '.js-layout__pjax-container  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-calendar' : '.js-calendar');
+  if ($components.length > 0) {
+    $components.map((index, node) => new Calendar(node));
+  }
 }
 
 export default render;

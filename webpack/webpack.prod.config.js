@@ -63,9 +63,6 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: ['es2015', 'stage-0']
-            }
           },
           {
             loader: 'pug-loader',
@@ -79,9 +76,6 @@ module.exports = new config.default().extend('webpack/webpack.base.config.js').m
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-0']
-          }
         },
         exclude: [
           /node_modules/,

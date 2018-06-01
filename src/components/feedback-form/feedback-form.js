@@ -28,10 +28,11 @@ class FeedbackForm {
   }
 }
 
-function render(isElementOnPage = false) {
-  $(()=> {
-    $(isElementOnPage ? '.js-layout__pjax-container .js-feedback-form' : '.js-feedback-form').map((index, node) => new FeedbackForm(node));
-  });
+function render(isComponentOnPjaxContainer = false) {
+  const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-feedback-form' : '.js-feedback-form');
+  if ($components.length > 0) {
+    $components.map((index, node) => new FeedbackForm(node));
+  }
 }
 
 export default render;
