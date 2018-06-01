@@ -1,8 +1,17 @@
-include ../activity/activity
-
 mixin news({href, img, alt, title, date, text} = {})
-  +activity({href: href, img: img, alt: alt})
-    .news
+  - 
+    let src;
+    try {
+      src = require.context('../../img', true)(`${img}`);
+    } 
+    catch(event) {
+      src = '';
+    }
+    
+  a.news(href= href)
+    .news__preview-image
+      img.news__img(src= src, alt= alt)
+    .news__preview-text 
       .news__title= title
       .news__date= date
       .news__text= text

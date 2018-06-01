@@ -2,14 +2,32 @@
 
 .event
   display flex
+  height 13.5rem
+  border-radius 0.185rem
+  text-decoration none
   overflow hidden
-  flex-direction column
-  flex 1 1
-  padding 1.2rem
-  text-align left
-  color white
-  background-color $c_green
-  align-items stretch
+  background-color $c_lightgray
+
+  &__preview-image
+    display flex
+    flex 3
+
+  &__img
+    max-width 100%
+    object-fit cover
+    object-position center
+
+  &__preview-text
+    display flex
+    overflow hidden
+    flex-direction column
+    flex 1 1
+    padding 1.2rem
+    text-align left
+    color white
+    background-color $c_green
+    align-items stretch
+    flex 7
 
   &__date
     display flex

@@ -1,9 +1,19 @@
-include ../activity/activity
 include ../button/button
 
 mixin event({href, img, title, day, month, text} = {})
-  +activity({href, img})
-    .event
+  - 
+    let src;
+    try {
+      src = require.context('../../img', true)(`${img}`);
+    } 
+    catch(event) {
+      src = '';
+    }
+    
+  a.event(href= href)
+    .event__preview-image
+      img.event__img(src= src, alt= alt)
+    .event__preview-text 
       .event__date
         .event__date-day= day
         .event__date-month= month
