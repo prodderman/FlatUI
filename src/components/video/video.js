@@ -1,14 +1,14 @@
 class Video {
   constructor(video) {  
     this.$video = $(video);
+    this.$frame = this.$video.children('.video__frame');
     this.init();
     this.addEventHandlers();
   }
 
   addEventHandlers() {  
     $(window).resize(() => {
-      const $frame = this.$video.children('.video__frame');
-      $frame.height(this.setHeight());
+      this.$frame.height(this.setHeight());
     });
   }
 
@@ -23,19 +23,10 @@ class Video {
   }
 
   init() {
-    setTimeout(() => {
-      this.$video.empty();
-      const url = this.$video.data('src');
-      const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
-      const $frame = $('<iframe/>', {
-        class: 'video__frame',
-        height: this.setHeight(),
-        src: this.createURL(src),
-        allowfullscreen: '',
-        frameborder: 0
-      });
-      this.$video.append($frame);
-    }, 100);
+    const url = this.$video.data('src');
+    const src = url.match(/https:|http:/) ? new URL(url) : new URL(`https:${url}`);
+    this.$frame.height(this.setHeight());
+    this.$frame.attr('src', this.createURL(src));
   }
 
   setHeight() {
