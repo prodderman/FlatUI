@@ -5,7 +5,7 @@ import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.js';
 import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.css';
 import 'jquery-ui-touch-punch';
 
-export class Slider {
+class Slider {
   constructor(slider) {
     this.slider = $(slider);
     this.init();
@@ -40,8 +40,10 @@ export class Slider {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-slider' : '.js-slider').map((index, node) => new Slider(node));
   });
 }
+
+export default render;

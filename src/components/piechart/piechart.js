@@ -1,4 +1,4 @@
-export class PieChart {
+class PieChart {
   constructor(diagram) {
     this.$diagram = $(diagram);
     this._render();
@@ -34,8 +34,10 @@ export class PieChart {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-piechart' : '.js-piechart').map((index, node) => new PieChart(node));
   });
 }
+
+export default render;

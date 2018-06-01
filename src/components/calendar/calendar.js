@@ -38,8 +38,10 @@ class Calendar {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
   });
 }
+
+export default render;

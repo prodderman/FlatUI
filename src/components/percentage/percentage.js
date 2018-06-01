@@ -1,6 +1,6 @@
 import 'jquery-circle-progress';
 
-export class Percentage {
+class Percentage {
   constructor(diagram) {
     this.$diagram = $(diagram);
     this._render();
@@ -28,8 +28,10 @@ export class Percentage {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
   });
 }
+
+export default render;

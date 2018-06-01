@@ -1,4 +1,4 @@
-export class Buttons {
+class Buttons {
   constructor() {
     this._addEventHandlers();
   }

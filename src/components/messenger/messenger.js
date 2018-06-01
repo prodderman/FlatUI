@@ -7,7 +7,7 @@ import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
 import 'jquery-ui-touch-punch';
 import msgTemplate from './template.pug';
 
-export class Messenger {
+class Messenger {
   constructor(node, target) {
     this.$messenger = $(node);
     this.target = target;
@@ -106,8 +106,11 @@ export class Messenger {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
   });
 }
+
+export { Messenger };
+export default render;

@@ -1,4 +1,4 @@
-export class Video {
+class Video {
   constructor(video) {  
     this.$video = $(video);
     this.init();
@@ -68,8 +68,10 @@ export class Video {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-video' : '.js-video').map((i, node) => new Video(node));
   });
 }
+
+export default render;

@@ -1,6 +1,6 @@
 import Slideout from 'slideout';
 
-export class Mpanel {
+class Mpanel {
   constructor(panel, menu, trigger) {
     this.$panel = $(panel).get(0);
     this.$menu = $(menu).get(0);

@@ -2,7 +2,7 @@ import { User } from '../user/user';
 import { Messenger } from '../messenger/messenger';
 import data from './data.json';
 
-export class Friend extends User {
+class Friend extends User {
   constructor(node, id) {
     super();
     this.$friend = $(node);
@@ -33,7 +33,7 @@ export class Friend extends User {
   }
 }
 
-export class Contacts {
+class Contacts {
   constructor(node) {
     this.contacts = node;
     this._init();

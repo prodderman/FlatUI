@@ -1,7 +1,7 @@
 import 'vendors/formstyler/jquery.formstyler.min.js';
 import 'vendors/formstyler/jquery.formstyler.css';
 
-export class Select {
+class Select {
   constructor(node) {
     this.$select = $(node);
     this._init();
@@ -13,9 +13,10 @@ export class Select {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-layout__pjax-container .js-select' : '.js-select').map((index, node) => new Select(node)); // layout to pjax-contaioner
+    $(isElementOnPage ? '.js-layout__pjax-container .js-select' : '.js-select').map((index, node) => new Select(node));
   });
 }
 
+export default render;

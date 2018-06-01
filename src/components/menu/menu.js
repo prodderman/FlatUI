@@ -1,6 +1,6 @@
 import menuItems from '../../global/mocks/menu-items.json';
 
-export class Menu {
+class Menu {
   constructor(node) {
     this.$menu = $(node);
     this._init();
@@ -25,8 +25,10 @@ export class Menu {
   }
 }
 
-export default function render() {
+function render() {
   $(() => {
     $('.js-menu').map((i, node) => new Menu(node));
   });
 }
+
+export default render;

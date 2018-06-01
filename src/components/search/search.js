@@ -1,4 +1,4 @@
-export class Search {
+class Search {
   constructor(node) {
     this.$search = $(node);
     this._addEventHadlers();
@@ -57,8 +57,10 @@ export class Search {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-search' : '.js-search').map((index, node) => new Search($(node)));
   });
 }
+
+export default render;

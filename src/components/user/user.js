@@ -1,9 +1,11 @@
 import userTemplate from './template.pug';
 
-export class User {
+class User {
   constructor() { }
 
   static template(options) {
     return userTemplate({options});
   }
 }
+
+export { User };

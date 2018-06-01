@@ -27,8 +27,10 @@ export class Signin {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-signin' : '.js-signin').map((index, node) => new Signin(node));
   });
 }
+
+export default render;

@@ -1,6 +1,5 @@
 /*global ymaps:true*/
-
-export class Map {
+class Map {
   constructor(node) {
     this.$ymap = $(node);
     this._init();
@@ -37,8 +36,10 @@ export class Map {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage ? '.js-layout__pjax-container .js-map' : '.js-map').map((index, node) => new Map(node));
   });
 }
+
+export default render;

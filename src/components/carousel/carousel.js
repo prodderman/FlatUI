@@ -1,7 +1,7 @@
 import 'swiper/dist/css/swiper.css';
 import Swiper from 'swiper';
 
-export class Carousel {
+class Carousel {
   constructor(node) {
     this.$carousel = $(node);
     this._init();
@@ -39,8 +39,10 @@ export class Carousel {
   }
 }
 
-export default function render(isElementOnPage = false) {
+function render(isElementOnPage = false) {
   $(() => {
     $(isElementOnPage? '.js-layout__pjax-container  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
   });
 }
+
+export default render;
