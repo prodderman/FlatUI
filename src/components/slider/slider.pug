@@ -1,12 +1,4 @@
-mixin slider({name, altColor, value=0, fill, float, pips, max=100, min=0} = {})
-
-  -  const classes = altColor ? `slider_alt-color` : ''
-
-  .slider.js-slider(class= classes 
-                    data-fill= fill
-                    data-float= float
-                    data-pips= pips
-                    data-value= value
-                    data-max= max
-                    data-min= min)
-                    input.slider__hidden-input(type='hidden', name=name, value=value)
+mixin slider({name, altColor, value = 0, isFilled, hasTooltip, hasPips, max = 100, min = 0} = {})
+  - const classes = altColor ? `slider_alt-color` : ''
+  .slider.js-slider(class= classes data-fill= isFilled data-float= hasTooltip data-pips= hasPips data-value= value data-max= max data-min= min)
+    input.slider__hidden-input(type="hidden", name=name, value=value)

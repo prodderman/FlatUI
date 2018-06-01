@@ -2,7 +2,7 @@ include ../activity/activity
 include ../button/button
 
 mixin event({href, img, title, day, month, text} = {})
-  +activity({href: href, img: img})
+  +activity({href, img})
     .event
       .event__date
         .event__date-day= day

@@ -41,8 +41,8 @@ export class Carousel {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage? '.layout  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
+    $(isElementOnPage? '.js-pjax__container  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
   });
 }

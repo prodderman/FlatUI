@@ -1,0 +1,33 @@
+@import '~global/colors.styl'
+@import '~global/mixins.styl'
+
+.news-event
+  display flex
+  justify-content center
+  flex-wrap wrap
+  width 100%
+
+  &__header
+    page-panel(1 1 100%)
+
+  &__content
+    page-panel(1 1 100%)
+    text-align left 
+
+  &__main-title
+    font-family Lato, Arial, sans-serif
+    font-size 1.5rem
+    letter-spacing 0.05rem
+    margin 0
+    color $c_black
+    font-weight 800
+    text-transform uppercase
+
+  &__title
+    font-family Lato, Arial, sans-serif
+    font-size 1.12rem
+    letter-spacing 0.05rem
+    color $c_black
+    font-weight 800
+    text-transform uppercase
+    margin-bottom 1rem

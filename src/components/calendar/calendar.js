@@ -11,18 +11,18 @@ class Calendar {
   }
 
   _init() {
-    const $nowNode = this.$calendar.children('.js-calendar__today');
-    const $goToTodaySave = $.datepicker._gotoToday;
-    const $selectDateSave = $.datepicker._selectDate;
-    $nowNode.text(new Date().getDate());
+    const $calendarHead = this.$calendar.children('.js-calendar__head');
+    const goToToday = $.datepicker._gotoToday;
+    const selectDate = $.datepicker._selectDate;
+    $calendarHead.text(new Date().getDate());
 
     $.datepicker._selectDate = function(id, dateStr) {
-      $selectDateSave.call(this, id, dateStr);
+      selectDate.call(this, id, dateStr);
       $( id ).datepicker('setDate', dateStr);
     };
 
     $.datepicker._gotoToday = function(id) {
-      $goToTodaySave.call(this,id);
+      goToToday.call(this,id);
       this._selectDate(id);
     };
     
@@ -34,14 +34,14 @@ class Calendar {
       showOtherMonths: true,
       firstDay: 1,
       onSelect: function(date) {
-        $nowNode.text(new Date(date).getDate());
+        $calendarHead.text(new Date(date).getDate());
       }
     });
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
+    $(isElementOnPage ? '.js-pjax__container  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
   });
 }

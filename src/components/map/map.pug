@@ -5,7 +5,7 @@ mixin map({coord, address} = {})
       .map__text Meet us!
       .map__address!= address 
       .map__controls
-        button.map__button.map__button_my-location.js-map__button_my-location
+        button.map__button.map__button_my-location.js-map__button_my-location //- убрать модификаторы
           include ./img/crosshair.svg
         button.map__button.map__button_to-marker.js-map__button_to-marker
           include ./img/marker.svg

@@ -11,7 +11,7 @@ export class Map {
 
   _init() {
     const $coord = this.$ymap.data('coord');
-    const $toMarker = this.$ymap.find('.js-map__btn_to-marker');
+    const $toMarker = this.$ymap.find('.js-map__button_to-marker');
     if (!($coord instanceof Array)) return;
     $('.js-map__location').empty();
 
@@ -40,8 +40,8 @@ export class Map {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-map' : '.js-map').map((index, node) => new Map(node));
+    $(isElementOnPage ? '.js-pjax__container .js-map' : '.js-map').map((index, node) => new Map(node));
   });
 }

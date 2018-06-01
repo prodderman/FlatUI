@@ -2,21 +2,21 @@ include ../input/input
 include ../button/button
 include ../textarea/textarea
 
-mixin feedback-from({method = 'POST', action = '', enctype} = {})
-  form.feedback-from.js-feedback-from(
+mixin feedback-form({method = 'POST', action = '', enctype} = {})
+  form.feedback-form.js-feedback-form(
     data-parsley-validate
     method= method
     action= action
     enctype= enctype
   )
-    .feedback-from__input
+    .feedback-form__input
       +input({
         name: 'name',
         placeholder: 'Your Name',
         required: true,
       })
     
-    .feedback-from__input
+    .feedback-form__input
       +input({
         name: 'email',
         type: 'email',
@@ -25,11 +25,11 @@ mixin feedback-from({method = 'POST', action = '', enctype} = {})
         required: true,
       })
 
-    .feedback-from__textarea
+    .feedback-form__textarea
       +textarea({
         name: 'message',
         placeholder: 'Your Message',
         required: true,
       })(data-parsley-errors-messages-disabled)
-    .feedback-from__button
+    .feedback-form__button
       +button({submit: true, text: 'Submit'})

@@ -50,18 +50,18 @@ export class Messenger {
   }
 
   _addEventHandlers() {
-    const btnClose = this.$messenger.find('.js-messenger__close-button');
-    const formSend = this.$messenger.find('.js-messenger__send-button');
-    const input = this.$messenger.find('.js-messenger__input');
-    const msgContainer = this.$messenger.find('ul.js-messenger__tape');
+    const $btnClose = this.$messenger.find('.js-messenger__close-button');
+    const $formSend = this.$messenger.find('.js-messenger__send-button');
+    const $input = this.$messenger.find('.js-messenger__input');
+    const $msgContainer = this.$messenger.find('ul.js-messenger__tape');
 
-    formSend.submit((event) => {
-      if (input.text()) {
+    $formSend.submit((event) => {
+      if ($input.text()) {
         event.preventDefault();
         $.ajax({
           type: 'POST',
           url: '',
-          data: input.text(),
+          data: $input.text(),
           success: () => {
 
           },
@@ -72,16 +72,16 @@ export class Messenger {
             const msg = $('<div/>', {
               class: 'messenger__msg messenger__msg_out'
             });
-            msgWrap.append(msg.text(input.text()));
-            msgContainer.append(msgWrap);
+            msgWrap.append(msg.text($input.text()));
+            $msgContainer.append(msgWrap);
             this.$messenger.find('.js-messenger__chat').mCustomScrollbar('scrollTo', 'last');
-            input.empty();
+            $input.empty();
           }
         });
       }
     });
 
-    btnClose.click(() => {
+    $btnClose.click(() => {
       if (this.target) {
         this.target.destroy();
         this.target = null;
@@ -108,8 +108,8 @@ export class Messenger {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
+    $(isElementOnPage ? '.js-pjax__container .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
   });
 }

@@ -42,8 +42,8 @@ export class Slider {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-slider' : '.js-slider').map((index, node) => new Slider(node));
+    $(isElementOnPage ? '.js-pjax__container .js-slider' : '.js-slider').map((index, node) => new Slider(node));
   });
 }

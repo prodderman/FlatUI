@@ -29,8 +29,8 @@ export class Signin {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-signin' : '.js-signin').map((index, node) => new Signin(node));
+    $(isElementOnPage ? '.js-pjax__container .js-signin' : '.js-signin').map((index, node) => new Signin(node));
   });
 }

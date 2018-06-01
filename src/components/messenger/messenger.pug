@@ -11,13 +11,13 @@ mixin messenger({userInfo = {}, messages = [], dialed} = {})
           +user(userInfo)
     .messenger__body
       .messenger__links
-        a(href='/mock-address/change-me' target= '_blank').messenger__link.messenger__link_msg
-        a(href='/mock-address/change-me' target= '_blank').messenger__link.messenger__link_photo
+        a(href='/mock-address/change-me' target= '_blank').messenger__link
+        a(href='/mock-address/change-me' target= '_blank').messenger__link
       .messenger__chat.js-messenger__chat
         ul.messenger__tape.js-messenger__tape
           each msg in messages
-            .messenger__msg-wrap(class= msg.incoming ? 'messenger__msg-wrap_in' : 'messenger__msg-wrap_out')
-              .messenger__msg(class= msg.incoming ? 'messenger__msg_in' : 'messenger__msg_out')= msg.text
+            li.messenger__msg-wrap(class= msg.incoming ? 'messenger__msg-wrap_incoming' : 'messenger__msg-wrap_outcoming')
+              .messenger__msg(class= msg.incoming ? 'messenger__msg_incoming' : 'messenger__msg_outcoming')= msg.text
       .messenger__textarea
         .messenger__input.js-messenger__input(contenteditable = 'true')= dialed
       form.messenger__send-button.js-messenger__send-button(method="POST" action='')

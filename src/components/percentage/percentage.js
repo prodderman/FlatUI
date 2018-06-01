@@ -30,8 +30,8 @@ export class Percentage {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
+    $(isElementOnPage ? '.js-pjax__container .js-percentage' : '.js-percentage').map((index, node) => new Percentage(node));
   });
 }

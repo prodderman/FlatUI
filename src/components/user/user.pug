@@ -4,7 +4,7 @@ include ../social/social
 mixin user({id, img, alt=false, social={}, name='user name', profession='profession', href='/mock-address/change-me'} = {})
   .user.js-user(class= alt ? 'user_alt' : false id = id !== undefined ? `user_${id}` : false)
     a.user__link.js-user__link(href= href)
-      +avatar({img: img})
+      +avatar({img})
     .user__info.js-user__info
       .user__name= name
       .user__profession= profession

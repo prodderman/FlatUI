@@ -64,9 +64,9 @@ mixin uikit()
         .uikit__container.uikit__container_sliders
           h2.uikit__title sliders
           .uikit__left-col
-            +slider({float: true, value: 40, altColor: true, fill: true})
+            +slider({hasTooltip: true, value: 40, altColor: true, isFilled: true})
           .uikit__right-col
-            +slider({pips: true, float: true})
+            +slider({hasPips: true, hasTooltip: true})
         .uikit__container.uikit__container_stages
           h2.uikit__title stages
           .uikit__row

@@ -8,7 +8,8 @@ const cache = {};
 function importAll (r) {
   r.keys().forEach(key => cache[key] = r(key));
 }
-importAll(require.context('./components/', true, /^\.\/.*\.(jsx?)$/));
+importAll(require.context('./components/', true, /^\.\/.*\.js$/));
+importAll(require.context('./components/', true, /^\.\/.*\.styl$/));
 
 for (let key in cache) {
   try {

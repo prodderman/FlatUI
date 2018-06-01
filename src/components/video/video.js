@@ -17,11 +17,11 @@ export class Video {
 
   static get snippets() {
     return {
-      'youtube': '//www.youtube.com/embed/',
-      'youtu': '//www.youtube.com/embed/',
-      'vimeo': '//player.vimeo.com/video/',
-      'rutube': '//rutube.ru/play/embed/',
-      'vk': ''
+      youtube: '//www.youtube.com/embed/',
+      youtu: '//www.youtube.com/embed/',
+      vimeo: '//player.vimeo.com/video/',
+      rutube: '//rutube.ru/play/embed/',
+      vk: ''
     };
   }
 
@@ -71,8 +71,8 @@ export class Video {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-video' : '.js-video').map((i, node) => new Video(node));
+    $(isElementOnPage ? '.js-pjax__container .js-video' : '.js-video').map((i, node) => new Video(node));
   });
 }

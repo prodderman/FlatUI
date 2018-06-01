@@ -8,9 +8,9 @@ mixin stages({count = 2, current = 1})
 
   ul.stages
     - for (let i = 0; i < count; i++)
-        - if (i < current - 1)
-            li.stages__item.stages__item_visited(data-stage= (i+1))
-        - else if (i == current - 1)
-            li.stages__item.stages__item_current(data-stage= (i+1))
-        - else
-            li.stages__item(data-stage= (i+1))
+      - if (i < current - 1)
+          li.stages__item.stages__item_visited(data-stage= (i+1))
+      - else if (i == current - 1)
+          li.stages__item.stages__item_current(data-stage= (i+1))
+      - else
+          li.stages__item(data-stage= (i+1))

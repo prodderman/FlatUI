@@ -60,8 +60,8 @@ export class Search {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-search' : '.js-search').map((index, node) => new Search($(node)));
+    $(isElementOnPage ? '.js-pjax__container .js-search' : '.js-search').map((index, node) => new Search($(node)));
   });
 }

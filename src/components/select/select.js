@@ -15,9 +15,9 @@ export class Select {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(() => {
-    $(inPage ? '.layout .js-select' : '.js-select').map((index, node) => new Select(node));
+    $(isElementOnPage ? '.js-pjax__container .js-select' : '.js-select').map((index, node) => new Select(node)); // layout to pjax-contaioner
   });
 }
 
