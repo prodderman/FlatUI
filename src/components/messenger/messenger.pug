@@ -11,8 +11,8 @@ mixin messenger({userInfo = {}, messages = [], dialed} = {})
           +user(userInfo)
     .messenger__body
       .messenger__links
-        a(href='/mock-address/change-me' target= '_blank').messenger__link
-        a(href='/mock-address/change-me' target= '_blank').messenger__link
+        a(href='/mock-address/change-me' target= '_blank').messenger__link.messenger__link_pic_msg
+        a(href='/mock-address/change-me' target= '_blank').messenger__link.messenger__link_pic_photo
       .messenger__chat.js-messenger__chat
         ul.messenger__tape.js-messenger__tape
           each msg in messages
