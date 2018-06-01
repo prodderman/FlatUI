@@ -1,18 +1,18 @@
 @import '~global/colors.styl'
 @import '~global/mixins.styl'
 
-.p-stage-info
+.stage-skills
   display flex
   flex-wrap wrap
   flex-grow 1
   align-content flex-start
-  
+
   &__stages
     page-panel(1 1 100%)
 
   &__content
     page-panel(1 1 100%)
-  
+
   &__title
     font-family Lato, Arial, sans-serif
     font-size 1.12rem
@@ -37,29 +37,15 @@
     @media screen and (max-width 650px)
       flex 1 1 100%
 
-  &__input
-  &__select
-  &__toggle
-    margin-bottom 1rem
-
-    &:last-of-type
-      margin-bottom: 0
-
-    @media screen and (max-width 768px)
-      flex 1 1 100%
-
   &__field
     display flex
     flex-wrap wrap
     align-items baseline
+    margin-bottom 1rem
 
     @media screen and (max-width 450px)
       & > .slider
         flex 1 1 100%
-
-  &__toggle
-    display flex
-    align-items center
 
   &__label
     flex 0 0 10rem

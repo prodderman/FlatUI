@@ -1,66 +1,41 @@
 @import '~global/colors.styl'
+@import '~global/mixins.styl'
 
 .feedback
-  text-align left
+  display flex
+  flex-wrap wrap
+  width 100%
 
-  &__input
-    position relative
-    margin-bottom 0.75rem
-    width calc(100% - 5rem)
+  &__header
+    page-panel(1 1 100%)
+  
+  &__content
+    page-panel(1 1 100%)
+    text-align left 
 
-  .parsley-errors-list
-    position absolute
-    color white
-    list-style none
-    top 0
-    width 4.375rem
-    margin-left 0.625rem
-    border-radius 0.188rem
-    text-align center
-    left 100%
-    height 1.75rem
-    background-color $c_red
+  &__main-title
+    font-family Lato, Arial, sans-serif
+    font-size 1.5rem
+    letter-spacing 0.05rem
+    margin 0
+    color $c_black
+    font-weight 800
+    text-transform uppercase
 
-    .parsley-required
-      display none;
+  &__title
+    margin-bottom 1rem
+    font-family Lato, Arial, sans-serif
+    font-size 1.12rem
+    letter-spacing 0.05rem
+    color $c_black
+    font-weight 800
+    text-transform uppercase
 
-    &:after
-      content 'error'
-      font-size 0.625rem
-      letter-spacing 0.05em
-      font-weight bold
-      line-height 1.75rem
-      text-transform uppercase
-      
+  &__form
+    width 50%
 
-    &:before
-      content ''
-      position absolute
-      right 100%
-      top 0
-      bottom 0
-      height 0.125rem
-      margin auto
-      border 0.188rem solid $c_red
+    @media screen and (max-width 768px)
+      width 100%
 
-      border-bottom-color transparent
-      border-left-color transparent
-      border-top-color transparent
-
-  .parsley-success
-    
-    + .parsley-errors-list
-        background-color $c_green
-
-        &:before
-          border-right-color $c_green
-
-        &:after
-          content 'thanks!'
-
-  &__button
-    display flex
-    justify-content flex-end
-
-  &__textarea
-    margin-bottom 0.75rem
+  &__map:not(:last-of-type)
+    margin-bottom 1rem

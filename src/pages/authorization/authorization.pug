@@ -1,6 +1,6 @@
 extends ../../global/template.pug
 
-include ../../components/p-authorization/p-authorization
+include ../../components/authorization/authorization
 
 block variables
   - const pageName = 'Authorization'
@@ -10,4 +10,4 @@ block title
   =pageName
 
 block main
-  +p-authorization()
+  +authorization()

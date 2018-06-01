@@ -19,40 +19,40 @@ include ../event/event
 include ../user/user
 include ../messenger/messenger
 
-mixin p-uikit()
-  - lastNews = require('../../global/mocks/news.json')[0];
-  - lastEvent = require('../../global/mocks/events.json')[0];
-  .p-uikit
-      .p-uikit__center
-        .p-uikit__container.p-uikit__container_buttons
-          h2.p-uikit__title standard buttons
-          .p-uikit__row
+mixin uikit()
+  - const lastNews = require('../../global/mocks/news.json')[0];
+  - const lastEvent = require('../../global/mocks/events.json')[0];
+  .uikit
+      .uikit__center
+        .uikit__container.uikit__container_buttons
+          h2.uikit__title standard buttons
+          .uikit__row
             +button({altSize: true})
             +button()
             +button({altColor: true})
             +button({altColor: true, altSize: true})
-          .p-uikit__row
+          .uikit__row
             +button({altSize: true})
             +button()
             +button({altColor: true})
             +button({altColor: true, altSize: true})
-          .p-uikit__row
+          .uikit__row
             +button({altSize: true, empty: true}) 
             +button({empty: true})
             +button({altColor: true, empty: true})
             +button({altColor: true, altSize: true, empty: true})   
-        .p-uikit__container.p-uikit__container_arrows
-          h2.p-uikit__title arrow buttons
-          .p-uikit__row
+        .uikit__container.uikit__container_arrows
+          h2.uikit__title arrow buttons
+          .uikit__row
             +arrow({empty: true})
             +arrow({empty: true, direction: "right"})
             +arrow({disabled: true})
             +arrow({disabled: true, direction: "right"})
             +arrow()
             +arrow({direction: "right"})
-        .p-uikit__container.p-uikit__container_diagrams
-          h2.p-uikit__title percentages / pie chart
-          .p-uikit__row
+        .uikit__container.uikit__container_diagrams
+          h2.uikit__title percentages / pie chart
+          .uikit__row
             +percentage({percent: 0})
             +percentage({percent: 38})
             +percentage({percent: 62})
@@ -61,50 +61,50 @@ mixin p-uikit()
                         {name: "Yandex", count: 1000, color: "#e75735"},
                         {name: "Firefox", count: 300, color: "#e5e5e5"},
                         {name: "Edge", count: 400, color: "#4f4f4f"}])
-        .p-uikit__container.p-uikit__container_sliders
-          h2.p-uikit__title sliders
-          .p-uikit__left-col
-            +slider({float: true, value: 40, altColor: true, fill: trueё})
-          .p-uikit__right-col
+        .uikit__container.uikit__container_sliders
+          h2.uikit__title sliders
+          .uikit__left-col
+            +slider({float: true, value: 40, altColor: true, fill: true})
+          .uikit__right-col
             +slider({pips: true, float: true})
-        .p-uikit__container.p-uikit__container_stages
-          h2.p-uikit__title stages
-          .p-uikit__row
+        .uikit__container.uikit__container_stages
+          h2.uikit__title stages
+          .uikit__row
             +stages({count: 5, current: 3})
-        .p-uikit__container.p-uikit__container_form-elements
-          h2.p-uikit__title form elements
-          .p-uikit__left-col.p-uikit__left-col_form
+        .uikit__container.uikit__container_form-elements
+          h2.uikit__title form elements
+          .uikit__left-col.uikit__left-col_form
             +feedback()
-          .p-uikit__right-col
-            h2.p-uikit__title  toggles
-            .p-uikit__container.p-uikit__container_toggles
+          .uikit__right-col
+            h2.uikit__title  toggles
+            .uikit__container.uikit__container_toggles
               +toggle()
-              +toggle()(checked)
-            h2.p-uikit__title tick boxes
-            .p-uikit__container.p-uikit__container_tickbox
-              +tickbox()(checked)
+              +toggle()
+            h2.uikit__title tick boxes
+            .uikit__container.uikit__container_tickbox
               +tickbox()
-        .p-uikit__container
-          .p-uikit__left-col
-            h2.p-uikit__title search / drop down
-            .p-uikit__row
+              +tickbox()
+        .uikit__container
+          .uikit__left-col
+            h2.uikit__title search / drop down
+            .uikit__row
               +search({method: "GET"})
-            .p-uikit__row
+            .uikit__row
               +select({options: {
                 1: "Option 1",
                 2: "Option 2",
                 3: "Option 3"
               }})
-          .p-uikit__right-col
-            h2.p-uikit__title user profile
-            .p-uikit__row
+          .uikit__right-col
+            h2.uikit__title user profile
+            .uikit__row
               +user({
                 img: "user-1.jpg", 
                 name: "John Smith",
                 profession: "ux designer",
                 social: {tw: "https://twitter.com"}
               })
-            .p-uikit__row
+            .uikit__row
               +user({
                 img: "user-2.jpg",
                 name: "Sarah Brown",
@@ -114,27 +114,27 @@ mixin p-uikit()
                         tw: "https://twitter.com"},
                 alt: true
               })
-        .p-uikit__container.p-uikit__container_news-events
-          h2.p-uikit__title news & events
-          .p-uikit__left-col.p-uikit__left-col_news
+        .uikit__container.uikit__container_news-events
+          h2.uikit__title news & events
+          .uikit__left-col.uikit__left-col_news
             +news(lastNews)
-          .p-uikit__right-col.p-uikit__right-col_event
+          .uikit__right-col.uikit__right-col_event
             +event(lastEvent)
-        .p-uikit__container.p-uikit__container_location
-          h2.p-uikit__title location
+        .uikit__container.uikit__container_location
+          h2.uikit__title location
           +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
-        .p-uikit__container
-          .p-uikit__left-col.p-uikit__left-col_calendar
-            h2.p-uikit__title calendar
+        .uikit__container
+          .uikit__left-col.uikit__left-col_calendar
+            h2.uikit__title calendar
             +calendar()
-          .p-uikit__right-col.p-uikit__right-col_messaging
-            h2.p-uikit__title messaging
+          .uikit__right-col.uikit__right-col_messaging
+            h2.uikit__title messaging
             +messenger({name: "Sarah Brown",
                         dialed: "Yeah that sounds great. See you then.",
                         img: "user-2.jpg",
                         messages: [
                           {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
                         ]})
-        .p-uikit__container.p-uikit__container_video
-          h2.p-uikit__title video
+        .uikit__container.uikit__container_video
+          h2.uikit__title video
           +video({src: "https://www.youtube.com/watch?v=CN8x6tfzIEg"})

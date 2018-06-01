@@ -1,0 +1,49 @@
+include ../stages/stages
+include ../percentage/percentage
+include ../slider/slider
+include ../button/button
+
+mixin stage-skills()
+  .stage-skills
+    .stage-skills__stages
+      +stages({count: 5, current: 5})
+    .stage-skills__content
+      form.stage-skills__form(method='POST' action='' data-parsley-validate)
+        .stage-skills__fieldset
+          .stage-skills__column
+            h2.stage-skills__title SKILLS
+            .stage-skills__field
+              .stage-skills__label creative
+              +slider({name: 'creative', altColor: true, float: true, max: 12, pips: true, fill: true})
+            .stage-skills__field
+              .stage-skills__label teamwork
+              +slider({name: 'teamwork', float: true, max: 12, pips: true, fill: true})
+            .stage-skills__field
+              .stage-skills__label innovate
+              +slider({name: 'innovate', altColor: true, float: true, max: 12, pips: true, fill: true})
+            .stage-skills__field
+              .stage-skills__label communication
+              +slider({name: 'comunication', float: true, max: 12, pips: true, fill: true})
+          .stage-skills__column
+            h2.stage-skills__title SOFTWARE
+            .stage-skills__field
+              .stage-skills__label html&css
+              +slider({name: 'html-css', altColor: true, float: true, max: 12, pips: true, fill: true})
+            .stage-skills__field
+              .stage-skills__label JavaScript
+              +slider({name: 'js', float: true, max: 12, pips: true, fill: true})
+            .stage-skills__field
+              .stage-skills__label photoshop
+              +slider({name: 'photoshop', altColor: true, float: true, max: 12, pips: true, fill: true})
+            .stage-skills__field
+              .stage-skills__label illustrator
+              +slider({name: 'illustrator', float: true, max: 12, pips: true, fill: true})
+        .stage-skills__footer
+          .stage-skills__diagram
+            +percentage({percent: 85, start: 64})
+            .stage-skills__label-diagram % Page Filling
+          .stage-skills__buttons
+            .stage-skills__prev
+              +button({href: 'stage-info.html', text: 'prev', altColor: true, pjax: true})
+            .stage-skills__next
+              +button({href: 'profile.html', text: 'complete'})

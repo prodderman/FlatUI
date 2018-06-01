@@ -1,8 +1,6 @@
-import './feedback.styl';
 import 'parsleyjs';
-import $ from 'jquery';
 
-class Feedback {
+class FeedbackForm {
   constructor(node) {
     this.$form = $(node);
     this.$form.parsley();
@@ -30,8 +28,8 @@ class Feedback {
   }
 }
 
-export default function render(inPage = false) {
+export default function render(isElementOnPage = false) {
   $(()=> {
-    $(inPage ? '.layout .js-feedback' : '.js-feedback').map((index, node) => new Feedback(node));
+    $(isElementOnPage ? '.js-pjax__container .js-feedback' : '.js-feedback').map((index, node) => new FeedbackForm(node));
   });
 }

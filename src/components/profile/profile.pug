@@ -1,0 +1,35 @@
+include ../calendar/calendar
+include ../button/button
+include ../avatar/avatar
+
+mixin profile()
+  .profile
+    .profile__header
+      h1.profile__title my profile
+    .profile__left-col
+      .profile__photo
+        .profile__photo-wrap
+          +avatar({isProfile: true})
+        .profile__edit
+          +button({altColor: true, text: 'edit', fullWidth: true})
+      .profile__calendar
+        +calendar()
+    .profile__right-col
+      .profile__content
+        h2.profile__name Ryan Reynolds
+        .profile__info
+          .profile__row
+            .profile__label profession
+            .profile__labeled Actor
+          .profile__row
+            .profile__label phone
+            .profile__labeled
+              a.profile__link(href='tel:8888888888') +78888888888
+          .profile__row
+            .profile__label twitter
+            .profile__labeled
+              a.profile__link(href='https://twitter.com' target='_blank') https://twitter.com
+          .profile__row
+            .profile__label facebook
+            .profile__labeled
+              a.profile__link(href='https://facebook.com' target='_blank') https://facebook.com
