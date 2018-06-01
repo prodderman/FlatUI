@@ -1,6 +1,3 @@
-import './video.styl';
-import $ from 'jquery';
-
 export class Video {
   constructor(video) {  
     this.$video = $(video);
@@ -73,6 +70,6 @@ export class Video {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container .js-video' : '.js-video').map((i, node) => new Video(node));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-video' : '.js-video').map((i, node) => new Video(node));
   });
 }

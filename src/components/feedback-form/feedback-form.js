@@ -30,6 +30,6 @@ class FeedbackForm {
 
 export default function render(isElementOnPage = false) {
   $(()=> {
-    $(isElementOnPage ? '.js-pjax__container .js-feedback' : '.js-feedback').map((index, node) => new FeedbackForm(node));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-feedback-form' : '.js-feedback-form').map((index, node) => new FeedbackForm(node));
   });
 }

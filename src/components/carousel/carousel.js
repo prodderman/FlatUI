@@ -1,7 +1,5 @@
 import 'swiper/dist/css/swiper.css';
 import Swiper from 'swiper';
-import $ from 'jquery';
-import './carousel.styl';
 
 export class Carousel {
   constructor(node) {
@@ -12,12 +10,12 @@ export class Carousel {
   _init() {
     const $swiperContainer = this.$carousel.find('.js-carousel__container');
     const $swiperWrapper = this.$carousel.find('.js-carousel__wrapper');
-    const $height = $swiperWrapper.height();
+    const height = $swiperWrapper.height();
     
     $swiperWrapper.children().map((index, node) => {
       $(node).wrap('<div class=\'carousel__slide swiper-slide\'></div>');
     });
-    this.$carousel.height($height);
+    this.$carousel.height(height);
     new Swiper($swiperContainer, {
       slidesPerView: 2,
       centeredSlides: true,
@@ -43,6 +41,6 @@ export class Carousel {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage? '.js-pjax__container  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
+    $(isElementOnPage? '.js-layout__pjax-container  .js-carousel' : '.js-carousel').map((index, node) => new Carousel(node));
   });
 }

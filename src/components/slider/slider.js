@@ -4,8 +4,6 @@ import 'jquery-ui/themes/base/slider.css';
 import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.js';
 import 'vendors/jquery-ui-slider-pips/jquery-ui-slider-pips.css';
 import 'jquery-ui-touch-punch';
-import './slider.styl';
-import $ from 'jquery';
 
 export class Slider {
   constructor(slider) {
@@ -44,6 +42,6 @@ export class Slider {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container .js-slider' : '.js-slider').map((index, node) => new Slider(node));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-slider' : '.js-slider').map((index, node) => new Slider(node));
   });
 }

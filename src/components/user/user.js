@@ -1,4 +1,3 @@
-import './user.styl';
 import userTemplate from './template.pug';
 
 export class User {

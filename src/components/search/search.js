@@ -1,6 +1,3 @@
-import './search.styl';
-import $ from 'jquery';
-
 export class Search {
   constructor(node) {
     this.$search = $(node);
@@ -62,6 +59,6 @@ export class Search {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container .js-search' : '.js-search').map((index, node) => new Search($(node)));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-search' : '.js-search').map((index, node) => new Search($(node)));
   });
 }

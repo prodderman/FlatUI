@@ -1,6 +1,3 @@
-import './piechart.styl';
-import $ from 'jquery';
-
 export class PieChart {
   constructor(diagram) {
     this.$diagram = $(diagram);
@@ -39,6 +36,6 @@ export class PieChart {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container .js-piechart' : '.js-piechart').map((index, node) => new PieChart(node));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-piechart' : '.js-piechart').map((index, node) => new PieChart(node));
   });
 }

@@ -1,6 +1,4 @@
-import './signin.styl';
 import 'parsleyjs';
-import $ from 'jquery';
 
 export class Signin {
   constructor(node) {
@@ -31,6 +29,6 @@ export class Signin {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container .js-signin' : '.js-signin').map((index, node) => new Signin(node));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-signin' : '.js-signin').map((index, node) => new Signin(node));
   });
 }

@@ -1,8 +1,6 @@
-import './contacts.styl';
 import { User } from '../user/user';
 import { Messenger } from '../messenger/messenger';
 import data from './data.json';
-import $ from 'jquery';
 
 export class Friend extends User {
   constructor(node, id) {

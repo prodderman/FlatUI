@@ -1,6 +1,3 @@
-import './button.styl';
-import $ from 'jquery';
-
 export class Buttons {
   constructor() {
     this._addEventHandlers();

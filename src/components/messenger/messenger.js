@@ -1,4 +1,3 @@
-import './messenger.styl';
 import 'jquery-ui/ui/widgets/resizable';
 import 'jquery-ui/ui/widgets/draggable';
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js';
@@ -6,7 +5,6 @@ import 'jquery-ui/themes/base/resizable.css';
 import 'jquery-ui/themes/base/draggable.css';
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
 import 'jquery-ui-touch-punch';
-import $ from 'jquery';
 import msgTemplate from './template.pug';
 
 export class Messenger {
@@ -110,6 +108,6 @@ export class Messenger {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
+    $(isElementOnPage ? '.js-layout__pjax-container .js-messenger' : '.js-messenger').map((index, node) => new Messenger(node));
   });
 }

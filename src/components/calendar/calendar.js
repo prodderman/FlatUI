@@ -1,8 +1,6 @@
 import 'jquery-ui/ui/widgets/datepicker';
 import 'jquery-ui/themes/base/theme.css';
 import 'jquery-ui/themes/base/datepicker.css';
-import './calendar.styl';
-import $ from 'jquery';
 
 class Calendar {
   constructor(calendar) {
@@ -42,6 +40,6 @@ class Calendar {
 
 export default function render(isElementOnPage = false) {
   $(() => {
-    $(isElementOnPage ? '.js-pjax__container  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
+    $(isElementOnPage ? '.js-layout__pjax-container  .js-calendar' : '.js-calendar').map((index, node) => new Calendar(node));
   });
 }

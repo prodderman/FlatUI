@@ -1,8 +1,5 @@
 /*global ymaps:true*/
 
-import './map.styl';
-import $ from 'jquery';
-
 export class Map {
   constructor(node) {
     this.$ymap = $(node);

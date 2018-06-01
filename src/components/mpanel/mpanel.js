@@ -1,5 +1,3 @@
-import './mpanel.styl';
-import $ from 'jquery';
 import Slideout from 'slideout';
 
 export class Mpanel {
