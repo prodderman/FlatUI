@@ -14,13 +14,13 @@ mixin stage-skills()
             h2.stage-skills__title SKILLS
             .stage-skills__field
               .stage-skills__label creative
-              +slider({name: 'creative', altColor: true, hasTooltip: true, max: 12, hasPips: true, isFilled: true})
+              +slider({name: 'creative', color: 'red', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
             .stage-skills__field
               .stage-skills__label teamwork
               +slider({name: 'teamwork', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
             .stage-skills__field
               .stage-skills__label innovate
-              +slider({name: 'innovate', altColor: true, hasTooltip: true, max: 12, hasPips: true, isFilled: true})
+              +slider({name: 'innovate', color: 'red', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
             .stage-skills__field
               .stage-skills__label communication
               +slider({name: 'comunication', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
@@ -28,13 +28,13 @@ mixin stage-skills()
             h2.stage-skills__title SOFTWARE
             .stage-skills__field
               .stage-skills__label html&css
-              +slider({name: 'html-css', altColor: true, hasTooltip: true, max: 12, hasPips: true, isFilled: true})
+              +slider({name: 'html-css', color: 'red', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
             .stage-skills__field
               .stage-skills__label JavaScript
               +slider({name: 'js', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
             .stage-skills__field
               .stage-skills__label photoshop
-              +slider({name: 'photoshop', altColor: true, hasTooltip: true, max: 12, hasPips: true, isFilled: true})
+              +slider({name: 'photoshop', color: 'red', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
             .stage-skills__field
               .stage-skills__label illustrator
               +slider({name: 'illustrator', hasTooltip: true, max: 12, hasPips: true, isFilled: true})
@@ -44,6 +44,6 @@ mixin stage-skills()
             .stage-skills__label-diagram % Page Filling
           .stage-skills__buttons
             .stage-skills__prev
-              +button({href: 'stage-info.html', text: 'prev', altColor: true, pjax: true})
+              +button({ href: 'stage-info.html', text: 'prev', color: 'red', background: 'filled', pjax: true })
             .stage-skills__next
-              +button({href: 'profile.html', text: 'complete'})
+              +button({ href: 'profile.html', text: 'complete', background: 'filled' })

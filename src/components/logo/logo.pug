@@ -1,4 +1,4 @@
-mixin logo({href, img})
+mixin logo({ href, img })
   - 
     let src;
     try {
@@ -8,5 +8,5 @@ mixin logo({href, img})
       src = require('../../img/favicons/android-chrome-192x192.png');
     }
   
-  a.logo(href= href)
-    img(src= src).logo__img
+  a.logo(href=href)
+    img(src=src).logo__img

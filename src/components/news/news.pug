@@ -1,4 +1,4 @@
-mixin news({href, img, alt, title, date, text} = {})
+mixin news({ href, img, alt, title, date, text } = {})
   - 
     let src;
     try {
@@ -8,10 +8,10 @@ mixin news({href, img, alt, title, date, text} = {})
       src = '';
     }
     
-  a.news(href= href)
+  a.news(href=href)
     .news__preview-image
-      img.news__img(src= src, alt= alt)
+      img.news__img(src=src, alt=alt)
     .news__preview-text 
-      .news__title= title
-      .news__date= date
-      .news__text= text
+      .news__title=title
+      .news__date=date
+      .news__text=text

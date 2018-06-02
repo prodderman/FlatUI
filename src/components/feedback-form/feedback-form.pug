@@ -2,7 +2,7 @@ include ../input/input
 include ../button/button
 include ../textarea/textarea
 
-mixin feedback-form({method = 'POST', action = '', enctype} = {})
+mixin feedback-form({ method = 'POST', action = '', enctype } = {})
   form.feedback-form.js-feedback-form(
     data-parsley-validate
     method= method
@@ -32,4 +32,4 @@ mixin feedback-form({method = 'POST', action = '', enctype} = {})
         required: true,
       })(data-parsley-errors-messages-disabled)
     .feedback-form__button
-      +button({submit: true, text: 'Submit'})
+      +button({ submit: true, text: 'Submit', background: 'filled' })

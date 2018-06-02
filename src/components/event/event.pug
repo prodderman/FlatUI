@@ -1,6 +1,6 @@
 include ../button/button
 
-mixin event({href, img, title, day, month, text} = {})
+mixin event({ href, img, title, day, month, text } = {})
   - 
     let src;
     try {
@@ -10,7 +10,7 @@ mixin event({href, img, title, day, month, text} = {})
       src = '';
     }
     
-  a.event(href= href)
+  a.event(href=href)
     .event__preview-image
       img.event__img(src= src, alt= alt)
     .event__preview-text 
@@ -20,4 +20,4 @@ mixin event({href, img, title, day, month, text} = {})
       .event__title= title
       .event__text= text
       form.event__action
-        +button({altSize: true, empty: true, text: 'add to calendar', submit: true})
+        +button({ size: 'small', text: 'add to calendar', submit: true })

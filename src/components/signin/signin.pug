@@ -2,28 +2,35 @@ include ../../components/input/input
 include ../../components/button/button
 include ../../components/tickbox/tickbox
 
-mixin signin({method = "POST", action = "", enctype} = {})
+mixin signin({ method = 'POST', action = '', enctype } = {})
   form.signin.js-signin(
       data-parsley-validate
       method= method
       action= action
     )
     .signin__field
-        +input({name: "email",
+        +input({name: 'email',
             pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.toString(),
-            placeholder: "Your e-mail",
+            placeholder: 'Your e-mail',
             required: true})
     .signin__field
-        +input({type: "password",
-            name: "password", 
-            placeholder: "Your password",
+        +input({type: 'password',
+            name: 'password', 
+            placeholder: 'Your password',
             required: true})
     .signin__row
       .signin__check
-        +tickbox({name: "remember", text: "Remember me?"})
-      a.signin__forgot-password(href= "/mock-address/change-me") Forgot password?
+        +tickbox({ name: 'remember', text: 'Remember me?' })
+      a.signin__forgot-password(href="/mock-address/change-me") Forgot password?
     .signin__row
       .signin__button
-        +button({submit: true, text: "Sign In", fullWidth: true})
+        +button({ submit: true, text: 'Sign In', width: 'full', background: 'filled' })
       .signin__button  
-        +button({href: "stage-info.html", text: "Sign Up", altColor: true, fullWidth: true, pjax: true})
+        +button({
+          href: 'stage-info.html',
+          text: "Sign Up",
+          color: 'red',
+          width: 'full',
+          background: 'filled',
+          pjax: true
+        })

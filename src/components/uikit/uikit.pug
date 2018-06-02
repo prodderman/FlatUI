@@ -27,46 +27,48 @@ mixin uikit()
         .uikit__container.uikit__container_buttons
           h2.uikit__title standard buttons
           .uikit__row
-            +button({altSize: true})
-            +button()
-            +button({altColor: true})
-            +button({altColor: true, altSize: true})
+            +button({ size: 'small', background: 'filled' })
+            +button({ background: 'filled' })
+            +button({ color: 'red', background: 'filled' })
+            +button({ size: 'small', color: 'red', background: 'filled' })
           .uikit__row
-            +button({altSize: true})
-            +button()
-            +button({altColor: true})
-            +button({altColor: true, altSize: true})
+            +button({ size: 'small', background: 'filled' })
+            +button({ background: 'filled' })
+            +button({ color: 'red', background: 'filled' })
+            +button({ size: 'small', color: 'red', background: 'filled' })
           .uikit__row
-            +button({altSize: true, empty: true}) 
-            +button({empty: true})
-            +button({altColor: true, empty: true})
-            +button({altColor: true, altSize: true, empty: true})   
+            +button({ size: 'small' })
+            +button({  })
+            +button({ color: 'red' })
+            +button({ size: 'small', color: 'red' })
         .uikit__container.uikit__container_arrows
           h2.uikit__title arrow buttons
           .uikit__row
-            +arrow({empty: true})
-            +arrow({empty: true, direction: "right"})
-            +arrow({disabled: true})
-            +arrow({disabled: true, direction: "right"})
             +arrow()
-            +arrow({direction: "right"})
+            +arrow({ direction: 'right' })
+            +arrow({ disabled: true })
+            +arrow({ disabled: true, direction: 'right' })
+            +arrow({ background: 'filled' })
+            +arrow({ direction: 'right', background: 'filled' })
         .uikit__container.uikit__container_diagrams
           h2.uikit__title percentages / pie chart
           .uikit__row
-            +percentage({percent: 0})
-            +percentage({percent: 38})
-            +percentage({percent: 62})
-            +percentage({percent: 89})
-            +piechart([{name: "Chrome", count: 2000, color: "#4eb7a8"},
-                        {name: "Yandex", count: 1000, color: "#e75735"},
-                        {name: "Firefox", count: 300, color: "#e5e5e5"},
-                        {name: "Edge", count: 400, color: "#4f4f4f"}])
+            +percentage({ percent: 0 })
+            +percentage({ percent: 38 })
+            +percentage({ percent: 62 })
+            +percentage({ percent: 89 })
+            +piechart([
+              { name: 'Chrome', count: 2000, color: '#4eb7a8' },
+              { name: 'Yandex', count: 1000, color: '#e75735' },
+              { name: 'Firefox', count: 300, color: '#e5e5e5' },
+              { name: 'Edge', count: 400, color: '#4f4f4f' }
+            ])
         .uikit__container.uikit__container_sliders
           h2.uikit__title sliders
           .uikit__left-col
-            +slider({hasTooltip: true, value: 40, altColor: true, isFilled: true})
+            +slider({ hasTooltip: true, value: 40, color: 'red', isFilled: true })
           .uikit__right-col
-            +slider({hasPips: true, hasTooltip: true})
+            +slider({ hasPips: true, hasTooltip: true })
         .uikit__container.uikit__container_stages
           h2.uikit__title stages
           .uikit__row
@@ -88,30 +90,34 @@ mixin uikit()
           .uikit__left-col
             h2.uikit__title search / drop down
             .uikit__row
-              +search({method: "GET"})
+              +search({ method: 'GET' })
             .uikit__row
               +select({options: {
-                1: "Option 1",
-                2: "Option 2",
-                3: "Option 3"
+                1: 'Option 1',
+                2: 'Option 2',
+                3: 'Option 3'
               }})
           .uikit__right-col
             h2.uikit__title user profile
             .uikit__row
               +user({
-                img: "user-1.jpg", 
-                name: "John Smith",
-                profession: "ux designer",
-                social: {tw: "https://twitter.com"}
+                img: 'user-1.jpg', 
+                name: 'John Smith',
+                profession: 'ux designer',
+                social: {
+                  tw: 'https://twitter.com'
+                }
               })
             .uikit__row
               +user({
-                img: "user-2.jpg",
-                name: "Sarah Brown",
-                profession: "developer",
+                img: 'user-2.jpg',
+                name: 'Sarah Brown',
+                profession: 'developer',
                 alt: true,
-                social: {dr: "https://dribbble.com/",
-                        tw: "https://twitter.com"},
+                social: {
+                  dr: 'https://dribbble.com/',
+                  tw: 'https://twitter.com'
+                },
                 alt: true
               })
         .uikit__container.uikit__container_news-events
@@ -122,19 +128,20 @@ mixin uikit()
             +event(lastEvent)
         .uikit__container.uikit__container_location
           h2.uikit__title location
-          +map({address: "1259  CALIFORNIA ST </br> San Francisco, CA", coord: "[56.454252,84.976109]"})
+          +map({address: '1259  CALIFORNIA ST </br> San Francisco, CA', coord: '[56.454252,84.976109]'})
         .uikit__container
           .uikit__left-col.uikit__left-col_calendar
             h2.uikit__title calendar
             +calendar()
           .uikit__right-col.uikit__right-col_messaging
             h2.uikit__title messaging
-            +messenger({name: "Sarah Brown",
-                        dialed: "Yeah that sounds great. See you then.",
-                        img: "user-2.jpg",
-                        messages: [
-                          {incoming: true, text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
-                        ]})
+            +messenger({
+              name: 'Sarah Brown',
+              dialed: 'Yeah that sounds great. See you then.',
+              img: 'user-2.jpg',
+              messages: [
+                { incoming: true, text: 'Hey! So are we cool to meet at the art gallery? Say 8pm' }
+              ]})
         .uikit__container.uikit__container_video
           h2.uikit__title video
-          +video({src: "https://www.youtube.com/watch?v=CN8x6tfzIEg"})
+          +video({ src: 'https://www.youtube.com/watch?v=CN8x6tfzIEg' })
