@@ -1,16 +1,16 @@
 @import '~global/colors.styl'
 
 .button
+  --main-color: $c_green
+  --shadow-color: $c_darkgreen
   position relative
   display block
   font-size 0.75rem
-  color white
-  border 0.06rem solid $c_green
-  background-color $c_green
+  color var(--main-color)
+  border 0.06rem solid var(--main-color)
+  background-color white
   border-radius 0.188rem
   padding 0.5rem 2.1rem
-  --shadow-color $c_darkgreen
-  --bg-color $c_green
   box-shadow 0 0.188rem 0 var(--shadow-color)
   font-weight 800
   text-transform uppercase
@@ -28,16 +28,18 @@
     transform translateY(0.188rem)
     box-shadow 0 0 0 0 var(--shadow-color)
 
-  &_full-width
+  &:hover
+    background-color var(--main-color)
+    color white
+
+  &_width_full
     width 100%
 
-  &_alt-color
-    --bg-color $c_red
-    --shadow-color $c_darkred
-    border-color $c_red
-    background-color $c_red
+  &_color_red
+    --main-color: $c_red
+    --shadow-color: $c_darkred
 
-  &_alt-size
+  &_size_small
     font-size 0.625rem
     padding 0.3rem 1rem
     box-shadow 0 0.125rem var(--shadow-color)
@@ -47,23 +49,16 @@
     &:active
       transform translateY(0.125rem)
 
-  &_empty
-    color $c_green
-    background-color white
-
-    &.button_alt-color
-      color $c_red
-
-    &:hover
-      color white
-      background-color var(--bg-color)
+  &_bg_filled
+    color: white
+    background-color: var(--main-color) 
 
   &_ripple 
-    color white !important
-    background-color var(--bg-color)
+    color white
+    background-color var(--main-color)
     transition background .7s
 
-  & .ripple
+  & > .ripple
     position absolute
     z-index 1
     width 0

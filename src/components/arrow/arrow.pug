@@ -1,6 +1,6 @@
-mixin arrow({disabled = false, href = '#', direction = 'left', empty = false } = {})
+mixin arrow({ disabled = false, href = '#', direction = 'left', background } = {})
   -  let classes = ''
-  -  classes += empty ? `arrow_empty` : ''
+  -  classes += background ? `arrow_bg_${background}` : ''
   -  classes += disabled ? ` arrow_disabled` : ''
   -  classes += ` arrow_direction_${direction}`
 

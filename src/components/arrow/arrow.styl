@@ -8,7 +8,7 @@
   height 3.125rem
   border-radius 50%
   border 0.185rem solid $c_green
-  background-color $c_green
+  background-color white
   color $c_green
   text-align center
   font-weight bold
@@ -19,7 +19,7 @@
     position absolute
     width 1.1rem
     height 0.25rem
-    background-color white
+    background-color $c_green
     left 35%
     bottom 0
     margin auto
@@ -55,12 +55,12 @@
       top -2px
 
 
-  &_empty
-    background-color white
+  &_bg_filled
+    background-color $c_green
 
     &:before
     &:after
-      background-color $c_green
+      background-color white
 
   &.arrow_disabled
     background-color $c_lightgray
