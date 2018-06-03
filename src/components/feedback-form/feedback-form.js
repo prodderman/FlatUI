@@ -1,4 +1,5 @@
 import 'parsleyjs';
+import { bind } from 'decko';
 
 class FeedbackForm {
   constructor(node) {
@@ -7,24 +8,27 @@ class FeedbackForm {
     this._addEventHandlers();
   }
 
-  _addEventHandlers() { 
-    this.$form.submit((event) => {
-      event.preventDefault();
-      $.ajax({
-        type: this.$form.attr('method'),
-        url: this.$form.attr('action'),
-        data: this.$form.serializeArray(),
-        success: () => {
-          this.$form.trigger('reset');
-          this.$form.find('input, select, textarea').trigger('focusout');
-          this.$form.parsley().reset();
-        },
-        error: (xhr, textStatus, errorThrown) => {
-          alert(`error: ${errorThrown ? errorThrown : xhr.status} ${textStatus}`);
-        },
-        
-      });
+  _addEventHandlers() {
+    this.$form.submit(this._sendFormData);
+  }
+
+  @bind
+  _sendFormData(event) {
+    event.preventDefault();
+    const $targetForm = $(event.currentTarget);
+    $.ajax({
+      type: $targetForm.attr('method'),
+      url: $targetForm.attr('action'),
+      complete: this._resetForm($targetForm)
     });
+  }
+
+  _resetForm($form) {
+    return function() {
+      $form.parsley().reset();
+      $form.trigger('reset');
+      $form.find('input, select, textarea').trigger('focusout');
+    };
   }
 }
 

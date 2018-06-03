@@ -7,8 +7,14 @@ class Menu {
   }
 
   _init() {
-    const $menuItemList = this.$menu.find('.menu__items').empty();
-    $menuItemList.append(menuItems.map(menuItem => {
+    const $menuItemsContainer = this.$menu.find('.menu__items').empty();
+    const currentURL = window.location.pathname;
+    const menuItemsList = menuItems.map(this._renderMenuItem(currentURL));
+    $menuItemsContainer.append(menuItemsList);
+  }
+
+  _renderMenuItem(url) {
+    return function (menuItem) {
       const $menuItem = $('<li />', { class: 'menu__item' });
       const $menuItemLink = $('<a />', { 
         class: 'menu__items-link',
@@ -16,12 +22,11 @@ class Menu {
         text: menuItem.name,
         'data-pjax': true,
       }).appendTo($menuItem);
-      if (window.location.pathname.indexOf(menuItem.href) !== -1) {
+      if (url.indexOf(menuItem.href) !== -1) {
         $menuItemLink.addClass('menu__items-link_active');
       }
       return $menuItem;
-    }));
-    
+    };
   }
 }
 

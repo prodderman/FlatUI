@@ -1,6 +1,7 @@
 import { User } from '../user/user';
 import { Messenger } from '../messenger/messenger';
 import data from './data.json';
+import { bind } from 'decko';
 
 class Friend extends User {
   constructor(node, id) {
@@ -11,25 +12,29 @@ class Friend extends User {
     this._addEventHandler();
   }
 
-  destroy() {
-    this.chat = null;
-  }
-
   _addEventHandler() {
     const $link = this.$friend.find('.js-user__link');
-    $link.click((event) => {
-      event.preventDefault();
-      if (!this.chat) {
-        const userChat = $(Messenger.template(data[this.id]))
-          .addClass('messenger_resizable')
-          .addClass('messenger_draggable');
-        $(userChat).insertBefore($('.js-layout'));
-        this.chat = new Messenger(userChat, this);
-        this.chat.setFocus();
-      } else {
-        this.chat.setFocus();
-      }
-    });
+    $link.click(this._mountChat);
+  }
+  
+  @bind
+  _mountChat(event) {
+    event.preventDefault();
+    if (!this.chat) {
+      const userChat = $(Messenger.template(data[this.id]))
+        .addClass('messenger_resizable')
+        .addClass('messenger_draggable');
+      $(userChat).insertBefore($('.js-layout'));
+      this.chat = new Messenger({ node: userChat, isDraggable: true, isResizable: true, destroyInstance: this._destroyInstance });
+      this.chat.setFocus();
+    } else {
+      this.chat.setFocus();
+    }
+  }
+
+  @bind
+  _destroyInstance() {
+    this.chat = null;
   }
 }
 
@@ -40,14 +45,17 @@ class Contacts {
   }
 
   _init() {
-    data.map((user) => {
-      const $userWrap = $('<div/>', { class: 'contacts__user-wrap' });
-      const $userNode = $(Friend.template(user.userInfo));
-      $userNode.find('.js-user__info').remove();
-      $userWrap.append($userNode);
-      this.contacts.find('.js-contacts__container').append($userWrap);
-      new Friend($userNode, user.userInfo.id);
-    });
+    data.forEach(this._renderUser);
+  }
+
+  @bind
+  _renderUser(user) {
+    const $userWrap = $('<div/>', { class: 'contacts__user-wrap' });
+    const $userNode = $(Friend.template(user.userInfo));
+    $userNode.find('.js-user__info').remove();
+    $userWrap.append($userNode);
+    this.contacts.find('.js-contacts__container').append($userWrap);
+    new Friend($userNode, user.userInfo.id);
   }
 }
 

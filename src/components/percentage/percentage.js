@@ -1,13 +1,13 @@
 import 'jquery-circle-progress';
+import { bind } from 'decko';
 
 class Percentage {
   constructor(diagram) {
     this.$diagram = $(diagram);
-    this._render();
+    this._init();
   }
 
-  _render() {
-    this.$diagram.find('canvas').remove();
+  _init() {
     const percent = parseFloat(this.$diagram.data('percent')/100);
     const size = this.$diagram.width();
     const start = this.$diagram.data('start');
@@ -16,15 +16,18 @@ class Percentage {
     const time = 1500;
     this.$diagram.circleProgress({
       value: percent,
-      size: size,
-      fill: fill,
-      emptyFill: emptyFill,
+      size,
+      fill,
+      emptyFill,
       startAngle: -Math.PI/2,
       animationStartValue: start/100,
       animation: { duration: time} 
-    }).on('circle-animation-progress', function(event, progress, stepValue) {
-      $(this).find('.js-percentage__text').text(Math.round(stepValue * 100));
-    });   
+    }).on('circle-animation-progress', this._putPercerntInPercentage);
+  }
+
+  @bind
+  _putPercerntInPercentage(event, progress, stepValue) {
+    this.$diagram.find('.js-percentage__text').text(Math.round(stepValue * 100));
   }
 }
 

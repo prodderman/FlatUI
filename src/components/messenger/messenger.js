@@ -6,11 +6,14 @@ import 'jquery-ui/themes/base/draggable.css';
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
 import 'jquery-ui-touch-punch';
 import msgTemplate from './template.pug';
+import { bind } from 'decko';
 
 class Messenger {
-  constructor(node, target) {
+  constructor({node, isDraggable = false, isResizable = false,  destroyInstance}) {
     this.$messenger = $(node);
-    this.target = target;
+    this.destroyInstance = destroyInstance;
+    this.isDraggable = isDraggable;
+    this.isResizable = isResizable;
     this._init();
     this._addEventHandlers();
   }
@@ -31,14 +34,16 @@ class Messenger {
       theme: 'dark'
     }).mCustomScrollbar('scrollTo', 'last');
 
-    if (this.$messenger.hasClass('messenger_resizable')) {
+    if (this.isResizable) {
+      this.$messenger.addClass('messenger_resizable');
       this.$messenger.resizable({
         minHeight: 429,
         minWidth: this.$messenger.width()
       });
     }
 
-    if (this.$messenger.hasClass('messenger_draggable')) {
+    if (this.isDraggable) {
+      this.$messenger.addClass('messenger_draggable');
       this.$messenger.draggable({
         handle: this.$messenger.find('.js-messenger__name'),
         containment: 'window',
@@ -50,42 +55,8 @@ class Messenger {
   _addEventHandlers() {
     const $btnClose = this.$messenger.find('.js-messenger__close-button');
     const $formSend = this.$messenger.find('.js-messenger__send-button');
-    const $input = this.$messenger.find('.js-messenger__input');
-    const $msgContainer = this.$messenger.find('ul.js-messenger__tape');
-
-    $formSend.submit((event) => {
-      if ($input.text()) {
-        event.preventDefault();
-        $.ajax({
-          type: 'POST',
-          url: '',
-          data: $input.text(),
-          success: () => {
-
-          },
-          complete: () => {
-            const msgWrap = $('<div/>', {
-              class: 'messenger__msg-wrap messenger__msg-wrap_out'
-            });
-            const msg = $('<div/>', {
-              class: 'messenger__msg messenger__msg_out'
-            });
-            msgWrap.append(msg.text($input.text()));
-            $msgContainer.append(msgWrap);
-            this.$messenger.find('.js-messenger__chat').mCustomScrollbar('scrollTo', 'last');
-            $input.empty();
-          }
-        });
-      }
-    });
-
-    $btnClose.click(() => {
-      if (this.target) {
-        this.target.destroy();
-        this.target = null;
-      }
-      this.$messenger.remove();
-    });
+    $formSend.submit(this._sendMessage(this.$messenger));
+    $btnClose.click(this._closeChat);
   }
 
   _placeCaretAtEnd(node) {
@@ -104,12 +75,50 @@ class Messenger {
       textRange.select();
     }
   }
+
+  @bind
+  _sendMessage($messenger) {
+    return (event) => {
+      const $input = $messenger.find('.js-messenger__input');
+      const $msgContainer = $messenger.find('.js-messenger__tape');
+      const $scrollContainer = $messenger.find('.js-messenger__chat');
+      event.preventDefault();
+      if ($input.text()) {
+        $.ajax({
+          complete: () => {
+            this._renderMessage($input.text(), $msgContainer);
+            this._scrollDown($scrollContainer);
+            $input.empty();
+          }
+        });
+      }
+    };
+  }
+
+  _scrollDown($container) {
+    $container.mCustomScrollbar('scrollTo', 'last');
+  }
+
+  _renderMessage(text, $container) {
+    const msgWrap = $('<li/>', { class: 'messenger__msg-wrap messenger__msg-wrap_outcoming' });
+    const msg = $('<div/>', { class: 'messenger__msg messenger__msg_outcoming' });
+    msgWrap.append(msg.text(text));
+    $container.append(msgWrap);
+  }
+
+  @bind
+  _closeChat() {
+    if (this.destroyInstance && typeof this.destroyInstance === 'function') {
+      this.destroyInstance();
+    }
+    this.$messenger.remove();
+  }
 }
 
 function render(isComponentOnPjaxContainer = false) {
   const $components = $(isComponentOnPjaxContainer ? '.js-layout__pjax-container .js-messenger' : '.js-messenger');
   if ($components.length > 0) {
-    $components.map((index, node) => new Messenger(node));
+    $components.map((index, node) => new Messenger({node}));
   }
 }
 

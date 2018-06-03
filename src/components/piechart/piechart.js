@@ -1,3 +1,5 @@
+import 'vendors/donut-pie-chart/donut-pie-chart.min.js';
+
 class PieChart {
   constructor(diagram) {
     this.$diagram = $(diagram);
@@ -5,36 +7,28 @@ class PieChart {
   }
 
   _render() {
-    const canvas = this.$diagram.find('canvas').get(0);
-    const ctx = canvas.getContext('2d');
-    const radius = this.$diagram.width() / 2;
-    const pieces = this.$diagram.find('.js-piechart__data .js-piechart__data-item').toArray();
+    const pieces = this.$diagram
+      .find('.js-piechart__data .js-piechart__data-item')
+      .toArray();
     const totalCount = pieces.reduce(this._calcTotalCount, 0);
-    canvas.width = this.$diagram.width() * 1.5;
-    canvas.height = this.$diagram.width() * 1.5;
-    const center = canvas.width / 2;
+    const chartData = pieces.map(this._extractDataAttrs(totalCount));
 
-    pieces.reduce((prevAngle, currentPiece) => {
-      const angle = prevAngle + currentPiece.dataset.count * 2 * Math.PI / totalCount;
-      this._renderPieceWithAngle(ctx, center, radius, prevAngle, angle, currentPiece.dataset.color);
-      return angle;
-    }, 0);
+    this.$diagram.empty().donutpie({
+      radius: this.$diagram.width() * 1.25
+    });
+    this.$diagram.donutpie('update', chartData);
   }
 
-  _renderPieceWithAngle(context, center, radius, startAngle, endAngle, color) {
-    context.beginPath();
-    context.arc(center, center, radius - 7.5, -Math.PI/2 + startAngle, -Math.PI/2 + endAngle, false);
-    context.fillStyle = 'transparent';
-    context.fill();
-    context.lineWidth = 15;
-    context.strokeStyle = color;
-    context.stroke();
+  _extractDataAttrs(totalCount) {
+    return function(node) {
+      node.dataset.hvalue = node.dataset.hvalue * 100 / totalCount;
+      return node.dataset;
+    };
   }
 
   _calcTotalCount(totalCount, currentPiece) {
-    return totalCount + parseInt(currentPiece.dataset.count);
+    return totalCount + parseInt(currentPiece.dataset.hvalue);
   }
- 
 }
 
 function render(isComponentOnPjaxContainer = false) {

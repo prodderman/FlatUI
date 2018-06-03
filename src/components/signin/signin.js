@@ -1,4 +1,5 @@
 import 'parsleyjs';
+import { bind } from 'decko';
 
 export class Signin {
   constructor(node) {
@@ -11,22 +12,19 @@ export class Signin {
     this.$form.submit(this._authorization);
   }
 
+  @bind
   _authorization(event) {
     event.preventDefault();
     const $targetForm = $(event.currentTarget);
     $.ajax({
       type: $targetForm.attr('method'),
       url: $targetForm.attr('action'),
-      data: $targetForm.serializeArray(),
-      success: () => {
-        $targetForm.trigger('reset');
-        $targetForm.find('input, select, textarea').trigger('focusout');
-        $targetForm.parsley().reset();
-      },
-      complete: () => {
-        window.location.replace('profile.html');
-      }
+      complete: this._relocation
     });
+  }
+
+  _relocation() {
+    window.location.replace('profile.html');
   }
 }
 
