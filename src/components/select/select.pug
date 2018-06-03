@@ -8,10 +8,6 @@ mixin select({ name, multiple, size, tabindex, require, options = {}, placeholde
       tabindex= tabindex
       data-placeholder= placeholder
     )
-      option.select__option(
-         selected= 'selected'
-      )
+      option.select__option(selected="selected")
       each name, value  in options
-        option.select__option(
-          value= value
-        )= name
+        option.select__option(value=value)= name

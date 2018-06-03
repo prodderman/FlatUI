@@ -97,10 +97,11 @@ mixin uikit()
             .uikit__row
               +search({ method: 'GET' })
             .uikit__row
-              +select({options: {
-                1: 'Option 1',
-                2: 'Option 2',
-                3: 'Option 3'
+              +select({
+                options: {
+                  1: 'Option 1',
+                  2: 'Option 2',
+                  3: 'Option 3'
               }})
           .uikit__right-col
             h2.uikit__title user profile

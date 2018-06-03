@@ -5,19 +5,23 @@ include ../../components/tickbox/tickbox
 mixin signin({ method = 'POST', action = '', enctype } = {})
   form.signin.js-signin(
       data-parsley-validate
-      method= method
-      action= action
+      method=method
+      action=action
     )
     .signin__field
-        +input({name: 'email',
-            pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.toString(),
-            placeholder: 'Your e-mail',
-            required: true})
+        +input({
+          name: 'email',
+          pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.toString(),
+          placeholder: 'Your e-mail',
+          required: true
+        })
     .signin__field
-        +input({type: 'password',
-            name: 'password', 
-            placeholder: 'Your password',
-            required: true})
+        +input({
+          type: 'password',
+          name: 'password', 
+          placeholder: 'Your password',
+          required: true
+        })
     .signin__row
       .signin__check
         +tickbox({ name: 'remember', text: 'Remember me?' })

@@ -1,8 +1,8 @@
-mixin social({href, icon})
+mixin social({ href, icon } = {})
   .social
     if href
-      a.social__icon.social__icon_link(data-icon= icon href= href)
+      a.social__icon.social__icon_link(data-icon=icon href=href)
         i.fa(class=`fa-${icon}`)
     else
-      span.social__icon(data-icon= icon)
+      span.social__icon(data-icon=icon)
         i.fa(class=`fa-${icon}`)

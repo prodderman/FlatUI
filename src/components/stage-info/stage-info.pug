@@ -8,67 +8,83 @@ include ../button/button
 mixin stage-info()
   .stage-info
     .stage-info__stages
-      +stages({count: 5, current: 4})
+      +stages({ count: 5, current: 4 })
     .stage-info__content
-      form.stage-info__form(method='POST' action='')
+      form.stage-info__form(method="POST" action="")
         .stage-info__fieldset
           .stage-info__column
             h2.stage-info__title main info
             .stage-info__input
-              +input({name: 'name',
-                      placeholder: 'Name',
-                      require: true,
-                      tabindex: 1})
+              +input({
+                name: 'name',
+                placeholder: 'Name',
+                require: true,
+                tabindex: 1
+              })
             .stage-info__input
-              +input({name: 'email',
-                      placeholder: 'E-mail',
-                      require: true,
-                      tabindex: 2})
+              +input({
+                name: 'email',
+                placeholder: 'E-mail',
+                require: true,
+                tabindex: 2
+              })
             .stage-info__select
-              +select({name: 'gender',
-                      require: true,
-                      placeholder: 'Gender',
-                      tabindex: 3,
-                      options: {
-                        male: 'Male',
-                        female: 'Female'
-                      }})
+              +select({
+                name: 'gender',
+                require: true,
+                placeholder: 'Gender',
+                tabindex: 3,
+                options: {
+                  male: 'Male',
+                  female: 'Female'
+                }
+              })
             .stage-info__input
-              +input({name: 'password',
-                      type: 'password',
-                      placeholder: 'Password',
-                      require: true,
-                      tabindex: 4})
+              +input({
+                name: 'password',
+                type: 'password',
+                placeholder: 'Password',
+                require: true,
+                tabindex: 4
+              })
             .stage-info__input
-              +input({name: 'password',
-                      type: 'password',
-                      placeholder: 'Confirm password',
-                      require: true,
-                      tabindex: 5})
+              +input({
+                name: 'password',
+                type: 'password',
+                placeholder: 'Confirm password',
+                require: true,
+                tabindex: 5
+              })
           .stage-info__column
             h2.stage-info__title other info
             .stage-info__input
-              +input({name: 'phone',
-                      placeholder: 'Phone number',
-                      require: true,
-                      tabindex: 6})
+              +input({
+                name: 'phone',
+                placeholder: 'Phone number',
+                require: true,
+                tabindex: 6
+              })
             .stage-info__input
-              +input({name: 'profession',
-                      placeholder: 'Profession',
-                      require: true,
-                      tabindex: 7})
+              +input({
+                name: 'profession',
+                placeholder: 'Profession',
+                require: true,
+                tabindex: 7
+              })
             .stage-info__input
-              +input({name: 'city',
-                      placeholder: 'City',
-                      require: true,
-                      tabindex: 7})
+              +input({
+                name: 'city',
+                placeholder: 'City',
+                require: true,
+                tabindex: 8
+              })
             .stage-info__toggle
-              +toggle({name: 'notifications'}) Receive notifications
+              +toggle({ name: 'notifications' }) Receive notifications
             .stage-info__toggle
-              +toggle({name: 'subscribe'}) Subscribe to newsletter
+              +toggle({ name: 'subscribe' }) Subscribe to newsletter
       .stage-info__footer
         .stage-info__diagram
-          +percentage({percent: 64})
+          +percentage({ percent: 64 })
           .stage-info__label-diagram % Page Filling
         .stage-info__buttons
           .stage-info__prev

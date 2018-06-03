@@ -5,9 +5,9 @@ include ../textarea/textarea
 mixin feedback-form({ method = 'POST', action = '', enctype } = {})
   form.feedback-form.js-feedback-form(
     data-parsley-validate
-    method= method
-    action= action
-    enctype= enctype
+    method=method
+    action=action
+    enctype=enctype
   )
     .feedback-form__input
       +input({

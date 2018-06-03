@@ -2,10 +2,10 @@ mixin tickbox({ name, required, tabindex, text = '' } = {})
   .tickbox
     label.tickbox__label
       input.tickbox__field(
-        type = 'checkbox'
-        name = name
-        required = required
-        tabindex = tabindex
+        type="checkbox"
+        name=name
+        required=required
+        tabindex=tabindex
       )
       .tickbox__indicator
       if text

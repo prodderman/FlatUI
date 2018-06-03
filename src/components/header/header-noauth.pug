@@ -4,9 +4,9 @@ include ../logo/logo
 mixin header-noauth()
   .header
     .header__logo
-      +logo({href: 'authorization.html', img: 'android-chrome-192x192.png'})
+      +logo({ href: 'authorization.html', img: 'android-chrome-192x192.png' })
     .header__content
-      a.header__auth-link(href= 'authorization.html' data-pjax= true) Sign in
+      a.header__auth-link(href="authorization.html" data-pjax) Sign in
        
     .header__search
       +search() 
