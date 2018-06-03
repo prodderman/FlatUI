@@ -53,16 +53,21 @@ mixin uikit()
         .uikit__container.uikit__container_diagrams
           h2.uikit__title percentages / pie chart
           .uikit__row
-            +percentage({ percent: 0 })
-            +percentage({ percent: 38 })
-            +percentage({ percent: 62 })
-            +percentage({ percent: 89 })
-            +piechart([
-              { name: 'Chrome', count: 2000, color: '#4eb7a8' },
-              { name: 'Yandex', count: 1000, color: '#e75735' },
-              { name: 'Firefox', count: 300, color: '#e5e5e5' },
-              { name: 'Edge', count: 400, color: '#4f4f4f' }
-            ])
+            .uikit__percentage
+              +percentage({ percent: 0 })
+            .uikit__percentage
+              +percentage({ percent: 38 })
+            .uikit__percentage
+              +percentage({ percent: 62 })
+            .uikit__percentage
+              +percentage({ percent: 89 })
+            .uikit__piechart
+              +piechart([
+                { name: 'Chrome', count: 2000, color: '#4eb7a8' },
+                { name: 'Yandex', count: 1000, color: '#e75735' },
+                { name: 'Firefox', count: 300, color: '#e5e5e5' },
+                { name: 'Edge', count: 400, color: '#4f4f4f' }
+              ])
         .uikit__container.uikit__container_sliders
           h2.uikit__title sliders
           .uikit__left-col
@@ -113,12 +118,11 @@ mixin uikit()
                 img: 'user-2.jpg',
                 name: 'Sarah Brown',
                 profession: 'developer',
-                alt: true,
+                color: 'green',
                 social: {
                   dr: 'https://dribbble.com/',
                   tw: 'https://twitter.com'
                 },
-                alt: true
               })
         .uikit__container.uikit__container_news-events
           h2.uikit__title news & events

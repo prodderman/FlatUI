@@ -2,13 +2,13 @@ include ../avatar/avatar
 include ../social/social
 
 mixin user({ id, img, color, social={}, name='user name', profession='profession', href='/mock-address/change-me' } = {})
-  .user.js-user(class= color ? `user_color_${color}` : false id = id !== undefined ? `user_${id}` : false)
+  .user.js-user(class=color ? `user_color_${color}` : false id=id !== undefined ? `user_${id}` : false)
     a.user__link.js-user__link(href= href)
-      +avatar({img})
+      +avatar({ img} )
     .user__info.js-user__info
       .user__name= name
       .user__profession= profession
       .user__social
-        +social({icon: 'facebook', href: social.fb})
-        +social({icon: 'twitter', href: social.tw})
-        +social({icon: 'dribbble', href: social.dr})
+        +social({ icon: 'facebook', href: social.fb })
+        +social({ icon: 'twitter', href: social.tw })
+        +social({ icon: 'dribbble', href: social.dr })

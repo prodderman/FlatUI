@@ -46,7 +46,8 @@ module.exports = new config.default().merge({
     new webpack.ProgressPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      d3: 'd3'
     }),
     new HtmlWebpackHarddiskPlugin()
   ].concat(htmls)

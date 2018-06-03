@@ -9,6 +9,7 @@
     width calc(100% - 5rem)
 
   .parsley-errors-list
+    display none
     position absolute
     color white
     list-style none
@@ -32,7 +33,6 @@
       line-height 1.75rem
       text-transform uppercase
       
-
     &:before
       content ''
       position absolute
@@ -42,14 +42,17 @@
       height 0.125rem
       margin auto
       border 0.188rem solid $c_red
-
       border-bottom-color transparent
       border-left-color transparent
       border-top-color transparent
 
-  .parsley-success
-    
+  .parsley-error
     + .parsley-errors-list
+        display block
+
+  .parsley-success
+    + .parsley-errors-list
+        display block
         background-color $c_green
 
         &:before

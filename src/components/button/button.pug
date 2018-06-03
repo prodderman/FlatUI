@@ -1,4 +1,4 @@
-mixin button({text = 'Button', color, size, background, submit, href, width, pjax = false} = {}) 
+mixin button({ text = 'Button', color, size, background, submit, href, width, pjax = false }) 
 
   -  let classes = ''
   -  classes += color ? `button_color_${color}` : ''
@@ -7,6 +7,8 @@ mixin button({text = 'Button', color, size, background, submit, href, width, pja
   -  classes += width ? ` button_width_${width}` : ``
 
   if href
-    a.button.js-button(href= href class= classes data-pjax= pjax ? true : false)= text
+    a.button.js-button(href=href class=classes data-pjax=pjax ? true : false)= text
+      .button__ripple.js-button__ripple
   else
-    button.button.js-button(class= classes type= submit ? 'submit' : false)= text
+    button.button.js-button(class=classes type=submit ? 'submit' : false)= text
+      .button__ripple.js-button__ripple

@@ -1,6 +1,7 @@
 include ../calendar/calendar
 include ../button/button
 include ../avatar/avatar
+include ../piechart/piechart
 
 mixin profile()
   .profile
@@ -9,7 +10,7 @@ mixin profile()
     .profile__left-col
       .profile__photo
         .profile__photo-wrap
-          +avatar({isProfile: true})
+          +avatar({ isProfile: true })
         .profile__edit
           +button({ color: 'red', background: 'filled', text: 'edit', width: 'full' })
       .profile__calendar
@@ -33,3 +34,12 @@ mixin profile()
             .profile__label facebook
             .profile__labeled
               a.profile__link(href='https://facebook.com' target='_blank') https://facebook.com
+        .profile__skills
+          .profile__piechart
+            .profile__label skills
+            +piechart([
+              { name: 'Singin', count: 231, color: '#4eb7a8' },
+              { name: 'Actor Play', count: 557, color: '#e75735' },
+              { name: 'Dance', count: 400, color: '#e5e5e5' },
+              { name: 'Creative', count: 300, color: '#4f4f4f' }
+            ])

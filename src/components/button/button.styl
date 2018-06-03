@@ -53,32 +53,36 @@
     color: white
     background-color: var(--main-color) 
 
-  &_ripple 
+  &_is-ripple
     color white
     background-color var(--main-color)
-    transition background .7s
+    transition background .4s
 
-  & > .ripple
+  &__ripple
     position absolute
     z-index 1
     width 0
     height 0
+    opacity 0
+    top: 50%;
+    left: 50%;
     transform translate(-50%, -50%)
-    animation ripple .7s
     border-radius 50%
-    opacity 0.10
-    background $c_lightgray
-
-    @keyframes ripple {
-      0% {
-        opacity 0
-      }
-      25% {
-        opacity .50
-      }
-      100% {
-        width 200%
-        padding-bottom 200%
-        opacity 0
-      }
-    }
+    background-color rgba(255, 255, 255, 0.50);
+  
+  &_is-ripple &__ripple
+    animation ripple .4s ease-in
+    
+@keyframes ripple {
+  0% {
+    opacity 0
+  }
+  25% {
+    opacity 1
+  }
+  100% {
+    width 200%
+    padding-bottom 200%
+    opacity 0
+  }
+}

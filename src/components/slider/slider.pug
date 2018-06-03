@@ -1,4 +1,4 @@
 mixin slider({ name, color, value = 0, isFilled, hasTooltip, hasPips, max = 100, min = 0 } = {})
-  - const classes = altColor ? `slider_color_${red}` : ''
+  - const classes = color ? `slider_color_${color}` : ''
   .slider.js-slider(class=classes data-fill=isFilled data-float=hasTooltip data-pips=hasPips data-value=value data-max=max data-min=min)
     input.slider__hidden-input(type="hidden", name=name, value=value)

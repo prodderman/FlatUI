@@ -33,7 +33,6 @@
     text-transform none
     position relative
     padding-bottom 0.7rem
-    margin-bottom 0.7rem
     letter-spacing 0.05rem
     color $c_black
     font-weight 800
@@ -47,6 +46,28 @@
       bottom 0
       left 0
       background-color $c_lightgray
+
+  &__info
+    position relative
+    padding-top 0.7rem
+    padding-bottom 0.7rem
+
+    &:after
+      content ''
+      position absolute
+      width 100%
+      height 0.125rem
+      bottom 0
+      left 0
+      background-color $c_lightgray
+
+  &__skills
+    padding-top 0.7rem
+    padding-bottom 0.7rem
+      
+  &__piechart
+    width 48%;
+    
 
   &__profile
     flex-direction column
