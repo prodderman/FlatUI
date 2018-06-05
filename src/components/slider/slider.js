@@ -18,7 +18,7 @@ class Slider {
       min: this.$slider.data('min'),
       max: this.$slider.data('max'),
       value: this.$slider.data('value'),
-      change: this._handleSliderChange
+      change: this._writeInInput
     });
 
     if (this.$slider.is('[data-fill]')) {
@@ -38,7 +38,7 @@ class Slider {
   }
 
   @bind
-  _handleSliderChange(event, data) {
+  _writeInInput(event, data) {
     this.$input.val(data.value);
   }
 }

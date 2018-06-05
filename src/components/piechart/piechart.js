@@ -11,7 +11,7 @@ class PieChart {
       .find('.js-piechart__data .js-piechart__data-item')
       .toArray();
     const totalCount = pieces.reduce(this._calcTotalCount, 0);
-    const chartData = pieces.map(this._extractDataAttrs(totalCount));
+    const chartData = pieces.map(this._makeDataAttrsExtracting(totalCount));
 
     this.$diagram.empty().donutpie({
       radius: this.$diagram.width() * 1.25
@@ -19,8 +19,8 @@ class PieChart {
     this.$diagram.donutpie('update', chartData);
   }
 
-  _extractDataAttrs(totalCount) {
-    return function(node) {
+  _makeDataAttrsExtracting(totalCount) {
+    return (node) => {
       node.dataset.hvalue = node.dataset.hvalue * 100 / totalCount;
       return node.dataset;
     };

@@ -31,11 +31,11 @@ class Calendar {
       showButtonPanel: true,
       showOtherMonths: true,
       firstDay: 1,
-      onSelect: this._writeDateInHead($calendarHead)
+      onSelect: this._makeWriteDateInHead($calendarHead)
     });
   }
 
-  _writeDateInHead($calendarHead) {
+  _makeWriteDateInHead($calendarHead) {
     return function(date) {
       $calendarHead.text(new Date(date).getDate());
     };

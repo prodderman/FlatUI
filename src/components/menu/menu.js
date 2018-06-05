@@ -9,11 +9,11 @@ class Menu {
   _init() {
     const $menuItemsContainer = this.$menu.find('.menu__items').empty();
     const currentURL = window.location.pathname;
-    const menuItemsList = menuItems.map(this._renderMenuItem(currentURL));
+    const menuItemsList = menuItems.map(this._makeMenuItemRendering(currentURL));
     $menuItemsContainer.append(menuItemsList);
   }
 
-  _renderMenuItem(url) {
+  _makeMenuItemRendering(url) {
     return function (menuItem) {
       const $menuItem = $('<li />', { class: 'menu__item' });
       const $menuItemLink = $('<a />', { 

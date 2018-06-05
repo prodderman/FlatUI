@@ -36,10 +36,10 @@ class Map {
     });
 
     ymap.geoObjects.add(placemark);
-    this.$toMarkerButton.click(this._goToMarker(ymap, placemark));
+    this.$toMarkerButton.click(this._makeToMarkerTransition(ymap, placemark));
   }
 
-  _goToMarker(map, marker) {
+  _makeToMarkerTransition(map, marker) {
     return function() {
       map.panTo(marker.geometry.getCoordinates());
     };

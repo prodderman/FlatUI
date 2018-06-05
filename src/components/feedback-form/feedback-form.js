@@ -19,11 +19,11 @@ class FeedbackForm {
     $.ajax({
       type: $targetForm.attr('method'),
       url: $targetForm.attr('action'),
-      complete: this._resetForm($targetForm)
+      complete: this._makeFormReseting($targetForm)
     });
   }
 
-  _resetForm($form) {
+  _makeFormReseting($form) {
     return function() {
       $form.parsley().reset();
       $form.trigger('reset');

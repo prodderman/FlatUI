@@ -55,7 +55,7 @@ class Messenger {
   _addEventHandlers() {
     const $btnClose = this.$messenger.find('.js-messenger__close-button');
     const $formSend = this.$messenger.find('.js-messenger__send-button');
-    $formSend.submit(this._sendMessage(this.$messenger));
+    $formSend.submit(this._makeMessageSending(this.$messenger));
     $btnClose.click(this._closeChat);
   }
 
@@ -68,7 +68,9 @@ class Messenger {
       const select = window.getSelection();
       select.removeAllRanges();
       select.addRange(range);
-    } else if (typeof document.body.createTextRange != 'undefined') {
+    }
+    
+    if (typeof document.body.createTextRange != 'undefined') {
       const textRange = document.body.createTextRange();
       textRange.moveToElementText(node);
       textRange.collapse(false);
@@ -77,7 +79,7 @@ class Messenger {
   }
 
   @bind
-  _sendMessage($messenger) {
+  _makeMessageSending($messenger) {
     return (event) => {
       const $input = $messenger.find('.js-messenger__input');
       const $msgContainer = $messenger.find('.js-messenger__tape');

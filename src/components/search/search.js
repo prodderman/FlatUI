@@ -26,7 +26,7 @@ class Search {
   }
 
   @bind
-  _setSearchError($field) {
+  _makeSearchErrorSetting($field) {
     return function() {
       $field.val('');
       $field.addClass('error');
