@@ -1,4 +1,4 @@
-class Buttons {
+class Button {
   constructor(selector) {
     this.buttonSelector = selector;
     this._addEventHandlers();
@@ -26,7 +26,7 @@ class Buttons {
 }
 
 function render() {
-  new Buttons('.js-button');
+  new Button('.js-button');
 }
 
 $( document ).ready(render);
