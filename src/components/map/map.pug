@@ -1,9 +1,11 @@
-mixin map({ coord, address } = {})
+mixin map({ coord, street, city } = {})
   .map.js-map(data-coord=coord)
     .map__location.js-map__location
     .map__overlay
       .map__text Meet us!
-      .map__address= address 
+      address.map__address
+        .map__street= street
+        .map__city= city
       .map__controls
         button.map__button.js-map__button-my-location
           include ./img/crosshair.svg
