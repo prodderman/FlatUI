@@ -23,130 +23,130 @@ mixin uikit()
   - const lastNews = require('../../global/mocks/news.json')[0];
   - const lastEvent = require('../../global/mocks/events.json')[0];
   .uikit
-      .uikit__center
-        .uikit__container.uikit__container_buttons
-          h2.uikit__title standard buttons
+    .uikit__center
+      .uikit__container.uikit__container_buttons
+        h2.uikit__title standard buttons
+        .uikit__row
+          +button({ size: 'small', background: 'filled' })
+          +button({ background: 'filled' })
+          +button({ color: 'red', background: 'filled' })
+          +button({ size: 'small', color: 'red', background: 'filled' })
+        .uikit__row
+          +button({ size: 'small', background: 'filled' })
+          +button({ background: 'filled' })
+          +button({ color: 'red', background: 'filled' })
+          +button({ size: 'small', color: 'red', background: 'filled' })
+        .uikit__row
+          +button({ size: 'small' })
+          +button({  })
+          +button({ color: 'red' })
+          +button({ size: 'small', color: 'red' })
+      .uikit__container.uikit__container_arrows
+        h2.uikit__title arrow buttons
+        .uikit__row
+          +arrow()
+          +arrow({ direction: 'right' })
+          +arrow({ disabled: true })
+          +arrow({ disabled: true, direction: 'right' })
+          +arrow({ background: 'filled' })
+          +arrow({ direction: 'right', background: 'filled' })
+      .uikit__container.uikit__container_diagrams
+        h2.uikit__title percentages / pie chart
+        .uikit__row
+          .uikit__percentage
+            +percentage({ percent: 0 })
+          .uikit__percentage
+            +percentage({ percent: 38 })
+          .uikit__percentage
+            +percentage({ percent: 62 })
+          .uikit__percentage
+            +percentage({ percent: 89 })
+          .uikit__piechart
+            +piechart([
+              { name: 'Chrome', count: 2000, color: '#4eb7a8' },
+              { name: 'Yandex', count: 1000, color: '#e75735' },
+              { name: 'Firefox', count: 300, color: '#e5e5e5' },
+              { name: 'Edge', count: 400, color: '#4f4f4f' }
+            ])
+      .uikit__container.uikit__container_sliders
+        h2.uikit__title sliders
+        .uikit__left-col
+          +slider({ hasTooltip: true, value: 40, color: 'red', isFilled: true })
+        .uikit__right-col
+          +slider({ hasPips: true, hasTooltip: true })
+      .uikit__container.uikit__container_stages
+        h2.uikit__title stages
+        .uikit__row
+          +stages({count: 5, current: 3})
+      .uikit__container.uikit__container_form-elements
+        h2.uikit__title form elements
+        .uikit__left-col.uikit__left-col_form
+          +feedback-form()
+        .uikit__right-col
+          h2.uikit__title  toggles
+          .uikit__container.uikit__container_toggles
+            +toggle()
+            +toggle()
+          h2.uikit__title tick boxes
+          .uikit__container.uikit__container_tickbox
+            +tickbox()
+            +tickbox()
+      .uikit__container
+        .uikit__left-col
+          h2.uikit__title search / drop down
           .uikit__row
-            +button({ size: 'small', background: 'filled' })
-            +button({ background: 'filled' })
-            +button({ color: 'red', background: 'filled' })
-            +button({ size: 'small', color: 'red', background: 'filled' })
+            +search({ method: 'GET' })
           .uikit__row
-            +button({ size: 'small', background: 'filled' })
-            +button({ background: 'filled' })
-            +button({ color: 'red', background: 'filled' })
-            +button({ size: 'small', color: 'red', background: 'filled' })
+            +select({
+              options: {
+                1: 'Option 1',
+                2: 'Option 2',
+                3: 'Option 3'
+            }})
+        .uikit__right-col
+          h2.uikit__title user profile
           .uikit__row
-            +button({ size: 'small' })
-            +button({  })
-            +button({ color: 'red' })
-            +button({ size: 'small', color: 'red' })
-        .uikit__container.uikit__container_arrows
-          h2.uikit__title arrow buttons
+            +user({
+              img: 'user-1.jpg', 
+              name: 'John Smith',
+              profession: 'ux designer',
+              social: {
+                tw: 'https://twitter.com'
+              }
+            })
           .uikit__row
-            +arrow()
-            +arrow({ direction: 'right' })
-            +arrow({ disabled: true })
-            +arrow({ disabled: true, direction: 'right' })
-            +arrow({ background: 'filled' })
-            +arrow({ direction: 'right', background: 'filled' })
-        .uikit__container.uikit__container_diagrams
-          h2.uikit__title percentages / pie chart
-          .uikit__row
-            .uikit__percentage
-              +percentage({ percent: 0 })
-            .uikit__percentage
-              +percentage({ percent: 38 })
-            .uikit__percentage
-              +percentage({ percent: 62 })
-            .uikit__percentage
-              +percentage({ percent: 89 })
-            .uikit__piechart
-              +piechart([
-                { name: 'Chrome', count: 2000, color: '#4eb7a8' },
-                { name: 'Yandex', count: 1000, color: '#e75735' },
-                { name: 'Firefox', count: 300, color: '#e5e5e5' },
-                { name: 'Edge', count: 400, color: '#4f4f4f' }
-              ])
-        .uikit__container.uikit__container_sliders
-          h2.uikit__title sliders
-          .uikit__left-col
-            +slider({ hasTooltip: true, value: 40, color: 'red', isFilled: true })
-          .uikit__right-col
-            +slider({ hasPips: true, hasTooltip: true })
-        .uikit__container.uikit__container_stages
-          h2.uikit__title stages
-          .uikit__row
-            +stages({count: 5, current: 3})
-        .uikit__container.uikit__container_form-elements
-          h2.uikit__title form elements
-          .uikit__left-col.uikit__left-col_form
-            +feedback-form()
-          .uikit__right-col
-            h2.uikit__title  toggles
-            .uikit__container.uikit__container_toggles
-              +toggle()
-              +toggle()
-            h2.uikit__title tick boxes
-            .uikit__container.uikit__container_tickbox
-              +tickbox()
-              +tickbox()
-        .uikit__container
-          .uikit__left-col
-            h2.uikit__title search / drop down
-            .uikit__row
-              +search({ method: 'GET' })
-            .uikit__row
-              +select({
-                options: {
-                  1: 'Option 1',
-                  2: 'Option 2',
-                  3: 'Option 3'
-              }})
-          .uikit__right-col
-            h2.uikit__title user profile
-            .uikit__row
-              +user({
-                img: 'user-1.jpg', 
-                name: 'John Smith',
-                profession: 'ux designer',
-                social: {
-                  tw: 'https://twitter.com'
-                }
-              })
-            .uikit__row
-              +user({
-                img: 'user-2.jpg',
-                name: 'Sarah Brown',
-                profession: 'developer',
-                color: 'green',
-                social: {
-                  dr: 'https://dribbble.com/',
-                  tw: 'https://twitter.com'
-                },
-              })
-        .uikit__container.uikit__container_news-events
-          h2.uikit__title news & events
-          .uikit__left-col.uikit__left-col_news
-            +news(lastNews)
-          .uikit__right-col.uikit__right-col_event
-            +event(lastEvent)
-        .uikit__container.uikit__container_location
-          h2.uikit__title location
-          +map({ street: '1259  CALIFORNIA ST', city: 'San Francisco, CA', coord: '[56.454252,84.976109]' })
-        .uikit__container
-          .uikit__left-col.uikit__left-col_calendar
-            h2.uikit__title calendar
-            +calendar()
-          .uikit__right-col.uikit__right-col_messaging
-            h2.uikit__title messaging
-            +messenger({
-              name: 'Sarah Brown',
-              dialed: 'Yeah that sounds great. See you then.',
+            +user({
               img: 'user-2.jpg',
-              messages: [
-                { incoming: true, text: 'Hey! So are we cool to meet at the art gallery? Say 8pm' }
-              ]})
-        .uikit__container.uikit__container_video
-          h2.uikit__title video
-          +video({ src: 'https://www.youtube.com/watch?v=CN8x6tfzIEg' })
+              name: 'Sarah Brown',
+              profession: 'developer',
+              color: 'green',
+              social: {
+                dr: 'https://dribbble.com/',
+                tw: 'https://twitter.com'
+              },
+            })
+      .uikit__container.uikit__container_news-events
+        h2.uikit__title news & events
+        .uikit__left-col.uikit__left-col_news
+          +news(lastNews)
+        .uikit__right-col.uikit__right-col_event
+          +event(lastEvent)
+      .uikit__container.uikit__container_location
+        h2.uikit__title location
+        +map({ street: '1259  CALIFORNIA ST', city: 'San Francisco, CA', coord: '[56.454252,84.976109]' })
+      .uikit__container
+        .uikit__left-col.uikit__left-col_calendar
+          h2.uikit__title calendar
+          +calendar()
+        .uikit__right-col.uikit__right-col_messaging
+          h2.uikit__title messaging
+          +messenger({
+            name: 'Sarah Brown',
+            dialed: 'Yeah that sounds great. See you then.',
+            img: 'user-2.jpg',
+            messages: [
+              { incoming: true, text: 'Hey! So are we cool to meet at the art gallery? Say 8pm' }
+            ]})
+      .uikit__container.uikit__container_video
+        h2.uikit__title video
+        +video({ src: 'https://www.youtube.com/watch?v=CN8x6tfzIEg' })
