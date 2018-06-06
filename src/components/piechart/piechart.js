@@ -1,22 +1,32 @@
 import 'vendors/donut-pie-chart/donut-pie-chart.min.js';
+import { bind } from 'decko';
 
 class PieChart {
   constructor(diagram) {
     this.$diagram = $(diagram);
+    this._init();
+    this._addEventHandlers();
+  }
+
+  _addEventHandlers() {
+    $(window).resize(this._render);
+  }
+
+  _init() {
+    this.pieces = this.$diagram
+      .find('.js-piechart__data .js-piechart__data-item')
+      .toArray();
+    this.totalCount = this.pieces.reduce(this._calcTotalCount, 0);
+    this.chartData = this.pieces.map(this._makeDataAttrsExtracting(this.totalCount));
     this._render();
   }
 
+  @bind
   _render() {
-    const pieces = this.$diagram
-      .find('.js-piechart__data .js-piechart__data-item')
-      .toArray();
-    const totalCount = pieces.reduce(this._calcTotalCount, 0);
-    const chartData = pieces.map(this._makeDataAttrsExtracting(totalCount));
-
     this.$diagram.empty().donutpie({
-      radius: this.$diagram.width() * 1.25
+      radius: this.$diagram.width()
     });
-    this.$diagram.donutpie('update', chartData);
+    this.$diagram.donutpie('update', this.chartData);
   }
 
   _makeDataAttrsExtracting(totalCount) {

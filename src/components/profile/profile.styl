@@ -3,12 +3,12 @@
 
 .profile
   display flex
-  justify-content center
-  flex-wrap wrap
-  width 100%
+  flex-direction column
+  justify-content flex-start
+  flex-grow 1
 
   &__header
-    page-panel(1 1 100%)
+    page-panel(0 0 auto)
 
   &__photo
     page-panel(1 1 100%)
@@ -64,15 +64,16 @@
   &__skills
     padding-top 0.7rem
     padding-bottom 0.7rem
-      
-  &__piechart
-    width 48%;
-    
 
-  &__profile
-    flex-direction column
-    justify-content flex-start
-    align-items stretch
+  &__piechart
+    width 45%
+    min-width 12.5rem
+
+  &__main
+    display flex
+
+    @media screen and (max-width 640px)
+      flex-wrap wrap
 
   &__left-col
     display flex
@@ -90,7 +91,6 @@
   &__right-col
     display: flex
     flex 1 1 auto
-    align-items stretch
 
   &__content
     page-panel(1 1 100%)

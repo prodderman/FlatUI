@@ -5,41 +5,49 @@ include ../piechart/piechart
 
 mixin profile()
   .profile
-    .profile__header
+    header.profile__header
       h1.profile__title my profile
-    .profile__left-col
-      .profile__photo
-        .profile__photo-wrap
-          +avatar({ isProfile: true })
-        .profile__edit
-          +button({ color: 'red', background: 'filled', text: 'edit', width: 'full' })
-      .profile__calendar
-        +calendar()
-    .profile__right-col
-      .profile__content
-        h2.profile__name Ryan Reynolds
-        .profile__info
-          .profile__row
-            .profile__label profession
-            .profile__labeled Actor
-          .profile__row
-            .profile__label phone
-            .profile__labeled
-              a.profile__link(href="tel:8888888888") +78888888888
-          .profile__row
-            .profile__label twitter
-            .profile__labeled
-              a.profile__link(href="https://twitter.com" target="_blank") twitter
-          .profile__row
-            .profile__label facebook
-            .profile__labeled
-              a.profile__link(href="https://facebook.com" target="_blank") facebook
-        .profile__skills
-          .profile__piechart
-            .profile__label skills
-            +piechart([
-              { name: 'Singin', count: 231, color: '#4eb7a8' },
-              { name: 'Actor Play', count: 557, color: '#e75735' },
-              { name: 'Dance', count: 400, color: '#e5e5e5' },
-              { name: 'Creative', count: 300, color: '#4f4f4f' }
-            ])
+    main.profile__main
+      .profile__left-col
+        .profile__photo
+          .profile__photo-wrap
+            +avatar({ isProfile: true })
+          .profile__edit
+            +button({ color: 'red', background: 'filled', text: 'edit', width: 'full' })
+        .profile__calendar
+          +calendar()
+      .profile__right-col
+        .profile__content
+          h2.profile__name Ryan Reynolds
+          .profile__info
+            .profile__row
+              .profile__label profession
+              .profile__labeled Actor
+            .profile__row
+              .profile__label phone
+              .profile__labeled
+                a.profile__link(href="tel:8888888888") +78888888888
+            .profile__row
+              .profile__label twitter
+              .profile__labeled
+                a.profile__link(href="https://twitter.com" target="_blank") twitter
+            .profile__row
+              .profile__label facebook
+              .profile__labeled
+                a.profile__link(href="https://facebook.com" target="_blank") facebook
+          .profile__skills
+            .profile__piechart
+              .profile__label skills
+              +piechart([
+                { name: 'Creative', count: 12, color: '#4eb7a8' },
+                { name: 'Teamwork', count: 7, color: '#e75735' },
+                { name: 'Innovate', count: 7, color: '#e5e5e5' },
+                { name: 'Communication', count: 10, color: '#4f4f4f' }
+              ])
+            .profile__piechart
+              .profile__label software
+              +piechart([
+                { name: 'HTML&CSS', count: 12, color: '#4eb7a8' },
+                { name: 'JavaScript', count: 7, color: '#e75735' },
+                { name: 'Photoshop', count: 2, color: '#e5e5e5' },
+              ])
