@@ -120,10 +120,8 @@
 
   &__msg-wrap
     display flex
+    flex-direction column
     padding 0.5rem 0
-
-    &_outcoming
-      justify-content flex-end
 
   &__msg
     position relative
@@ -140,6 +138,7 @@
 
     &_incoming
       background-color $c_white
+      align-self flex-start
 
       &:before
         content ''
@@ -155,6 +154,7 @@
     &_outcoming
       color $c_white
       background-color $c_green
+      align-self flex-end
 
       &:before
         content ''

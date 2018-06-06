@@ -102,7 +102,7 @@ class Messenger {
   }
 
   _renderMessage(text, $container) {
-    const msgWrap = $('<li/>', { class: 'messenger__msg-wrap messenger__msg-wrap_outcoming' });
+    const msgWrap = $('<li/>', { class: 'messenger__msg-wrap' });
     const msg = $('<div/>', { class: 'messenger__msg messenger__msg_outcoming' });
     msgWrap.append(msg.text(text));
     $container.append(msgWrap);

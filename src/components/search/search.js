@@ -21,7 +21,7 @@ class Search {
     $.ajax({
       type: 'POST',
       url: '',
-      error: this._setSearchError($field)
+      error: this._makeSearchErrorSetting($field)
     });
   }
 

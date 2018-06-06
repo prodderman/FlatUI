@@ -79,9 +79,9 @@ mixin stage-info()
                 tabindex: 8
               })
             .stage-info__toggle
-              +toggle({ name: 'notifications' }) Receive notifications
+              +toggle({ name: 'notifications', text: 'Receive notifications' })
             .stage-info__toggle
-              +toggle({ name: 'subscribe' }) Subscribe to newsletter
+              +toggle({ name: 'subscribe', text: 'Subscribe to newsletter' })
       .stage-info__footer
         .stage-info__diagram
           +percentage({ percent: 64 })

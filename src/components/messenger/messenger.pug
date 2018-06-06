@@ -16,7 +16,7 @@ mixin messenger({ userInfo = {}, messages = [], dialed } = {})
       .messenger__chat.js-messenger__chat
         ul.messenger__tape.js-messenger__tape
           each msg in messages
-            li.messenger__msg-wrap(class=msg.incoming ? 'messenger__msg-wrap_incoming' : 'messenger__msg-wrap_outcoming')
+            li.messenger__msg-wrap
               .messenger__msg(class=msg.incoming ? 'messenger__msg_incoming' : 'messenger__msg_outcoming')= msg.text
       .messenger__textarea
         .messenger__input.js-messenger__input(contenteditable)= dialed
