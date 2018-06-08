@@ -22,26 +22,26 @@
     flex-direction column
     margin-bottom 1rem
 
-    & > a
-      font-family Lato, Arial, sans-serif
-      font-weight bold
-      color $c_black
-      transition 0.2s
+  &__link
+    font-family Lato, Arial, sans-serif
+    font-weight bold
+    color $c_black
+    transition 0.2s
 
-      &:hover
-        color $c_red
+    &:hover
+      color $c_red
+
+    &_logout
+      text-align right
+      margin-right 1rem
+
+    &_profile
+      display flex
+      align-items center
 
   &__avatar
     width 5.875rem
     height 5.875rem
-
-  &__logout
-    text-align right
-    margin-right 1rem
-
-  &__profile-link
-    display flex
-    align-items center
 
   &__name
     margin-left 0.9rem

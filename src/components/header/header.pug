@@ -7,11 +7,11 @@ mixin header()
     .header__logo
       +logo({ href: 'UI-Kit.html', img: 'android-chrome-192x192.png' })
     .header__content
-      a.header__profile-link(href='profile.html' data-pjax)
+      a.header__link.header__link_profile(href='profile.html' data-pjax)
         .header__avatar
           +avatar()
         .header__name  Ryan Reynolds
-      a.header__logout(href="authorization.html") Log out
+      a.header__link.header__link_logout(href="authorization.html") Log out
 
     .header__search
       +search()

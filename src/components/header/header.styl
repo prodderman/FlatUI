@@ -29,23 +29,23 @@
     @media (max-width 1024px)
       display none
     
-    & > a
-      font-family Lato, Arial, sans-serif
-      font-weight bold
-      display flex
-      align-items center
-      color white
-      transition 0.2s
-
-      &:hover
-        color $c_red
-
-  &__logout
-    margin-right 1rem
-
-  &__profile-link
+  &__link
+    font-family Lato, Arial, sans-serif
+    font-weight bold
     display flex
-    flex-direction row-reverse
+    align-items center
+    color white
+    transition 0.2s
+
+    &:hover
+      color $c_red
+
+    &_logout
+      margin-right 1rem
+
+    &_profile
+      display flex
+      flex-direction row-reverse
 
   &__name
     margin-right 0.9rem

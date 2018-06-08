@@ -7,6 +7,13 @@
     position relative
     margin-bottom 0.75rem
     width calc(100% - 5rem)
+  
+  &__button
+    display flex
+    justify-content flex-end
+
+  &__textarea
+    margin-bottom 0.75rem
 
   .parsley-errors-list
     display none
@@ -21,9 +28,6 @@
     left 100%
     height 1.75rem
     background-color $c_red
-
-    .parsley-required
-      display none;
 
     &:after
       content 'error'
@@ -46,6 +50,9 @@
       border-left-color transparent
       border-top-color transparent
 
+    .parsley-required
+      display none;
+
   .parsley-error
     + .parsley-errors-list
         display block
@@ -60,10 +67,3 @@
 
         &:after
           content 'thanks!'
-
-  &__button
-    display flex
-    justify-content flex-end
-
-  &__textarea
-    margin-bottom 0.75rem
